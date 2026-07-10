@@ -18,10 +18,10 @@ function ProductItem({ item, size }) {
   );
 }
 
-function LikeIcon({ size = 15 }) {
+function LikeIcon({ size = 15, filter }) {
   return (
     <div className={styles.likeWrap} style={{ width: size * 2, height: size * 2 }}>
-      <svg width={size} height={size} viewBox="0 0 24 24" fill="#FC635E" stroke="#FC635E" strokeWidth="1" className={styles.heartBeat}><path d="M12 21s-7.5-4.9-10-9.4C.4 8.4 2 5 5.4 5c2 0 3.5 1.1 4.6 2.7C11.1 6.1 12.6 5 14.6 5 18 5 19.6 8.4 18 11.6 15.5 16.1 12 21 12 21z" /></svg>
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="#FC635E" stroke="#FC635E" strokeWidth="1" className={styles.heartBeat} style={filter ? { filter } : undefined}><path d="M12 21s-7.5-4.9-10-9.4C.4 8.4 2 5 5.4 5c2 0 3.5 1.1 4.6 2.7C11.1 6.1 12.6 5 14.6 5 18 5 19.6 8.4 18 11.6 15.5 16.1 12 21 12 21z" /></svg>
       <svg width={size} height={size} viewBox="0 0 24 24" fill="#FC635E" className={`${styles.heartFloat} ${styles.heartFloat1}`}><path d="M12 21s-7.5-4.9-10-9.4C.4 8.4 2 5 5.4 5c2 0 3.5 1.1 4.6 2.7C11.1 6.1 12.6 5 14.6 5 18 5 19.6 8.4 18 11.6 15.5 16.1 12 21 12 21z" /></svg>
       <svg width={size * 0.73} height={size * 0.73} viewBox="0 0 24 24" fill="#f5878a" className={`${styles.heartFloat} ${styles.heartFloat2}`}><path d="M12 21s-7.5-4.9-10-9.4C.4 8.4 2 5 5.4 5c2 0 3.5 1.1 4.6 2.7C11.1 6.1 12.6 5 14.6 5 18 5 19.6 8.4 18 11.6 15.5 16.1 12 21 12 21z" /></svg>
       <svg width={size * 0.67} height={size * 0.67} viewBox="0 0 24 24" fill="#FC635E" className={`${styles.heartFloat} ${styles.heartFloat3}`}><path d="M12 21s-7.5-4.9-10-9.4C.4 8.4 2 5 5.4 5c2 0 3.5 1.1 4.6 2.7C11.1 6.1 12.6 5 14.6 5 18 5 19.6 8.4 18 11.6 15.5 16.1 12 21 12 21z" /></svg>
@@ -180,22 +180,22 @@ export default function ProductBundles() {
 
           <div className={styles.actionRail}>
             <div className={styles.actionIcon}>
-              <svg width={isMobile ? 11 : 13} height={isMobile ? 11 : 13} viewBox="0 0 24 24" fill="none" stroke="#0d1033" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" /></svg>
+              <svg width={isMobile ? 15 : 17} height={isMobile ? 15 : 17} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.5))' }}><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" /></svg>
             </div>
             {!isMobile && (
               <div className={styles.actionCol}>
-                <div className={styles.actionIcon}><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1033" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" /></svg></div>
+                <div className={styles.actionIcon}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.5))' }}><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" /></svg></div>
                 <span className={styles.actionCount}>12</span>
               </div>
             )}
             {!isMobile && (
               <div className={styles.actionCol}>
-                <div className={styles.actionIcon}><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1033" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg></div>
+                <div className={styles.actionIcon}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.5))' }}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg></div>
                 <span className={styles.actionCount}>12</span>
               </div>
             )}
             <div className={styles.actionCol}>
-              <LikeIcon size={isMobile ? 12 : 15} />
+              <LikeIcon size={isMobile ? 16 : 15} filter={isMobile ? 'drop-shadow(0 1px 3px rgba(0,0,0,.4))' : undefined} />
               {!isMobile && <span className={styles.actionCount}>341</span>}
             </div>
           </div>

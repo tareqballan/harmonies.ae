@@ -6,12 +6,15 @@
   text-align: center;
 }
 
-.glowA {
-  position: absolute; left: -6%; top: -10%;
-  width: 420px; height: 420px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(252,99,94,.42), transparent 70%);
-  filter: blur(16px); pointer-events: none;
-  animation: cornerGlowFloat 9.5s ease-in-out infinite;
+/* single centered glow behind the heading, replacing the old top-left-only glow */
+.glowCenter {
+  position: absolute; left: 50%; top: 34%;
+  width: 520px; height: 520px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(252,99,94,.25), transparent 70%);
+  filter: blur(24px); pointer-events: none;
+  animation: cornerGlowFloat 8s ease-in-out infinite;
 }
 .glitterA {
   position: absolute; left: 2%; top: 2%;
@@ -60,62 +63,43 @@
 .h2 {
   position: relative; z-index: 1;
   font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(40px, 7vw, 96px); line-height: 1.05; letter-spacing: -.03em;
-  max-width: 1300px; margin: 0 auto 64px; color: var(--color-heading-on-dark);
-}
-.strike {
-  text-decoration: line-through;
-  text-decoration-color: rgba(154,158,196,.6);
-  text-decoration-thickness: 4px;
-  font-weight: 500;
+  font-size: clamp(40px, 6vw, 72px); line-height: 1.18; letter-spacing: -.02em;
+  max-width: 1000px; margin: 0 auto 56px; color: var(--color-heading-on-dark);
 }
 .gradientWord {
   background: linear-gradient(90deg, var(--color-coral), var(--color-sunset-pink), var(--color-blue), var(--color-lilac));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  white-space: nowrap;
 }
 
 .chainRow {
   position: relative; z-index: 1;
   display: flex; align-items: center; justify-content: center;
-  gap: 18px; flex-wrap: wrap;
-  max-width: 900px; margin: 0 auto;
+  gap: 16px;
 }
 
-.node {
-  position: relative;
+.miniNode {
   width: 60px; height: 60px; border-radius: 50%;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
   display: flex; align-items: center; justify-content: center;
-  animation: chainPulse 4s ease-in-out infinite;
-}
-.nodeLabel {
-  position: absolute; top: 100%; left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-  white-space: nowrap;
-  font-size: 13px; font-weight: 700; color: var(--color-coral);
-  animation: labelFade 4s ease-in-out infinite;
+  animation: miniChainPulse 3.2s ease-in-out infinite;
 }
 
-.arrow { animation: arrowFlow 4s ease-in-out infinite; }
-.finalArrow { animation: glowPulse 4s ease-in-out infinite; }
+.miniArrow { animation: miniArrowFlow 3.2s ease-in-out infinite; }
 
-.finalPill {
-  border-radius: var(--radius-pill);
-  background: linear-gradient(135deg, var(--color-coral), var(--color-sunset-pink) 40%, var(--color-blue) 70%, var(--color-lilac) 100%);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 16px 34px;
-  animation: finalGlow 4s ease-in-out infinite;
+.miniCoinNode {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-coral), var(--color-sunset-pink) 60%, var(--color-lilac) 100%);
+  display: flex; align-items: center; justify-content: center;
+  animation: miniCoinPop 3.2s ease-in-out infinite;
 }
-.finalCount { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: #fff; line-height: 1; }
-.finalLabel { font-size: 12.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: rgba(255,255,255,.85); }
 
 @media (max-width: 820px) {
   .section { padding: 64px 20px; }
-  .glowA { left: -40px; top: -40px; width: 180px; height: 180px; filter: blur(14px); animation-duration: 9s; }
+  .glowCenter { width: 300px; height: 300px; filter: blur(20px); }
   .glitterA { left: 10%; top: 6%; width: 6px; height: 6px; box-shadow: 0 0 10px 3px rgba(252,99,94,.7); animation-duration: 3s; }
   .glitterA2 { display: none; }
   .glowB { right: -40px; bottom: -40px; width: 180px; height: 180px; filter: blur(14px); animation-duration: 10s; }
@@ -126,18 +110,13 @@
   .badge svg { width: 18px; height: 18px; }
   .badgeText { font-size: 14px; letter-spacing: .06em; }
 
-  .h2 { font-size: clamp(32px, 10vw, 48px); line-height: 1.06; margin: 0 auto 40px; }
-  .strike { text-decoration-thickness: 3px; }
+  .h2 { font-size: clamp(28px, 8vw, 40px); line-height: 1.2; margin: 0 auto 40px; }
 
-  .chainRow { gap: 10px; }
-  .node { width: 46px; height: 46px; }
-  .node svg { width: 18px; height: 18px; }
-  .nodeLabel { font-size: 10.5px; margin-top: 8px; }
-  .arrow { width: 16px; height: 12px; }
-  .finalArrow { width: 18px; height: 14px; }
-  .finalPill { padding: 12px 24px; }
-  .finalCount { font-size: 22px; }
-  .finalLabel { font-size: 9.5px; letter-spacing: .04em; }
+  .chainRow { gap: 14px; }
+  .miniNode, .miniCoinNode { width: 52px; height: 52px; }
+  .miniNode svg { width: 21px; height: 21px; }
+  .miniCoinNode svg { width: 22px; height: 22px; }
+  .miniArrow { width: 34px; height: 16px; }
 }
 
 /* ---- local copies of shared keyframes from animations.css ----
@@ -147,33 +126,20 @@
    from here silently no-ops. Declaring them locally (identical
    bodies) keeps the exact same timing/easing but makes the scoped
    reference resolve correctly. ---- */
-@keyframes arrowFlow {
-  0%, 20%, 100% { stroke: rgba(255,255,255,.3); stroke-dashoffset: 24; }
-  30%, 42% { stroke: #FC635E; stroke-dashoffset: 0; }
-  52% { stroke: rgba(255,255,255,.3); stroke-dashoffset: 24; }
-}
-
-@keyframes chainPulse {
-  0%, 20%, 100% { background: rgba(255,255,255,.06); transform: scale(1); box-shadow: 0 0 0 rgba(252,99,94,0); }
-  30%, 42% { background: linear-gradient(135deg,#fd8b87,#FC635E 70%); transform: scale(1.16); box-shadow: 0 0 30px 10px rgba(252,99,94,.55); }
-  52% { background: rgba(255,255,255,.06); transform: scale(1); box-shadow: 0 0 0 rgba(252,99,94,0); }
-}
-
 @keyframes cornerGlowFloat { 0%, 100% { transform: translate(0,0) scale(1); opacity: .85; } 50% { transform: translate(18px,-14px) scale(1.12); opacity: 1; } }
 
 @keyframes cornerGlowFloat2 { 0%, 100% { transform: translate(0,0) scale(1); opacity: .8; } 50% { transform: translate(-16px,16px) scale(1.15); opacity: 1; } }
 
-@keyframes finalGlow {
-  0%, 20%, 100% { box-shadow: 0 16px 34px -10px rgba(252,99,94,.55); transform: scale(1); }
-  75%, 85% { box-shadow: 0 16px 50px -4px rgba(252,99,94,.9); transform: scale(1.08); }
-}
-
 @keyframes glitterTwinkle { 0%, 100% { opacity: .3; transform: scale(.7); } 50% { opacity: 1; transform: scale(1.3); } }
 
-@keyframes glowPulse { 0%, 100% { opacity: .5; } 50% { opacity: .9; } }
+@keyframes miniChainPulse { 0%, 100% { opacity: .5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } }
 
-@keyframes labelFade {
-  0%, 24%, 100% { opacity: 0; transform: translate(-50%,-4px); }
-  32%, 40% { opacity: 1; transform: translate(-50%,0); }
-  48%, 100% { opacity: 0; }
+@keyframes miniArrowFlow {
+  0%, 20%, 100% { stroke: rgba(255,255,255,.25); stroke-dashoffset: 20; }
+  45%, 65% { stroke: #FC635E; stroke-dashoffset: 0; }
+}
+
+@keyframes miniCoinPop {
+  0%, 100% { opacity: .5; transform: scale(1) translateY(0); }
+  70%, 85% { opacity: 1; transform: scale(1.15) translateY(-2px); }
 }

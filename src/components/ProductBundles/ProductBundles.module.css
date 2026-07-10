@@ -115,9 +115,8 @@
 }
 .sceneFrameMobile .actionRail { right: 8px; bottom: 62px; gap: 9px; }
 .actionIcon {
-  width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,.92);
+  width: 30px; height: 30px; border-radius: 50%; background: transparent;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 3px 8px -2px rgba(0,0,0,.2);
 }
 .sceneFrameMobile .actionIcon { width: 24px; height: 24px; }
 .actionCol { display: flex; flex-direction: column; align-items: center; gap: 3px; }
