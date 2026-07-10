@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-navy);
+  font-family: var(--font-body);
+  color: var(--color-ink);
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; }
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.site-root {
+  overflow-x: hidden;
+  background: var(--color-surface);
+}
+
+/* utility: show only on one breakpoint side (used for sections with
+   genuinely divergent desktop/mobile layouts — Community, Product
+   Bundles, The Loop, and various desktop/mobile-specific decorations —
+   so both live in the same component tree per the handoff, without
+   naive collapsing).
+
+   Important: these utilities only ever force `display:none` on the
+   hidden side. They never force a `display:block` on the visible side,
+   because that would fight a component's own `display:flex`/`grid`
+   declared in its CSS module (whichever rule is later in the bundled
+   stylesheet wins when specificity is equal, which is fragile and was
+   previously clobbering flex layouts into stacked block columns).
+   Leaving the visible side alone means each element keeps whatever
+   display value its own component styles gave it. */
+@media (min-width: 821px) {
+  .mobile-only { display: none !important; }
+}
+@media (max-width: 820px) {
+  .desktop-only { display: none !important; }
+}
+
+/* pill button hover/press per handoff's design-system recommendation */
+.pill-cta {
+  transition: filter .25s ease, transform .08s ease, background .25s ease, color .25s ease;
+}
+.pill-cta:hover { filter: brightness(0.94); }
+.pill-cta:active { transform: scale(0.98); }
