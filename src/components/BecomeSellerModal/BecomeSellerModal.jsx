@@ -10,6 +10,7 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
   const [form, setForm] = useState(INITIAL_FORM);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
+  const [errors, setErrors] = useState({});
 
   // reset to a fresh state every time the modal opens, per spec
   useEffect(() => {
@@ -19,13 +20,24 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
       setForm(INITIAL_FORM);
       setIsSubmitting(false);
       setSubmitError(null);
+      setErrors({});
     }
   }, [isOpen]);
 
   if (!isOpen) return null;
 
-  const field = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+  const field = (key) => (e) => {
+    setForm((f) => ({ ...f, [key]: e.target.value }));
+    if (errors[key]) setErrors((e) => ({ ...e, [key]: null }));
+  };
   const nextStep = () => setStep((s) => Math.min(s + 1, 2));
+  const nextStepValidated = () => {
+    const newErrors = {};
+    if (!form.name.trim()) newErrors.name = 'Please enter your name.';
+    if (!form.whatsapp.trim()) newErrors.whatsapp = 'Please enter your WhatsApp number.';
+    if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
+    nextStep();
+  };
   const prevStep = () => setStep((s) => Math.max(s - 1, 0));
 
   const submitSeller = async () => {
@@ -92,8 +104,9 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
                   value={form.name}
                   onChange={field('name')}
                   className={styles.input}
-                  style={{ marginBottom: 18 }}
+                  style={{ marginBottom: errors.name ? 4 : 18 }}
                 />
+                {errors.name && <p className={styles.errorText}>{errors.name}</p>}
 
                 <label className={styles.label}>WhatsApp number</label>
                 <div className={styles.whatsappRow}>
@@ -106,9 +119,10 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
                     className={styles.input}
                   />
                 </div>
+                {errors.whatsapp && <p className={styles.errorText}>{errors.whatsapp}</p>}
 
                 <div className={styles.footerRowEnd}>
-                  <button type="button" className={styles.continueButton} onClick={nextStep}>
+                  <button type="button" className={styles.continueButton} onClick={nextStepValidated}>
                     Continue
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                   </button>
