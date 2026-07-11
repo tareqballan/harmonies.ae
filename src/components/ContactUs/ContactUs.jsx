@@ -18,6 +18,7 @@ export default function ContactUs() {
     const newErrors = {};
     if (!form.name.trim()) newErrors.name = 'Please enter your name.';
     if (!form.email.trim()) newErrors.email = 'Please enter your email.';
+    if (!form.whatsapp.trim()) newErrors.whatsapp = 'Please enter your WhatsApp number.';
     if (!form.subject.trim()) newErrors.subject = 'Please enter a subject.';
     if (!form.message.trim()) newErrors.message = 'Please enter a message.';
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
@@ -127,7 +128,7 @@ export default function ContactUs() {
                   {errors.email && <p className={styles.errorText}>{errors.email}</p>}
                 </div>
                 <div className={styles.fieldCol}>
-                  <label className={styles.label}>WhatsApp <span className={styles.optional}>(optional)</span></label>
+                  <label className={styles.label}>WhatsApp</label>
                   <div className={styles.whatsappRow}>
                     <div className={styles.countryCode}>+971</div>
                     <input
@@ -138,6 +139,7 @@ export default function ContactUs() {
                       className={`${styles.input} ${styles.whatsappInput}`}
                     />
                   </div>
+                  {errors.whatsapp && <p className={styles.errorText}>{errors.whatsapp}</p>}
                 </div>
               </div>
 
