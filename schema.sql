@@ -11,3 +11,13 @@ CREATE TABLE IF NOT EXISTS seller_applications (
   how_heard     TEXT,
   submitted_at  TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS contact_submissions (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  name          TEXT NOT NULL,
+  email         TEXT NOT NULL,
+  whatsapp      TEXT,
+  subject       TEXT,
+  message       TEXT NOT NULL,
+  submitted_at  TEXT NOT NULL
+);

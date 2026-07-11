@@ -1,12 +1,16 @@
-import { onRequestPost } from '../functions/api/apply.js';
+import { onRequestPost as applyHandler } from '../functions/api/apply.js';
+import { onRequestPost as contactHandler } from '../functions/api/contact.js';
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // Route API requests to the handler
     if (url.pathname === '/api/apply' && request.method === 'POST') {
-      return onRequestPost({ request, env });
+      return applyHandler({ request, env });
+    }
+
+    if (url.pathname === '/api/contact' && request.method === 'POST') {
+      return contactHandler({ request, env });
     }
 
     // Try to serve a static asset; fall back to index.html for SPA routes

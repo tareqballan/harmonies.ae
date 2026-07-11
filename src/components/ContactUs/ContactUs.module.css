@@ -146,11 +146,11 @@
 
 /* Form card */
 .card {
-  flex: 1;
-  max-width: 440px;
+  flex: 1.4;
+  max-width: 580px;
   background: #fff;
   border-radius: 20px;
-  padding: 36px;
+  padding: 40px 44px;
   box-shadow: 0 30px 60px -20px rgba(0,0,0,.4);
 }
 .label {
@@ -176,7 +176,40 @@
 }
 .input:focus { outline: 2px solid #FC635E; outline-offset: 1px; border-color: transparent; }
 .input::placeholder { color: #a8a5b8; }
-.textarea { resize: none; }
+.optional {
+  font-weight: 500;
+  color: #a8a5b8;
+  font-size: 11.5px;
+}
+.row2 {
+  display: flex;
+  gap: 16px;
+}
+.fieldCol {
+  flex: 1;
+  min-width: 0;
+}
+.whatsappRow {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.countryCode {
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1.5px solid #e7e3dc;
+  background: #faf9f6;
+  font-size: 15px;
+  color: #0d1033;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.whatsappInput {
+  flex: 1;
+  min-width: 0;
+}
 .errorText {
   color: #FC635E;
   font-size: 12.5px;

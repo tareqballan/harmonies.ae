@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import styles from './ContactUs.module.css';
 
 export default function ContactUs() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', whatsapp: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState(null);
 
   const field = (key) => (e) => {
     setForm((f) => ({ ...f, [key]: e.target.value }));
@@ -21,10 +22,21 @@ export default function ContactUs() {
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
 
     setIsSubmitting(true);
-    // Simulate a short delay for UX feel; wire to real backend here
-    await new Promise((r) => setTimeout(r, 400));
-    setSubmitted(true);
-    setIsSubmitting(false);
+    setSubmitError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -101,15 +113,41 @@ export default function ContactUs() {
               />
               {errors.name && <p className={styles.errorText}>{errors.name}</p>}
 
-              <label className={styles.label}>Email</label>
+              <div className={styles.row2}>
+                <div className={styles.fieldCol}>
+                  <label className={styles.label}>Email</label>
+                  <input
+                    type="email"
+                    placeholder="you@email.com"
+                    value={form.email}
+                    onChange={field('email')}
+                    className={styles.input}
+                  />
+                  {errors.email && <p className={styles.errorText}>{errors.email}</p>}
+                </div>
+                <div className={styles.fieldCol}>
+                  <label className={styles.label}>WhatsApp <span className={styles.optional}>(optional)</span></label>
+                  <div className={styles.whatsappRow}>
+                    <div className={styles.countryCode}>+971</div>
+                    <input
+                      type="text"
+                      placeholder="50 123 4567"
+                      value={form.whatsapp}
+                      onChange={field('whatsapp')}
+                      className={`${styles.input} ${styles.whatsappInput}`}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <label className={styles.label}>Subject <span className={styles.optional}>(optional)</span></label>
               <input
-                type="email"
-                placeholder="you@email.com"
-                value={form.email}
-                onChange={field('email')}
+                type="text"
+                placeholder="What's this about?"
+                value={form.subject}
+                onChange={field('subject')}
                 className={styles.input}
               />
-              {errors.email && <p className={styles.errorText}>{errors.email}</p>}
 
               <label className={styles.label}>Message</label>
               <textarea
@@ -120,6 +158,8 @@ export default function ContactUs() {
                 className={`${styles.input} ${styles.textarea}`}
               />
               {errors.message && <p className={styles.errorText}>{errors.message}</p>}
+
+              {submitError && <p className={styles.errorText}>{submitError}</p>}
 
               <button
                 type="button"
