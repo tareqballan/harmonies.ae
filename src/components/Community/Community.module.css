@@ -1,0 +1,258 @@
+.section {
+  position: relative;
+  padding: 140px 6vw;
+  background: linear-gradient(165deg, var(--color-community-wash-1) 0%, var(--color-community-wash-2) 100%);
+  overflow: visible;
+}
+
+.blobA {
+  position: absolute;
+  left: -160px; top: -180px;
+  width: 400px; height: 400px;
+  border-radius: 42% 58% 37% 63% / 60% 40% 63% 37%;
+  background: linear-gradient(160deg, #c9d3fb, var(--color-blue) 65%);
+  opacity: .14;
+  pointer-events: none;
+  animation: floatBlobA 16s ease-in-out infinite;
+}
+.blobAMobile {
+  position: absolute;
+  left: -100px; top: -100px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #c9d3fb, var(--color-blue) 65%);
+  opacity: .16;
+  pointer-events: none;
+  animation: floatBlobA 12s ease-in-out infinite;
+}
+
+.netWrap { position: absolute; left: 20px; top: 20px; width: 150px; height: 130px; pointer-events: none; }
+.netWrapMobile { position: absolute; left: 16px; top: 16px; width: 100px; height: 88px; pointer-events: none; }
+.netSvg { position: absolute; inset: 0; overflow: visible; }
+
+.heading { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 64px; text-align: center; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-badge-fill);
+  border: 1px solid var(--color-border);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--color-body);
+  margin-bottom: 24px;
+}
+.badgeDot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-success); display: inline-block; }
+.h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 4.6vw, 50px);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin: 0 0 26px;
+  color: var(--color-ink);
+}
+.gradientWord {
+  background: linear-gradient(90deg, var(--color-coral), var(--color-sunset-pink), var(--color-lilac));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- desktop diagram ---- */
+.desktopDiagramOuter { position: relative; z-index: 1; width: min(1320px, 96vw); margin: 0 auto 12px; }
+.desktopDiagramInner { position: relative; width: min(680px, 100%); margin: 0 auto; }
+
+.valueLine {
+  position: absolute;
+  max-width: 170px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  opacity: 0;
+  animation: valueReveal .7s ease forwards;
+}
+.valueDot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; transform: translateY(-2px); }
+.valueText { font-size: 14.5px; font-weight: 600; line-height: 1.45; letter-spacing: .005em; color: #77738a; font-style: italic; }
+.valTopLeft { left: -19%; top: 2%; }
+.valTopRight { right: -18%; top: 6%; max-width: 160px; text-align: left; }
+.valBottomLeft { left: -20%; bottom: 22%; max-width: 160px; }
+.valBottomRight { right: -19%; bottom: 28%; text-align: left; }
+.valCenter { left: 50%; bottom: -9%; max-width: 280px; transform: translateX(-50%); justify-content: center; }
+
+@keyframes valueReveal { 0% { opacity: 0; transform: translateY(14px); } 100% { opacity: 1; transform: translateY(0); } }
+
+.loopWrap { position: relative; width: 620px; max-width: 100%; height: 640px; margin: 0 auto; }
+.diagramFloat { position: absolute; inset: 0; animation: diagramFloat 7s ease-in-out infinite; }
+
+.blobHalo {
+  position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+  width: 560px; height: 590px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(155,232,176,.5), rgba(155,232,176,0) 68%);
+  filter: blur(18px); pointer-events: none;
+  animation: haloBreathe 8s ease-in-out infinite;
+}
+.blobShape {
+  position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+  width: 480px; height: 480px;
+  animation: blobBreathe 7s ease-in-out infinite;
+}
+.blobInnerWash { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, rgba(155,232,176,.4), rgba(155,232,176,0) 70%); }
+.blobDashRing { position: absolute; inset: 38px; border-radius: 50%; border: 2px dashed rgba(52,199,89,.35); }
+.ringSpin { position: absolute; inset: 0; animation: ringSpin 60s linear infinite; }
+.ringDot { position: absolute; border-radius: 50%; }
+.blobFace {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(155,232,176,.5), rgba(52,199,89,.22) 72%);
+  border: 1px solid rgba(52,199,89,.35);
+  box-shadow: 0 40px 80px -24px rgba(31,157,68,.35);
+}
+
+.driftDot { position: absolute; transform: translate(-50%, -50%); }
+.driftInner { width: 10px; height: 10px; border-radius: 50%; opacity: .7; }
+.drift1 { left: 8%; top: 44%; animation: dotFloatGentle 6.5s ease-in-out infinite; }
+.drift1 .driftInner { background: #fd8b87; box-shadow: 0 4px 10px -3px rgba(252,99,94,.4); width: 10px; height: 10px; }
+.drift2 { left: 92%; top: 40%; animation: dotFloatGentle 5.4s ease-in-out infinite; animation-delay: .4s; }
+.drift2 .driftInner { background: #a9b8f7; box-shadow: 0 4px 10px -3px rgba(138,155,247,.4); width: 8px; height: 8px; }
+.drift3 { left: 60%; top: 95%; animation: dotFloatGentle 7.2s ease-in-out infinite; animation-delay: .8s; }
+.drift3 .driftInner { background: #c9a9e6; box-shadow: 0 4px 10px -3px rgba(150,106,194,.4); width: 9px; height: 9px; }
+
+.storySvg { position: absolute; inset: 0; pointer-events: none; }
+.storyEdge {
+  stroke-dasharray: 1;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 11s;
+}
+.storyPulse {
+  position: absolute; left: 0; top: 0;
+  border-radius: 50%;
+  offset-rotate: 0deg;
+  offset-distance: 0%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 11s;
+}
+
+.centerLabel {
+  position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+  text-align: center; width: 230px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.centerIcon {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: #fff; box-shadow: 0 8px 18px -6px rgba(31,157,68,.3);
+  display: flex; align-items: center; justify-content: center;
+}
+.centerText { font-family: var(--font-display); font-weight: 700; font-size: 25px; line-height: 1.35; color: #1f9d44; }
+
+.nodeShadow { position: absolute; border-radius: 50%; transform: translateX(-50%); }
+
+.node { position: absolute; transform: translate(-50%, -50%); }
+.nodeCircle {
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.labelWrap { position: absolute; }
+.storyLabel {
+  position: relative; z-index: 5; display: inline-block;
+  background: #fff; padding: 4px 11px; border-radius: var(--radius-pill);
+  box-shadow: 0 3px 10px -3px rgba(13,16,51,.22);
+  font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 11s;
+}
+
+/* ---- mobile vertical chain ---- */
+.mobileChain {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 280px;
+  margin: 0 auto;
+}
+.mobileChainGroup { display: contents; }
+.mobileNodeGroup { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.mobileNode {
+  width: 78px; height: 78px; border-radius: 50%;
+  overflow: hidden; display: flex; align-items: center; justify-content: center;
+}
+.mobileNodeLabel { font-size: 12.5px; font-weight: 700; color: var(--color-ink); }
+.mobileConnector { width: 2px; height: 34px; }
+.mobileConnectorShort { width: 2px; height: 16px; }
+.mobileVerb { font-size: 10.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 2px; }
+.mobileConnectorDashed {
+  width: 2px; height: 16px; background: #1f9d44;
+  background-image: linear-gradient(#1f9d44 60%, transparent 40%);
+  background-size: 2px 8px;
+}
+.mobileVerbFinal { font-size: 10.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #1f9d44; margin-bottom: 14px; }
+
+@media (max-width: 820px) {
+  .section { padding: 64px 20px; overflow: hidden; }
+  .heading { margin-bottom: 40px; }
+  .badge { padding: 8px 16px; font-size: 12px; margin-bottom: 20px; }
+  .badgeDot { width: 6px; height: 6px; }
+  .h2 { font-size: clamp(28px, 8vw, 36px); line-height: 1.2; }
+}
+
+/* ---- gate always-on loop animations until section scrolls into view,
+   matching the reference's [data-reveal].is-in pattern ---- */
+.valueLine,
+.loopWrap,
+.diagramFloat,
+.blobHalo,
+.blobShape,
+.ringSpin,
+.storyEdge,
+.storyPulse,
+.storyLabel,
+.driftDot,
+.node > div,
+.nodeShadow {
+  animation-play-state: paused;
+}
+:global([data-reveal].is-in) .valueLine,
+:global([data-reveal].is-in) .loopWrap,
+:global([data-reveal].is-in) .diagramFloat,
+:global([data-reveal].is-in) .blobHalo,
+:global([data-reveal].is-in) .blobShape,
+:global([data-reveal].is-in) .ringSpin,
+:global([data-reveal].is-in) .storyEdge,
+:global([data-reveal].is-in) .storyPulse,
+:global([data-reveal].is-in) .storyLabel,
+:global([data-reveal].is-in) .driftDot,
+:global([data-reveal].is-in) .node > div,
+:global([data-reveal].is-in) .nodeShadow {
+  animation-play-state: running;
+}
+
+/* ---- local copies of shared keyframes from animations.css ----
+   Vite's CSS Modules scopes any identifier used in `animation:`
+   within a .module.css file, even when no local @keyframes exists
+   for it -- so referencing the shared global keyframes by name
+   from here silently no-ops. Declaring them locally (identical
+   bodies) keeps the exact same timing/easing but makes the scoped
+   reference resolve correctly. ---- */
+@keyframes blobBreathe { 0%, 100% { transform: translate(-50%,-50%) scale(1); } 50% { transform: translate(-50%,-50%) scale(1.018); } }
+
+@keyframes diagramFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+@keyframes dotFloatGentle { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(6px,-8px); } }
+
+@keyframes floatBlobA { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(26px,-38px) rotate(4deg); } }
+
+@keyframes haloBreathe { 0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: .55; } 50% { transform: translate(-50%,-50%) scale(1.08); opacity: .8; } }
+
+@keyframes ringSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }

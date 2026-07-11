@@ -1,0 +1,262 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: var(--color-surface);
+}
+
+/* ambient floating dots */
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.dotCoral {
+  width: 22px; height: 22px;
+  left: 6%; top: 20%;
+  background: radial-gradient(circle at 32% 26%, #ffb9b5, var(--color-coral) 55%, var(--color-coral-dark) 100%);
+  box-shadow: 0 10px 22px -8px rgba(252,99,94,.55), inset -3px -4px 7px rgba(0,0,0,.18), inset 2px 2px 5px rgba(255,255,255,.55);
+  animation: floatSlow 5.5s ease-in-out infinite;
+}
+.dotBlue {
+  width: 14px; height: 14px;
+  left: 12%; bottom: 14%;
+  background: radial-gradient(circle at 32% 26%, #dbe2fd, var(--color-blue) 55%, var(--color-blue-dark) 100%);
+  box-shadow: 0 8px 16px -6px rgba(138,155,247,.55), inset -2px -3px 5px rgba(0,0,0,.15), inset 2px 2px 4px rgba(255,255,255,.6);
+  animation: floatSlow 6.5s ease-in-out infinite;
+}
+.dotLilac {
+  width: 9px; height: 9px;
+  left: 1%; top: 56%;
+  background: radial-gradient(circle at 32% 26%, #f0ddfa, var(--color-lilac) 55%, #7a4fa0 100%);
+  box-shadow: 0 6px 12px -5px rgba(150,106,194,.5), inset -2px -2px 4px rgba(0,0,0,.15), inset 1px 1px 3px rgba(255,255,255,.55);
+  animation: floatSlow2 8s ease-in-out infinite;
+}
+.dotDesktop { display: block; }
+.dotMobile { display: none; }
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 160px 6vw 100px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.copy { flex: 1; min-width: 380px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-badge-fill);
+  border: 1px solid var(--color-border);
+  font-size: 13px;
+  color: var(--color-body);
+  margin-bottom: 32px;
+}
+.eyebrowDot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--color-success);
+  display: inline-block;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(56px, 6.6vw, 108px);
+  line-height: .98;
+  letter-spacing: -.03em;
+  margin: 0;
+  background: linear-gradient(120deg, var(--color-coral), var(--color-sunset-pink) 45%, var(--color-blue) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.desktopBreak { display: inline; }
+
+.paragraphWrap { margin-top: 36px; max-width: 480px; }
+.paragraph { font-size: 19px; line-height: 1.55; color: var(--color-body); margin: 0; }
+.highlight {
+  background: linear-gradient(180deg, transparent 62%, rgba(252,99,94,.22) 62%);
+  padding: 0 2px;
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.photoStage {
+  flex: 1;
+  min-width: 360px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 520px;
+}
+
+.orb { position: absolute; border-radius: 50%; }
+.orbNavy {
+  right: 8%; top: 2%;
+  width: 34px; height: 34px;
+  background: radial-gradient(circle at 34% 28%, #5c6099, #2c3164 60%, var(--color-navy-grad-1) 100%);
+  opacity: .85;
+  filter: blur(1.2px);
+  box-shadow: 0 10px 18px -10px rgba(11,16,54,.35);
+  animation: floatSlow 6s ease-in-out infinite;
+  z-index: 3;
+}
+.orbBlueGlow {
+  left: 2%; bottom: 10%;
+  width: 40px; height: 40px;
+  background: radial-gradient(circle at 42% 38%, rgba(255,255,255,.55) 0%, rgba(138,155,247,.32) 35%, rgba(138,155,247,.12) 60%, transparent 80%);
+  opacity: .7;
+  animation: floatSlow2 7s ease-in-out infinite;
+  z-index: 0;
+}
+.orbCoralGlow {
+  left: 16%; bottom: 2%;
+  width: 56px; height: 56px;
+  background: radial-gradient(circle at 42% 38%, rgba(255,255,255,.55) 0%, rgba(252,99,94,.32) 35%, rgba(252,99,94,.12) 60%, transparent 80%);
+  opacity: .7;
+  animation: floatSlow 9s ease-in-out infinite;
+  z-index: 0;
+}
+
+.photoFrame {
+  position: relative;
+  width: min(560px, 90%);
+  height: 660px;
+  border-radius: var(--radius-blob);
+  right: -8%;
+  box-shadow: var(--shadow-ambient);
+  overflow: hidden;
+}
+.photo { width: 100%; height: 100%; object-fit: cover; }
+
+.photoShadow {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  width: min(420px, 68%);
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(13,16,51,.25), transparent 70%);
+  transform: translateX(-50%);
+  animation: floatShadow 7s ease-in-out infinite;
+  z-index: 0;
+}
+
+.pill {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(142,142,150,.42);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: var(--radius-pill);
+  padding: 14px 24px;
+  box-shadow: 0 20px 44px -16px rgba(13,16,51,.32);
+}
+.pillEmoji { font-size: 18px; line-height: 1; }
+.pillLabel { font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap; }
+
+.pillOrder { left: 2%; top: 14%; animation: floatSlow 10s ease-in-out infinite; }
+.pillInventory { left: -4%; bottom: 30%; animation: floatSlow2 12s ease-in-out infinite; }
+.pillDelivery { right: 6%; bottom: 6%; animation: floatSlow 13s ease-in-out infinite; }
+
+.desktopOnly { display: flex; }
+
+@media (max-width: 820px) {
+  .hero { min-height: auto; padding-top: 0; }
+  .inner {
+    flex-direction: column;
+    padding: 36px 20px 48px;
+    gap: 0;
+  }
+  .dotDesktop { display: none; }
+  .dotMobile { display: block; }
+  .dotMobile.dotCoral { width: 14px; height: 14px; left: 8%; top: 8%; bottom: auto; }
+  .dotMobile.dotBlue { width: 10px; height: 10px; right: 10%; left: auto; top: 14%; bottom: auto; }
+
+  .copy { min-width: 0; width: 100%; }
+  .headline {
+    font-size: clamp(40px, 12vw, 54px);
+    line-height: 1;
+    margin: 0 0 20px;
+  }
+  .desktopBreak { display: none; }
+  .eyebrow { padding: 8px 16px; font-size: 12px; margin-bottom: 22px; }
+  .eyebrowDot { width: 6px; height: 6px; }
+  .paragraphWrap { margin-top: 0; max-width: none; }
+  .paragraph { font-size: 17px; margin: 0 0 32px; }
+  .highlight { background: none; padding: 0; color: var(--color-ink); }
+
+  .photoStage {
+    min-width: 0;
+    width: 100%;
+    min-height: auto;
+    display: block;
+  }
+  .orb { display: none; }
+  .photoFrame {
+    width: 100%;
+    max-width: 340px;
+    height: 400px;
+    margin: 0 auto;
+    right: 0;
+    border-radius: 52% 48% 58% 42% / 42% 58% 42% 58%;
+    box-shadow: 0 30px 60px -24px rgba(13,16,51,.32);
+  }
+  .photoShadow { display: none; }
+
+  .pill {
+    position: static;
+    background: rgba(13,16,51,.9);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    padding: 11px 20px;
+    box-shadow: 0 14px 30px -14px rgba(13,16,51,.4);
+    animation: none !important;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .pillLabel { font-size: 13px; }
+  .pillEmoji { font-size: 16px; }
+  .desktopOnly { display: none; }
+
+  /* mobile stacks the 2 remaining pills below the photo */
+  .photoStage {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 28px;
+  }
+}
+
+/* ---- local copies of shared keyframes from animations.css ----
+   Vite's CSS Modules scopes any identifier used in `animation:`
+   within a .module.css file, even when no local @keyframes exists
+   for it -- so referencing the shared global keyframes by name
+   from here silently no-ops. Declaring them locally (identical
+   bodies) keeps the exact same timing/easing but makes the scoped
+   reference resolve correctly. ---- */
+@keyframes floatShadow { 0%, 100% { transform: translateX(-50%) scale(1); opacity: .6; } 50% { transform: translateX(-50%) scale(.82); opacity: .35; } }
+
+@keyframes floatSlow { 0% { transform: translate(0,0); } 50% { transform: translate(10px,-14px); } 100% { transform: translate(0,0); } }
+
+@keyframes floatSlow2 { 0% { transform: translate(0,0); } 50% { transform: translate(-10px,14px); } 100% { transform: translate(0,0); } }

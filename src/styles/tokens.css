@@ -1,0 +1,56 @@
+:root {
+  /* Colors */
+  --color-coral: #FC635E;
+  --color-coral-light: #fd8b87;
+  --color-coral-dark: #c23a36;
+  --color-sunset-pink: #f5878a;
+
+  --color-blue: #8A9BF7;
+  --color-blue-dark: #5f76ce;
+  --color-blue-tint: #a9b8f7;
+  --color-blue-tint-2: #b9c5fb;
+
+  --color-lilac: #966ac2;
+  --color-lilac-tint: #c9a9e6;
+
+  --color-navy: #0d1033;
+  --color-navy-grad-1: #171b52;
+  --color-navy-grad-2: #080a24;
+
+  --color-ink: #0d1033;
+  --color-body: #5B596B;
+  --color-heading-on-dark: #c7c9d9;
+
+  --color-surface: #FFFFFF;
+  --color-badge-fill: #F1F1F5;
+  --color-warm-lilac-1: #F5F0EB;
+  --color-warm-lilac-2: #EAE3F0;
+  --color-community-wash-1: #F3F1FB;
+  --color-community-wash-2: #EDEBF9;
+
+  --color-success: #34C759;
+  --color-success-dark: #1f9d44;
+
+  --color-border: #e7e3dc;
+  --color-border-soft: #e5ddec;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --section-pad-y-desktop: 160px;
+  --section-pad-x-desktop: 6vw;
+  --section-pad-y-mobile: 60px;
+  --section-pad-x-mobile: 20px;
+
+  --radius-pill: 999px;
+  --radius-blob: 58% 42% 63% 37% / 40% 60% 40% 60%;
+
+  --shadow-coral: 0 16px 34px -10px rgba(252, 99, 94, .55);
+  --shadow-blue: 0 16px 34px -10px rgba(95, 118, 206, .45);
+  --shadow-ambient: 0 40px 90px -30px rgba(13, 16, 51, .35);
+
+  --ease-reveal: cubic-bezier(.16, 1, .3, 1);
+}

@@ -1,0 +1,149 @@
+.section {
+  position: relative;
+  background: var(--color-surface);
+  padding: 210px 6vw 170px;
+  overflow: hidden;
+}
+
+.blobA {
+  position: absolute; left: -220px; top: -8%;
+  width: 460px; height: 560px;
+  border-radius: 42% 58% 37% 63% / 60% 40% 63% 37%;
+  background: linear-gradient(160deg, #c9d3fb, var(--color-blue) 65%);
+  opacity: .10; pointer-events: none; z-index: 0;
+  animation: floatBlobA 15s ease-in-out infinite;
+}
+.blobB {
+  position: absolute; right: -200px; bottom: -10%;
+  width: 420px; height: 500px;
+  border-radius: var(--radius-blob);
+  background: linear-gradient(160deg, #f5c2b8, var(--color-coral) 65%);
+  opacity: .10; pointer-events: none; z-index: 0;
+  animation: floatBlobB 17s ease-in-out infinite;
+}
+
+.cornerMark {
+  position: absolute; right: 24px; top: 28px;
+  height: 88px; width: auto; z-index: 2;
+  filter: drop-shadow(0 14px 24px rgba(13,16,51,.18));
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.inner {
+  position: relative; z-index: 1;
+  max-width: 1300px; margin: 0 auto;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+}
+
+.illustrationCol { flex: 1.6; min-width: 480px; max-width: 560px; display: flex; justify-content: center; }
+.illustration { width: 480px; max-width: 100%; max-height: 520px; height: auto; object-fit: contain; }
+
+.textCol { flex: 1; min-width: 380px; }
+
+.mobileMark { display: none; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 20px; border-radius: var(--radius-pill);
+  background: var(--color-badge-fill); border: 1px solid var(--color-border);
+  font-size: 13px; color: var(--color-body);
+  margin-bottom: 28px;
+}
+.badgeDot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-success); display: inline-block; }
+
+.h2 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(42px, 5.6vw, 78px); line-height: 1.02; letter-spacing: -.03em;
+  margin: 0 0 26px; color: var(--color-ink);
+}
+.gradientWord {
+  background: linear-gradient(120deg, var(--color-coral), var(--color-sunset-pink) 45%, var(--color-blue) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.paragraph { font-size: 19px; line-height: 1.6; color: var(--color-body); margin: 0 0 40px; max-width: 440px; }
+
+.ctaPill {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 42px; border-radius: var(--radius-pill);
+  background: var(--color-coral); color: #fff;
+  font-size: 16px; font-weight: 700;
+  box-shadow: 0 20px 40px -14px rgba(252,99,94,.5);
+}
+
+.illustrationColMobile { display: none; }
+
+.wordmarkWrap { margin-top: 48px; }
+.wordmark {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -.01em;
+  background: linear-gradient(90deg, var(--color-coral), var(--color-lilac), var(--color-blue), var(--color-coral));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 6s linear infinite;
+}
+
+.socialRow { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
+.socialButton {
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 50%;
+  text-decoration: none;
+}
+.social0 { box-shadow: 0 10px 20px -8px rgba(252,99,94,.5), inset -3px -4px 6px rgba(0,0,0,.18), inset 2px 2px 4px rgba(255,255,255,.5); animation: floatSlow 6.5s ease-in-out infinite; }
+.social1 { box-shadow: 0 10px 20px -8px rgba(11,16,54,.5), inset -3px -4px 6px rgba(0,0,0,.3), inset 2px 2px 4px rgba(255,255,255,.12); animation: floatSlow2 7.5s ease-in-out infinite; }
+.social2 { box-shadow: 0 10px 20px -8px rgba(10,102,194,.5), inset -3px -4px 6px rgba(0,0,0,.18), inset 2px 2px 4px rgba(255,255,255,.5); animation: floatSlow 8s ease-in-out infinite; }
+
+@media (max-width: 820px) {
+  .section { padding: 64px 20px; text-align: center; }
+  .blobA, .blobB { opacity: .08; }
+
+  .inner { flex-direction: column; }
+  .illustrationCol { display: none; }
+  .textCol { min-width: 0; width: 100%; }
+
+  .mobileMark {
+    display: block;
+    height: 60px; width: auto;
+    margin: 0 auto 24px;
+    filter: drop-shadow(0 10px 18px rgba(13,16,51,.18));
+  }
+
+  .badge { padding: 8px 16px; font-size: 12px; margin-bottom: 20px; }
+  .badgeDot { width: 6px; height: 6px; }
+
+  .h2 { font-size: clamp(34px, 10vw, 48px); line-height: 1.05; margin: 0 0 20px; }
+  .paragraph { font-size: 16px; margin: 0 0 28px; max-width: none; }
+  .ctaPill { padding: 16px 36px; font-size: 15px; box-shadow: 0 16px 32px -12px rgba(252,99,94,.5); margin-bottom: 32px; }
+
+  .illustrationColMobile {
+    display: block;
+    width: 100%; max-width: 280px; margin: 0 auto 20px;
+  }
+  .illustrationMobile { width: 100%; height: auto; aspect-ratio: 1408 / 736; object-fit: contain; }
+
+  /* mobile omits the "Follow the noise" wordmark entirely (desktop-only) */
+
+  .socialRow { justify-content: center; margin-top: 0; }
+  .socialButton { width: 44px; height: 44px; }
+  .social0, .social1, .social2 { animation: none; box-shadow: none; }
+}
+
+/* ---- local copies of shared keyframes from animations.css ----
+   Vite's CSS Modules scopes any identifier used in `animation:`
+   within a .module.css file, even when no local @keyframes exists
+   for it -- so referencing the shared global keyframes by name
+   from here silently no-ops. Declaring them locally (identical
+   bodies) keeps the exact same timing/easing but makes the scoped
+   reference resolve correctly. ---- */
+@keyframes floatBlobA { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(26px,-38px) rotate(4deg); } }
+
+@keyframes floatBlobB { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-30px,34px) rotate(-5deg); } }
+
+@keyframes floatSlow { 0% { transform: translate(0,0); } 50% { transform: translate(10px,-14px); } 100% { transform: translate(0,0); } }
+
+@keyframes floatSlow2 { 0% { transform: translate(0,0); } 50% { transform: translate(-10px,14px); } 100% { transform: translate(0,0); } }
+
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }

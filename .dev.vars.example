@@ -1,0 +1,8 @@
+# Copy this file to `.dev.vars` (gitignored) for local testing with
+# `npx wrangler pages dev`. In production, set these as encrypted
+# environment variables in the Cloudflare dashboard instead — see the
+# setup notes at the top of functions/api/apply.js.
+
+RESEND_API_KEY=
+NOTIFY_EMAIL=
+FROM_EMAIL=

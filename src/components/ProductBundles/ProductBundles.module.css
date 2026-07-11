@@ -1,0 +1,205 @@
+.section {
+  position: relative;
+  padding: 150px 6vw;
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.tickRail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.tickLeft { left: 24px; }
+.tickRight { right: 24px; }
+.tick { width: 5px; height: 26px; border-radius: 3px; }
+
+.heading { position: relative; z-index: 1; max-width: 760px; margin: 0 auto 72px; text-align: center; }
+.badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 20px; border-radius: var(--radius-pill);
+  background: #fff; border: 1px solid var(--color-border);
+  font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--color-body); margin-bottom: 24px;
+}
+.badgeDot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-coral); display: inline-block; }
+.h2 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(32px, 4.6vw, 50px); line-height: 1.15; letter-spacing: -.02em;
+  margin: 0 0 22px; color: var(--color-ink);
+}
+.gradientText {
+  background: linear-gradient(90deg, var(--color-coral), var(--color-sunset-pink), var(--color-lilac));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.subcopy { font-size: 19px; line-height: 1.65; color: var(--color-body); margin: 0; }
+
+/* ---- desktop horizontal flow ---- */
+.flowRow {
+  position: relative; z-index: 1;
+  display: flex; align-items: flex-start; justify-content: center;
+  gap: clamp(14px, 2.4vw, 32px);
+  max-width: 1160px; margin: 0 auto;
+  flex-wrap: nowrap;
+}
+.stage { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.stageLabel { font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--color-body); white-space: nowrap; text-align: center; }
+
+.stackCenter { margin-top: 36px; height: clamp(292px, 34.4vw, 430px); display: flex; align-items: center; }
+.itemsColumn { display: flex; flex-direction: column; gap: clamp(8px, 1vw, 14px); }
+.itemsRow { display: flex; gap: 14px; }
+
+.item { position: relative; }
+.itemGlow { position: absolute; left: 50%; top: 50%; width: 132%; height: 132%; border-radius: 50%; transform: translate(-50%, -50%); }
+.itemPhoto {
+  position: relative; width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
+  box-shadow: 0 12px 24px -8px rgba(13,16,51,.28);
+  border: 3px solid #fff;
+}
+.itemPhoto img { width: 100%; height: 100%; object-fit: cover; }
+
+.mergeConnector { flex-shrink: 0; width: 56px; height: clamp(292px, 34.4vw, 430px); margin-top: 66px; }
+.bundleArrow { animation: bundleArrowFlow 1.4s linear infinite; }
+.horizConnectorSvg { margin: -2px 0 -2px; }
+.horizConnectorSpacer { width: 40px; height: 20px; margin: -2px 0 -2px; }
+
+.sceneFrame { position: relative; width: clamp(170px, 20vw, 250px); }
+.sceneFrameMobile { position: relative; width: min(220px, 72vw); }
+.sceneShadow {
+  position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%);
+  width: 78%; height: 26px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(13,16,51,.22), transparent 75%);
+  filter: blur(4px); pointer-events: none;
+}
+.sceneFrameMobile .sceneShadow { bottom: -12px; height: 22px; }
+.scenePhoto {
+  position: relative; aspect-ratio: 250 / 430; border-radius: 30px; overflow: hidden;
+  box-shadow: 0 22px 40px -18px rgba(13,16,51,.28);
+}
+.sceneFrameMobile .scenePhoto { border-radius: 26px; box-shadow: 0 20px 36px -16px rgba(13,16,51,.28); }
+.scenePhoto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* posted-as-Harmony card overlay */
+.postedCard { background: #ddd8cd; animation: itemRise2 6s ease-in-out infinite; }
+.cardTopRow { position: absolute; left: 12px; top: 12px; right: 12px; display: flex; align-items: center; justify-content: space-between; }
+.sceneFrameMobile .cardTopRow { left: 10px; top: 10px; right: 10px; }
+.storeChip {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.92); border-radius: var(--radius-pill);
+  padding: 5px 12px 5px 5px;
+  box-shadow: 0 4px 10px -2px rgba(0,0,0,.15);
+}
+.sceneFrameMobile .storeChip { gap: 6px; padding: 4px 10px 4px 4px; }
+.storeAvatar { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--color-coral), var(--color-lilac)); flex-shrink: 0; }
+.sceneFrameMobile .storeAvatar { width: 20px; height: 20px; }
+.storeNameCol { display: flex; flex-direction: column; line-height: 1.1; }
+.storeName { font-size: 11px; font-weight: 700; color: var(--color-ink); white-space: nowrap; }
+.storeHandle { font-size: 9px; color: #8f8c9c; white-space: nowrap; }
+.storeNameMobile { font-size: 9.5px; font-weight: 700; color: var(--color-ink); white-space: nowrap; }
+.moreButton {
+  width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,.92);
+  box-shadow: 0 4px 10px -2px rgba(0,0,0,.15);
+  display: flex; align-items: center; justify-content: center;
+}
+.sceneFrameMobile .moreButton { width: 24px; height: 24px; }
+
+.actionRail {
+  position: absolute; right: 10px; bottom: 74px;
+  display: flex; flex-direction: column; align-items: center; gap: 13px;
+}
+.sceneFrameMobile .actionRail { right: 8px; bottom: 62px; gap: 9px; }
+.actionIcon {
+  width: 30px; height: 30px; border-radius: 50%; background: transparent;
+  display: flex; align-items: center; justify-content: center;
+}
+.sceneFrameMobile .actionIcon { width: 24px; height: 24px; }
+.actionCol { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.actionCount { font-size: 10px; font-weight: 700; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
+
+.likeWrap { position: relative; display: flex; align-items: center; justify-content: center; }
+.heartBeat { animation: heartBeat 2.6s ease-in-out infinite; transform-origin: center; }
+.heartFloat { position: absolute; pointer-events: none; }
+.heartFloat1 { left: 2px; top: -2px; animation: heartFloat1 2.6s ease-out infinite; }
+.heartFloat2 { left: 17px; top: 1px; animation: heartFloat2 2.6s ease-out infinite .5s; }
+.heartFloat3 { left: -4px; top: 3px; animation: heartFloat3 2.6s ease-out infinite 1.1s; }
+.heartRing { position: absolute; inset: -6px; border-radius: 50%; border: 1.5px solid var(--color-coral); animation: heartRing 2.6s ease-out infinite; pointer-events: none; }
+.sceneFrameMobile .heartFloat1 { left: 1.5px; top: -2px; }
+.sceneFrameMobile .heartFloat2 { left: 14px; top: 1px; }
+.sceneFrameMobile .heartFloat3 { left: -3px; top: 2px; }
+.sceneFrameMobile .heartRing { inset: -5px; }
+
+.cardCopy { position: absolute; left: 14px; right: 58px; bottom: 30px; color: #fff; }
+.cardCopyMobile { position: absolute; left: 12px; right: 52px; bottom: 14px; color: #fff; }
+.cardTitle { font-family: var(--font-display); font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,.4); }
+.cardCopy .cardTitle { font-size: 16.5px; margin-bottom: 6px; }
+.cardCopyMobile .cardTitle { font-size: 13.5px; margin-bottom: 4px; text-shadow: 0 2px 6px rgba(0,0,0,.4); }
+.recRow { display: flex; align-items: center; gap: 5px; margin-bottom: 8px; }
+.recCheck { width: 14px; height: 14px; border-radius: 50%; background: var(--color-coral); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.recText { font-size: 11.5px; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.cardPrice { font-family: var(--font-display); font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,.4); }
+.cardCopy .cardPrice { font-size: 20px; }
+.cardCopyMobile .cardPrice { font-size: 16px; text-shadow: 0 2px 6px rgba(0,0,0,.4); }
+
+.avatarStack { position: absolute; right: 12px; bottom: 34px; display: flex; }
+.avatarStackMobile { position: absolute; right: 10px; bottom: 14px; display: flex; }
+.avatarChip {
+  width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff;
+  overflow: hidden; margin-right: -12px; position: relative;
+  box-shadow: 0 3px 8px -2px rgba(0,0,0,.3);
+}
+.avatarChip img { width: 100%; height: 100%; object-fit: cover; }
+.avatarStackMobile .avatarChip { width: 26px; height: 26px; margin-right: -10px; }
+.avatarChipMore {
+  width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff;
+  background: rgba(13,16,51,.75);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8.5px; font-weight: 700; color: #fff;
+  position: relative;
+}
+
+.dotsRow { position: absolute; left: 0; right: 0; bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+.dotActive { width: 16px; height: 3px; border-radius: 2px; background: #fff; }
+.dotInactive { width: 5px; height: 3px; border-radius: 2px; background: rgba(255,255,255,.5); }
+
+/* ---- mobile vertical flow ---- */
+.flowColumn { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.flowColumn .stage { gap: 14px; }
+.flowColumn .stageLabel { font-size: 11px; letter-spacing: .06em; }
+
+@media (max-width: 820px) {
+  .section { padding: 64px 20px; }
+  .tickLeft, .tickRight { gap: 8px; }
+  .tick { width: 4px; height: 20px; border-radius: 2px; }
+  .heading { margin-bottom: 40px; }
+  .badge { padding: 8px 16px; font-size: 12px; margin-bottom: 20px; }
+  .badgeDot { width: 6px; height: 6px; }
+  .h2 { font-size: clamp(28px, 8vw, 36px); line-height: 1.2; margin: 0 0 16px; }
+  .subcopy { font-size: 16px; line-height: 1.6; }
+}
+
+/* ---- local copies of shared keyframes from animations.css ----
+   Vite's CSS Modules scopes any identifier used in `animation:`
+   within a .module.css file, even when no local @keyframes exists
+   for it -- so referencing the shared global keyframes by name
+   from here silently no-ops. Declaring them locally (identical
+   bodies) keeps the exact same timing/easing but makes the scoped
+   reference resolve correctly. ---- */
+@keyframes bundleArrowFlow { to { stroke-dashoffset: -24; } }
+
+@keyframes heartBeat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.5); } 30% { transform: scale(1); } 45% { transform: scale(1.3); } 60% { transform: scale(1); } }
+
+@keyframes heartFloat1 { 0% { opacity: 0; transform: translateY(0) scale(.6); } 12% { opacity: 1; } 100% { opacity: 0; transform: translateY(-46px) scale(1.3); } }
+
+@keyframes heartFloat2 { 0% { opacity: 0; transform: translateY(0) translateX(0) scale(.5); } 12% { opacity: 1; } 100% { opacity: 0; transform: translateY(-40px) translateX(10px) scale(1.1); } }
+
+@keyframes heartFloat3 { 0% { opacity: 0; transform: translateY(0) translateX(0) scale(.4); } 12% { opacity: .9; } 100% { opacity: 0; transform: translateY(-36px) translateX(-9px) scale(1); } }
+
+@keyframes heartRing { 0% { opacity: .8; transform: scale(.6); } 70% { opacity: 0; transform: scale(1.7); } 100% { opacity: 0; transform: scale(1.7); } }
+
+@keyframes itemRise2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }

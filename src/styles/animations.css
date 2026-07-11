@@ -1,0 +1,133 @@
+/* ============================================================
+   Global keyframes — ported 1:1 from reference_desktop.html /
+   reference_mobile.html. Durations, delays, and easings are
+   intentional per the design handoff and must not be altered.
+   ============================================================ */
+
+/* ---- ambient floats (desktop amplitude) ---- */
+@keyframes floatSlow { 0% { transform: translate(0,0); } 50% { transform: translate(10px,-14px); } 100% { transform: translate(0,0); } }
+@keyframes floatSlow2 { 0% { transform: translate(0,0); } 50% { transform: translate(-10px,14px); } 100% { transform: translate(0,0); } }
+
+/* ---- ambient floats (mobile amplitude, smaller travel) ---- */
+@keyframes floatSlowM { 0% { transform: translate(0,0); } 50% { transform: translate(6px,-8px); } 100% { transform: translate(0,0); } }
+@keyframes floatSlow2M { 0% { transform: translate(0,0); } 50% { transform: translate(-6px,7px); } 100% { transform: translate(0,0); } }
+
+@keyframes floatBlobA { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(26px,-38px) rotate(4deg); } }
+@keyframes floatBlobB { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-30px,34px) rotate(-5deg); } }
+@keyframes floatBlobAM { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(14px,-18px); } }
+@keyframes floatBlobBM { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(-14px,16px); } }
+
+@keyframes floatShadow { 0%, 100% { transform: translateX(-50%) scale(1); opacity: .6; } 50% { transform: translateX(-50%) scale(.82); opacity: .35; } }
+
+/* ---- decorative network / hub-and-spoke (Community section) ---- */
+@keyframes netSpokeA { 0%, 100% { transform: rotate(0deg); } 33% { transform: rotate(-9deg); } 66% { transform: rotate(6deg); } }
+@keyframes netSpokeB { 0%, 100% { transform: rotate(0deg); } 33% { transform: rotate(7deg); } 66% { transform: rotate(-8deg); } }
+@keyframes netSpokeD { 0%, 100% { transform: rotate(0deg); } 33% { transform: rotate(-11deg); } 66% { transform: rotate(9deg); } }
+@keyframes netHubPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+
+/* ---- community "growing blob" ring diagram ---- */
+@keyframes dotFloatGentle { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(6px,-8px); } }
+@keyframes diagramFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes blobBreathe { 0%, 100% { transform: translate(-50%,-50%) scale(1); } 50% { transform: translate(-50%,-50%) scale(1.018); } }
+@keyframes haloBreathe { 0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: .55; } 50% { transform: translate(-50%,-50%) scale(1.08); opacity: .8; } }
+@keyframes ringSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes ringSpinRev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+@keyframes nodeFloatA { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes nodeFloatB { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+@keyframes nodeFloatC { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes nodeFloatD { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+@keyframes nodeFloatE { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* story edges (sells -> buys -> recommends -> gifts -> follows), 11s cycle */
+@keyframes edgeSells { 0%, 2% { opacity: 0; stroke-dashoffset: 1; } 7%, 84% { opacity: 1; stroke-dashoffset: 0; } 90%, 100% { opacity: 0; stroke-dashoffset: 0; } }
+@keyframes edgeBuys { 0%, 11% { opacity: 0; stroke-dashoffset: 1; } 16%, 84% { opacity: 1; stroke-dashoffset: 0; } 90%, 100% { opacity: 0; stroke-dashoffset: 0; } }
+@keyframes edgeRecommends { 0%, 20% { opacity: 0; stroke-dashoffset: 1; } 25%, 84% { opacity: 1; stroke-dashoffset: 0; } 90%, 100% { opacity: 0; stroke-dashoffset: 0; } }
+@keyframes edgeGiftsA { 0%, 29% { opacity: 0; stroke-dashoffset: 1; } 34%, 84% { opacity: 1; stroke-dashoffset: 0; } 90%, 100% { opacity: 0; stroke-dashoffset: 0; } }
+@keyframes edgeFollow1 { 0%, 47% { opacity: 0; stroke-dashoffset: 1; } 53%, 84% { opacity: 1; stroke-dashoffset: 0; } 90%, 100% { opacity: 0; stroke-dashoffset: 0; } }
+@keyframes edgeFollow2 { 0%, 49% { opacity: 0; stroke-dashoffset: 1; } 55%, 84% { opacity: 1; stroke-dashoffset: 0; } 90%, 100% { opacity: 0; stroke-dashoffset: 0; } }
+
+@keyframes labelSells2 { 0%, 3% { opacity: 0; } 8%, 84% { opacity: 1; } 88%, 100% { opacity: 0; } }
+@keyframes labelBuys2 { 0%, 12% { opacity: 0; } 17%, 84% { opacity: 1; } 88%, 100% { opacity: 0; } }
+@keyframes labelRecommends2 { 0%, 21% { opacity: 0; } 26%, 84% { opacity: 1; } 88%, 100% { opacity: 0; } }
+@keyframes labelGifts2 { 0%, 30% { opacity: 0; } 35%, 84% { opacity: 1; } 88%, 100% { opacity: 0; } }
+@keyframes labelFollows { 0%, 46% { opacity: 0; } 53%, 84% { opacity: 1; } 88%, 100% { opacity: 0; } }
+
+@keyframes pulseSells { 0%, 2% { offset-distance: 0%; opacity: 0; } 3% { opacity: 1; } 7% { offset-distance: 100%; opacity: 1; } 8% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes pulseBuys { 0%, 11% { offset-distance: 0%; opacity: 0; } 12% { opacity: 1; } 16% { offset-distance: 100%; opacity: 1; } 17% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes pulseRecommends { 0%, 20% { offset-distance: 0%; opacity: 0; } 21% { opacity: 1; } 25% { offset-distance: 100%; opacity: 1; } 26% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes pulseGiftsA { 0%, 29% { offset-distance: 0%; opacity: 0; } 30% { opacity: 1; } 34% { offset-distance: 100%; opacity: 1; } 35% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes pulseFollow1 { 0%, 47% { offset-distance: 0%; opacity: 0; } 48% { opacity: 1; } 52% { offset-distance: 100%; opacity: 1; } 53% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes pulseFollow2 { 0%, 49% { offset-distance: 0%; opacity: 0; } 50% { opacity: 1; } 54% { offset-distance: 100%; opacity: 1; } 55% { opacity: 0; } 100% { opacity: 0; } }
+
+/* ---- Turn Social Into Business: chain pulse / label / arrow flow / final glow ---- */
+@keyframes chainPulse {
+  0%, 20%, 100% { background: rgba(255,255,255,.06); transform: scale(1); box-shadow: 0 0 0 rgba(252,99,94,0); }
+  30%, 42% { background: linear-gradient(135deg,#fd8b87,#FC635E 70%); transform: scale(1.16); box-shadow: 0 0 30px 10px rgba(252,99,94,.55); }
+  52% { background: rgba(255,255,255,.06); transform: scale(1); box-shadow: 0 0 0 rgba(252,99,94,0); }
+}
+@keyframes labelFade {
+  0%, 24%, 100% { opacity: 0; transform: translate(-50%,-4px); }
+  32%, 40% { opacity: 1; transform: translate(-50%,0); }
+  48%, 100% { opacity: 0; }
+}
+@keyframes arrowFlow {
+  0%, 20%, 100% { stroke: rgba(255,255,255,.3); stroke-dashoffset: 24; }
+  30%, 42% { stroke: #FC635E; stroke-dashoffset: 0; }
+  52% { stroke: rgba(255,255,255,.3); stroke-dashoffset: 24; }
+}
+@keyframes glowPulse { 0%, 100% { opacity: .5; } 50% { opacity: .9; } }
+@keyframes finalGlow {
+  0%, 20%, 100% { box-shadow: 0 16px 34px -10px rgba(252,99,94,.55); transform: scale(1); }
+  75%, 85% { box-shadow: 0 16px 50px -4px rgba(252,99,94,.9); transform: scale(1.08); }
+}
+
+/* ---- Product Bundles ---- */
+@keyframes bundleArrowFlow { to { stroke-dashoffset: -24; } }
+@keyframes itemGlow { 0%, 100% { opacity: .5; transform: translate(-50%,-50%) scale(1); } 50% { opacity: .85; transform: translate(-50%,-50%) scale(1.08); } }
+@keyframes itemRise1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes itemRise2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes itemRise3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes tickFade1 { 0%, 100% { opacity: .25; } 50% { opacity: .7; } }
+@keyframes tickFade2 { 0%, 100% { opacity: .6; } 50% { opacity: .2; } }
+
+/* like icon: heartbeat + floating hearts + expanding ring */
+@keyframes heartBeat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.5); } 30% { transform: scale(1); } 45% { transform: scale(1.3); } 60% { transform: scale(1); } }
+@keyframes heartFloat1 { 0% { opacity: 0; transform: translateY(0) scale(.6); } 12% { opacity: 1; } 100% { opacity: 0; transform: translateY(-46px) scale(1.3); } }
+@keyframes heartFloat2 { 0% { opacity: 0; transform: translateY(0) translateX(0) scale(.5); } 12% { opacity: 1; } 100% { opacity: 0; transform: translateY(-40px) translateX(10px) scale(1.1); } }
+@keyframes heartFloat3 { 0% { opacity: 0; transform: translateY(0) translateX(0) scale(.4); } 12% { opacity: .9; } 100% { opacity: 0; transform: translateY(-36px) translateX(-9px) scale(1); } }
+@keyframes heartRing { 0% { opacity: .8; transform: scale(.6); } 70% { opacity: 0; transform: scale(1.7); } 100% { opacity: 0; transform: scale(1.7); } }
+
+/* ---- The Loop ---- */
+@keyframes orbitMove { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@keyframes hubPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+
+/* ---- decorative corner glows / glitter (Community, Turn-Social, The Loop) ---- */
+@keyframes cornerGlowFloat { 0%, 100% { transform: translate(0,0) scale(1); opacity: .85; } 50% { transform: translate(18px,-14px) scale(1.12); opacity: 1; } }
+@keyframes cornerGlowFloat2 { 0%, 100% { transform: translate(0,0) scale(1); opacity: .8; } 50% { transform: translate(-16px,16px) scale(1.15); opacity: 1; } }
+@keyframes glitterTwinkle { 0%, 100% { opacity: .3; transform: scale(.7); } 50% { opacity: 1; transform: scale(1.3); } }
+
+/* ---- Final CTA wordmark shimmer ---- */
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+
+/* ---- scroll-reveal entrance states (see useReveal hook) ---- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s var(--ease-reveal), transform .8s var(--ease-reveal);
+}
+[data-reveal].is-in { opacity: 1; transform: translateY(0); }
+
+[data-reveal-l] {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity .9s var(--ease-reveal), transform .9s var(--ease-reveal);
+}
+[data-reveal-l].is-in { opacity: 1; transform: translateX(0); }
+
+[data-reveal-r] {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .9s var(--ease-reveal), transform .9s var(--ease-reveal);
+}
+[data-reveal-r].is-in { opacity: 1; transform: translateX(0); }
