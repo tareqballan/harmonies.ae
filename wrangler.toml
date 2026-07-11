@@ -10,6 +10,7 @@
 # paste the database_id it prints into database_id below.
 
 name = "harmonies"
+compatibility_date = "2026-07-11"
 pages_build_output_dir = "dist"
 
 [[d1_databases]]
