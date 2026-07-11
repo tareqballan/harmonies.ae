@@ -11,7 +11,11 @@
 
 name = "harmonies"
 compatibility_date = "2026-07-11"
-pages_build_output_dir = "dist"
+main = "src/worker.js"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
 
 [[d1_databases]]
 binding = "DB"
