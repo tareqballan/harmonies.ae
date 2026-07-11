@@ -18,6 +18,7 @@ export default function ContactUs() {
     const newErrors = {};
     if (!form.name.trim()) newErrors.name = 'Please enter your name.';
     if (!form.email.trim()) newErrors.email = 'Please enter your email.';
+    if (!form.subject.trim()) newErrors.subject = 'Please enter a subject.';
     if (!form.message.trim()) newErrors.message = 'Please enter a message.';
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
 
@@ -140,7 +141,7 @@ export default function ContactUs() {
                 </div>
               </div>
 
-              <label className={styles.label}>Subject <span className={styles.optional}>(optional)</span></label>
+              <label className={styles.label}>Subject</label>
               <input
                 type="text"
                 placeholder="What's this about?"
@@ -148,6 +149,7 @@ export default function ContactUs() {
                 onChange={field('subject')}
                 className={styles.input}
               />
+              {errors.subject && <p className={styles.errorText}>{errors.subject}</p>}
 
               <label className={styles.label}>Message</label>
               <textarea
