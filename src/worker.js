@@ -9,7 +9,12 @@ export default {
       return onRequestPost({ request, env });
     }
 
-    // Serve static assets (the Vite build output)
-    return env.ASSETS.fetch(request);
+    // Try to serve a static asset; fall back to index.html for SPA routes
+    const assetResponse = await env.ASSETS.fetch(request).catch(() => null);
+    if (assetResponse && assetResponse.status !== 404) return assetResponse;
+
+    // SPA fallback: serve index.html for all unmatched paths
+    const indexRequest = new Request(new URL('/', url).toString(), request);
+    return env.ASSETS.fetch(indexRequest);
   },
 };

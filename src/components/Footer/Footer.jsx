@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+import { Link } from 'react-router-dom';
 
 const COLUMNS = [
   {
@@ -18,6 +19,7 @@ const COLUMNS = [
   {
     title: 'Support',
     links: ['Help Center', 'Contact Us', 'Status Page', 'Privacy Policy'],
+    hrefs: { 'Contact Us': '/contact' },
     mobileLinks: ['Help Center', 'Contact Us', 'Privacy Policy'],
   },
 ];
@@ -41,12 +43,18 @@ export default function Footer() {
           >
             <div className={styles.colTitle}>{col.title}</div>
             <div className={styles.linkStack}>
-              {col.links.map((l) => (
-                <a key={`d-${l}`} href="#" className={`${styles.link} desktop-only`}>{l}</a>
-              ))}
-              {(col.mobileLinks ?? col.links).map((l) => (
-                <a key={`m-${l}`} href="#" className={`${styles.link} mobile-only`}>{l}</a>
-              ))}
+              {col.links.map((l) => {
+                const href = col.hrefs?.[l];
+                return href
+                  ? <Link key={`d-${l}`} to={href} className={`${styles.link} desktop-only`}>{l}</Link>
+                  : <a key={`d-${l}`} href="#" className={`${styles.link} desktop-only`}>{l}</a>;
+              })}
+              {(col.mobileLinks ?? col.links).map((l) => {
+                const href = col.hrefs?.[l];
+                return href
+                  ? <Link key={`m-${l}`} to={href} className={`${styles.link} mobile-only`}>{l}</Link>
+                  : <a key={`m-${l}`} href="#" className={`${styles.link} mobile-only`}>{l}</a>;
+              })}
             </div>
           </div>
         ))}
