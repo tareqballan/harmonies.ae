@@ -70,18 +70,18 @@ export default function ContactUs() {
             Questions, feedback, or just want to say hi — drop us a line and a real person will get back to you.
           </p>
           <div className={styles.socials}>
-            <a href="#" aria-label="Instagram" className={styles.socialBtn}>
+            <a href="https://www.instagram.com/harmonies.ae" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.socialBtn}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
               </svg>
             </a>
-            <a href="#" aria-label="TikTok" className={styles.socialBtn}>
+            <a href="https://www.tiktok.com/@harmonies.ae" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className={styles.socialBtn}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff">
                 <path d="M16.6 5.8c-.9-.9-1.4-2.1-1.4-3.4h-3.1v14.2c0 1.5-1.2 2.7-2.7 2.7s-2.7-1.2-2.7-2.7 1.2-2.7 2.7-2.7c.3 0 .6 0 .8.1v-3.2c-.3 0-.5-.1-.8-.1-3.2 0-5.8 2.6-5.8 5.8s2.6 5.8 5.8 5.8 5.8-2.6 5.8-5.8v-7c1.2.9 2.7 1.4 4.3 1.4v-3.1c-1 0-1.9-.3-2.7-.9z" />
               </svg>
             </a>
-            <a href="#" aria-label="LinkedIn" className={styles.socialBtn}>
+            <a href="https://www.linkedin.com/company/harmonies-ae/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.socialBtn}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff">
                 <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.75h4.5V23H.24V8.75zM8.5 8.75h4.3v1.95h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V23h-4.5v-6.85c0-1.63-.03-3.73-2.27-3.73-2.27 0-2.62 1.77-2.62 3.6V23H8.5V8.75z" />
               </svg>
