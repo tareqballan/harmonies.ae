@@ -17,3 +17,8 @@ main = "src/worker.js"
 directory = "./dist"
 binding = "ASSETS"
 
+[[d1_databases]]
+binding = "DB"
+database_name = "harmonies-sellers"
+database_id = "dbfd189c-adfe-4ce3-a977-c0c3f9996e51"
+
