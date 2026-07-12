@@ -7,6 +7,7 @@ import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import CookiesPolicy from './components/CookiesPolicy/CookiesPolicy';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import WhyHarmonies from './components/WhyHarmonies/WhyHarmonies';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/animations.css';
@@ -14,6 +15,7 @@ import './styles/animations.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/contact" element={<ContactUs />} />
