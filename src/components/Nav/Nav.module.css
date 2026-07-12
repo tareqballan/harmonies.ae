@@ -42,25 +42,6 @@
   white-space: nowrap;
 }
 
-.joinPill {
-  display: inline-flex;
-  padding: 10px 24px;
-  border-radius: var(--radius-pill);
-  border: 2px solid transparent;
-  background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(120deg, var(--color-coral), var(--color-blue)) border-box;
-  color: var(--color-ink);
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.joinPill:hover {
-  background: linear-gradient(120deg, var(--color-coral), var(--color-blue)) border-box;
-  color: #fff;
-  filter: none;
-}
-
 @media (max-width: 820px) {
   .nav {
     position: sticky;
@@ -74,12 +55,4 @@
   .mark { height: 28px; }
   .wordmark { font-size: 18px; }
   .howItWorks { display: none; }
-  .joinPill {
-    padding: 9px 18px;
-    font-size: 13px;
-    background: var(--color-coral);
-    border: none;
-    color: #fff;
-  }
-  .joinPill:hover { filter: brightness(0.94); }
 }

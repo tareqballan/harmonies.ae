@@ -27,12 +27,12 @@ export default function App() {
 
   return (
     <div id="harmonies-site" className="site-root">
-      <Nav onJoinNow={handleJoinNow} />
-      <Hero />
+      <Nav />
+      <Hero onJoinNow={handleJoinNow} />
       <SeamOrbs />
       <PainPoints />
-      <Community />
       <TurnSocialIntoBusiness />
+      <Community />
       <ProductBundles />
       <SectionDivider />
       <AcceleratePath />

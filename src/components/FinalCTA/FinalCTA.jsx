@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useReveal } from '../../hooks/useReveal';
 import styles from './FinalCTA.module.css';
 
@@ -63,9 +64,14 @@ export default function FinalCTA({ onJoinNow }) {
             Turn your following into a thriving, professional business—branding, storefront, and delivery, all in one place.
           </p>
 
-          <button type="button" className={`${styles.ctaPill} pill-cta`} onClick={onJoinNow}>
-            Become an Early Seller
-          </button>
+          <div className={styles.ctaRow}>
+            <button type="button" className={`${styles.ctaPill} pill-cta`} onClick={onJoinNow}>
+              Become an Early Seller
+            </button>
+            <Link to="/features" className={`${styles.ctaPillSecondary} pill-cta`}>
+              Explore All Features
+            </Link>
+          </div>
 
           <div className={`${styles.illustrationColMobile} mobile-only`}>
             <img

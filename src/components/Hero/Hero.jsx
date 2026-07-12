@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styles from './Hero.module.css';
 
-export default function Hero() {
+export default function Hero({ onJoinNow }) {
   return (
     <section id="hero-section" className={styles.hero} data-screen-label="Hero">
       {/* ambient floating dots — desktop only, hidden on mobile via CSS */}
@@ -27,6 +28,15 @@ export default function Hero() {
               We help local businesses grow faster by giving them everything they need to{' '}
               <span className={styles.highlight}>sell, manage, and deliver</span>—all in one platform.
             </p>
+          </div>
+
+          <div className={styles.ctaRow}>
+            <button type="button" className={`${styles.ctaPrimary} pill-cta`} onClick={onJoinNow}>
+              Become an Early Seller
+            </button>
+            <Link to="/features" className={`${styles.ctaSecondary} pill-cta`}>
+              Explore All Features
+            </Link>
           </div>
         </div>
 

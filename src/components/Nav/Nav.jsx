@@ -7,7 +7,7 @@ import styles from './Nav.module.css';
  * Nav.module.css — this is a genuine desktop/mobile behavior divergence
  * per the handoff, but the markup itself is shared).
  */
-export default function Nav({ onJoinNow }) {
+export default function Nav() {
   return (
     <nav className={styles.nav} data-screen-label="Nav">
       <div className={styles.brand}>
@@ -16,9 +16,6 @@ export default function Nav({ onJoinNow }) {
       </div>
       <div className={styles.links}>
         <a href="#how-it-works" className={styles.howItWorks}>How it works</a>
-        <button type="button" className={`${styles.joinPill} pill-cta`} onClick={onJoinNow}>
-          Join Now
-        </button>
       </div>
     </nav>
   );
