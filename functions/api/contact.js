@@ -98,8 +98,11 @@ export async function onRequestPost({ request, env, ctx }) {
           </div>
         `,
       }),
-      }).catch(() => {});
+      }).then(async (res) => {
+        if (!res.ok) console.error(`[contact] confirmation email to ${email} failed: ${res.status} ${await res.text()}`);
+      }).catch((err) => console.error(`[contact] confirmation email to ${email} threw:`, err));
     if (ctx?.waitUntil) ctx.waitUntil(confirmationFetch);
+    else await confirmationFetch;
   }
 
   if (dbError && emailError) {
