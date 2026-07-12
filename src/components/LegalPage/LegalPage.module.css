@@ -125,16 +125,6 @@
 }
 .link:hover { color: #c23a36; }
 
-.footer {
-  padding: 40px 6vw;
-  background: #0d1033;
-  text-align: center;
-}
-.footerText {
-  font-size: 13.5px;
-  color: rgba(255,255,255,.6);
-}
-
 @media (max-width: 820px) {
   .wrap {
     padding: 0 24px 100px;

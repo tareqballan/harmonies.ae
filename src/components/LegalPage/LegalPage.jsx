@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 import styles from './LegalPage.module.css';
 
 /**
- * Shared chrome for legal documents (Privacy Policy, Cookies Policy):
- * dark nav, centered content column, and a plain footer bar. Per the
- * design handoff these two pages share one layout and differ only in
- * their body content.
+ * Shared chrome for legal documents (Privacy Policy, Terms of Service,
+ * Cookies Policy): dark nav, centered content column, and the site-wide
+ * footer. These pages share one layout and differ only in their body
+ * content.
  */
 export default function LegalPage({ title, dateLabel, date, children }) {
   return (
@@ -27,9 +28,7 @@ export default function LegalPage({ title, dateLabel, date, children }) {
         {children}
       </div>
 
-      <footer className={styles.footer}>
-        <span className={styles.footerText}>© 2026 Lumiere Global Ventures LLC-FZ. All rights reserved.</span>
-      </footer>
+      <Footer />
     </div>
   );
 }
