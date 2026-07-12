@@ -1,0 +1,209 @@
+.page {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  overflow-x: hidden;
+  background: #fff;
+}
+
+/* ---- nav ---- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 6vw;
+  background: #fff;
+}
+.navBrand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.navMark { height: 38px; width: auto; display: block; }
+.navWordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 23px;
+  letter-spacing: -.01em;
+  color: var(--color-ink);
+}
+.navLinks { display: flex; align-items: center; gap: 36px; }
+.navLink { font-size: 14px; color: var(--color-body); white-space: nowrap; }
+
+/* ---- hero ---- */
+.hero { position: relative; overflow: hidden; padding: 64px 6vw 100px; background: #fff; }
+.heroDotA {
+  position: absolute; left: 6%; top: 20%; width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle at 32% 26%, #ffb9b5, var(--color-coral) 55%, var(--color-coral-dark) 100%);
+  box-shadow: 0 10px 22px -8px rgba(252,99,94,.55);
+  animation: floatSlow 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+.heroDotB {
+  position: absolute; right: 8%; top: 10%; width: 14px; height: 14px; border-radius: 50%;
+  background: radial-gradient(circle at 32% 26%, #dbe2fd, var(--color-blue) 55%, var(--color-blue-dark) 100%);
+  box-shadow: 0 8px 16px -6px rgba(138,155,247,.55);
+  animation: floatSlow 6.5s ease-in-out infinite;
+  pointer-events: none;
+}
+.heroDotC {
+  position: absolute; left: 14%; bottom: 6%; width: 10px; height: 10px; border-radius: 50%;
+  background: radial-gradient(circle at 32% 26%, #f0ddfa, var(--color-lilac) 55%, #7a4fa0 100%);
+  box-shadow: 0 6px 12px -5px rgba(150,106,194,.5);
+  animation: floatSlow 8s ease-in-out infinite;
+  pointer-events: none;
+}
+.heroInner { max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+.heroBadge {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 20px; border-radius: var(--radius-pill);
+  background: var(--color-badge-fill); border: 1px solid var(--color-border);
+  font-size: 13px; color: var(--color-body); margin-bottom: 32px;
+}
+.heroTitle {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(36px, 5.6vw, 64px); line-height: 1.08; letter-spacing: -.025em;
+  color: #0b1036; margin: 0 0 24px;
+}
+.gradientWord {
+  background: linear-gradient(120deg, var(--color-coral), var(--color-sunset-pink) 45%, var(--color-blue) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.heroCopy { font-size: 19px; line-height: 1.6; color: var(--color-body); max-width: 660px; margin: 0 auto; }
+
+/* ---- shared section bits ---- */
+.eyebrow {
+  font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--color-coral); margin-bottom: 14px;
+}
+.sectionHeading {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(28px, 4.2vw, 44px); letter-spacing: -.015em; color: #0b1036; margin: 0;
+}
+
+/* ---- our story ---- */
+.story { padding: 100px 6vw; background: #F7F6F2; }
+.storyInner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 64px; }
+.storyText { flex: 1; min-width: 340px; }
+.storyText .sectionHeading { font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -.01em; margin: 0 0 22px; }
+.storyPara { font-size: 16px; line-height: 1.7; color: var(--color-body); margin: 0 0 20px; }
+.storyPara:last-child { margin-bottom: 0; }
+.storyParaBold { font-weight: 600; color: #0b1036; }
+.storyVisual { flex: 1; min-width: 300px; display: flex; justify-content: center; }
+.storyGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: min(420px, 100%); }
+.storyCard {
+  border-radius: 22px; overflow: hidden; background: #fff;
+  box-shadow: 0 20px 44px -18px rgba(13,16,51,.22);
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+}
+.storyImg { width: 78%; height: 78%; object-fit: contain; }
+
+/* ---- mission + vision ---- */
+.mission { padding: 100px 6vw; background: var(--color-navy); position: relative; overflow: hidden; }
+.missionGlowA {
+  position: absolute; left: -6%; top: -10%; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(252,99,94,.16), transparent 70%); pointer-events: none;
+}
+.missionGlowB {
+  position: absolute; right: -8%; bottom: -14%; width: 460px; height: 460px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(138,155,247,.18), transparent 70%); pointer-events: none;
+}
+.missionGrid {
+  max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(255,255,255,.12); border-radius: 24px; overflow: hidden;
+}
+.missionCell { background: var(--color-navy); padding: 48px 40px; }
+.missionIcon {
+  width: 52px; height: 52px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 24px;
+}
+.missionEyebrow { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
+.missionStatement { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.4; color: #fff; margin: 0 0 16px; }
+.missionSub { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.6); margin: 0; }
+
+/* ---- what makes us different ---- */
+.different { padding: 100px 6vw; background: #fff; }
+.differentInner { max-width: 1200px; margin: 0 auto; }
+.differentHead { text-align: center; margin-bottom: 64px; }
+.differentGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.differentCol { padding: 0 22px; }
+.differentCol:first-child { padding-left: 0; }
+.differentCol:last-child { padding-right: 0; }
+.differentIcon {
+  width: 52px; height: 52px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 22px;
+}
+.differentTitle { font-family: var(--font-display); font-weight: 700; font-size: 17px; color: #0b1036; margin-bottom: 10px; }
+.differentDesc { font-size: 14.5px; line-height: 1.6; color: var(--color-body); margin: 0; }
+
+/* ---- our values ---- */
+.values { padding: 100px 6vw; background: #F7F6F2; }
+.valuesInner { max-width: 1200px; margin: 0 auto; }
+.valuesHead { text-align: center; margin-bottom: 64px; }
+.valuesGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.valueCard { background: #fff; border-radius: 22px; padding: 32px 24px; box-shadow: 0 20px 44px -20px rgba(13,16,51,.18); }
+.valueIcon {
+  width: 44px; height: 44px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px; margin-bottom: 18px;
+}
+.valueTitle { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: #0b1036; margin-bottom: 8px; }
+.valueDesc { font-size: 14px; line-height: 1.6; color: var(--color-body); margin: 0; }
+
+/* ---- join the movement ---- */
+.movement { padding: 110px 6vw 150px; background: #fff; text-align: center; position: relative; overflow: hidden; }
+.movementHead { max-width: 900px; margin: 0 auto 56px; }
+.movementHead .sectionHeading { font-size: clamp(30px, 4.6vw, 50px); letter-spacing: -.02em; margin: 0 0 20px; }
+.movementGrid {
+  max-width: 900px; margin: 0 auto 56px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: left;
+}
+.movementCard {
+  background: #F7F6F2; border-radius: 24px; padding: 36px 32px;
+  display: flex; align-items: center; gap: 20px;
+}
+.movementAvatar {
+  width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+  box-shadow: 0 10px 22px -10px rgba(13,16,51,.3);
+}
+.movementEyebrow { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+.movementLine { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: #0b1036; }
+.movementCta {
+  display: inline-flex; padding: 18px 42px; border-radius: var(--radius-pill);
+  background: var(--color-coral); color: #fff; font-size: 16px; font-weight: 700;
+  box-shadow: 0 20px 40px -14px rgba(252,99,94,.5); border: none; cursor: pointer; font-family: inherit;
+}
+
+@media (max-width: 820px) {
+  .nav { padding: 16px 20px; }
+  .navMark { height: 28px; }
+  .navWordmark { font-size: 18px; }
+
+  .hero { padding: 40px 20px 64px; }
+  .heroTitle { font-size: clamp(30px, 9vw, 44px); }
+  .heroCopy { font-size: 16.5px; }
+
+  .story, .mission, .different, .values { padding: 64px 20px; }
+  .storyInner { flex-direction: column; gap: 40px; }
+  .storyText, .storyVisual { width: 100%; min-width: 0; }
+
+  .missionGrid { grid-template-columns: 1fr; }
+  .missionCell { padding: 36px 28px; }
+
+  .differentGrid { grid-template-columns: 1fr; gap: 36px; }
+  .differentCol, .differentCol:first-child, .differentCol:last-child { padding: 0; }
+
+  .valuesGrid { grid-template-columns: 1fr; gap: 16px; }
+
+  .movement { padding: 72px 20px 96px; }
+  .movementGrid { grid-template-columns: 1fr; }
+}
+
+/* ---- local copies of shared keyframes from animations.css ----
+   Vite's CSS Modules scopes any identifier used in `animation:`
+   within a .module.css file, even when no local @keyframes exists
+   for it -- so referencing the shared global keyframes by name
+   from here silently no-ops. Declaring them locally (identical
+   bodies) keeps the exact same timing/easing but makes the scoped
+   reference resolve correctly. ---- */
+@keyframes floatSlow { 0% { transform: translate(0,0); } 50% { transform: translate(10px,-14px); } 100% { transform: translate(0,0); } }

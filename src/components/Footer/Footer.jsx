@@ -23,8 +23,8 @@ const DESKTOP_COLUMNS = [
   {
     title: 'About',
     links: [
+      { text: 'About Harmonies', to: '/about-harmonies' },
       { text: 'About Lumiere' },
-      { text: 'Our Vision' },
       // present in the DOM but hidden until the company is hiring, per handoff
       { text: 'Careers', hidden: true },
     ],
@@ -47,7 +47,7 @@ const MOBILE_COLUMNS = [
   },
   {
     title: 'Company',
-    links: [{ text: 'About Lumiere' }, { text: 'Our Vision' }, { text: 'Careers' }],
+    links: [{ text: 'About Harmonies', to: '/about-harmonies' }, { text: 'About Lumiere' }, { text: 'Careers' }],
   },
   {
     title: 'Support',

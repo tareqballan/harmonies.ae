@@ -11,6 +11,7 @@ import WhyHarmonies from './components/WhyHarmonies/WhyHarmonies';
 import Pricing from './components/Pricing/Pricing';
 import Features from './components/Features/Features';
 import FAQs from './components/FAQs/FAQs';
+import AboutHarmonies from './components/AboutHarmonies/AboutHarmonies';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './styles/tokens.css';
 import './styles/base.css';
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/features" element={<Features />} />
         <Route path="/faqs" element={<FAQs />} />
+        <Route path="/about-harmonies" element={<AboutHarmonies />} />
       </Routes>
       <CookieConsent />
     </BrowserRouter>
