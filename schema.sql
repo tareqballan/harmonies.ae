@@ -36,6 +36,10 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
 -- one — already covered by the "Device and Usage Information" clause
 -- in the Privacy Policy, but worth knowing if you're auditing what PII
 -- this app stores.
+-- device_type/browser/os are parsed server-side from the User-Agent
+-- header (see parseUserAgent in consent.js); country/city/region come
+-- free from Cloudflare's request.cf on every edge request, no
+-- third-party GeoIP lookup needed.
 CREATE TABLE IF NOT EXISTS cookie_consents (
   id            INTEGER PRIMARY KEY AUTOINCREMENT,
   client_id     TEXT,
@@ -45,12 +49,25 @@ CREATE TABLE IF NOT EXISTS cookie_consents (
   marketing     INTEGER NOT NULL,
   ip_address    TEXT,
   user_agent    TEXT,
+  device_type   TEXT,
+  browser       TEXT,
+  os            TEXT,
+  country       TEXT,
+  city          TEXT,
+  region        TEXT,
   decided_at    TEXT NOT NULL
 );
 
--- Already ran this file before client_id/ip_address/user_agent existed?
+-- Already ran this file before one of these columns existed?
 -- CREATE TABLE IF NOT EXISTS won't retroactively add columns to a table
--- that's already there — run these three once against the live DB:
+-- that's already there — run whichever of these you haven't yet, once,
+-- against the live DB:
 --   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN client_id TEXT"
 --   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN ip_address TEXT"
 --   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN user_agent TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN device_type TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN browser TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN os TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN country TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN city TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN region TEXT"
