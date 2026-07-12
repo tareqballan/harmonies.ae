@@ -1,26 +1,61 @@
 import styles from './Footer.module.css';
 import { Link } from 'react-router-dom';
 
-const COLUMNS = [
+// Desktop and mobile references use genuinely different column sets
+// (not a responsive collapse of the same content) — see README §"Footer".
+// Rendered as two separate trees, toggled via desktop-only/mobile-only,
+// same pattern used by Community/ProductBundles/TheLoop.
+const DESKTOP_COLUMNS = [
   {
     title: 'Platform',
-    links: ['Why Harmonies', 'For Sellers', 'Features', 'Pricing'],
+    links: [{ text: 'Why Harmonies' }, { text: 'Features' }, { text: 'Pricing' }],
   },
   {
-    title: 'Solutions',
-    desktopOnly: true,
-    links: ['For Sellers', 'Integration Services', 'Mobile App', 'API Documentation'],
+    title: 'For Sellers',
+    links: [
+      { text: 'Resources' },
+      { text: 'Help Center' },
+      { text: 'Seller Guide' },
+      { text: 'FAQs' },
+      { text: 'Contact Us', to: '/contact' },
+    ],
+  },
+  {
+    title: 'About',
+    links: [
+      { text: 'About Lumiere' },
+      { text: 'Our Vision' },
+      // present in the DOM but hidden until the company is hiring, per handoff
+      { text: 'Careers', hidden: true },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { text: 'Privacy Policy', to: '/privacy-policy' },
+      { text: 'Terms of Service' },
+      { text: 'Cookie Policy', to: '/cookies-policy' },
+      { text: 'Seller Agreement' },
+    ],
+  },
+];
+
+const MOBILE_COLUMNS = [
+  {
+    title: 'Platform',
+    links: [{ text: 'Why Harmonies' }, { text: 'For Sellers' }, { text: 'Features' }, { text: 'Pricing' }],
   },
   {
     title: 'Company',
-    links: ['About Lumiere', 'Our Vision', 'Lumiere Global Ventures', 'Careers'],
-    mobileLinks: ['About Lumiere', 'Our Vision', 'Careers'],
+    links: [{ text: 'About Lumiere' }, { text: 'Our Vision' }, { text: 'Careers' }],
   },
   {
     title: 'Support',
-    links: ['Help Center', 'Contact Us', 'Status Page', 'Privacy Policy', 'Cookie Policy'],
-    hrefs: { 'Contact Us': '/contact', 'Privacy Policy': '/privacy-policy', 'Cookie Policy': '/cookies-policy' },
-    mobileLinks: ['Help Center', 'Contact Us', 'Privacy Policy', 'Cookie Policy'],
+    links: [
+      { text: 'Help Center' },
+      { text: 'Contact Us', to: '/contact' },
+      { text: 'Privacy Policy', to: '/privacy-policy' },
+    ],
   },
 ];
 
@@ -32,54 +67,67 @@ function AppStoreIcon() {
   );
 }
 
+function FooterLink({ link }) {
+  const className = styles.link;
+  if (link.hidden) {
+    return <a href="#" className={className} style={{ display: 'none' }}>{link.text}</a>;
+  }
+  return link.to
+    ? <Link to={link.to} className={className}>{link.text}</Link>
+    : <a href="#" className={className}>{link.text}</a>;
+}
+
+function AppDownloadColumn({ title }) {
+  return (
+    <div className={styles.column}>
+      <div className={styles.colTitle}>{title}</div>
+      <div className={styles.appLinks}>
+        <a href="#" className={styles.appButton}>
+          <span className={styles.appIconWrap}>
+            <img src="/assets/google-play-icon.png" alt="Google Play" className={styles.appIconImg} />
+          </span>
+          <span className={styles.appTextCol}>
+            <span className={styles.appEyebrow}>Get it on</span>
+            <span className={styles.appName}>Google Play</span>
+          </span>
+        </a>
+        <a href="#" className={styles.appButton}>
+          <span className={styles.appIconWrap}><AppStoreIcon /></span>
+          <span className={styles.appTextCol}>
+            <span className={styles.appEyebrow}>Download on the</span>
+            <span className={styles.appName}>App Store</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className={styles.footer} data-screen-label="Footer">
-      <div className={styles.columnsRow}>
-        {COLUMNS.map((col) => (
-          <div
-            key={col.title}
-            className={`${styles.column} ${col.desktopOnly ? 'desktop-only' : ''}`}
-          >
+      <div className={`${styles.columnsRow} desktop-only`}>
+        {DESKTOP_COLUMNS.map((col) => (
+          <div key={col.title} className={styles.column}>
             <div className={styles.colTitle}>{col.title}</div>
             <div className={styles.linkStack}>
-              {col.links.map((l) => {
-                const href = col.hrefs?.[l];
-                return href
-                  ? <Link key={`d-${l}`} to={href} className={`${styles.link} desktop-only`}>{l}</Link>
-                  : <a key={`d-${l}`} href="#" className={`${styles.link} desktop-only`}>{l}</a>;
-              })}
-              {(col.mobileLinks ?? col.links).map((l) => {
-                const href = col.hrefs?.[l];
-                return href
-                  ? <Link key={`m-${l}`} to={href} className={`${styles.link} mobile-only`}>{l}</Link>
-                  : <a key={`m-${l}`} href="#" className={`${styles.link} mobile-only`}>{l}</a>;
-              })}
+              {col.links.map((l) => <FooterLink key={l.text} link={l} />)}
             </div>
           </div>
         ))}
+        <AppDownloadColumn title="Download the Free App" />
+      </div>
 
-        <div className={styles.column}>
-          <div className={styles.colTitle}>Download the free app today</div>
-          <div className={styles.appLinks}>
-            <a href="#" className={styles.appButton}>
-              <span className={styles.appIconWrap}>
-                <img src="/assets/google-play-icon.png" alt="Google Play" className={styles.appIconImg} />
-              </span>
-              <span className={styles.appTextCol}>
-                <span className={styles.appEyebrow}>Get it on</span>
-                <span className={styles.appName}>Google Play</span>
-              </span>
-            </a>
-            <a href="#" className={styles.appButton}>
-              <span className={styles.appIconWrap}><AppStoreIcon /></span>
-              <span className={styles.appTextCol}>
-                <span className={styles.appEyebrow}>Download on the</span>
-                <span className={styles.appName}>App Store</span>
-              </span>
-            </a>
+      <div className={`${styles.columnsRow} mobile-only`}>
+        {MOBILE_COLUMNS.map((col) => (
+          <div key={col.title} className={styles.column}>
+            <div className={styles.colTitle}>{col.title}</div>
+            <div className={styles.linkStack}>
+              {col.links.map((l) => <FooterLink key={l.text} link={l} />)}
+            </div>
           </div>
-        </div>
+        ))}
+        <AppDownloadColumn title="Download the free app today" />
       </div>
 
       <div className={styles.bottomRow}>
@@ -89,7 +137,10 @@ export default function Footer() {
         </div>
         <span className={styles.copyright}>© 2026 Lumiere Global Ventures LLC-FZ. All rights reserved.</span>
         <span className={`${styles.subline} desktop-only`}>
-          Harmonies is a platform operated by Lumiere Global Ventures LLC-FZ.
+          Harmonies is a social commerce platform operated by Lumiere Global Ventures LLC-FZ.
+        </span>
+        <span className={`${styles.subline} desktop-only`}>
+          Made with ❤️ in the UAE for local businesses.
         </span>
       </div>
     </footer>

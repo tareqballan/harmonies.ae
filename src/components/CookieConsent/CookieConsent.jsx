@@ -13,7 +13,7 @@ const STORAGE_KEY = 'harmonies_cookie_consent';
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
   const [managing, setManaging] = useState(false);
-  const [prefs, setPrefs] = useState({ analytics: true, marketing: true });
+  const [prefs, setPrefs] = useState({ functional: true, analytics: true, marketing: true });
 
   useEffect(() => {
     try {
@@ -36,8 +36,8 @@ export default function CookieConsent() {
 
   if (!visible) return null;
 
-  const acceptAll = () => saveConsent({ essential: true, analytics: true, marketing: true });
-  const rejectAll = () => saveConsent({ essential: true, analytics: false, marketing: false });
+  const acceptAll = () => saveConsent({ essential: true, functional: true, analytics: true, marketing: true });
+  const rejectAll = () => saveConsent({ essential: true, functional: false, analytics: false, marketing: false });
   const savePreferences = () => saveConsent({ essential: true, ...prefs });
 
   return (
@@ -70,6 +70,21 @@ export default function CookieConsent() {
                 <span className={`${styles.toggle} ${styles.toggleLocked}`}>
                   <span className={`${styles.knob} ${styles.knobOn}`} />
                 </span>
+              </div>
+
+              <div className={styles.row}>
+                <div>
+                  <div className={styles.rowLabel}>Functional</div>
+                  <div className={styles.rowDesc}>Remembers preferences like language and dashboard settings</div>
+                </div>
+                <button
+                  type="button"
+                  className={`${styles.toggle} ${prefs.functional ? styles.toggleOn : styles.toggleOff}`}
+                  aria-pressed={prefs.functional}
+                  onClick={() => setPrefs((p) => ({ ...p, functional: !p.functional }))}
+                >
+                  <span className={`${styles.knob} ${prefs.functional ? styles.knobOn : ''}`} />
+                </button>
               </div>
 
               <div className={styles.row}>
