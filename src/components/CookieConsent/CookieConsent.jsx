@@ -3,6 +3,22 @@ import { Link } from 'react-router-dom';
 import styles from './CookieConsent.module.css';
 
 const STORAGE_KEY = 'harmonies_cookie_consent';
+const CLIENT_ID_KEY = 'harmonies_cookie_client_id';
+
+// Random ID for this browser, persisted so repeat consent decisions can
+// be correlated without a login. Not tied to a real identity on its own.
+function getOrCreateClientId() {
+  try {
+    let id = localStorage.getItem(CLIENT_ID_KEY);
+    if (!id) {
+      id = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+      localStorage.setItem(CLIENT_ID_KEY, id);
+    }
+    return id;
+  } catch {
+    return null;
+  }
+}
 
 /**
  * Persisted accept/reject/preferences flow per the design handoff: shown
@@ -35,7 +51,7 @@ export default function CookieConsent() {
     fetch('/api/consent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(consent),
+      body: JSON.stringify({ ...consent, clientId: getOrCreateClientId() }),
     }).catch(() => {});
     setVisible(false);
     setManaging(false);

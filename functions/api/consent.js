@@ -20,11 +20,14 @@ export async function onRequestPost({ request, env }) {
     return json({ error: 'Invalid JSON body' }, 400);
   }
 
+  const clientId = (body.clientId || '').toString().trim() || null;
   const essential = body.essential !== false; // always true in practice; kept explicit for the audit record
   const functional = !!body.functional;
   const analytics = !!body.analytics;
   const marketing = !!body.marketing;
   const decidedAt = new Date().toISOString();
+  const ipAddress = request.headers.get('CF-Connecting-IP') || null;
+  const userAgent = request.headers.get('User-Agent') || null;
 
   if (!env.DB) {
     return json({ ok: true, skipped: 'DB not bound' });
@@ -32,9 +35,9 @@ export async function onRequestPost({ request, env }) {
 
   try {
     await env.DB.prepare(
-      `INSERT INTO cookie_consents (essential, functional, analytics, marketing, decided_at)
-       VALUES (?, ?, ?, ?, ?)`
-    ).bind(essential ? 1 : 0, functional ? 1 : 0, analytics ? 1 : 0, marketing ? 1 : 0, decidedAt).run();
+      `INSERT INTO cookie_consents (client_id, essential, functional, analytics, marketing, ip_address, user_agent, decided_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+    ).bind(clientId, essential ? 1 : 0, functional ? 1 : 0, analytics ? 1 : 0, marketing ? 1 : 0, ipAddress, userAgent, decidedAt).run();
   } catch (err) {
     return json({ error: String(err) }, 500);
   }

@@ -28,11 +28,29 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
 -- the banner is shown again — that's just a UI convenience and proves
 -- nothing on its own. This table is what you'd point to if asked to
 -- demonstrate a specific user's consent was recorded.
+--
+-- client_id is a random UUID generated in the browser and stored in
+-- localStorage (see CookieConsent.jsx) so repeat decisions from the
+-- same browser can be correlated without needing a login. ip_address
+-- and user_agent make this a real identifying record, not an anonymous
+-- one — already covered by the "Device and Usage Information" clause
+-- in the Privacy Policy, but worth knowing if you're auditing what PII
+-- this app stores.
 CREATE TABLE IF NOT EXISTS cookie_consents (
   id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  client_id     TEXT,
   essential     INTEGER NOT NULL DEFAULT 1,
   functional    INTEGER NOT NULL,
   analytics     INTEGER NOT NULL,
   marketing     INTEGER NOT NULL,
+  ip_address    TEXT,
+  user_agent    TEXT,
   decided_at    TEXT NOT NULL
 );
+
+-- Already ran this file before client_id/ip_address/user_agent existed?
+-- CREATE TABLE IF NOT EXISTS won't retroactively add columns to a table
+-- that's already there — run these three once against the live DB:
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN client_id TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN ip_address TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN user_agent TEXT"
