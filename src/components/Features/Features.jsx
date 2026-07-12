@@ -1,19 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Features.module.css';
 import { useReveal } from '../../hooks/useReveal';
+import { useCountUp } from '../../hooks/useCountUp';
 import Footer from '../Footer/Footer';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
 // Hero visual: "Your Storefront" gradient card connected via dashed SVG
 // lines to a 4-up grid of feature icon cards (Delivery/Statistics/
 // Marketing/Visuals) — matches reference_features.html's hero exactly.
+// rot/delay drive the puzzle-piece tilt and the floatSlow stagger.
 const HERO_ICON_CARDS = [
-  { key: 'delivery', icon: '🚚', label: 'Delivery', sub: 'Coordinated for you', bg: 'linear-gradient(150deg,#8A9BF7,#5f76ce)' },
-  { key: 'statistics', icon: '📈', label: 'Statistics', sub: "Know what's working", bg: 'linear-gradient(150deg,#966ac2,#7a4fa0)' },
-  { key: 'marketing', icon: '🔔', label: 'Marketing', sub: 'Reach new customers', bg: '#0d1033' },
-  { key: 'visuals', icon: '🎨', label: 'Visuals', sub: 'Brand-ready assets', bg: 'linear-gradient(150deg,#7ee2a0,#1f9e46)' },
+  { key: 'delivery', icon: '🚚', label: 'Delivery', sub: 'Coordinated for you', bg: 'linear-gradient(150deg,#8A9BF7,#5f76ce)', rot: '-2deg', delay: '0s' },
+  { key: 'statistics', icon: '📈', label: 'Statistics', sub: "Know what's working", bg: 'linear-gradient(150deg,#966ac2,#7a4fa0)', rot: '2deg', delay: '.9s' },
+  { key: 'marketing', icon: '🔔', label: 'Marketing', sub: 'Reach new customers', bg: '#0d1033', rot: '-2deg', delay: '1.8s' },
+  { key: 'visuals', icon: '🎨', label: 'Visuals', sub: 'Brand-ready assets', bg: 'linear-gradient(150deg,#7ee2a0,#1f9e46)', rot: '2deg', delay: '2.7s' },
 ];
+
+// Staggered draw-in delays for the 4 SVG connector paths under the storefront card.
+const HERO_LINE_DELAYS = ['.5s', '.65s', '.8s', '.95s'];
 
 const SELL_CHECKLIST = ['Product catalog', 'Digital store page', 'Order management', 'Customer communication'];
 const MARKETING_CHECKLIST = ['Social media growth support', 'Influencer partnerships', 'Campaign opportunities', 'Promotional tools', 'Customer engagement'];
@@ -36,13 +41,6 @@ const ANALYTICS_ITEMS = [
   { num: '02', color: 'rgba(138,155,247,.45)', title: 'Product performance' },
   { num: '03', color: 'rgba(150,106,194,.5)', title: 'Customer behavior insights' },
   { num: '04', color: 'rgba(52,199,89,.45)', title: 'Growth opportunities' },
-];
-
-const STORE_STATS = [
-  { n: '152', label: 'Items' },
-  { n: '254K', label: 'Likes' },
-  { n: '258', label: 'Followers' },
-  { n: '503', label: 'Recommendation', accent: true },
 ];
 
 const DISCOVER_STORES = [
@@ -144,6 +142,26 @@ export default function Features() {
   const analyticsRef = useReveal();
   const finalCtaRef = useReveal();
 
+  // Hero entrance: elements are visible by default (see .heroIn in the
+  // module CSS); on mount we briefly add the .heroPreIn dip, then remove
+  // it a frame later, for a dip-and-rise entrance instead of a hard cut.
+  const [heroPreIn, setHeroPreIn] = useState(true);
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setHeroPreIn(false));
+    return () => cancelAnimationFrame(raf);
+  }, []);
+  const heroInClass = `${styles.heroIn} ${heroPreIn ? styles.heroPreIn : ''}`;
+  const heroInStyle = (delay) => ({ transitionDelay: delay });
+
+  const itemsCountRef = useCountUp(152);
+  const likesCountRef = useCountUp(254, { suffix: 'K' });
+  const followersCountRef = useCountUp(258);
+  const recCountRef = useCountUp(503);
+  const earningsCountRef = useCountUp(1150254, { commas: true });
+  const pendingCountRef = useCountUp(20);
+  const refundCountRef = useCountUp(5);
+  const preparingCountRef = useCountUp(7);
+
   return (
     <div id="features-page" className={styles.page}>
       <nav className={styles.nav} data-screen-label="Nav">
@@ -151,24 +169,24 @@ export default function Features() {
           <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
           <span className={styles.navWordmark}>Harmonies</span>
         </Link>
-        <button type="button" className={styles.joinPill} onClick={handleJoinNow}>Join Now</button>
+        <button type="button" className={`${styles.joinPill} ${styles.ctaBtnGhost}`} onClick={handleJoinNow}>Join Now</button>
       </nav>
 
       <section className={styles.hero} data-screen-label="Hero">
         <div className={styles.heroInner}>
           <div className={styles.heroCopy}>
-            <div className={styles.heroBadge}>Features</div>
-            <h1 className={styles.heroTitle}>Everything You Need to Turn Your Business Into a Brand</h1>
-            <p className={styles.heroSub}>Sell more, manage smarter, and grow faster with a platform built for local businesses.</p>
-            <button type="button" className={styles.heroCta} onClick={handleJoinNow}>Join Now &mdash; It&apos;s Free</button>
+            <div className={`${styles.heroBadge} ${heroInClass}`} style={heroInStyle('0ms')}>Features</div>
+            <h1 className={`${styles.heroTitle} ${heroInClass}`} style={heroInStyle('40ms')}>Everything You Need to Turn Your Business Into a Brand</h1>
+            <p className={`${styles.heroSub} ${heroInClass}`} style={heroInStyle('80ms')}>Sell more, manage smarter, and grow faster with a platform built for local businesses.</p>
+            <button type="button" className={`${styles.heroCta} ${styles.ctaBtn} ${heroInClass}`} style={heroInStyle('120ms')} onClick={handleJoinNow}>Join Now &mdash; It&apos;s Free</button>
           </div>
-          <div className={styles.heroVisual}>
+          <div className={`${styles.heroVisual} ${heroInClass}`} style={heroInStyle('60ms')}>
             <div className={styles.heroVisualInner}>
               <div className={styles.heroSystemPillWrap}>
                 <span className={styles.heroSystemPill}>One system. Everything connected.</span>
               </div>
 
-              <div className={styles.heroStorefrontCard}>
+              <div className={`${styles.heroStorefrontCard} ${styles.puzzlePiece}`} style={{ '--rot': '-1deg' }}>
                 <span className={styles.heroStorefrontIcon}>🏪</span>
                 <div>
                   <div className={styles.heroStorefrontTitle}>Your Storefront</div>
@@ -177,15 +195,19 @@ export default function Features() {
               </div>
 
               <svg width="100%" height="46" viewBox="0 0 460 46" className={styles.heroConnectorSvg}>
-                <path d="M 40 46 C 40 20, 120 20, 178 4" fill="none" stroke="#e7e3dc" strokeWidth="1.5" />
-                <path d="M 155 46 C 155 30, 190 22, 215 6" fill="none" stroke="#e7e3dc" strokeWidth="1.5" />
-                <path d="M 305 46 C 305 30, 270 22, 245 6" fill="none" stroke="#e7e3dc" strokeWidth="1.5" />
-                <path d="M 420 46 C 420 20, 340 20, 282 4" fill="none" stroke="#e7e3dc" strokeWidth="1.5" />
+                <path d="M 40 46 C 40 20, 120 20, 178 4" fill="none" stroke="#e7e3dc" strokeWidth="1.5" className={styles.heroLinePath} style={{ animationDelay: HERO_LINE_DELAYS[0] }} />
+                <path d="M 155 46 C 155 30, 190 22, 215 6" fill="none" stroke="#e7e3dc" strokeWidth="1.5" className={styles.heroLinePath} style={{ animationDelay: HERO_LINE_DELAYS[1] }} />
+                <path d="M 305 46 C 305 30, 270 22, 245 6" fill="none" stroke="#e7e3dc" strokeWidth="1.5" className={styles.heroLinePath} style={{ animationDelay: HERO_LINE_DELAYS[2] }} />
+                <path d="M 420 46 C 420 20, 340 20, 282 4" fill="none" stroke="#e7e3dc" strokeWidth="1.5" className={styles.heroLinePath} style={{ animationDelay: HERO_LINE_DELAYS[3] }} />
               </svg>
 
               <div className={styles.heroIconGrid}>
                 {HERO_ICON_CARDS.map((c) => (
-                  <div key={c.key} className={styles.heroIconCard}>
+                  <div
+                    key={c.key}
+                    className={`${styles.heroIconCard} ${styles.puzzlePiece} ${styles.floatCard}`}
+                    style={{ '--rot': c.rot, animationDelay: c.delay }}
+                  >
                     <div className={styles.heroIconBadge} style={{ background: c.bg }}><span>{c.icon}</span></div>
                     <div className={styles.heroIconLabel}>{c.label}</div>
                     <div className={styles.heroIconSub}>{c.sub}</div>
@@ -218,7 +240,7 @@ export default function Features() {
           </div>
 
           <div className={styles.featVisual}>
-            <div className={styles.portraitCard}>
+            <div className={`${styles.portraitCard} ${styles.puzzlePiece}`} style={{ '--rot': '1deg' }}>
               <div className={styles.storeBanner}>
                 <svg width="100%" height="100%" viewBox="0 0 300 184" preserveAspectRatio="none" className={styles.storeBannerSvg}>
                   <circle cx="266" cy="40" r="26" fill="#fff" opacity=".25" />
@@ -237,12 +259,22 @@ export default function Features() {
                 </div>
                 <p className={styles.storeDesc}>Handmade gifts &amp; home decor, crafted in small batches with love.</p>
                 <div className={styles.storeStats}>
-                  {STORE_STATS.map((s) => (
-                    <div key={s.label} className={styles.storeStat}>
-                      <div className={s.accent ? styles.storeStatNumAccent : styles.storeStatNum}>{s.n}</div>
-                      <div className={styles.storeStatLabel}>{s.label}</div>
-                    </div>
-                  ))}
+                  <div className={styles.storeStat}>
+                    <div ref={itemsCountRef} className={styles.storeStatNum}>0</div>
+                    <div className={styles.storeStatLabel}>Items</div>
+                  </div>
+                  <div className={styles.storeStat}>
+                    <div ref={likesCountRef} className={styles.storeStatNum}>0</div>
+                    <div className={styles.storeStatLabel}>Likes</div>
+                  </div>
+                  <div className={styles.storeStat}>
+                    <div ref={followersCountRef} className={styles.storeStatNum}>0</div>
+                    <div className={styles.storeStatLabel}>Followers</div>
+                  </div>
+                  <div className={styles.storeStat}>
+                    <div ref={recCountRef} className={styles.storeStatNumAccent}>0</div>
+                    <div className={styles.storeStatLabel}>Recommendation</div>
+                  </div>
                 </div>
                 <div className={styles.storeTabs}>
                   <span className={styles.storeTabActive}>Home</span>
@@ -291,7 +323,7 @@ export default function Features() {
           </div>
 
           <div className={styles.featVisual}>
-            <div className={`${styles.portraitCard} ${styles.discoverCard}`}>
+            <div className={`${styles.portraitCard} ${styles.discoverCard} ${styles.puzzlePiece}`} style={{ '--rot': '-1deg' }}>
               <div className={styles.discoverTop}>
                 <div className={styles.discoverUser}>
                   <span className={styles.discoverAvatar}>👤</span>
@@ -395,7 +427,7 @@ export default function Features() {
           </div>
 
           <div className={styles.featVisual}>
-            <div className={styles.portraitCard}>
+            <div className={`${styles.portraitCard} ${styles.puzzlePiece}`} style={{ '--rot': '1deg' }}>
               <div className={styles.searchBody}>
                 <div className={styles.searchHeadRow}>
                   <span>&#8592;</span>
@@ -455,7 +487,7 @@ export default function Features() {
           </div>
 
           <div className={styles.featVisual}>
-            <div className={styles.portraitCard}>
+            <div className={`${styles.portraitCard} ${styles.puzzlePiece}`} style={{ '--rot': '-1deg' }}>
               <div className={styles.ordersBody}>
                 <div className={styles.ordersTitle}>Orders</div>
                 <div className={styles.ordersSearchRow}><span>🔍</span><span>Search categories</span></div>
@@ -505,7 +537,7 @@ export default function Features() {
           </div>
 
           <div className={styles.featVisual}>
-            <div className={styles.recCard}>
+            <div className={`${styles.recCard} ${styles.puzzlePiece}`} style={{ '--rot': '1deg' }}>
               <div className={styles.recTabs}>
                 <span className={styles.recTab}>All</span>
                 <span className={styles.recTab}>Comments</span>
@@ -534,7 +566,7 @@ export default function Features() {
                 ))}
               </div>
               <div className={styles.recFooter}>
-                <span className={styles.recBtn}>Recommend this Item</span>
+                <span className={`${styles.recBtn} ${styles.ctaBtn}`}>Recommend this Item</span>
               </div>
             </div>
           </div>
@@ -562,16 +594,16 @@ export default function Features() {
           </div>
 
           <div className={styles.featVisual}>
-            <div className={styles.dashCard}>
+            <div className={`${styles.dashCard} ${styles.puzzlePiece}`} style={{ '--rot': '-1deg' }}>
               <div className={styles.dashLabel}>Total Earnings</div>
               <div className={styles.dashTotalRow}>
-                <span className={styles.dashTotal}>1,150,254</span>
+                <span ref={earningsCountRef} className={styles.dashTotal}>0</span>
                 <span className={styles.dashCurrency}>AED</span>
               </div>
               <div className={styles.dashStatsGrid}>
-                <div className={styles.dashStat}><div className={styles.dashStatNum}>20</div><div className={styles.dashStatLabel}>Pending</div></div>
-                <div className={styles.dashStat}><div className={styles.dashStatNum}>05</div><div className={styles.dashStatLabel}>Refund</div></div>
-                <div className={styles.dashStat}><div className={styles.dashStatNum}>07</div><div className={styles.dashStatLabel}>Preparing</div></div>
+                <div className={styles.dashStat}><div ref={pendingCountRef} className={styles.dashStatNum}>0</div><div className={styles.dashStatLabel}>Pending</div></div>
+                <div className={styles.dashStat}><div ref={refundCountRef} className={styles.dashStatNum}>0</div><div className={styles.dashStatLabel}>Refund</div></div>
+                <div className={styles.dashStat}><div ref={preparingCountRef} className={styles.dashStatNum}>0</div><div className={styles.dashStatLabel}>Preparing</div></div>
               </div>
               <div className={styles.dashTrendRow}>
                 <span className={styles.dashTrendLabel}>Revenue Trend</span>
@@ -601,7 +633,7 @@ export default function Features() {
         <div className={styles.finalCtaInner}>
           <h2 className={styles.finalCtaHeading}>Ready to Grow Your Business?</h2>
           <p className={styles.finalCtaCopy}>Join local businesses already building their future with Harmonies.</p>
-          <button type="button" className={styles.finalCtaBtn} onClick={handleJoinNow}>Start For Free</button>
+          <button type="button" className={`${styles.finalCtaBtn} ${styles.ctaBtn}`} onClick={handleJoinNow}>Start For Free</button>
         </div>
       </section>
 
