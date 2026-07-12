@@ -34,7 +34,7 @@ export async function onRequestPost({ request, env }) {
     }
   }
 
-  // --- 2. Email notification (best-effort) ---
+  // --- 2. Email notification to team (best-effort) ---
   let emailError = null;
   if (env.RESEND_API_KEY && env.NOTIFY_EMAIL) {
     try {
@@ -52,7 +52,7 @@ export async function onRequestPost({ request, env }) {
             <h2>New contact form submission</h2>
             <p><strong>Name:</strong> ${escapeHtml(name)}</p>
             <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-            <p><strong>WhatsApp:</strong> ${whatsapp ? `+971 ${escapeHtml(whatsapp)}` : '—'}</p>
+            <p><strong>WhatsApp:</strong> ${whatsapp ? escapeHtml(whatsapp) : '—'}</p>
             <p><strong>Subject:</strong> ${escapeHtml(subject) || '—'}</p>
             <p><strong>Message:</strong></p>
             <blockquote style="border-left:3px solid #FC635E;padding-left:12px;color:#444">${escapeHtml(message).replace(/\n/g, '<br>')}</blockquote>
@@ -64,6 +64,41 @@ export async function onRequestPost({ request, env }) {
     } catch (err) {
       emailError = String(err);
     }
+  }
+
+  // --- 3. Confirmation email to visitor (best-effort, non-blocking) ---
+  if (env.RESEND_API_KEY && email) {
+    fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: env.FROM_EMAIL || 'Harmonies <onboarding@resend.dev>',
+        to: email,
+        subject: `We received your message — Harmonies`,
+        html: `
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;max-width:520px;margin:0 auto;color:#0d1033">
+            <div style="background:linear-gradient(135deg,#FC635E,#f5878a 60%,#966ac2 100%);border-radius:16px 16px 0 0;padding:32px 36px">
+              <img src="https://harmonies.ae/assets/harmonies-mark.png" alt="Harmonies" style="height:36px;width:auto;display:block;margin-bottom:16px">
+              <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;color:#fff;margin:0;line-height:1.3">We got your message!</h1>
+            </div>
+            <div style="background:#fff;border-radius:0 0 16px 16px;padding:32px 36px;border:1px solid #e7e3dc;border-top:none">
+              <p style="font-size:16px;line-height:1.65;color:#5B596B;margin:0 0 20px">Hi ${escapeHtml(name)},</p>
+              <p style="font-size:16px;line-height:1.65;color:#5B596B;margin:0 0 20px">Thanks for reaching out — we've received your message and will get back to you within a day.</p>
+              <div style="background:#faf9f6;border-radius:12px;padding:18px 20px;margin:0 0 24px;border:1px solid #e7e3dc">
+                <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#a8a5b8;margin:0 0 8px">Your message</p>
+                <p style="font-size:14px;color:#5B596B;margin:0;line-height:1.6"><strong>${escapeHtml(subject)}</strong></p>
+                <p style="font-size:14px;color:#5B596B;margin:8px 0 0;line-height:1.6">${escapeHtml(message).replace(/\n/g, '<br>')}</p>
+              </div>
+              <p style="font-size:15px;color:#0d1033;font-weight:600;margin:0 0 4px">The Harmonies team</p>
+              <p style="font-size:13px;color:#a8a5b8;margin:0">harmonies.ae</p>
+            </div>
+          </div>
+        `,
+      }),
+    }).catch(() => {}); // fire-and-forget, never block the response
   }
 
   if (dbError && emailError) {
