@@ -5,17 +5,14 @@ import { useReveal } from '../../hooks/useReveal';
 import Footer from '../Footer/Footer';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
-// Tangram-style puzzle board (README: "5 rounded-rect tiles ... tiled
-// edge-to-edge in a 4-col×4-row grid with no gaps or filler cells").
-// Grid areas (see Features.module.css .puzzleBoard): storefront + visuals
-// are the two large tiles anchoring opposite corners; delivery spans the
-// top-right; statistics/marketing fill the two small interior cells.
-const PUZZLE_TILES = [
-  { key: 'storefront', label: 'Storefront', icon: '🏪', gradient: 'linear-gradient(150deg,#FC635E,#ff9c98)' },
-  { key: 'delivery', label: 'Delivery', icon: '🚚', gradient: 'linear-gradient(150deg,#8A9BF7,#5f76ce)' },
-  { key: 'statistics', label: 'Statistics', icon: '📈', gradient: 'linear-gradient(150deg,#966ac2,#c199e8)' },
-  { key: 'marketing', label: 'Marketing', icon: '🔔', gradient: 'linear-gradient(160deg,#171b52,#0d1033)' },
-  { key: 'visuals', label: 'Visuals', icon: '🎨', gradient: 'linear-gradient(150deg,#34C759,#7ee2a0)' },
+// Hero visual: "Your Storefront" gradient card connected via dashed SVG
+// lines to a 4-up grid of feature icon cards (Delivery/Statistics/
+// Marketing/Visuals) — matches reference_features.html's hero exactly.
+const HERO_ICON_CARDS = [
+  { key: 'delivery', icon: '🚚', label: 'Delivery', sub: 'Coordinated for you', bg: 'linear-gradient(150deg,#8A9BF7,#5f76ce)' },
+  { key: 'statistics', icon: '📈', label: 'Statistics', sub: "Know what's working", bg: 'linear-gradient(150deg,#966ac2,#7a4fa0)' },
+  { key: 'marketing', icon: '🔔', label: 'Marketing', sub: 'Reach new customers', bg: '#0d1033' },
+  { key: 'visuals', icon: '🎨', label: 'Visuals', sub: 'Brand-ready assets', bg: 'linear-gradient(150deg,#7ee2a0,#1f9e46)' },
 ];
 
 const SELL_CHECKLIST = ['Product catalog', 'Digital store page', 'Order management', 'Customer communication'];
@@ -166,13 +163,35 @@ export default function Features() {
             <button type="button" className={styles.heroCta} onClick={handleJoinNow}>Join Now &mdash; It&apos;s Free</button>
           </div>
           <div className={styles.heroVisual}>
-            <div className={styles.puzzleBoard}>
-              {PUZZLE_TILES.map((t) => (
-                <div key={t.key} className={`${styles.tile} ${styles['tile_' + t.key]}`} style={{ background: t.gradient }}>
-                  <span className={styles.tileIcon}>{t.icon}</span>
-                  <span className={styles.tileLabel}>{t.label}</span>
+            <div className={styles.heroVisualInner}>
+              <div className={styles.heroSystemPillWrap}>
+                <span className={styles.heroSystemPill}>One system. Everything connected.</span>
+              </div>
+
+              <div className={styles.heroStorefrontCard}>
+                <span className={styles.heroStorefrontIcon}>🏪</span>
+                <div>
+                  <div className={styles.heroStorefrontTitle}>Your Storefront</div>
+                  <div className={styles.heroStorefrontSub}>Where customers find and buy from you</div>
                 </div>
-              ))}
+              </div>
+
+              <svg width="100%" height="46" viewBox="0 0 460 46" className={styles.heroConnectorSvg}>
+                <path d="M 40 46 C 40 20, 120 20, 178 4" fill="none" stroke="#e7e3dc" strokeWidth="1.5" />
+                <path d="M 155 46 C 155 30, 190 22, 215 6" fill="none" stroke="#e7e3dc" strokeWidth="1.5" />
+                <path d="M 305 46 C 305 30, 270 22, 245 6" fill="none" stroke="#e7e3dc" strokeWidth="1.5" />
+                <path d="M 420 46 C 420 20, 340 20, 282 4" fill="none" stroke="#e7e3dc" strokeWidth="1.5" />
+              </svg>
+
+              <div className={styles.heroIconGrid}>
+                {HERO_ICON_CARDS.map((c) => (
+                  <div key={c.key} className={styles.heroIconCard}>
+                    <div className={styles.heroIconBadge} style={{ background: c.bg }}><span>{c.icon}</span></div>
+                    <div className={styles.heroIconLabel}>{c.label}</div>
+                    <div className={styles.heroIconSub}>{c.sub}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
