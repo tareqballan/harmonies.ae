@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ContactUs.module.css';
+import CountryCodeSelect from '../CountryCodeSelect/CountryCodeSelect';
 
 export default function ContactUs() {
-  const [form, setForm] = useState({ name: '', email: '', whatsapp: '', subject: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', whatsappCode: '+971', whatsapp: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
@@ -29,7 +30,7 @@ export default function ContactUs() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, whatsapp: form.whatsapp ? `${form.whatsappCode} ${form.whatsapp}` : '' }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
@@ -130,7 +131,10 @@ export default function ContactUs() {
                 <div className={styles.fieldCol}>
                   <label className={styles.label}>WhatsApp</label>
                   <div className={styles.whatsappRow}>
-                    <div className={styles.countryCode}>+971</div>
+                    <CountryCodeSelect
+                      value={form.whatsappCode}
+                      onChange={(dial) => setForm((f) => ({ ...f, whatsappCode: dial }))}
+                    />
                     <input
                       type="text"
                       placeholder="50 123 4567"
