@@ -100,6 +100,7 @@ export async function onRequestPost({ request, env, ctx }) {
       }),
       }).catch(() => {});
     if (ctx?.waitUntil) ctx.waitUntil(confirmationFetch);
+  }
 
   if (dbError && emailError) {
     return json({ error: 'Could not save or notify.', dbError, emailError }, 500);
