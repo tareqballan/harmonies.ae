@@ -1,5 +1,6 @@
 import { onRequestPost as applyHandler } from '../functions/api/apply.js';
 import { onRequestPost as contactHandler } from '../functions/api/contact.js';
+import { onRequestPost as consentHandler } from '../functions/api/consent.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -11,6 +12,10 @@ export default {
 
     if (url.pathname === '/api/contact' && request.method === 'POST') {
       return contactHandler({ request, env, ctx });
+    }
+
+    if (url.pathname === '/api/consent' && request.method === 'POST') {
+      return consentHandler({ request, env });
     }
 
     // Try to serve a static asset; fall back to index.html for SPA routes
