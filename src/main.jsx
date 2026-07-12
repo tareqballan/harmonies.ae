@@ -10,6 +10,7 @@ import CookieConsent from './components/CookieConsent/CookieConsent';
 import WhyHarmonies from './components/WhyHarmonies/WhyHarmonies';
 import Pricing from './components/Pricing/Pricing';
 import Features from './components/Features/Features';
+import FAQs from './components/FAQs/FAQs';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './styles/tokens.css';
 import './styles/base.css';
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/why-harmonies" element={<WhyHarmonies />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/features" element={<Features />} />
+        <Route path="/faqs" element={<FAQs />} />
       </Routes>
       <CookieConsent />
     </BrowserRouter>

@@ -16,7 +16,7 @@ const DESKTOP_COLUMNS = [
       { text: 'Resources' },
       { text: 'Help Center' },
       { text: 'Seller Guide' },
-      { text: 'FAQs' },
+      { text: 'FAQs', to: '/faqs' },
       { text: 'Contact Us', to: '/contact' },
     ],
   },
