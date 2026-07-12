@@ -20,5 +20,19 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+
+  <!--
+    Cloudflare Web Analytics. Cookie-less by design (no localStorage, no
+    tracking cookie, no cross-site identifiers), so it runs for every
+    visitor regardless of the cookie-consent banner's "Analytics" toggle
+    — there's nothing in that category for it to gate.
+
+    Setup (one-time, in the Cloudflare dashboard): Analytics & Logs >
+    Web Analytics > Add a site > enter this site's hostname. It gives
+    you a beacon token — paste it into data-cf-beacon below, replacing
+    the placeholder. Until you do, this tag is inert (Cloudflare drops
+    beacons from unregistered tokens).
+  -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_YOUR_CF_WEB_ANALYTICS_TOKEN"}'></script>
 </body>
 </html>

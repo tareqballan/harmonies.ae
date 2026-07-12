@@ -30,6 +30,13 @@ export default function CookieConsent() {
     } catch {
       // localStorage unavailable (private browsing, etc.) — consent just won't persist across visits
     }
+    // Fire-and-forget: the D1 audit log is a nice-to-have, never block
+    // dismissing the banner on it.
+    fetch('/api/consent', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(consent),
+    }).catch(() => {});
     setVisible(false);
     setManaging(false);
   };
