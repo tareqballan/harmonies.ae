@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import ContactUs from './components/ContactUs/ContactUs';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService/TermsOfService';
 import CookiesPolicy from './components/CookiesPolicy/CookiesPolicy';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import WhyHarmonies from './components/WhyHarmonies/WhyHarmonies';
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
         <Route path="/why-harmonies" element={<WhyHarmonies />} />
         <Route path="/pricing" element={<Pricing />} />

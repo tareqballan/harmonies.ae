@@ -33,7 +33,7 @@ const DESKTOP_COLUMNS = [
     title: 'Legal',
     links: [
       { text: 'Privacy Policy', to: '/privacy-policy' },
-      { text: 'Terms of Service' },
+      { text: 'Terms of Service', to: '/terms-of-service' },
       { text: 'Cookie Policy', to: '/cookies-policy' },
       { text: 'Seller Agreement' },
     ],
