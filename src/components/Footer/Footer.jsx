@@ -18,9 +18,9 @@ const COLUMNS = [
   },
   {
     title: 'Support',
-    links: ['Help Center', 'Contact Us', 'Status Page', 'Privacy Policy'],
-    hrefs: { 'Contact Us': '/contact' },
-    mobileLinks: ['Help Center', 'Contact Us', 'Privacy Policy'],
+    links: ['Help Center', 'Contact Us', 'Status Page', 'Privacy Policy', 'Cookie Policy'],
+    hrefs: { 'Contact Us': '/contact', 'Privacy Policy': '/privacy-policy', 'Cookie Policy': '/cookies-policy' },
+    mobileLinks: ['Help Center', 'Contact Us', 'Privacy Policy', 'Cookie Policy'],
   },
 ];
 

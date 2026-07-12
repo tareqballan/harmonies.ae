@@ -1,0 +1,150 @@
+.page {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #403e52;
+  min-height: 100vh;
+  background: #faf9f6;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 6vw;
+  background: #0d1033;
+}
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+.navMark {
+  height: 30px;
+  width: auto;
+}
+.navWordmark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -.01em;
+  color: #fff;
+}
+.backLink {
+  font-size: 14px;
+  color: #c7c9d9;
+  text-decoration: none;
+  transition: color .2s;
+}
+.backLink:hover { color: #fff; }
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 72px 24px 120px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #F1F1F5;
+  border: 1px solid #e7e3dc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #5B596B;
+  margin-bottom: 22px;
+}
+
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4.5vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  color: #0b1036;
+  margin: 0 0 14px;
+}
+
+.meta {
+  font-size: 15px;
+  color: #8b899a;
+  margin: 0 0 8px;
+}
+.metaLast { margin: 0 0 40px; }
+
+.divider {
+  height: 1px;
+  background: #e7e3dc;
+  margin: 0 0 8px;
+}
+
+.intro {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #403e52;
+  margin: 0 0 18px;
+}
+
+.h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: -.01em;
+  color: #0b1036;
+  margin: 56px 0 18px;
+}
+
+.h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #0b1036;
+  margin: 28px 0 12px;
+}
+
+.p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #403e52;
+  margin: 0 0 18px;
+}
+
+.ul {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.li {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #403e52;
+}
+
+.link {
+  color: #FC635E;
+  text-decoration: none;
+  font-weight: 600;
+}
+.link:hover { color: #c23a36; }
+
+.footer {
+  padding: 40px 6vw;
+  background: #0d1033;
+  text-align: center;
+}
+.footerText {
+  font-size: 13.5px;
+  color: rgba(255,255,255,.6);
+}
+
+@media (max-width: 820px) {
+  .wrap {
+    padding: 0 24px 100px;
+  }
+}
