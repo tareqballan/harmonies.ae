@@ -47,6 +47,7 @@ export default function CookiesPolicy() {
         <li className={styles.li}>User engagement patterns</li>
       </ul>
       <p className={styles.p}>The information collected through analytics is used for improving platform functionality, user experience, and business decisions.</p>
+      <p className={styles.p}>Currently, we use Cloudflare Web Analytics for this purpose. Cloudflare Web Analytics does not use cookies or any persistent identifier to track you, so it is not affected by your choice in the preferences below — it runs for all visitors in the same way basic visit logs would on any web server, and only reports aggregate statistics (such as page views and approximate location).</p>
 
       <h3 className={styles.h3}>3.4 Marketing and Advertising Cookies</h3>
       <p className={styles.p}>We may use marketing cookies and similar technologies to measure the effectiveness of our marketing activities and partnerships.</p>
