@@ -90,11 +90,15 @@ export default function CookiesPolicy() {
       <p className={styles.p}>Please note that disabling essential cookies may affect the availability or functionality of certain parts of our services.</p>
       <p className={styles.p}>For mobile applications, you can manage certain permissions and tracking preferences through your device settings.</p>
 
-      <h2 className={styles.h2}>7. Changes to This Cookies Policy</h2>
+      <h2 className={styles.h2}>7. Cookie Consent Records</h2>
+      <p className={styles.p}>When you make a choice through our cookie consent banner (accept all, reject non-essential, or save preferences), we record that decision together with technical information about the request that made it — including your IP address, approximate location (country, city, and region), and device, browser, and operating system information. This applies regardless of which choice you make, including if you reject all non-essential cookies.</p>
+      <p className={styles.p}>This record-keeping is treated as essential to operating Harmonies: it allows us to demonstrate, if required, that a specific consent decision was made, when, and under what circumstances. It is not used for analytics, marketing, or personalization, and is kept separate from any data collected under the Analytics or Marketing cookies you may separately consent to.</p>
+
+      <h2 className={styles.h2}>8. Changes to This Cookies Policy</h2>
       <p className={styles.p}>We may update this Cookies Policy from time to time to reflect changes in our technology, services, legal requirements, or privacy practices.</p>
       <p className={styles.p}>When we make significant changes, we will update the &quot;Last Updated&quot; date at the top of this policy.</p>
 
-      <h2 className={styles.h2}>8. Contact Us</h2>
+      <h2 className={styles.h2}>9. Contact Us</h2>
       <p className={styles.p}>If you have questions about this Cookies Policy or our use of cookies and similar technologies, please contact us through the <a href="/contact" className={styles.link}>contact information</a> provided on our website.</p>
     </LegalPage>
   );

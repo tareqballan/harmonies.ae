@@ -141,6 +141,7 @@ export default function PrivacyPolicy() {
         <li className={styles.li}>Support marketing activities where permitted</li>
       </ul>
       <p className={styles.p}>You may manage cookies through your browser settings. Disabling cookies may affect some Platform functionality.</p>
+      <p className={styles.p}>Separately, when you make a choice through our cookie consent banner — including if you reject non-essential cookies — we log that decision along with your IP address, approximate location, and device/browser information, as an essential record of consent. See our <a href="/cookies-policy" className={styles.link}>Cookies Policy</a> for details.</p>
 
       <h2 className={styles.h2}>5. Personalized Recommendations</h2>
       <p className={styles.p}>Harmonies uses information such as browsing activity, saved items, purchase history, interactions, and preferences to improve your experience.</p>
