@@ -1,6 +1,7 @@
 import { onRequestPost as applyHandler } from '../functions/api/apply.js';
 import { onRequestPost as contactHandler } from '../functions/api/contact.js';
 import { onRequestPost as consentHandler } from '../functions/api/consent.js';
+import { onRequestPost as bannerImpressionHandler } from '../functions/api/banner-impression.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -16,6 +17,10 @@ export default {
 
     if (url.pathname === '/api/consent' && request.method === 'POST') {
       return consentHandler({ request, env });
+    }
+
+    if (url.pathname === '/api/banner-impression' && request.method === 'POST') {
+      return bannerImpressionHandler({ request, env });
     }
 
     // Try to serve a static asset; fall back to index.html for SPA routes

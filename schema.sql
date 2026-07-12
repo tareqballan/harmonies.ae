@@ -58,6 +58,18 @@ CREATE TABLE IF NOT EXISTS cookie_consents (
   decided_at    TEXT NOT NULL
 );
 
+-- One row per time the cookie banner is shown (see banner-impression.js
+-- and CookieConsent.jsx). Deliberately minimal — no IP, no user agent —
+-- this exists purely to compute a drop-off rate:
+--   SELECT
+--     (SELECT COUNT(DISTINCT client_id) FROM cookie_banner_impressions) AS shown,
+--     (SELECT COUNT(DISTINCT client_id) FROM cookie_consents) AS decided;
+CREATE TABLE IF NOT EXISTS cookie_banner_impressions (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  client_id     TEXT,
+  shown_at      TEXT NOT NULL
+);
+
 -- Already ran this file before one of these columns existed?
 -- CREATE TABLE IF NOT EXISTS won't retroactively add columns to a table
 -- that's already there — run whichever of these you haven't yet, once,

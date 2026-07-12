@@ -32,12 +32,21 @@ export default function CookieConsent() {
   const [prefs, setPrefs] = useState({ functional: true, analytics: true, marketing: true });
 
   useEffect(() => {
+    let shown = false;
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (!stored) setVisible(true);
+      shown = !localStorage.getItem(STORAGE_KEY);
     } catch {
-      setVisible(true);
+      shown = true;
     }
+    if (!shown) return;
+    setVisible(true);
+    // Anonymous impression ping so drop-off (shown vs decided) is
+    // measurable — see banner-impression.js for exactly what's stored.
+    fetch('/api/banner-impression', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ clientId: getOrCreateClientId() }),
+    }).catch(() => {});
   }, []);
 
   const saveConsent = (consent) => {
