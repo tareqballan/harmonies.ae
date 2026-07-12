@@ -10,7 +10,7 @@ export default {
     }
 
     if (url.pathname === '/api/contact' && request.method === 'POST') {
-      return contactHandler({ request, env });
+      return contactHandler({ request, env, ctx });
     }
 
     // Try to serve a static asset; fall back to index.html for SPA routes

@@ -1,7 +1,7 @@
 // Cloudflare Worker Function — POST /api/contact
 // Stores contact form submissions in D1 and sends a Resend notification.
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost({ request, env, ctx }) {
   let body;
   try {
     body = await request.json();
@@ -68,7 +68,7 @@ export async function onRequestPost({ request, env }) {
 
   // --- 3. Confirmation email to visitor (best-effort, non-blocking) ---
   if (env.RESEND_API_KEY && email) {
-    fetch('https://api.resend.com/emails', {
+    const confirmationFetch = fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${env.RESEND_API_KEY}`,
@@ -98,8 +98,8 @@ export async function onRequestPost({ request, env }) {
           </div>
         `,
       }),
-    }).catch(() => {}); // fire-and-forget, never block the response
-  }
+      }).catch(() => {});
+    if (ctx?.waitUntil) ctx.waitUntil(confirmationFetch);
 
   if (dbError && emailError) {
     return json({ error: 'Could not save or notify.', dbError, emailError }, 500);
