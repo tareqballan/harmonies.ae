@@ -7,6 +7,7 @@ import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import CookiesPolicy from './components/CookiesPolicy/CookiesPolicy';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import WhyHarmonies from './components/WhyHarmonies/WhyHarmonies';
+import Pricing from './components/Pricing/Pricing';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './styles/tokens.css';
 import './styles/base.css';
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
         <Route path="/why-harmonies" element={<WhyHarmonies />} />
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
       <CookieConsent />
     </BrowserRouter>

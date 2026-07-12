@@ -54,7 +54,6 @@ export default function ContactUs() {
           <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
           <span className={styles.navWordmark}>Harmonies</span>
         </Link>
-        <Link to="/" className={styles.backLink}>← Back to site</Link>
       </nav>
 
       {/* Split layout */}

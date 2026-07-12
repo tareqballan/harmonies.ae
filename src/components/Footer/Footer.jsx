@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const DESKTOP_COLUMNS = [
   {
     title: 'Platform',
-    links: [{ text: 'Why Harmonies', to: '/why-harmonies' }, { text: 'Features' }, { text: 'Pricing' }],
+    links: [{ text: 'Why Harmonies', to: '/why-harmonies' }, { text: 'Features' }, { text: 'Pricing', to: '/pricing' }],
   },
   {
     title: 'For Sellers',
@@ -43,7 +43,7 @@ const DESKTOP_COLUMNS = [
 const MOBILE_COLUMNS = [
   {
     title: 'Platform',
-    links: [{ text: 'Why Harmonies', to: '/why-harmonies' }, { text: 'For Sellers' }, { text: 'Features' }, { text: 'Pricing' }],
+    links: [{ text: 'Why Harmonies', to: '/why-harmonies' }, { text: 'For Sellers' }, { text: 'Features' }, { text: 'Pricing', to: '/pricing' }],
   },
   {
     title: 'Company',

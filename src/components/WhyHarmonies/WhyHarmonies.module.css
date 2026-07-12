@@ -28,12 +28,6 @@
   color: var(--color-ink);
 }
 .navLinks { display: flex; align-items: center; gap: 36px; }
-.backLink {
-  font-size: 14px;
-  color: var(--color-body);
-  white-space: nowrap;
-  text-decoration: none;
-}
 .joinPill {
   display: inline-flex;
   padding: 10px 24px;
@@ -304,7 +298,6 @@
 @keyframes floatSlow2 { 0% { transform: translate(0,0); } 50% { transform: translate(-10px,14px); } 100% { transform: translate(0,0); } }
 
 @media (max-width: 820px) {
-  .backLink { display: none; }
   .grid4 { grid-template-columns: 1fr; }
   .solutionGrid { grid-template-columns: 1fr; }
   .solutionCol { padding: 22px 0; border-right: none; border-bottom: 1px solid var(--color-border); }

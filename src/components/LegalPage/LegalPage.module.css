@@ -29,14 +29,6 @@
   letter-spacing: -.01em;
   color: #fff;
 }
-.backLink {
-  font-size: 14px;
-  color: #c7c9d9;
-  text-decoration: none;
-  transition: color .2s;
-}
-.backLink:hover { color: #fff; }
-
 .wrap {
   max-width: 760px;
   margin: 0 auto;

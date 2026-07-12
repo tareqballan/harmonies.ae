@@ -3,9 +3,9 @@ import styles from './LegalPage.module.css';
 
 /**
  * Shared chrome for legal documents (Privacy Policy, Cookies Policy):
- * dark nav with a back-to-site link, centered content column, and a
- * plain footer bar. Per the design handoff these two pages share one
- * layout and differ only in their body content.
+ * dark nav, centered content column, and a plain footer bar. Per the
+ * design handoff these two pages share one layout and differ only in
+ * their body content.
  */
 export default function LegalPage({ title, dateLabel, date, children }) {
   return (
@@ -15,7 +15,6 @@ export default function LegalPage({ title, dateLabel, date, children }) {
           <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
           <span className={styles.navWordmark}>Harmonies</span>
         </Link>
-        <Link to="/" className={styles.backLink}>← Back to site</Link>
       </nav>
 
       <div className={styles.wrap}>

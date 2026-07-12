@@ -77,7 +77,6 @@ export default function WhyHarmonies() {
           <span className={styles.navWordmark}>Harmonies</span>
         </Link>
         <div className={styles.navLinks}>
-          <Link to="/" className={styles.backLink}>&larr; Back to site</Link>
           <button type="button" className={styles.joinPill} onClick={handleJoinNow}>Join Now</button>
         </div>
       </nav>
