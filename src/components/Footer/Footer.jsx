@@ -24,7 +24,7 @@ const DESKTOP_COLUMNS = [
     title: 'About',
     links: [
       { text: 'About Harmonies', to: '/about-harmonies' },
-      { text: 'About Lumiere' },
+      { text: 'About Lumiere', href: 'https://lgv.ae' },
       // present in the DOM but hidden until the company is hiring, per handoff
       { text: 'Careers', hidden: true },
     ],
@@ -47,7 +47,7 @@ const MOBILE_COLUMNS = [
   },
   {
     title: 'Company',
-    links: [{ text: 'About Harmonies', to: '/about-harmonies' }, { text: 'About Lumiere' }, { text: 'Careers' }],
+    links: [{ text: 'About Harmonies', to: '/about-harmonies' }, { text: 'About Lumiere', href: 'https://lgv.ae' }, { text: 'Careers' }],
   },
   {
     title: 'Support',
@@ -71,6 +71,9 @@ function FooterLink({ link }) {
   const className = styles.link;
   if (link.hidden) {
     return <a href="#" className={className} style={{ display: 'none' }}>{link.text}</a>;
+  }
+  if (link.href) {
+    return <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>{link.text}</a>;
   }
   return link.to
     ? <Link to={link.to} className={className}>{link.text}</Link>
