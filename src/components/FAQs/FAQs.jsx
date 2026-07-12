@@ -1,8 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './FAQs.module.css';
+import { usePageMeta } from '../../hooks/usePageMeta';
 import Footer from '../Footer/Footer';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
+
+// Strips the display markup (<strong>, <ul><li>, ...) down to plain text for
+// the FAQPage schema's "text" field — Google's structured-data guidelines
+// want plain text there even though the on-page answer can use rich markup.
+function stripHtml(html) {
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
 
 const FAQS = [
   {
@@ -45,7 +53,23 @@ function FAQItem({ item, isOpen, onToggle }) {
   );
 }
 
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: stripHtml(item.a) },
+  })),
+};
+
 export default function FAQs() {
+  usePageMeta({
+    title: 'FAQs | Harmonies Seller Questions Answered',
+    description: 'Answers to common questions about becoming a Harmonies seller — eligibility, required documents, approval time, and how the platform works.',
+    path: '/faqs',
+  });
+
   const [isSellerModalOpen, setIsSellerModalOpen] = useState(false);
   const handleJoinNow = () => setIsSellerModalOpen(true);
   const closeSellerModal = () => setIsSellerModalOpen(false);
@@ -55,6 +79,7 @@ export default function FAQs() {
 
   return (
     <div id="faqs-page" className={styles.page}>
+      <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
       <nav className={styles.nav} data-screen-label="Nav">
         <Link to="/" className={styles.navBrand}>
           <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />

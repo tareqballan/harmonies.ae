@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './WhyHarmonies.module.css';
 import { useReveal } from '../../hooks/useReveal';
+import { usePageMeta } from '../../hooks/usePageMeta';
 import Footer from '../Footer/Footer';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
@@ -55,6 +56,12 @@ const JOURNEY_STEPS = [
 ];
 
 export default function WhyHarmonies() {
+  usePageMeta({
+    title: 'Why Harmonies? | Turn Your Passion Into a Growing Business',
+    description: 'See how Harmonies helps local businesses sell more, build their brand, and manage growth — all from one platform.',
+    path: '/why-harmonies',
+  });
+
   const [isSellerModalOpen, setIsSellerModalOpen] = useState(false);
   const handleJoinNow = () => setIsSellerModalOpen(true);
   const closeSellerModal = () => setIsSellerModalOpen(false);

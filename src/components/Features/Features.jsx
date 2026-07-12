@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Features.module.css';
 import { useReveal } from '../../hooks/useReveal';
 import { useCountUp } from '../../hooks/useCountUp';
+import { usePageMeta } from '../../hooks/usePageMeta';
 import Footer from '../Footer/Footer';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
@@ -129,6 +130,12 @@ const NAV_GLYPHS = {
 };
 
 export default function Features() {
+  usePageMeta({
+    title: 'Features | Everything You Need to Sell, Market & Grow',
+    description: "Explore Harmonies' seller tools — storefronts, curated collections, marketing support, order management, and analytics, built for local businesses.",
+    path: '/features',
+  });
+
   const [isSellerModalOpen, setIsSellerModalOpen] = useState(false);
   const handleJoinNow = () => setIsSellerModalOpen(true);
   const closeSellerModal = () => setIsSellerModalOpen(false);

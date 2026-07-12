@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import { usePageMeta } from '../../hooks/usePageMeta';
 import styles from './LegalPage.module.css';
 
 /**
@@ -8,7 +9,9 @@ import styles from './LegalPage.module.css';
  * footer. These pages share one layout and differ only in their body
  * content.
  */
-export default function LegalPage({ title, dateLabel, date, children }) {
+export default function LegalPage({ title, description, path, dateLabel, date, children }) {
+  usePageMeta({ title: `${title} | Harmonies`, description, path });
+
   return (
     <div className={styles.page}>
       <nav className={styles.nav}>

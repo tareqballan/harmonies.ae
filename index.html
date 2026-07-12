@@ -5,6 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Harmonies — From Zero to Hero</title>
   <meta name="description" content="Harmonies helps local, social-first sellers turn their following into a professional online business." />
+  <link rel="canonical" href="https://harmonies.ae/" />
+
+  <!--
+    Static baseline Open Graph/Twitter tags. Per-page titles/descriptions
+    are set client-side (see src/hooks/usePageMeta.js) for Googlebot, which
+    executes JS — but social-preview scrapers (WhatsApp, Facebook, LinkedIn,
+    Slack) generally don't run JS, so they only ever see these static tags
+    regardless of which page was shared. Fixing that fully would need an
+    edge-level per-route rewrite (e.g. a Cloudflare Worker HTMLRewriter);
+    this baseline just ensures every shared link gets a decent preview.
+  -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Harmonies" />
+  <meta property="og:title" content="Harmonies — From Zero to Hero" />
+  <meta property="og:description" content="Harmonies helps local, social-first sellers turn their following into a professional online business." />
+  <meta property="og:url" content="https://harmonies.ae/" />
+  <meta property="og:image" content="https://harmonies.ae/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Harmonies — From Zero to Hero" />
+  <meta name="twitter:description" content="Harmonies helps local, social-first sellers turn their following into a professional online business." />
+  <meta name="twitter:image" content="https://harmonies.ae/assets/og-image.jpg" />
+
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
@@ -16,6 +40,21 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
     rel="stylesheet"
   />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Harmonies",
+      "legalName": "Lumiere Global Ventures LLC-FZ",
+      "url": "https://harmonies.ae",
+      "logo": "https://harmonies.ae/assets/harmonies-mark.png",
+      "sameAs": [
+        "https://www.instagram.com/harmonies.ae",
+        "https://www.tiktok.com/@harmonies.ae",
+        "https://www.linkedin.com/company/harmonies-ae/"
+      ]
+    }
+  </script>
 </head>
 <body>
   <div id="root"></div>

@@ -3,7 +3,13 @@ import styles from '../LegalPage/LegalPage.module.css';
 
 export default function CookiesPolicy() {
   return (
-    <LegalPage title="Cookies Policy" dateLabel="Last Updated" date="July 12, 2026">
+    <LegalPage
+      title="Cookies Policy"
+      description="How Harmonies uses cookies and similar technologies, and how to manage your preferences."
+      path="/cookies-policy"
+      dateLabel="Last Updated"
+      date="July 12, 2026"
+    >
       <h2 className={styles.h2}>1. Introduction</h2>
       <p className={styles.p}>Harmonies (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) uses cookies and similar technologies on our website, applications, and digital services to provide a better user experience, maintain platform security, understand how users interact with our services, and improve our products.</p>
       <p className={styles.p}>This Cookies Policy explains what cookies are, how we use them, and how you can manage your preferences.</p>

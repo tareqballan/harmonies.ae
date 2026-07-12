@@ -3,7 +3,13 @@ import styles from '../LegalPage/LegalPage.module.css';
 
 export default function PrivacyPolicy() {
   return (
-    <LegalPage title="Privacy Policy" dateLabel="Effective Date" date="July 12, 2026">
+    <LegalPage
+      title="Privacy Policy"
+      description="How Harmonies collects, uses, stores, and protects your personal information."
+      path="/privacy-policy"
+      dateLabel="Effective Date"
+      date="July 12, 2026"
+    >
       <p className={styles.p}>Welcome to Harmonies.ae (&quot;Harmonies&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;).</p>
       <p className={styles.p}>This Privacy Policy explains how Harmonies collects, uses, stores, shares, and protects your information when you use our website, mobile applications, and related services (collectively, the &quot;Platform&quot;).</p>
       <p className={styles.p}>By accessing or using Harmonies, you acknowledge and agree to the practices described in this Privacy Policy.</p>

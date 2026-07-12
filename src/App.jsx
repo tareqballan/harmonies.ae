@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { usePageMeta } from './hooks/usePageMeta';
 import Nav from './components/Nav/Nav';
 import Hero from './components/Hero/Hero';
 import SeamOrbs from './components/SeamOrbs/SeamOrbs';
@@ -14,6 +15,12 @@ import Footer from './components/Footer/Footer';
 import BecomeSellerModal from './components/BecomeSellerModal/BecomeSellerModal';
 
 export default function App() {
+  usePageMeta({
+    title: 'Harmonies — From Zero to Hero',
+    description: 'Harmonies helps local, social-first sellers turn their following into a professional online business.',
+    path: '/',
+  });
+
   const [isSellerModalOpen, setIsSellerModalOpen] = useState(false);
   const handleJoinNow = () => setIsSellerModalOpen(true);
   const closeSellerModal = () => setIsSellerModalOpen(false);

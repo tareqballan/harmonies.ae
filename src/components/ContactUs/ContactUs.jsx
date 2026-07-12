@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ContactUs.module.css';
+import { usePageMeta } from '../../hooks/usePageMeta';
 import CountryCodeSelect from '../CountryCodeSelect/CountryCodeSelect';
+import Footer from '../Footer/Footer';
 
 export default function ContactUs() {
+  usePageMeta({
+    title: 'Contact Us | Harmonies',
+    description: 'Have a question about selling on Harmonies? Get in touch — we usually reply within a day.',
+    path: '/contact',
+  });
+
   const [form, setForm] = useState({ name: '', email: '', whatsappCode: '+971', whatsapp: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -180,6 +188,8 @@ export default function ContactUs() {
           )}
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

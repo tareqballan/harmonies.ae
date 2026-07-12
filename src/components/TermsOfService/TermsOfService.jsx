@@ -3,7 +3,13 @@ import styles from '../LegalPage/LegalPage.module.css';
 
 export default function TermsOfService() {
   return (
-    <LegalPage title="Terms of Service" dateLabel="Last Updated" date="July 2026">
+    <LegalPage
+      title="Terms of Service"
+      description="The terms governing your access to and use of the Harmonies platform."
+      path="/terms-of-service"
+      dateLabel="Last Updated"
+      date="July 2026"
+    >
       <p className={styles.p}>Welcome to Harmonies.ae. These Terms of Service (&quot;Terms&quot;) govern your access to and use of the Harmonies platform, including our website, mobile applications, and related services (&quot;Platform&quot;).</p>
       <p className={styles.p}>By creating an account, accessing, or using Harmonies, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our Platform.</p>
 

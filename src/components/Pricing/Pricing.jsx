@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Pricing.module.css';
 import { useReveal } from '../../hooks/useReveal';
+import { usePageMeta } from '../../hooks/usePageMeta';
 import Footer from '../Footer/Footer';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
@@ -20,6 +21,12 @@ const PAID_SERVICES = [
 ];
 
 export default function Pricing() {
+  usePageMeta({
+    title: 'Pricing | Become a Harmonies Partner Seller for Free',
+    description: "Join Harmonies at no cost — no fees, no contracts. Optional paid services like marketing and design support are available when you're ready to grow.",
+    path: '/pricing',
+  });
+
   const [isSellerModalOpen, setIsSellerModalOpen] = useState(false);
   const handleJoinNow = () => setIsSellerModalOpen(true);
   const closeSellerModal = () => setIsSellerModalOpen(false);
