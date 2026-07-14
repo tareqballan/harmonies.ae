@@ -11,6 +11,24 @@
   background-repeat: no-repeat;
 }
 
+/* Past ~1400px the text column has already hit its own max-width, so the
+   available space to the right of it keeps growing with the viewport while
+   the narrow-desktop formula above stays flat at its 960px cap -- meaning
+   the art renders far smaller than it safely could on typical desktop/
+   wide-desktop screens. Scale it up again in stages now that there's room
+   (measured against actual text-column width at each breakpoint so it
+   never re-collides with the headline/feature row). */
+@media (min-width: 1401px) {
+  .hero {
+    background-size: min(55vw, 1300px) auto;
+  }
+}
+@media (min-width: 1700px) {
+  .hero {
+    background-size: min(62vw, 1500px) auto;
+  }
+}
+
 .twinkle {
   position: absolute;
   border-radius: 50%;
