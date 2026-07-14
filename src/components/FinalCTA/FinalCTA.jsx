@@ -81,7 +81,7 @@ export default function FinalCTA({ onJoinNow }) {
             />
           </div>
 
-          <div className={`${styles.wordmarkWrap} desktop-only`}>
+          <div className={styles.wordmarkWrap}>
             <span className={styles.wordmark}>Follow the noise</span>
           </div>
 

@@ -39,13 +39,13 @@ export default function ProductBundles() {
         <span className={styles.tick} style={{ background: '#FC635E', animation: 'tickFade1 3.4s ease-in-out infinite' }} />
         <span className={styles.tick} style={{ background: '#8A9BF7', animation: 'tickFade2 3.8s ease-in-out infinite .3s' }} />
         <span className={styles.tick} style={{ background: '#966ac2', animation: 'tickFade1 3.1s ease-in-out infinite .6s' }} />
-        <span className={`${styles.tick} desktop-only`} style={{ background: '#FC635E', animation: 'tickFade2 3.6s ease-in-out infinite .9s' }} />
+        <span className={styles.tick} style={{ background: '#FC635E', animation: 'tickFade2 3.6s ease-in-out infinite .9s' }} />
       </div>
       <div className={`${styles.tickRail} ${styles.tickRight}`}>
         <span className={styles.tick} style={{ background: '#966ac2', animation: 'tickFade2 3.5s ease-in-out infinite .2s' }} />
         <span className={styles.tick} style={{ background: '#FC635E', animation: 'tickFade1 3.9s ease-in-out infinite .5s' }} />
         <span className={styles.tick} style={{ background: '#8A9BF7', animation: 'tickFade2 3.2s ease-in-out infinite .8s' }} />
-        <span className={`${styles.tick} desktop-only`} style={{ background: '#966ac2', animation: 'tickFade1 3.7s ease-in-out infinite 1.1s' }} />
+        <span className={styles.tick} style={{ background: '#966ac2', animation: 'tickFade1 3.7s ease-in-out infinite 1.1s' }} />
       </div>
 
       <div className={styles.heading}>
@@ -53,11 +53,8 @@ export default function ProductBundles() {
           <span className={styles.badgeDot} />
           Product Bundles
         </div>
-        <h2 className={`${styles.h2} desktop-only`}>
+        <h2 className={styles.h2}>
           <span className={styles.gradientText}>Post once, sell as a&nbsp;Harmony.</span>
-        </h2>
-        <h2 className={`${styles.h2} mobile-only`}>
-          Bundle your products into <span className={styles.gradientText}>one Harmony.</span>
         </h2>
         <p className={styles.subcopy}>
           Style a few products together in one photo, set one price, and post it once. Buyers discover the whole set in Discover and buy it in a tap.
@@ -182,56 +179,42 @@ export default function ProductBundles() {
             <div className={styles.actionIcon}>
               <svg width={isMobile ? 15 : 17} height={isMobile ? 15 : 17} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.5))' }}><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" /></svg>
             </div>
-            {!isMobile && (
-              <div className={styles.actionCol}>
-                <div className={styles.actionIcon}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.5))' }}><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" /></svg></div>
-                <span className={styles.actionCount}>12</span>
-              </div>
-            )}
-            {!isMobile && (
-              <div className={styles.actionCol}>
-                <div className={styles.actionIcon}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.5))' }}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg></div>
-                <span className={styles.actionCount}>12</span>
-              </div>
-            )}
+            <div className={styles.actionCol}>
+              <div className={styles.actionIcon}><svg width={isMobile ? 15 : 17} height={isMobile ? 15 : 17} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.5))' }}><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" /></svg></div>
+              <span className={styles.actionCount}>12</span>
+            </div>
+            <div className={styles.actionCol}>
+              <div className={styles.actionIcon}><svg width={isMobile ? 15 : 17} height={isMobile ? 15 : 17} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,.5))' }}><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg></div>
+              <span className={styles.actionCount}>612</span>
+            </div>
             <div className={styles.actionCol}>
               <LikeIcon size={isMobile ? 16 : 15} filter={isMobile ? 'drop-shadow(0 1px 3px rgba(0,0,0,.4))' : undefined} />
-              {!isMobile && <span className={styles.actionCount}>341</span>}
+              <span className={styles.actionCount}>341</span>
             </div>
           </div>
 
           <div className={isMobile ? styles.cardCopyMobile : styles.cardCopy}>
             <div className={styles.cardTitle}>Morning Light Harmony</div>
-            {!isMobile && (
-              <div className={styles.recRow}>
-                <span className={styles.recCheck}>
-                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-                </span>
-                <span className={styles.recText}>9 Recommendations</span>
-              </div>
-            )}
+            <div className={styles.recRow}>
+              <span className={styles.recCheck}>
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+              </span>
+              <span className={styles.recText}>9 Recommendations</span>
+            </div>
             <div className={styles.cardPrice}>$36</div>
           </div>
 
           <div className={isMobile ? styles.avatarStackMobile : styles.avatarStack}>
             <div className={styles.avatarChip} style={{ zIndex: 3 }}><img src="/assets/item-tote-bag-clay.png" alt="" /></div>
-            {isMobile ? (
-              <div className={styles.avatarChipMore} style={{ zIndex: 2 }}>+1</div>
-            ) : (
-              <>
-                <div className={styles.avatarChip} style={{ zIndex: 2 }}><img src="/assets/item-candles-stack-clay.png" alt="" /></div>
-                <div className={styles.avatarChip} style={{ zIndex: 1 }}><img src="/assets/item-notebook-clay.png" alt="" /></div>
-              </>
-            )}
+            <div className={styles.avatarChip} style={{ zIndex: 2 }}><img src="/assets/item-candles-stack-clay.png" alt="" /></div>
+            <div className={styles.avatarChip} style={{ zIndex: 1 }}><img src="/assets/item-notebook-clay.png" alt="" /></div>
           </div>
 
-          {!isMobile && (
-            <div className={styles.dotsRow}>
-              <span className={styles.dotActive} />
-              <span className={styles.dotInactive} />
-              <span className={styles.dotInactive} />
-            </div>
-          )}
+          <div className={styles.dotsRow}>
+            <span className={styles.dotActive} />
+            <span className={styles.dotInactive} />
+            <span className={styles.dotInactive} />
+          </div>
         </div>
       </div>
     );

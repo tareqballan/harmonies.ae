@@ -1,11 +1,9 @@
 import styles from './Footer.module.css';
 import { Link } from 'react-router-dom';
 
-// Desktop and mobile references use genuinely different column sets
-// (not a responsive collapse of the same content) — see README §"Footer".
-// Rendered as two separate trees, toggled via desktop-only/mobile-only,
-// same pattern used by Community/ProductBundles/TheLoop.
-const DESKTOP_COLUMNS = [
+// Same column set on desktop and mobile — the handoff's mobile stylesheet only
+// rewraps these into a centered 2-per-row grid, it doesn't change the content.
+const COLUMNS = [
   {
     title: 'Platform',
     links: [{ text: 'Why Harmonies', to: '/why-harmonies' }, { text: 'Features', to: '/features' }, { text: 'Pricing', to: '/pricing' }],
@@ -36,25 +34,6 @@ const DESKTOP_COLUMNS = [
       { text: 'Terms of Service', to: '/terms-of-service' },
       { text: 'Cookie Policy', to: '/cookies-policy' },
       { text: 'Seller Agreement' },
-    ],
-  },
-];
-
-const MOBILE_COLUMNS = [
-  {
-    title: 'Platform',
-    links: [{ text: 'Why Harmonies', to: '/why-harmonies' }, { text: 'For Sellers' }, { text: 'Features', to: '/features' }, { text: 'Pricing', to: '/pricing' }],
-  },
-  {
-    title: 'Company',
-    links: [{ text: 'About Harmonies', to: '/about-harmonies' }, { text: 'About Lumiere', href: 'https://lgv.ae' }, { text: 'Careers' }],
-  },
-  {
-    title: 'Support',
-    links: [
-      { text: 'Help Center' },
-      { text: 'Contact Us', to: '/contact' },
-      { text: 'Privacy Policy', to: '/privacy-policy' },
     ],
   },
 ];
@@ -109,8 +88,8 @@ function AppDownloadColumn({ title }) {
 export default function Footer() {
   return (
     <footer className={styles.footer} data-screen-label="Footer">
-      <div className={`${styles.columnsRow} desktop-only`}>
-        {DESKTOP_COLUMNS.map((col) => (
+      <div className={styles.columnsRow}>
+        {COLUMNS.map((col) => (
           <div key={col.title} className={styles.column}>
             <div className={styles.colTitle}>{col.title}</div>
             <div className={styles.linkStack}>
@@ -121,28 +100,16 @@ export default function Footer() {
         <AppDownloadColumn title="Download the Free App" />
       </div>
 
-      <div className={`${styles.columnsRow} mobile-only`}>
-        {MOBILE_COLUMNS.map((col) => (
-          <div key={col.title} className={styles.column}>
-            <div className={styles.colTitle}>{col.title}</div>
-            <div className={styles.linkStack}>
-              {col.links.map((l) => <FooterLink key={l.text} link={l} />)}
-            </div>
-          </div>
-        ))}
-        <AppDownloadColumn title="Download the free app today" />
-      </div>
-
       <div className={styles.bottomRow}>
         <div className={styles.brand}>
           <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.brandMark} />
           <span className={styles.brandWordmark}>Harmonies</span>
         </div>
         <span className={styles.copyright}>© 2026 Lumiere Global Ventures LLC-FZ. All rights reserved.</span>
-        <span className={`${styles.subline} desktop-only`}>
+        <span className={styles.subline}>
           Harmonies is a social commerce platform operated by Lumiere Global Ventures LLC-FZ.
         </span>
-        <span className={`${styles.subline} desktop-only`}>
+        <span className={styles.subline}>
           Made with ❤️ in the UAE for local businesses.
         </span>
       </div>

@@ -138,9 +138,9 @@
   }
   .illustrationMobile { width: 100%; height: auto; aspect-ratio: 1408 / 736; object-fit: contain; }
 
-  /* mobile omits the "Follow the noise" wordmark entirely (desktop-only) */
+  .wordmarkWrap { margin-top: 0; }
 
-  .socialRow { justify-content: center; margin-top: 0; }
+  .socialRow { justify-content: center; margin-top: 16px; }
   .socialButton { width: 44px; height: 44px; }
   .social0, .social1, .social2 { animation: none; box-shadow: none; }
 }

@@ -28,18 +28,6 @@ const RING_DOTS = [
   { left: 'calc(50% - 231px)', top: 'calc(50% - 122px)', size: 24, bg: '#c9a9e6', shadow: 'rgba(150,106,194,.5)' },
 ];
 
-const MOBILE_CHAIN = [
-  { src: '/assets/storefront.png', alt: 'Store', label: 'Store', border: '#FC635E', bg: '#fff8f2', shadow: 'rgba(252,99,94,.4)', fit: 'contain', size: '74%' },
-  { src: '/assets/mug-photo.png', alt: 'Product', label: 'Product', border: '#8A9BF7', bg: '#fbf3ef', shadow: 'rgba(138,155,247,.4)', fit: 'cover', size: '76%', round: true },
-  { src: '/assets/avatar-girl.png', alt: 'Buyer', label: 'Buyer', border: '#8fa0d0', bg: '#fff5f0', shadow: 'rgba(13,16,51,.25)', fit: 'cover', size: '100%', pos: '50% 20%' },
-  { src: '/assets/avatar-boy.png', alt: 'Friend', label: 'Friend', border: '#8fa0d0', bg: '#fff5f0', shadow: 'rgba(13,16,51,.25)', fit: 'cover', size: '100%', pos: '50% 26%' },
-];
-const MOBILE_CONNECTORS = [
-  { verb: 'sells', color: '#FC635E' },
-  { verb: 'buys', color: '#5f76ce' },
-  { verb: 'recommends', color: '#966ac2' },
-];
-
 function NetworkDecoration({ mobile }) {
   const s = mobile ? { w: 100, h: 88, hub: [45, 49] } : { w: 150, h: 130, hub: [67, 73] };
   const [hx, hy] = s.hub;
@@ -82,11 +70,12 @@ export default function Community() {
         </h2>
       </div>
 
-      {/* ============ DESKTOP: full relationship diagram ============ */}
-      <div className={`${styles.desktopDiagramOuter} desktop-only`}>
+      {/* ============ Full relationship diagram (same on desktop and mobile;
+           mobile scales the whole thing down via CSS transform, per handoff) ============ */}
+      <div className={styles.desktopDiagramOuter}>
         <div className={styles.desktopDiagramInner}>
           {VALUE_LINES.map((v, i) => (
-            <div key={i} className={`${styles.valueLine} ${v.pos}`} style={{ animationDelay: v.delay }}>
+            <div key={i} className={`${styles.valueLine} ${v.pos} desktop-only`} style={{ animationDelay: v.delay }}>
               <span className={styles.valueDot} style={{ background: v.color }} />
               <span className={styles.valueText}>{v.text}</span>
             </div>
@@ -199,38 +188,15 @@ export default function Community() {
         </div>
       </div>
 
-      {/* ============ MOBILE: simplified vertical chain ============ */}
-      <div className={`${styles.mobileChain} mobile-only`}>
-        {MOBILE_CHAIN.map((n, i) => (
-          <div key={n.label} className={styles.mobileChainGroup}>
-            <div className={styles.mobileNodeGroup}>
-              <div
-                className={styles.mobileNode}
-                style={{ background: n.bg, border: `3px solid ${n.border}`, boxShadow: `0 12px 24px -8px ${n.shadow}` }}
-              >
-                <img
-                  src={n.src}
-                  alt={n.alt}
-                  style={{
-                    width: n.size, height: n.size, objectFit: n.fit,
-                    borderRadius: n.round ? '50%' : undefined,
-                    objectPosition: n.pos,
-                  }}
-                />
-              </div>
-              <span className={styles.mobileNodeLabel}>{n.label}</span>
-            </div>
-            {i < MOBILE_CONNECTORS.length && (
-              <>
-                <div className={styles.mobileConnector} style={{ background: MOBILE_CONNECTORS[i].color }} />
-                <span className={styles.mobileVerb} style={{ color: MOBILE_CONNECTORS[i].color }}>{MOBILE_CONNECTORS[i].verb}</span>
-                <div className={styles.mobileConnectorShort} style={{ background: i === 0 ? '#8A9BF7' : MOBILE_CONNECTORS[i].color }} />
-              </>
-            )}
+      {/* ============ MOBILE: same diagram (scaled via CSS), value-lines
+           become a static stacked list below it instead of scattered overlay ============ */}
+      <div className={`${styles.valueLinesList} mobile-only`}>
+        {VALUE_LINES.map((v, i) => (
+          <div key={i} className={styles.valueLineStatic} style={{ animationDelay: v.delay }}>
+            <span className={styles.valueDot} style={{ background: v.color }} />
+            <span className={styles.valueText}>{v.text}</span>
           </div>
         ))}
-        <div className={styles.mobileConnectorDashed} />
-        <span className={styles.mobileVerbFinal}>gifts &amp; the loop continues</span>
       </div>
     </section>
   );

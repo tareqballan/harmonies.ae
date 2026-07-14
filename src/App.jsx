@@ -16,7 +16,7 @@ import BecomeSellerModal from './components/BecomeSellerModal/BecomeSellerModal'
 
 export default function App() {
   usePageMeta({
-    title: 'Harmonies — From Zero to Hero',
+    title: 'Harmonies — The Future of Social Commerce',
     description: 'Harmonies helps local, social-first sellers turn their following into a professional online business.',
     path: '/',
   });
@@ -31,8 +31,8 @@ export default function App() {
       <Hero onJoinNow={handleJoinNow} />
       <SeamOrbs />
       <PainPoints />
-      <TurnSocialIntoBusiness />
       <Community />
+      <TurnSocialIntoBusiness />
       <ProductBundles />
       <SectionDivider />
       <AcceleratePath />
