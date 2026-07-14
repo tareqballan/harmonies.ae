@@ -361,5 +361,7 @@
 
   .heroInner { flex-direction: column; }
   .heroCopy, .heroVisual { width: 100%; min-width: 0; }
+  .heroCopy { text-align: center; }
+  .heroSub { margin-left: auto; margin-right: auto; }
   .heroVisual { max-width: 440px; margin: 0 auto; }
 }
