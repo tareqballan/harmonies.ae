@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './AboutHarmonies.module.css';
 import { useReveal } from '../../hooks/useReveal';
 import { usePageMeta, SITE_URL } from '../../hooks/usePageMeta';
 import Footer from '../Footer/Footer';
+import Nav from '../Nav/Nav';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
 const STORY_IMAGES = [
@@ -62,16 +62,7 @@ export default function AboutHarmonies() {
     <div id="about-harmonies-page" className={styles.page}>
       <script type="application/ld+json">{JSON.stringify(ABOUT_SCHEMA)}</script>
 
-      <nav className={styles.nav} data-screen-label="Nav">
-        <Link to="/" className={styles.navBrand}>
-          <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
-          <span className={styles.navWordmark}>Harmonies</span>
-        </Link>
-        <div className={`${styles.navLinks} desktop-only`}>
-          <Link to="/why-harmonies" className={styles.navLink}>Why Harmonies</Link>
-          <Link to="/features" className={styles.navLink}>Features</Link>
-        </div>
-      </nav>
+      <Nav variant="light" onJoinNow={handleJoinNow} />
 
       <section className={styles.hero} data-screen-label="Hero">
         <span className={styles.heroDotA} />

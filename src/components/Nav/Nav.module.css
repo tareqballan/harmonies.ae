@@ -1,19 +1,29 @@
 .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 6vw;
+  padding: 26px 6vw;
+}
+
+.navDark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(8, 10, 36, .55), transparent);
+}
+
+.navLight {
+  background: #fff;
+  border-bottom: 1px solid #F1F1F5;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
 }
 
 .mark {
@@ -27,32 +37,62 @@
   font-weight: 700;
   font-size: 23px;
   letter-spacing: -.01em;
-  color: var(--color-ink);
 }
+.navDark .wordmark { color: #fff; }
+.navLight .wordmark { color: var(--color-ink); }
 
-.links {
+.linkGroup {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 6px;
+  padding: 6px;
+  border-radius: var(--radius-pill);
+}
+.navDark .linkGroup {
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .1);
+}
+.navLight .linkGroup {
+  background: #F8F7FB;
+  border: 1px solid #ECEAF3;
 }
 
-.howItWorks {
-  font-size: 14px;
-  color: var(--color-body);
+.navLink {
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 14.5px;
+  font-weight: 600;
   white-space: nowrap;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
 }
+.navDark .navLink { color: rgba(255, 255, 255, .82); }
+.navDark .navLink:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.navLight .navLink { color: #403e52; }
+.navLight .navLink:hover { background: #fff; color: var(--color-ink); }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: linear-gradient(120deg, var(--color-periwinkle), var(--color-coral));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 12px 24px -10px rgba(252, 99, 94, .5);
+  transition: transform .25s cubic-bezier(.2, .8, .3, 1), box-shadow .25s ease;
+}
+.cta:hover { transform: translateY(-2px) scale(1.02); }
+.cta:active { transform: translateY(-1px) scale(.98); }
 
 @media (max-width: 820px) {
-  .nav {
-    position: sticky;
-    top: 0;
-    padding: 16px 20px;
-    background: rgba(255, 255, 255, .9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid #f1eee7;
-  }
-  .mark { height: 28px; }
+  .nav { padding: 16px 20px; }
+  .mark { height: 30px; }
   .wordmark { font-size: 18px; }
-  .howItWorks { display: none; }
+  .linkGroup { display: none; }
+  .cta { padding: 9px 16px; font-size: 13px; }
 }

@@ -4,6 +4,7 @@ import styles from './Pricing.module.css';
 import { useReveal } from '../../hooks/useReveal';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import Footer from '../Footer/Footer';
+import Nav from '../Nav/Nav';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
 const FREE_PLAN_ITEMS = [
@@ -37,13 +38,7 @@ export default function Pricing() {
 
   return (
     <div id="pricing-page" className={styles.page}>
-      <nav className={styles.nav} data-screen-label="Nav">
-        <Link to="/" className={styles.navBrand}>
-          <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
-          <span className={styles.navWordmark}>Harmonies</span>
-        </Link>
-        <button type="button" className={styles.joinPill} onClick={handleJoinNow}>Join Now</button>
-      </nav>
+      <Nav variant="light" onJoinNow={handleJoinNow} />
 
       <section className={styles.hero} data-screen-label="Hero">
         <span className={styles.heroDotA} />

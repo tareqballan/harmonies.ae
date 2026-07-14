@@ -5,26 +5,6 @@
   background: #fff;
 }
 
-/* ---- nav ---- */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 6vw;
-  background: #fff;
-}
-.navBrand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.navMark { height: 38px; width: auto; display: block; }
-.navWordmark {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 23px;
-  letter-spacing: -.01em;
-  color: var(--color-ink);
-}
-.navLinks { display: flex; align-items: center; gap: 36px; }
-.navLink { font-size: 14px; color: var(--color-body); white-space: nowrap; }
-
 /* ---- hero ---- */
 .hero { position: relative; overflow: hidden; padding: 64px 6vw 100px; background: #fff; }
 .heroDotA {

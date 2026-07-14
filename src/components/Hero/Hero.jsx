@@ -1,71 +1,121 @@
 import { Link } from 'react-router-dom';
 import styles from './Hero.module.css';
 
+const TWINKLE_DOTS = [
+  { left: '58%', top: '18%', size: 5, delay: '0s', duration: '2.8s' },
+  { left: '74%', top: '10%', size: 4, delay: '.6s', duration: '3s' },
+  { left: '88%', top: '34%', size: 6, delay: '1.1s', duration: '2.7s' },
+  { left: '64%', top: '58%', size: 4, delay: '1.7s', duration: '3.2s' },
+  { left: '80%', top: '70%', size: 5, delay: '.3s', duration: '2.9s' },
+];
+
+const FEATURES = [
+  {
+    key: 'collections',
+    color: 'var(--color-coral)',
+    label: <>Curated<br />Collections</>,
+    icon: (
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z M3 6h18 M16 10a4 4 0 0 1-8 0" />
+    ),
+  },
+  {
+    key: 'community',
+    color: 'var(--color-lilac)',
+    label: <>Engaged<br />Community</>,
+    icon: (
+      <>
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </>
+    ),
+  },
+  {
+    key: 'growth',
+    color: 'var(--color-blue)',
+    label: <>Business<br />Growth</>,
+    icon: (
+      <>
+        <line x1="18" x2="18" y1="20" y2="10" />
+        <line x1="12" x2="12" y1="20" y2="4" />
+        <line x1="6" x2="6" y1="20" y2="14" />
+      </>
+    ),
+  },
+  {
+    key: 'logistics',
+    color: 'var(--color-coral)',
+    label: <>Smart<br />Logistics</>,
+    icon: (
+      <>
+        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+        <path d="M15 18H9" />
+        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+        <circle cx="17" cy="18" r="2" />
+        <circle cx="7" cy="18" r="2" />
+      </>
+    ),
+  },
+];
+
 export default function Hero({ onJoinNow }) {
   return (
     <section id="hero-section" className={styles.hero} data-screen-label="Hero">
-      {/* ambient floating dots — desktop only, hidden on mobile via CSS */}
-      <span className={`${styles.dot} ${styles.dotCoral} ${styles.dotDesktop}`} />
-      <span className={`${styles.dot} ${styles.dotBlue} ${styles.dotDesktop}`} />
-      <span className={`${styles.dot} ${styles.dotLilac} ${styles.dotDesktop}`} />
-      {/* mobile-only ambient dots (2, smaller) */}
-      <span className={`${styles.dot} ${styles.dotCoral} ${styles.dotMobile}`} />
-      <span className={`${styles.dot} ${styles.dotBlue} ${styles.dotMobile}`} />
+      {TWINKLE_DOTS.map((dot, i) => (
+        <span
+          key={i}
+          className={styles.twinkle}
+          style={{
+            left: dot.left,
+            top: dot.top,
+            width: dot.size,
+            height: dot.size,
+            animationDelay: dot.delay,
+            animationDuration: dot.duration,
+          }}
+        />
+      ))}
+
+      <img src="/assets/harmonies-mark.png" alt="" className={styles.mobileMark} />
 
       <div className={styles.inner}>
-        <div className={styles.copy}>
-          <div className={styles.eyebrow}>
-            <span className={styles.eyebrowDot} />
-            Built for local &amp; social-first sellers
-          </div>
+        <h1 className={styles.headline}>
+          The Future of <span className={styles.headlineAccent}>Social Commerce</span>
+        </h1>
 
-          <h1 className={styles.headline}>
-            From Zero<br className={styles.desktopBreak} /> to Hero.
-          </h1>
+        <p className={styles.subtitle}>
+          Connecting <span className={styles.hlCoral}>communities</span> with the{' '}
+          <span className={styles.hlBlue}>businesses</span> they love.
+        </p>
 
-          <div className={styles.paragraphWrap}>
-            <p className={styles.paragraph}>
-              We help local businesses grow faster by giving them everything they need to{' '}
-              <span className={styles.highlight}>sell, manage, and deliver</span>—all in one platform.
-            </p>
-          </div>
-
-          <div className={styles.ctaRow}>
-            <button type="button" className={`${styles.ctaPrimary} pill-cta`} onClick={onJoinNow}>
-              Become an Early Seller
-            </button>
-            <Link to="/features" className={`${styles.ctaSecondary} pill-cta`}>
-              Explore All Features
-            </Link>
-          </div>
+        <div className={styles.featureRow}>
+          {FEATURES.map((f) => (
+            <div key={f.key} className={styles.featureItem}>
+              <span className={styles.featureIcon}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={f.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  {f.icon}
+                </svg>
+              </span>
+              <span className={styles.featureLabel}>{f.label}</span>
+            </div>
+          ))}
         </div>
 
-        <div className={styles.photoStage}>
-          <span className={`${styles.orb} ${styles.orbNavy}`} />
-          <span className={`${styles.orb} ${styles.orbBlueGlow}`} />
-          <span className={`${styles.orb} ${styles.orbCoralGlow}`} />
-
-          <div className={styles.photoFrame}>
-            <img
-              src="/assets/hero-clay-illustration.png"
-              alt="A seller at work"
-              className={styles.photo}
-            />
-          </div>
-          <div className={styles.photoShadow} />
-
-          <div className={`${styles.pill} ${styles.pillOrder}`}>
-            <span className={styles.pillEmoji}>🛍️</span>
-            <span className={styles.pillLabel}>New order received</span>
-          </div>
-          <div className={`${styles.pill} ${styles.pillInventory} ${styles.desktopOnly}`}>
-            <span className={styles.pillEmoji}>📦</span>
-            <span className={styles.pillLabel}>Inventory synced</span>
-          </div>
-          <div className={`${styles.pill} ${styles.pillDelivery}`}>
-            <span className={styles.pillEmoji}>🚚</span>
-            <span className={styles.pillLabel}>Out for delivery</span>
-          </div>
+        <div className={styles.ctaRow}>
+          <button type="button" className={styles.ctaPrimary} onClick={onJoinNow}>
+            Become a Seller
+            <span className={styles.ctaPrimaryInner}>
+              It&apos;s Free
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </span>
+          </button>
+          <Link to="/features" className={styles.ctaSecondary}>
+            Explore All Features
+          </Link>
         </div>
       </div>
     </section>

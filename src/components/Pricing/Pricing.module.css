@@ -5,42 +5,6 @@
   background: #fff;
 }
 
-/* ---- nav (shared shape with WhyHarmonies) ---- */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 6vw;
-  background: #fff;
-}
-.navBrand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.navMark { height: 38px; width: auto; display: block; }
-.navWordmark {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 23px;
-  letter-spacing: -.01em;
-  color: var(--color-ink);
-}
-.joinPill {
-  display: inline-flex;
-  padding: 10px 24px;
-  border-radius: var(--radius-pill);
-  border: 2px solid transparent;
-  background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(120deg, var(--color-coral), var(--color-blue)) border-box;
-  color: var(--color-ink);
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: color .25s ease, background .25s ease;
-}
-.joinPill:hover {
-  background: linear-gradient(120deg, var(--color-coral), var(--color-blue)) border-box;
-  color: #fff;
-}
-
 /* ---- hero ---- */
 .hero { position: relative; overflow: hidden; padding: 64px 6vw 90px; background: #fff; }
 .heroDotA {

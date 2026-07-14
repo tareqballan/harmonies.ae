@@ -5,30 +5,6 @@
   background: #faf9f6;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 6vw;
-  background: #0d1033;
-}
-.navLogo {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  text-decoration: none;
-}
-.navMark {
-  height: 30px;
-  width: auto;
-}
-.navWordmark {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: -.01em;
-  color: #fff;
-}
 .wrap {
   max-width: 760px;
   margin: 0 auto;

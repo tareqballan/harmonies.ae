@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './FAQs.module.css';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import Footer from '../Footer/Footer';
+import Nav from '../Nav/Nav';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
 // Strips the display markup (<strong>, <ul><li>, ...) down to plain text for
@@ -80,13 +80,7 @@ export default function FAQs() {
   return (
     <div id="faqs-page" className={styles.page}>
       <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
-      <nav className={styles.nav} data-screen-label="Nav">
-        <Link to="/" className={styles.navBrand}>
-          <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
-          <span className={styles.navWordmark}>Harmonies</span>
-        </Link>
-        <button type="button" className={styles.joinPill} onClick={handleJoinNow}>Join Now</button>
-      </nav>
+      <Nav variant="light" onJoinNow={handleJoinNow} />
 
       <section className={styles.hero} data-screen-label="Hero">
         <div className={styles.heroBadge}>FAQs</div>

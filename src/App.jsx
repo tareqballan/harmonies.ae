@@ -27,7 +27,7 @@ export default function App() {
 
   return (
     <div id="harmonies-site" className="site-root">
-      <Nav />
+      <Nav variant="dark" onJoinNow={handleJoinNow} />
       <Hero onJoinNow={handleJoinNow} />
       <SeamOrbs />
       <PainPoints />

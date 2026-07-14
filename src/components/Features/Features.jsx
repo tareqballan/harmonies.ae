@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Features.module.css';
 import { useReveal } from '../../hooks/useReveal';
 import { useCountUp } from '../../hooks/useCountUp';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import Footer from '../Footer/Footer';
+import Nav from '../Nav/Nav';
 import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
 // Hero visual: "Your Storefront" gradient card connected via dashed SVG
@@ -171,13 +171,7 @@ export default function Features() {
 
   return (
     <div id="features-page" className={styles.page}>
-      <nav className={styles.nav} data-screen-label="Nav">
-        <Link to="/" className={styles.navBrand}>
-          <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
-          <span className={styles.navWordmark}>Harmonies</span>
-        </Link>
-        <button type="button" className={`${styles.joinPill} ${styles.ctaBtnGhost}`} onClick={handleJoinNow}>Join Now</button>
-      </nav>
+      <Nav variant="light" onJoinNow={handleJoinNow} />
 
       <section className={styles.hero} data-screen-label="Hero">
         <div className={styles.heroInner}>

@@ -5,46 +5,7 @@
   background: #fff;
 }
 
-/* ---- nav ---- */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 6vw;
-  background: #fff;
-}
-.navBrand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.navMark { height: 38px; width: auto; display: block; }
-.navWordmark {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 23px;
-  letter-spacing: -.01em;
-  color: var(--color-ink);
-}
-.joinPill {
-  display: inline-flex;
-  padding: 10px 24px;
-  border-radius: var(--radius-pill);
-  border: 2px solid transparent;
-  background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(120deg, var(--color-coral), var(--color-blue)) border-box;
-  color: var(--color-ink);
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: color .25s ease, background .25s ease;
-}
-.joinPill:hover {
-  background: linear-gradient(120deg, var(--color-coral), var(--color-blue)) border-box;
-  color: #fff;
-}
-
-/* ---- CTA hover/press feedback (nav ghost pill + solid coral pills) ---- */
-.ctaBtnGhost { transition: transform .25s ease, box-shadow .25s ease; }
-.ctaBtnGhost:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -12px rgba(13, 16, 51, .3); }
-
+/* ---- CTA hover/press feedback (solid coral pills) ---- */
 .ctaBtn {
   transition: transform .25s cubic-bezier(.2, .8, .3, 1), box-shadow .25s ease, background-color .25s ease;
 }

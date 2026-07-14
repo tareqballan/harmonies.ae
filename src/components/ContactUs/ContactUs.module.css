@@ -35,32 +35,6 @@
   animation: floatB 10s ease-in-out infinite;
 }
 
-/* Nav */
-.nav {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 6vw;
-}
-.navLogo {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  text-decoration: none;
-}
-.navMark {
-  height: 30px;
-  width: auto;
-}
-.navWordmark {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: -.01em;
-  color: #fff;
-}
 /* Split */
 .split {
   position: relative;

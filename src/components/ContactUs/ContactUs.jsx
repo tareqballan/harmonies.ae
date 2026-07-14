@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './ContactUs.module.css';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import CountryCodeSelect from '../CountryCodeSelect/CountryCodeSelect';
 import Footer from '../Footer/Footer';
+import Nav from '../Nav/Nav';
+import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 
 export default function ContactUs() {
   usePageMeta({
@@ -11,6 +12,10 @@ export default function ContactUs() {
     description: 'Have a question about selling on Harmonies? Get in touch — we usually reply within a day.',
     path: '/contact',
   });
+
+  const [isSellerModalOpen, setIsSellerModalOpen] = useState(false);
+  const handleJoinNow = () => setIsSellerModalOpen(true);
+  const closeSellerModal = () => setIsSellerModalOpen(false);
 
   const [form, setForm] = useState({ name: '', email: '', whatsappCode: '+971', whatsapp: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -56,13 +61,7 @@ export default function ContactUs() {
       <div className={`${styles.blob} ${styles.blobCoral}`} />
       <div className={`${styles.blob} ${styles.blobBlue}`} />
 
-      {/* Nav */}
-      <nav className={styles.nav}>
-        <Link to="/" className={styles.navLogo}>
-          <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
-          <span className={styles.navWordmark}>Harmonies</span>
-        </Link>
-      </nav>
+      <Nav variant="light" onJoinNow={handleJoinNow} />
 
       {/* Split layout */}
       <div className={styles.split}>
@@ -190,6 +189,7 @@ export default function ContactUs() {
       </div>
 
       <Footer />
+      <BecomeSellerModal isOpen={isSellerModalOpen} onClose={closeSellerModal} />
     </div>
   );
 }

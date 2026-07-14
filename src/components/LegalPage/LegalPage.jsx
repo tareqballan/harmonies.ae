@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Footer from '../Footer/Footer';
+import Nav from '../Nav/Nav';
+import BecomeSellerModal from '../BecomeSellerModal/BecomeSellerModal';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import styles from './LegalPage.module.css';
 
@@ -12,14 +14,13 @@ import styles from './LegalPage.module.css';
 export default function LegalPage({ title, description, path, dateLabel, date, children }) {
   usePageMeta({ title: `${title} | Harmonies`, description, path });
 
+  const [isSellerModalOpen, setIsSellerModalOpen] = useState(false);
+  const handleJoinNow = () => setIsSellerModalOpen(true);
+  const closeSellerModal = () => setIsSellerModalOpen(false);
+
   return (
     <div className={styles.page}>
-      <nav className={styles.nav}>
-        <Link to="/" className={styles.navLogo}>
-          <img src="/assets/harmonies-mark.png" alt="Harmonies" className={styles.navMark} />
-          <span className={styles.navWordmark}>Harmonies</span>
-        </Link>
-      </nav>
+      <Nav variant="light" onJoinNow={handleJoinNow} />
 
       <div className={styles.wrap}>
         <div className={styles.badge}>Legal</div>
@@ -32,6 +33,7 @@ export default function LegalPage({ title, description, path, dateLabel, date, c
       </div>
 
       <Footer />
+      <BecomeSellerModal isOpen={isSellerModalOpen} onClose={closeSellerModal} />
     </div>
   );
 }
