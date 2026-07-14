@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { usePageMeta } from './hooks/usePageMeta';
 import Nav from './components/Nav/Nav';
 import Hero from './components/Hero/Hero';
-import SeamOrbs from './components/SeamOrbs/SeamOrbs';
 import PainPoints from './components/PainPoints/PainPoints';
 import Community from './components/Community/Community';
 import TurnSocialIntoBusiness from './components/TurnSocialIntoBusiness/TurnSocialIntoBusiness';
@@ -29,7 +28,6 @@ export default function App() {
     <div id="harmonies-site" className="site-root">
       <Nav variant="dark" onJoinNow={handleJoinNow} />
       <Hero onJoinNow={handleJoinNow} />
-      <SeamOrbs />
       <PainPoints />
       <Community />
       <TurnSocialIntoBusiness />

@@ -2,11 +2,15 @@ import { Link } from 'react-router-dom';
 import styles from './Hero.module.css';
 
 const TWINKLE_DOTS = [
-  { left: '58%', top: '18%', size: 5, delay: '0s', duration: '2.8s' },
-  { left: '74%', top: '10%', size: 4, delay: '.6s', duration: '3s' },
-  { left: '88%', top: '34%', size: 6, delay: '1.1s', duration: '2.7s' },
-  { left: '64%', top: '58%', size: 4, delay: '1.7s', duration: '3.2s' },
-  { left: '80%', top: '70%', size: 5, delay: '.3s', duration: '2.9s' },
+  { left: '52.7%', top: '22.6%', size: 8, color: '#fd8b87', shadow: 'rgba(252,99,94,.85)', shadowSize: '14px 4px', duration: '2.8s', delay: '0s' },
+  { left: '92.3%', top: '20.7%', size: 7, color: '#FC635E', shadow: 'rgba(252,99,94,.9)', shadowSize: '12px 3px', duration: '2.4s', delay: '.3s' },
+  { left: '94.6%', top: '49.7%', size: 7, color: '#8A9BF7', shadow: 'rgba(138,155,247,.9)', shadowSize: '12px 3px', duration: '2.6s', delay: '.6s' },
+  { left: '97%', top: '42.4%', size: 6, color: '#FC635E', shadow: 'rgba(252,99,94,.85)', shadowSize: '10px 3px', duration: '2.5s', delay: '.9s' },
+  { left: '65.4%', top: '34.2%', size: 5, color: '#966ac2', shadow: 'rgba(150,106,194,.85)', shadowSize: '10px 2px', duration: '3s', delay: '.2s' },
+  { left: '77.8%', top: '12.5%', size: 6, color: '#8A9BF7', shadow: 'rgba(138,155,247,.85)', shadowSize: '11px 3px', duration: '2.3s', delay: '1.1s' },
+  { left: '88.5%', top: '66.3%', size: 5, color: '#fd8b87', shadow: 'rgba(252,99,94,.85)', shadowSize: '10px 2px', duration: '2.8s', delay: '1.4s' },
+  { left: '60.2%', top: '58.9%', size: 6, color: '#966ac2', shadow: 'rgba(150,106,194,.85)', shadowSize: '11px 3px', duration: '2.5s', delay: '.7s' },
+  { left: '99.2%', top: '60.8%', size: 5, color: '#8A9BF7', shadow: 'rgba(138,155,247,.8)', shadowSize: '9px 2px', duration: '2.9s', delay: '1.6s' },
 ];
 
 const FEATURES = [
@@ -71,6 +75,8 @@ export default function Hero({ onJoinNow }) {
             top: dot.top,
             width: dot.size,
             height: dot.size,
+            background: dot.color,
+            boxShadow: `0 0 ${dot.shadowSize} ${dot.shadow}`,
             animationDelay: dot.delay,
             animationDuration: dot.duration,
           }}
