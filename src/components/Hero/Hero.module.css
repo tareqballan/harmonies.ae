@@ -5,10 +5,6 @@
   align-items: center;
   overflow: hidden;
   background-color: #080a24;
-  background-image: url('/assets/harmonies-mark.png');
-  background-size: auto 62%;
-  background-position: right bottom;
-  background-repeat: no-repeat;
 }
 
 .twinkle {
@@ -25,6 +21,71 @@
 }
 
 .mobileMark { display: none; }
+
+.heroArt {
+  position: absolute;
+  z-index: 1;
+  right: 2vw;
+  bottom: 0;
+  width: min(42vw, 620px);
+  height: min(42vw, 620px);
+  min-width: 380px;
+  min-height: 380px;
+  pointer-events: none;
+}
+
+.heroReflection {
+  position: absolute;
+  left: 50%;
+  bottom: -6%;
+  width: 110%;
+  height: 55%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(138, 155, 247, .35), rgba(252, 99, 94, .22) 55%, transparent 75%);
+  filter: blur(30px);
+}
+
+.heroRing {
+  position: absolute;
+  inset: 6%;
+  width: 88%;
+  height: 88%;
+  animation: heroRingSpin 90s linear infinite;
+}
+
+.heroMark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 74%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, .5));
+}
+
+.heroBadge {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, .45);
+}
+.badgeBag { top: 2%; left: 40%; }
+.badgeHeart { top: 18%; right: -3%; }
+.badgePeople { top: 46%; left: -8%; }
+.badgeTruck { top: 68%; right: -2%; }
+
+@keyframes heroRingSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 820px) {
+  .heroArt { display: none; }
+}
 
 .inner {
   position: relative;
@@ -149,7 +210,6 @@
     padding-top: 0;
     flex-direction: column;
     background-color: #070a24;
-    background-image: none;
   }
   .twinkle { display: none; }
 

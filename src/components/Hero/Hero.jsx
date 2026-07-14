@@ -9,6 +9,53 @@ const TWINKLE_DOTS = [
   { left: '80%', top: '70%', size: 5, delay: '.3s', duration: '2.9s' },
 ];
 
+const ORBIT_BADGES = [
+  {
+    key: 'bag',
+    pos: 'badgeBag',
+    bg: 'linear-gradient(135deg,#8b7ff0,#5b4fcf)',
+    iconColor: '#fff',
+    icon: <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z M3 6h18 M16 10a4 4 0 0 1-8 0" />,
+  },
+  {
+    key: 'heart',
+    pos: 'badgeHeart',
+    bg: '#fff',
+    iconColor: 'var(--color-coral)',
+    filled: true,
+    icon: <path d="M12 21s-7.5-4.9-10-9.4C.4 8.4 2 5 5.4 5c2 0 3.5 1.1 4.6 2.7C11.1 6.1 12.6 5 14.6 5 18 5 19.6 8.4 18 11.6 15.5 16.1 12 21 12 21z" />,
+  },
+  {
+    key: 'people',
+    pos: 'badgePeople',
+    bg: 'linear-gradient(135deg,#7d8ef2,#5f76ce)',
+    iconColor: '#fff',
+    icon: (
+      <>
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </>
+    ),
+  },
+  {
+    key: 'truck',
+    pos: 'badgeTruck',
+    bg: 'linear-gradient(135deg,#ffb37a,#f4874a)',
+    iconColor: '#fff',
+    icon: (
+      <>
+        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+        <path d="M15 18H9" />
+        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+        <circle cx="17" cy="18" r="2" />
+        <circle cx="7" cy="18" r="2" />
+      </>
+    ),
+  },
+];
+
 const FEATURES = [
   {
     key: 'collections',
@@ -78,6 +125,21 @@ export default function Hero({ onJoinNow }) {
       ))}
 
       <img src="/assets/harmonies-mark.png" alt="" className={styles.mobileMark} />
+
+      <div className={styles.heroArt} aria-hidden="true">
+        <div className={styles.heroReflection} />
+        <svg className={styles.heroRing} viewBox="0 0 400 400">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(199,205,248,.4)" strokeWidth="1.5" strokeDasharray="2 9" strokeLinecap="round" />
+        </svg>
+        <img src="/assets/harmonies-mark.png" alt="" className={styles.heroMark} />
+        {ORBIT_BADGES.map((b) => (
+          <div key={b.key} className={`${styles.heroBadge} ${styles[b.pos]}`} style={{ background: b.bg }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill={b.filled ? b.iconColor : 'none'} stroke={b.filled ? 'none' : b.iconColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              {b.icon}
+            </svg>
+          </div>
+        ))}
+      </div>
 
       <div className={styles.inner}>
         <h1 className={styles.headline}>
