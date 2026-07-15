@@ -52,7 +52,13 @@
   z-index: 2;
   width: 100%;
   max-width: clamp(330px, calc(100vw - 600px), 680px);
-  padding: 70px 6vw 40px;
+  /* horizontal padding is capped separately from the vw-based value used
+     elsewhere on the page: this column's own max-width is fixed at 680px,
+     so letting padding keep growing with viewport width past that point
+     eats an ever-larger share of a box that isn't getting any wider --
+     at ~1900px it was down to ~450px of usable width, not enough to fit
+     both CTA buttons on one row even though the column had room to spare. */
+  padding: 70px min(6vw, 40px) 40px;
 }
 
 .headline {
