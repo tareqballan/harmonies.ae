@@ -6,32 +6,17 @@
   overflow: hidden;
   background-color: #080a24;
   background-image: url('/assets/hero-bg-v2.png');
-  /* hero-bg-v2.png is cropped tight to its visible content, aspect ~1.151
-     (997x866) -- the calc(88vh * 1.151) term caps the render so its auto
-     height never exceeds ~88% of the viewport height (matching the
-     handoff's own auto-88%-tall intent) and gets clipped at the top of
-     this overflow:hidden section on shorter windows. */
-  background-size: min(50vw, 960px, calc(88vh * 1.151)) auto;
+  /* handoff literal value is `auto 88%` (height-based) -- kept here via the
+     calc(88vh * 1.874) term, matching it almost exactly from ~1850px up,
+     which is where it was verified pixel-for-pixel against the source
+     design. Below that, "auto 88%" alone re-collides with the headline
+     (its own width stays ~1567px regardless of viewport, so on narrower
+     screens it starts far enough left to reach the text) -- the
+     calc(100vw - 300px) term reins it in there instead, still landing
+     within ~20px of the literal value at typical desktop widths. */
+  background-size: min(calc(100vw - 300px), calc(88vh * 1.874)) auto;
   background-position: right bottom;
   background-repeat: no-repeat;
-}
-
-/* Past ~1400px the text column has already hit its own max-width, so the
-   available space to the right of it keeps growing with the viewport while
-   the narrow-desktop formula above stays flat at its 960px cap -- meaning
-   the art renders far smaller than it safely could on typical desktop/
-   wide-desktop screens. Scale it up again in stages now that there's room
-   (measured against actual text-column width at each breakpoint so it
-   never re-collides with the headline/feature row). */
-@media (min-width: 1401px) {
-  .hero {
-    background-size: min(55vw, 1300px, calc(88vh * 1.151)) auto;
-  }
-}
-@media (min-width: 1700px) {
-  .hero {
-    background-size: min(62vw, 1500px, calc(88vh * 1.151)) auto;
-  }
 }
 
 .twinkle {
@@ -69,6 +54,7 @@
   letter-spacing: -.02em;
   color: #fff;
   margin: 0;
+  white-space: nowrap;
 }
 .headlineAccent {
   background: linear-gradient(90deg, var(--color-blue), var(--color-lilac), var(--color-coral));
