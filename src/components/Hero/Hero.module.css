@@ -6,7 +6,12 @@
   overflow: hidden;
   background-color: #080a24;
   background-image: url('/assets/hero-bg-v2.png');
-  background-size: min(50vw, 960px) auto;
+  /* hero-bg-v2.png is cropped tight to its visible content, aspect ~1.151
+     (997x866) -- the calc(88vh * 1.151) term caps the render so its auto
+     height never exceeds ~88% of the viewport height (matching the
+     handoff's own auto-88%-tall intent) and gets clipped at the top of
+     this overflow:hidden section on shorter windows. */
+  background-size: min(50vw, 960px, calc(88vh * 1.151)) auto;
   background-position: right bottom;
   background-repeat: no-repeat;
 }
@@ -20,12 +25,12 @@
    never re-collides with the headline/feature row). */
 @media (min-width: 1401px) {
   .hero {
-    background-size: min(55vw, 1300px) auto;
+    background-size: min(55vw, 1300px, calc(88vh * 1.151)) auto;
   }
 }
 @media (min-width: 1700px) {
   .hero {
-    background-size: min(62vw, 1500px) auto;
+    background-size: min(62vw, 1500px, calc(88vh * 1.151)) auto;
   }
 }
 
