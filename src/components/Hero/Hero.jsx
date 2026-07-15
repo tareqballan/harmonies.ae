@@ -69,7 +69,7 @@ export default function Hero({ onJoinNow }) {
       {TWINKLE_DOTS.map((dot, i) => (
         <span
           key={i}
-          className={styles.twinkle}
+          className={`${styles.twinkle} desktop-only`}
           style={{
             left: dot.left,
             top: dot.top,
@@ -83,8 +83,24 @@ export default function Hero({ onJoinNow }) {
         />
       ))}
 
-      <div className={styles.mobileMarkWrap}>
+      <div className={`${styles.mobileMarkWrap} mobile-only`}>
         <img src="/assets/mobile-hero-mark-v3.png" alt="" className={styles.mobileMark} />
+        {TWINKLE_DOTS.map((dot, i) => (
+          <span
+            key={i}
+            className={styles.twinkle}
+            style={{
+              left: dot.left,
+              top: dot.top,
+              width: dot.size,
+              height: dot.size,
+              background: dot.color,
+              boxShadow: `0 0 ${dot.shadowSize} ${dot.shadow}`,
+              animationDelay: dot.delay,
+              animationDuration: dot.duration,
+            }}
+          />
+        ))}
       </div>
 
       <div className={styles.inner}>
