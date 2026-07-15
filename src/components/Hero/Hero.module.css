@@ -5,7 +5,6 @@
   align-items: center;
   overflow: hidden;
   background-color: #080a24;
-  background-image: url('/assets/hero-bg-v2.png');
   /* handoff literal value is `auto 88%` (height-based) -- kept here via the
      calc(88vh * 1.874) term, matching it almost exactly from ~1850px up,
      which is where it was verified pixel-for-pixel against the source
@@ -13,10 +12,25 @@
      (its own width stays ~1567px regardless of viewport, so on narrower
      screens it starts far enough left to reach the text) -- the
      calc(100vw - 300px) term reins it in there instead, still landing
-     within ~20px of the literal value at typical desktop widths. */
-  background-size: min(calc(100vw - 300px), calc(88vh * 1.874)) auto;
-  background-position: right bottom;
-  background-repeat: no-repeat;
+     within ~20px of the literal value at typical desktop widths.
+
+     A second, full-bleed layer sits on top of the photo: a short vertical
+     fade from the section's own flat background-color down to transparent.
+     Without it, the photo's top edge (which floats partway down the
+     section, since it's anchored bottom via background-position) reads as
+     a visible hard-edged rectangle against the flat color above it. */
+  background-image:
+    linear-gradient(to bottom, #080a24 0%, rgba(8, 10, 36, 0) 14%),
+    url('/assets/hero-bg-v2.png');
+  background-size:
+    100% 100%,
+    min(calc(100vw - 300px), calc(88vh * 1.874)) auto;
+  background-position:
+    left top,
+    right bottom;
+  background-repeat:
+    no-repeat,
+    no-repeat;
 }
 
 .twinkle {
