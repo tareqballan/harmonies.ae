@@ -142,7 +142,6 @@
 
   .socialRow { justify-content: center; margin-top: 16px; }
   .socialButton { width: 44px; height: 44px; }
-  .social0, .social1, .social2 { animation: none; box-shadow: none; }
 }
 
 /* ---- local copies of shared keyframes from animations.css ----
