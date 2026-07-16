@@ -14,13 +14,28 @@
      calc(100vw - 300px) term reins it in there instead, still landing
      within ~20px of the literal value at typical desktop widths.
 
-     A second, full-bleed layer sits on top of the photo: a short vertical
-     fade from the section's own flat background-color down to transparent.
+     A second, full-bleed layer sits on top of the photo: a vertical fade
+     from the section's own flat background-color down to transparent.
      Without it, the photo's top edge (which floats partway down the
      section, since it's anchored bottom via background-position) reads as
-     a visible hard-edged rectangle against the flat color above it. */
+     a visible hard-edged rectangle against the flat color above it. A
+     simple 2-stop fade just moves the hard edge to wherever it finishes
+     (a plain alpha ramp ends abruptly, and the photo's own faint top-of-
+     frame glow doesn't fade at the same rate) -- this eases out over many
+     stops and a much longer span instead, so there's no single point
+     where it visibly finishes. */
   background-image:
-    linear-gradient(to bottom, #080a24 0%, rgba(8, 10, 36, 0) 14%),
+    linear-gradient(
+      to bottom,
+      #080a24 0%,
+      rgba(8, 10, 36, .95) 10%,
+      rgba(8, 10, 36, .75) 16%,
+      rgba(8, 10, 36, .5) 22%,
+      rgba(8, 10, 36, .28) 29%,
+      rgba(8, 10, 36, .12) 37%,
+      rgba(8, 10, 36, .04) 45%,
+      rgba(8, 10, 36, 0) 55%
+    ),
     url('/assets/hero-bg-v2.png');
   background-size:
     100% 100%,
