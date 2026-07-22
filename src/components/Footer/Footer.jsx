@@ -31,7 +31,6 @@ const COLUMNS = [
       { text: 'Privacy Policy', to: '/privacy-policy' },
       { text: 'Terms of Service', to: '/terms-of-service' },
       { text: 'Cookie Policy', to: '/cookies-policy' },
-      { text: 'Seller Agreement' },
     ],
   },
 ];
