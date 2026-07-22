@@ -51,7 +51,12 @@ export default function TermsOfService() {
       </ul>
       <p className={styles.p}>Harmonies may review seller accounts, remove products, restrict access, suspend accounts, or take other actions if sellers violate these Terms or applicable laws.</p>
 
-      <h2 className={styles.h2}>5. Orders and Payments</h2>
+      <h2 className={styles.h2}>5. Seller Verification and KYC Requirements</h2>
+      <p className={styles.p}>To maintain a secure and trusted marketplace, sellers may be required to complete identity and business verification procedures before accessing selling features on Harmonies.</p>
+      <p className={styles.p}>Sellers agree to provide accurate and up-to-date information and documentation required for verification purposes.</p>
+      <p className={styles.p}>For more details about seller verification requirements, please refer to our <a href="/seller-verification-kyc-policy" className={styles.link}>Seller Verification and KYC Policy</a>.</p>
+
+      <h2 className={styles.h2}>6. Orders and Payments</h2>
       <p className={styles.p}>When a customer places an order through Harmonies:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>The seller is responsible for accepting and fulfilling the order.</li>
@@ -64,13 +69,13 @@ export default function TermsOfService() {
       <p className={styles.p}>Harmonies manages the marketplace transaction flow, including applicable commissions, service fees, and seller payouts.</p>
       <p className={styles.p}>Seller payouts may be processed according to Harmonies&apos; payout schedule and may be subject to order completion, delivery confirmation, refunds, disputes, chargebacks, or other risk management procedures.</p>
 
-      <h2 className={styles.h2}>6. Delivery and Logistics</h2>
+      <h2 className={styles.h2}>7. Delivery and Logistics</h2>
       <p className={styles.p}>Harmonies coordinates delivery through third-party logistics providers and delivery partners to support order fulfillment.</p>
       <p className={styles.p}>Delivery times are estimates and may vary due to circumstances outside Harmonies&apos; reasonable control, including weather conditions, transportation delays, operational issues, or third-party provider delays.</p>
       <p className={styles.p}>Delivery fees and applicable logistics charges will be displayed or communicated before order completion.</p>
       <p className={styles.p}>While Harmonies facilitates delivery coordination, sellers remain responsible for ensuring products are properly prepared, packaged, and ready for delivery.</p>
 
-      <h2 className={styles.h2}>7. Returns and Refunds</h2>
+      <h2 className={styles.h2}>8. Returns and Refunds</h2>
       <p className={styles.p}>Return eligibility depends on the seller&apos;s return settings and the product type.</p>
       <p className={styles.p}>Customers may request a return or refund if:</p>
       <ul className={styles.ul}>
@@ -91,7 +96,7 @@ export default function TermsOfService() {
       <p className={styles.p}>Harmonies facilitates communication and operational processes between customers and sellers regarding returns and refunds. Sellers remain responsible for product quality, accuracy, safety, and compliance of their products.</p>
       <p className={styles.p}>Harmonies is not responsible for product defects, incorrect product descriptions, or seller actions, except where required by applicable law.</p>
 
-      <h2 className={styles.h2}>8. Order Cancellation</h2>
+      <h2 className={styles.h2}>9. Order Cancellation</h2>
       <p className={styles.p}>Customers may request order cancellation under the following conditions:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>For standard products: cancellation is allowed if the order has not been shipped.</li>
@@ -99,7 +104,7 @@ export default function TermsOfService() {
       </ul>
       <p className={styles.p}>Once an order has been shipped or production has started, cancellation may not be possible.</p>
 
-      <h2 className={styles.h2}>9. Platform Content and Intellectual Property</h2>
+      <h2 className={styles.h2}>10. Platform Content and Intellectual Property</h2>
       <p className={styles.p}>All content, features, designs, trademarks, software, and materials provided by Harmonies are owned by or licensed to Harmonies.</p>
       <p className={styles.p}>Users may not:</p>
       <ul className={styles.ul}>
@@ -109,12 +114,12 @@ export default function TermsOfService() {
       </ul>
       <p className={styles.p}>Sellers retain ownership of their product content but grant Harmonies permission to display, promote, and use such content for operating and marketing the Platform.</p>
 
-      <h2 className={styles.h2}>10. Recommendations and Social Features</h2>
+      <h2 className={styles.h2}>11. Recommendations and Social Features</h2>
       <p className={styles.p}>Harmonies may include social commerce features such as recommendations, curated collections, and user interactions.</p>
       <p className={styles.p}>Recommendations represent user opinions and experiences and do not constitute guarantees regarding product quality, performance, or suitability.</p>
       <p className={styles.p}>Customers should make purchasing decisions based on their own judgment.</p>
 
-      <h2 className={styles.h2}>11. Prohibited Products and Activities</h2>
+      <h2 className={styles.h2}>12. Prohibited Products and Activities</h2>
       <p className={styles.p}>Sellers may not list, sell, or promote products or services that violate applicable UAE laws or payment provider requirements, including:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Illegal drugs, controlled substances, or related products.</li>
@@ -130,16 +135,16 @@ export default function TermsOfService() {
       </ul>
       <p className={styles.p}>Harmonies reserves the right to remove prohibited products and take appropriate action against violating accounts.</p>
 
-      <h2 className={styles.h2}>12. Third-Party Services</h2>
+      <h2 className={styles.h2}>13. Third-Party Services</h2>
       <p className={styles.p}>Harmonies may integrate with third-party services, including payment providers, delivery companies, analytics providers, and other partners.</p>
       <p className={styles.p}>Your use of third-party services may be subject to their own terms and conditions.</p>
 
-      <h2 className={styles.h2}>13. Chargebacks and Payment Disputes</h2>
+      <h2 className={styles.h2}>14. Chargebacks and Payment Disputes</h2>
       <p className={styles.p}>Customers should contact Harmonies before initiating a payment dispute or chargeback whenever possible.</p>
       <p className={styles.p}>Harmonies will cooperate with customers, sellers, and payment providers to investigate and resolve payment-related issues.</p>
       <p className={styles.p}>Fraudulent chargebacks or misuse of payment systems may result in account suspension or termination.</p>
 
-      <h2 className={styles.h2}>14. Account Suspension and Termination</h2>
+      <h2 className={styles.h2}>15. Account Suspension and Termination</h2>
       <p className={styles.p}>Harmonies may suspend or terminate accounts if users:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Violate these Terms.</li>
@@ -149,7 +154,7 @@ export default function TermsOfService() {
       </ul>
       <p className={styles.p}>Users may request account deletion through available account settings or by contacting Harmonies.</p>
 
-      <h2 className={styles.h2}>15. Limitation of Liability</h2>
+      <h2 className={styles.h2}>16. Limitation of Liability</h2>
       <p className={styles.p}>Harmonies provides the Platform as a marketplace and technology service.</p>
       <p className={styles.p}>To the maximum extent permitted by applicable law, Harmonies is not responsible for:</p>
       <ul className={styles.ul}>
@@ -160,18 +165,18 @@ export default function TermsOfService() {
       </ul>
       <p className={styles.p}>Nothing in these Terms excludes liability where such exclusion is not permitted by applicable law.</p>
 
-      <h2 className={styles.h2}>16. Privacy</h2>
+      <h2 className={styles.h2}>17. Privacy</h2>
       <p className={styles.p}>Your use of Harmonies is also governed by our <a href="/privacy-policy" className={styles.link}>Privacy Policy</a>, which explains how we collect, use, store, and protect your information.</p>
 
-      <h2 className={styles.h2}>17. Changes to These Terms</h2>
+      <h2 className={styles.h2}>18. Changes to These Terms</h2>
       <p className={styles.p}>Harmonies may update these Terms from time to time.</p>
       <p className={styles.p}>Updated Terms will be published on this page with the revised date. Continued use of the Platform after changes are published constitutes acceptance of the updated Terms.</p>
 
-      <h2 className={styles.h2}>18. Governing Law</h2>
+      <h2 className={styles.h2}>19. Governing Law</h2>
       <p className={styles.p}>These Terms are governed by the applicable laws and regulations of the United Arab Emirates.</p>
       <p className={styles.p}>Any disputes arising from these Terms or your use of Harmonies shall be handled according to applicable UAE laws and jurisdiction.</p>
 
-      <h2 className={styles.h2}>19. Contact Us</h2>
+      <h2 className={styles.h2}>20. Contact Us</h2>
       <p className={styles.p}>For questions regarding these Terms, please contact us:</p>
       <p className={styles.p}>Email: <a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></p>
     </LegalPage>

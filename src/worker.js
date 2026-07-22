@@ -32,6 +32,10 @@ const PAGE_META = {
     title: 'Return and Refund Policy | Harmonies',
     description: 'When customers may request returns, how returns are processed, and how refunds are issued on Harmonies.',
   },
+  '/seller-verification-kyc-policy': {
+    title: 'Seller Verification and KYC Policy | Harmonies',
+    description: 'How Harmonies verifies seller identity and business legitimacy to maintain a trusted marketplace.',
+  },
   '/why-harmonies': {
     title: 'Why Harmonies? | Turn Your Passion Into a Growing Business',
     description: 'See how Harmonies helps local businesses sell more, build their brand, and manage growth — all from one platform.',
