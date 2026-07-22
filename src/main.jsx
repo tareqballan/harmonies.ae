@@ -6,6 +6,7 @@ import ContactUs from './components/ContactUs/ContactUs';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService/TermsOfService';
 import CookiesPolicy from './components/CookiesPolicy/CookiesPolicy';
+import ReturnRefundPolicy from './components/ReturnRefundPolicy/ReturnRefundPolicy';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import WhyHarmonies from './components/WhyHarmonies/WhyHarmonies';
 import Pricing from './components/Pricing/Pricing';
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
+        <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
         <Route path="/why-harmonies" element={<WhyHarmonies />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/features" element={<Features />} />

@@ -28,6 +28,10 @@ const PAGE_META = {
     title: 'Cookies Policy | Harmonies',
     description: 'How Harmonies uses cookies and similar technologies, and how to manage your preferences.',
   },
+  '/return-refund-policy': {
+    title: 'Return and Refund Policy | Harmonies',
+    description: 'When customers may request returns, how returns are processed, and how refunds are issued on Harmonies.',
+  },
   '/why-harmonies': {
     title: 'Why Harmonies? | Turn Your Passion Into a Growing Business',
     description: 'See how Harmonies helps local businesses sell more, build their brand, and manage growth — all from one platform.',
