@@ -11,7 +11,6 @@ const COLUMNS = [
   {
     title: 'For Sellers',
     links: [
-      { text: 'Seller Guide' },
       { text: 'FAQs', to: '/faqs' },
       { text: 'Contact Us', to: '/contact' },
     ],
