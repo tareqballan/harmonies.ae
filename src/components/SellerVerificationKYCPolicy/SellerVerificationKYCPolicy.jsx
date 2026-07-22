@@ -8,7 +8,7 @@ export default function SellerVerificationKYCPolicy() {
       description="How Harmonies verifies seller identity and business legitimacy to maintain a trusted marketplace."
       path="/seller-verification-kyc-policy"
       dateLabel="Last Updated"
-      date="July 2026"
+      date="01 July 2026"
     >
       <p className={styles.p}>At Harmonies, we aim to provide a trusted marketplace experience for customers, sellers, and partners. To maintain platform security, comply with applicable regulations, and prevent fraudulent activities, Harmonies requires sellers to complete verification procedures before selling on the Platform.</p>
 

@@ -8,7 +8,7 @@ export default function ReturnRefundPolicy() {
       description="When customers may request returns, how returns are processed, and how refunds are issued on Harmonies."
       path="/return-refund-policy"
       dateLabel="Last Updated"
-      date="July 2026"
+      date="01 July 2026"
     >
       <p className={styles.p}>At Harmonies, we aim to provide customers with a reliable and transparent shopping experience. This Return and Refund Policy explains when customers may request returns, how returns are processed, and how refunds are issued.</p>
 

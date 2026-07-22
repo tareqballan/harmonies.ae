@@ -8,7 +8,7 @@ export default function CookiesPolicy() {
       description="How Harmonies uses cookies and similar technologies, and how to manage your preferences."
       path="/cookies-policy"
       dateLabel="Last Updated"
-      date="July 12, 2026"
+      date="01 July 2026"
     >
       <h2 className={styles.h2}>1. Introduction</h2>
       <p className={styles.p}>Harmonies (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) uses cookies and similar technologies on our website, applications, and digital services to provide a better user experience, maintain platform security, understand how users interact with our services, and improve our products.</p>
