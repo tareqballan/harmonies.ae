@@ -8,6 +8,7 @@ import TermsOfService from './components/TermsOfService/TermsOfService';
 import CookiesPolicy from './components/CookiesPolicy/CookiesPolicy';
 import ReturnRefundPolicy from './components/ReturnRefundPolicy/ReturnRefundPolicy';
 import SellerVerificationKYCPolicy from './components/SellerVerificationKYCPolicy/SellerVerificationKYCPolicy';
+import SellerAgreement from './components/SellerAgreement/SellerAgreement';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import WhyHarmonies from './components/WhyHarmonies/WhyHarmonies';
 import Pricing from './components/Pricing/Pricing';
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
         <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
         <Route path="/seller-verification-kyc-policy" element={<SellerVerificationKYCPolicy />} />
+        <Route path="/seller-agreement" element={<SellerAgreement />} />
         <Route path="/why-harmonies" element={<WhyHarmonies />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/features" element={<Features />} />
