@@ -64,12 +64,13 @@ export default function SellerAgreement() {
         <li className={styles.li}>Bank and payout details.</li>
         <li className={styles.li}>Product authenticity and origin.</li>
         <li className={styles.li}>Intellectual-property rights.</li>
-        <li className={styles.li}>Tax or VAT information.</li>
+        <li className={styles.li}>VAT-registration status and Tax Registration Number ("TRN").</li>
         <li className={styles.li}>Transaction legitimacy.</li>
         <li className={styles.li}>Continued eligibility and compliance.</li>
       </ul>
       <p className={styles.p}>The Seller must provide requested documents within the period specified by Harmonies.</p>
       <p className={styles.p}>Failure to provide satisfactory information may result in listing removal, delayed payouts, additional reserves, restrictions, suspension, or termination.</p>
+      <p className={styles.p}>The Seller must promptly notify Harmonies of any change to its VAT-registration status and provide accurate supporting documents.</p>
 
       <h2 className={styles.h2}>6. Changes to Seller Information</h2>
       <p className={styles.p}>The Seller must promptly notify Harmonies of material changes concerning:</p>
@@ -144,14 +145,24 @@ export default function SellerAgreement() {
       <p className={styles.p}>The Seller may only sell product categories approved by Harmonies. New categories may require prior written approval.</p>
 
       <h2 className={styles.h2}>11. Pricing and Promotions</h2>
-      <p className={styles.p}>The Seller determines its product prices and agrees that:</p>
+      <p className={styles.p}>The Seller determines its product prices.</p>
+      <p className={styles.p}>All prices submitted to Harmonies must be the <strong>final consumer price</strong>, inclusive of any VAT the Seller is legally required to charge.</p>
+      <p className={styles.p}>A VAT-registered Seller must:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Include applicable VAT in the submitted product price.</li>
+        <li className={styles.li}>Provide Harmonies with a valid TRN.</li>
+        <li className={styles.li}>Issue tax invoices where legally required.</li>
+        <li className={styles.li}>Ensure its pricing and tax information is accurate.</li>
+      </ul>
+      <p className={styles.p}>A Seller that is not VAT-registered must not charge, collect, represent, or separately identify any amount as VAT.</p>
+      <p className={styles.p}>The Seller also agrees that:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Prices must be accurate and transparent.</li>
-        <li className={styles.li}>Prices must include applicable VAT where legally required.</li>
         <li className={styles.li}>Promotions and discounts must be genuine.</li>
-        <li className={styles.li}>Prices must not be artificially increased before discounts.</li>
-        <li className={styles.li}>Pricing must comply with consumer-protection laws.</li>
+        <li className={styles.li}>Prices must not be artificially increased before a discount.</li>
+        <li className={styles.li}>Pricing must comply with applicable consumer-protection and tax laws.</li>
       </ul>
+      <p className={styles.p}>Harmonies may display the VAT component or other tax information where required based on information supplied by the Seller.</p>
       <p className={styles.p}>Campaign participation and financial responsibilities will be communicated before participation.</p>
 
       <h2 className={styles.h2}>12. Commissions and Fees</h2>
@@ -359,16 +370,19 @@ export default function SellerAgreement() {
       <p className={styles.p}>The Seller must supply requested records promptly and within any deadline communicated by Harmonies.</p>
 
       <h2 className={styles.h2}>26. Taxes and Legal Obligations</h2>
-      <p className={styles.p}>The Seller is responsible for:</p>
+      <p className={styles.p}>The Seller is solely responsible for:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Maintaining required licences.</li>
-        <li className={styles.li}>VAT registration where applicable.</li>
-        <li className={styles.li}>Setting tax-compliant prices.</li>
-        <li className={styles.li}>Issuing legally required invoices.</li>
-        <li className={styles.li}>Tax reporting and payment.</li>
-        <li className={styles.li}>Compliance with applicable laws.</li>
+        <li className={styles.li}>Determining whether VAT registration is required.</li>
+        <li className={styles.li}>Maintaining valid VAT registration where applicable.</li>
+        <li className={styles.li}>Entering VAT-inclusive prices when legally required to charge VAT.</li>
+        <li className={styles.li}>Providing and maintaining an accurate TRN.</li>
+        <li className={styles.li}>Issuing legally compliant invoices and tax invoices.</li>
+        <li className={styles.li}>Reporting and paying VAT and other applicable taxes.</li>
+        <li className={styles.li}>Correcting tax information and notifying Harmonies promptly of any change.</li>
       </ul>
-      <p className={styles.p}>Unless stated otherwise, submitted product prices must include any VAT the Seller is legally required to charge.</p>
+      <p className={styles.p}>The Seller authorises Harmonies to rely on the VAT-registration information it provides. The Seller remains responsible for inaccurate tax treatment, including VAT improperly charged, omitted, reported, or paid.</p>
+      <p className={styles.p}>Harmonies may suspend listings, delay payouts, correct displayed tax information, or request additional documentation where the Seller's VAT status or tax information appears inaccurate.</p>
+      <p className={styles.p}>Any commission, subscription fee, delivery service charge, or other service supplied by Harmonies may be subject to VAT separately where Harmonies is legally required to charge it. Such VAT may be deducted from the Seller Balance or otherwise collected from the Seller.</p>
       <p className={styles.p}>Harmonies does not provide tax or legal advice.</p>
 
       <h2 className={styles.h2}>27. Cross-Border Sales</h2>
