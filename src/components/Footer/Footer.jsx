@@ -28,7 +28,6 @@ const COLUMNS = [
     title: 'Legal',
     links: [
       { text: 'Privacy Policy', to: '/privacy-policy' },
-      { text: 'Terms of Service', to: '/terms-of-service' },
       { text: 'Cookie Policy', to: '/cookies-policy' },
       { text: 'Return and Refund Policy', to: '/return-refund-policy' },
       { text: 'Seller Verification and KYC Policy', to: '/seller-verification-kyc-policy' },
