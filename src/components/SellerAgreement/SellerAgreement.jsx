@@ -10,450 +10,593 @@ export default function SellerAgreement() {
       dateLabel="Effective Date"
       date="01 July 2026"
     >
-      <p className={styles.p}>This Seller Agreement ("Agreement") is entered into between <strong>Harmonies</strong> ("Harmonies", "we", "our", or "us") and the individual or business registered as a seller on the Harmonies platform ("Seller", "you", or "your").</p>
-      <p className={styles.p}>This Agreement governs the relationship between Harmonies and Sellers who use the Harmonies platform to list, promote, sell, and fulfill products.</p>
-      <p className={styles.p}>By creating a Seller account, accepting orders, listing products, or continuing to use Seller services, you confirm that you have read, understood, and agree to be bound by this Agreement.</p>
+      <p className={styles.p}>This Seller Agreement ("Agreement") is entered into between <strong>Lumiere Global Ventures LLC-FZ</strong>, operating the Harmonies Platform ("Harmonies," "we," "our," or "us"), and the individual or legal entity registered as a Seller ("Seller," "you," or "your").</p>
+      <p className={styles.p}>This Agreement governs your use of Harmonies to list, promote, sell, and fulfil products.</p>
 
-      <h2 className={styles.h2}>1. Seller Eligibility</h2>
-      <p className={styles.p}>To become and remain a Seller on Harmonies, you must:</p>
+      <h2 className={styles.h2}>1. Acceptance</h2>
+      <p className={styles.p}>By completing electronic acceptance, the Seller confirms that:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>The Seller has read and understood this Agreement.</li>
+        <li className={styles.li}>The Seller agrees to comply with it.</li>
+        <li className={styles.li}>The person accepting it has authority to bind the Seller.</li>
+      </ul>
+      <p className={styles.p}>Merely browsing the Platform does not constitute acceptance of this Seller Agreement.</p>
+
+      <h2 className={styles.h2}>2. Seller Eligibility</h2>
+      <p className={styles.p}>To become and remain a Seller, you must:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Be legally capable of entering into this Agreement.</li>
-        <li className={styles.li}>Operate a legally registered business where required by applicable laws.</li>
-        <li className={styles.li}>Hold all required licenses, permits, and approvals necessary for selling your products.</li>
-        <li className={styles.li}>Complete Harmonies' Know Your Customer (KYC) verification process.</li>
-        <li className={styles.li}>Provide accurate, complete, and current business and personal information.</li>
+        <li className={styles.li}>Maintain a legally registered business where required.</li>
+        <li className={styles.li}>Hold all licences, permits, approvals, and registrations required for your activities and products.</li>
+        <li className={styles.li}>Complete Harmonies' KYC and compliance processes.</li>
+        <li className={styles.li}>Provide accurate, complete, and current information.</li>
+        <li className={styles.li}>Comply with applicable UAE laws and regulations.</li>
       </ul>
-      <p className={styles.p}>The Seller is responsible for ensuring compliance with all applicable UAE laws and regulations.</p>
-      <p className={styles.p}>Harmonies reserves the right to approve, reject, suspend, or terminate any Seller account at its discretion.</p>
+      <p className={styles.p}>Harmonies may approve or reject Seller applications based on eligibility, compliance, operational, or risk considerations.</p>
 
-      <h2 className={styles.h2}>2. Seller Account</h2>
+      <h2 className={styles.h2}>3. Seller Warranties</h2>
+      <p className={styles.p}>The Seller represents and warrants that:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>All information supplied to Harmonies is accurate and complete.</li>
+        <li className={styles.li}>The Seller has authority to enter into this Agreement.</li>
+        <li className={styles.li}>The Seller owns or is legally authorised to sell every listed product.</li>
+        <li className={styles.li}>Its products, listings, and activities comply with applicable laws.</li>
+        <li className={styles.li}>It holds all required licences and intellectual-property rights.</li>
+        <li className={styles.li}>All transactions represent genuine sales to genuine customers.</li>
+        <li className={styles.li}>It will notify Harmonies promptly if any warranty becomes inaccurate.</li>
+      </ul>
+
+      <h2 className={styles.h2}>4. Seller Account</h2>
       <p className={styles.p}>The Seller is responsible for:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Maintaining the confidentiality of account credentials.</li>
-        <li className={styles.li}>All activities performed through the Seller account.</li>
-        <li className={styles.li}>Keeping account information accurate and updated.</li>
-        <li className={styles.li}>Immediately notifying Harmonies of unauthorized access.</li>
+        <li className={styles.li}>Protecting account credentials.</li>
+        <li className={styles.li}>All activity conducted through the account.</li>
+        <li className={styles.li}>Keeping account, contact, ownership, and payout information current.</li>
+        <li className={styles.li}>Immediately reporting unauthorised access.</li>
       </ul>
-      <p className={styles.p}>Seller accounts:</p>
+      <p className={styles.p}>Accounts may only be used by the registered Seller and its authorised representatives. They may not be sold, transferred, shared, or assigned without Harmonies' written approval.</p>
+
+      <h2 className={styles.h2}>5. Verification and Compliance Reviews</h2>
+      <p className={styles.p}>Harmonies may request information or documents to verify:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>May not be transferred, sold, or shared without Harmonies' approval.</li>
-        <li className={styles.li}>May only be used by the registered Seller or authorized representatives.</li>
+        <li className={styles.li}>Identity, ownership, and business registration.</li>
+        <li className={styles.li}>Licences and regulatory approvals.</li>
+        <li className={styles.li}>Bank and payout details.</li>
+        <li className={styles.li}>Product authenticity and origin.</li>
+        <li className={styles.li}>Intellectual-property rights.</li>
+        <li className={styles.li}>Tax or VAT information.</li>
+        <li className={styles.li}>Transaction legitimacy.</li>
+        <li className={styles.li}>Continued eligibility and compliance.</li>
+      </ul>
+      <p className={styles.p}>The Seller must provide requested documents within the period specified by Harmonies.</p>
+      <p className={styles.p}>Failure to provide satisfactory information may result in listing removal, delayed payouts, additional reserves, restrictions, suspension, or termination.</p>
+
+      <h2 className={styles.h2}>6. Changes to Seller Information</h2>
+      <p className={styles.p}>The Seller must promptly notify Harmonies of material changes concerning:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Ownership or beneficial owners.</li>
+        <li className={styles.li}>Management or authorised representatives.</li>
+        <li className={styles.li}>Trade licence, legal name, or business activities.</li>
+        <li className={styles.li}>Address or contact details.</li>
+        <li className={styles.li}>Bank or payout information.</li>
+        <li className={styles.li}>Financial condition affecting fulfilment or refunds.</li>
+        <li className={styles.li}>Product categories.</li>
+        <li className={styles.li}>Regulatory investigations or legal proceedings.</li>
       </ul>
 
-      <h2 className={styles.h2}>3. Seller Responsibilities</h2>
+      <h2 className={styles.h2}>7. Seller Responsibilities</h2>
       <p className={styles.p}>The Seller agrees to:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Sell only products they are legally authorized to sell.</li>
-        <li className={styles.li}>Ensure all products comply with UAE laws and applicable regulations.</li>
+        <li className={styles.li}>Sell only lawful and authorised products.</li>
         <li className={styles.li}>Provide accurate product information.</li>
-        <li className={styles.li}>Maintain sufficient inventory.</li>
-        <li className={styles.li}>Fulfill accepted orders according to Harmonies requirements.</li>
+        <li className={styles.li}>Maintain accurate inventory.</li>
+        <li className={styles.li}>Fulfil accepted orders on time.</li>
         <li className={styles.li}>Provide professional customer service.</li>
-        <li className={styles.li}>Cooperate with Harmonies regarding customer complaints, disputes, returns, refunds, and investigations.</li>
+        <li className={styles.li}>Cooperate with complaints, returns, refunds, disputes, fraud reviews, and chargebacks.</li>
+        <li className={styles.li}>Maintain sufficient operational and financial capacity to fulfil orders and meet refund obligations.</li>
       </ul>
-      <p className={styles.p}>The Seller remains fully responsible for all products listed and sold through Harmonies.</p>
+      <p className={styles.p}>The Seller remains responsible for all products listed and sold through Harmonies.</p>
 
-      <h2 className={styles.h2}>4. Product Listings</h2>
-      <p className={styles.p}>The Seller is solely responsible for all information provided in product listings, including:</p>
+      <h2 className={styles.h2}>8. Product Listings</h2>
+      <p className={styles.p}>The Seller is responsible for all listing information, including:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Product names.</li>
-        <li className={styles.li}>Descriptions.</li>
+        <li className={styles.li}>Names and descriptions.</li>
         <li className={styles.li}>Images and videos.</li>
-        <li className={styles.li}>Specifications.</li>
-        <li className={styles.li}>Variations.</li>
-        <li className={styles.li}>Prices.</li>
-        <li className={styles.li}>Inventory availability.</li>
-        <li className={styles.li}>Categories.</li>
+        <li className={styles.li}>Specifications and variations.</li>
+        <li className={styles.li}>Prices and availability.</li>
+        <li className={styles.li}>Ingredients, materials, sizes, warnings, and preparation requirements.</li>
+        <li className={styles.li}>Product claims and delivery restrictions.</li>
       </ul>
-      <p className={styles.p}>Product listings must:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Accurately represent the actual product.</li>
-        <li className={styles.li}>Use authentic images or content the Seller has rights to use.</li>
-        <li className={styles.li}>Clearly disclose relevant limitations, variations, or conditions.</li>
-        <li className={styles.li}>Not contain misleading, inaccurate, or deceptive information.</li>
-      </ul>
-      <p className={styles.p}>Harmonies may review, modify, reject, hide, or remove any listing that violates this Agreement, applicable laws, or platform standards.</p>
+      <p className={styles.p}>Listings must accurately represent the product and must not contain false, incomplete, misleading, or deceptive information.</p>
+      <p className={styles.p}>Harmonies may review, edit, reject, hide, restrict, or remove listings that violate this Agreement, applicable law, or Platform standards.</p>
 
-      <h2 className={styles.h2}>5. Product Quality Requirements</h2>
-      <p className={styles.p}>The Seller guarantees that products sold through Harmonies:</p>
+      <h2 className={styles.h2}>9. Product Quality and Safety</h2>
+      <p className={styles.p}>The Seller guarantees that products:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Match their descriptions and displayed images.</li>
         <li className={styles.li}>Are authentic and genuine.</li>
         <li className={styles.li}>Are free from undisclosed defects.</li>
-        <li className={styles.li}>Are safe for intended use.</li>
-        <li className={styles.li}>Meet applicable quality and safety requirements.</li>
-        <li className={styles.li}>Comply with applicable laws and regulations.</li>
+        <li className={styles.li}>Are safe and suitable for their intended use.</li>
+        <li className={styles.li}>Meet applicable quality, labelling, storage, and safety requirements.</li>
+        <li className={styles.li}>Have not expired, been recalled, or been improperly stored.</li>
+        <li className={styles.li}>Comply with applicable laws and regulatory requirements.</li>
       </ul>
-      <p className={styles.p}>Products described as handmade, customized, unique, or original must accurately reflect their actual nature.</p>
-      <p className={styles.p}>The Seller is responsible for resolving issues related to product quality, defects, or inaccurate descriptions.</p>
+      <p className={styles.p}>Claims that products are handmade, customised, original, sustainable, or otherwise distinctive must be truthful.</p>
 
-      <h2 className={styles.h2}>6. Prohibited Products</h2>
-      <p className={styles.p}>The Seller must not list or sell products that are illegal, restricted, unsafe, counterfeit, or harmful.</p>
-      <p className={styles.p}>Prohibited products include, but are not limited to:</p>
+      <h2 className={styles.h2}>10. Prohibited and Restricted Products</h2>
+      <p className={styles.p}>Sellers must not list or sell illegal, restricted, unsafe, counterfeit, or harmful products, including:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Counterfeit goods, replicas, or unauthorized branded products.</li>
+        <li className={styles.li}>Counterfeit, replica, or unauthorised branded goods.</li>
         <li className={styles.li}>Stolen goods.</li>
-        <li className={styles.li}>Weapons, firearms, ammunition, and explosives.</li>
-        <li className={styles.li}>Illegal drugs and controlled substances.</li>
-        <li className={styles.li}>Prescription medications without proper authorization.</li>
-        <li className={styles.li}>Tobacco products, cigarettes, nicotine products, and vaping products.</li>
-        <li className={styles.li}>Alcohol products.</li>
+        <li className={styles.li}>Weapons, ammunition, or explosives.</li>
+        <li className={styles.li}>Illegal drugs or controlled substances.</li>
+        <li className={styles.li}>Unauthorised medicines or regulated medical products.</li>
+        <li className={styles.li}>Tobacco, nicotine, cigarettes, or vaping products.</li>
+        <li className={styles.li}>Alcohol.</li>
         <li className={styles.li}>Hazardous chemicals or dangerous materials.</li>
         <li className={styles.li}>Adult or sexually explicit products.</li>
-        <li className={styles.li}>Human organs, body parts, or biological materials.</li>
+        <li className={styles.li}>Human biological materials.</li>
         <li className={styles.li}>Live animals.</li>
-        <li className={styles.li}>Products violating copyrights, trademarks, patents, or other intellectual property rights.</li>
-        <li className={styles.li}>Products prohibited by UAE laws or government authorities.</li>
-        <li className={styles.li}>Any products that Harmonies determines may negatively affect customers, sellers, or the reputation of the platform.</li>
+        <li className={styles.li}>Recalled, expired, or unsafe products.</li>
+        <li className={styles.li}>Products infringing third-party rights.</li>
+        <li className={styles.li}>Products prohibited by law, payment providers, card schemes, logistics providers, or competent authorities.</li>
       </ul>
-      <p className={styles.p}>Harmonies may remove prohibited products immediately without prior notice and may suspend or terminate the Seller account.</p>
+      <p className={styles.p}>The Seller may only sell product categories approved by Harmonies. New categories may require prior written approval.</p>
 
-      <h2 className={styles.h2}>7. Pricing and Promotions</h2>
-      <p className={styles.p}>The Seller is responsible for setting product prices.</p>
-      <p className={styles.p}>The Seller agrees that:</p>
+      <h2 className={styles.h2}>11. Pricing and Promotions</h2>
+      <p className={styles.p}>The Seller determines its product prices and agrees that:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Product prices must be accurate and transparent.</li>
+        <li className={styles.li}>Prices must be accurate and transparent.</li>
+        <li className={styles.li}>Prices must include applicable VAT where legally required.</li>
         <li className={styles.li}>Promotions and discounts must be genuine.</li>
-        <li className={styles.li}>Artificial price increases before discounts are prohibited.</li>
-        <li className={styles.li}>All pricing practices must comply with applicable consumer protection laws.</li>
+        <li className={styles.li}>Prices must not be artificially increased before discounts.</li>
+        <li className={styles.li}>Pricing must comply with consumer-protection laws.</li>
       </ul>
-      <p className={styles.p}>Harmonies may create platform-wide campaigns, promotions, or marketing activities. Participation terms and financial responsibilities will be communicated separately when applicable.</p>
+      <p className={styles.p}>Campaign participation and financial responsibilities will be communicated before participation.</p>
 
-      <h2 className={styles.h2}>8. Seller Pricing Packages, Commissions, and Fees</h2>
-      <p className={styles.p}>Harmonies provides different Seller pricing packages with different benefits, commission rates, fees, and services.</p>
-      <p className={styles.p}>The Seller's applicable:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Marketplace commission percentage.</li>
-        <li className={styles.li}>Subscription fees.</li>
-        <li className={styles.li}>Delivery rates.</li>
-        <li className={styles.li}>Additional service fees.</li>
-        <li className={styles.li}>Other applicable charges.</li>
-      </ul>
-      <p className={styles.p}>will depend on the pricing package selected by the Seller.</p>
-      <p className={styles.p}>The Seller authorizes Harmonies to automatically deduct applicable fees according to the selected pricing package from transaction amounts before making funds available for withdrawal.</p>
-      <p className={styles.p}>The Seller may upgrade, downgrade, or change their pricing package according to Harmonies' package rules. Changes will apply from the effective date communicated by Harmonies.</p>
-      <p className={styles.p}>Harmonies may introduce new pricing packages or modify existing packages according to the Amendments section of this Agreement.</p>
+      <h2 className={styles.h2}>12. Commissions and Fees</h2>
+      <p className={styles.p}>Applicable commissions, delivery charges, subscription fees, service charges, and other fees will be shown in the Seller's pricing terms or package.</p>
+      <p className={styles.p}>The Seller must review the applicable fees before accepting the package or transaction.</p>
+      <p className={styles.p}>The Seller authorises Harmonies to deduct all applicable and authorised amounts from transaction proceeds, the Seller Balance, or future payouts.</p>
+      <p className={styles.p}>Changes to fees will be handled in accordance with Section 45.</p>
 
-      <h2 className={styles.h2}>9. Inventory Management</h2>
-      <p className={styles.p}>The Seller is responsible for maintaining accurate inventory information.</p>
+      <h2 className={styles.h2}>13. Inventory Management</h2>
       <p className={styles.p}>The Seller must:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Keep product availability updated.</li>
-        <li className={styles.li}>Avoid accepting orders for unavailable products.</li>
-        <li className={styles.li}>Notify Harmonies of inventory issues promptly.</li>
+        <li className={styles.li}>Keep inventory and availability accurate.</li>
+        <li className={styles.li}>Promptly mark unavailable products as unavailable.</li>
+        <li className={styles.li}>Avoid accepting orders it cannot fulfil.</li>
+        <li className={styles.li}>Notify Harmonies promptly of inventory problems.</li>
       </ul>
-      <p className={styles.p}>Repeated cancellations due to inaccurate inventory information may result in account restrictions, reduced visibility, suspension, or termination.</p>
+      <p className={styles.p}>Repeated inventory-related cancellations may result in reduced visibility, restrictions, reserves, suspension, or termination.</p>
 
-      <h2 className={styles.h2}>10. Orders and Fulfillment</h2>
-      <p className={styles.p}>Once an order is placed and accepted through Harmonies, the Seller agrees to:</p>
+      <h2 className={styles.h2}>14. Orders and Fulfilment</h2>
+      <p className={styles.p}>After accepting an order, the Seller must:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Prepare the order within the required timeframe.</li>
-        <li className={styles.li}>Ensure the product matches the customer's order.</li>
-        <li className={styles.li}>Package the product appropriately.</li>
-        <li className={styles.li}>Make the order available for pickup or delivery according to Harmonies' instructions.</li>
-        <li className={styles.li}>Provide accurate order and shipment information.</li>
+        <li className={styles.li}>Prepare it within the required timeframe.</li>
+        <li className={styles.li}>Ensure it matches the Buyer's order.</li>
+        <li className={styles.li}>Package it appropriately.</li>
+        <li className={styles.li}>Make it available for pickup as instructed.</li>
+        <li className={styles.li}>Provide accurate shipment information.</li>
+        <li className={styles.li}>Promptly report fulfilment problems.</li>
       </ul>
-      <p className={styles.p}>The Seller must not cancel accepted orders without a valid reason.</p>
-      <p className={styles.p}>Repeated order cancellations, delays, or failure to fulfill orders may negatively affect Seller performance and may result in restrictions, reduced visibility, suspension, or termination.</p>
+      <p className={styles.p}>The Seller must not cancel an accepted order without a legitimate reason.</p>
 
-      <h2 className={styles.h2}>11. Packaging Requirements</h2>
-      <p className={styles.p}>The Seller is responsible for ensuring products are packaged appropriately before delivery.</p>
-      <p className={styles.p}>Packaging must:</p>
+      <h2 className={styles.h2}>15. Right to Cancel or Refuse Orders</h2>
+      <p className={styles.p}>Harmonies may cancel, suspend, or refuse an order where it reasonably suspects:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Protect products from damage during transportation.</li>
-        <li className={styles.li}>Be suitable for the product type.</li>
-        <li className={styles.li}>Maintain product quality until delivery.</li>
-        <li className={styles.li}>Comply with any applicable safety requirements.</li>
+        <li className={styles.li}>Fraud or unauthorised payment.</li>
+        <li className={styles.li}>A pricing or listing error.</li>
+        <li className={styles.li}>Product unavailability.</li>
+        <li className={styles.li}>A technical failure.</li>
+        <li className={styles.li}>A legal, safety, sanctions, or regulatory concern.</li>
+        <li className={styles.li}>A violation of Platform or payment-provider rules.</li>
       </ul>
-      <p className={styles.p}>The Seller is responsible for damages caused by insufficient or inappropriate packaging.</p>
+      <p className={styles.p}>Necessary refunds will be processed according to applicable law and Harmonies' payment procedures.</p>
 
-      <h2 className={styles.h2}>12. Shipping and Delivery</h2>
-      <p className={styles.p}>Harmonies may coordinate delivery through third-party logistics providers or delivery partners.</p>
-      <p className={styles.p}>The Seller is responsible for:</p>
+      <h2 className={styles.h2}>16. Packaging Requirements</h2>
+      <p className={styles.p}>The Seller must use packaging that:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Preparing products before the scheduled pickup time.</li>
-        <li className={styles.li}>Providing accurate pickup and delivery information.</li>
-        <li className={styles.li}>Ensuring products are ready for collection.</li>
+        <li className={styles.li}>Protects the product during transportation.</li>
+        <li className={styles.li}>Suits its weight, size, fragility, and temperature requirements.</li>
+        <li className={styles.li}>Preserves product quality.</li>
+        <li className={styles.li}>Complies with carrier and safety requirements.</li>
+        <li className={styles.li}>Is properly sealed and labelled where necessary.</li>
       </ul>
-      <p className={styles.p}>Delivery fees and delivery-related charges will be applied according to the Seller's selected pricing package and/or applicable Harmonies service terms.</p>
-      <p className={styles.p}>Harmonies is not responsible for delays caused by third-party delivery providers, provided the Seller fulfilled their responsibilities on time.</p>
+      <p className={styles.p}>Where reasonably possible, the Seller must use the <strong>smallest suitably sized package</strong> that safely protects the product. Unnecessarily large packaging must be avoided because delivery charges may be based on volumetric weight.</p>
+      <p className={styles.p}>Reducing package size must not compromise product safety, hygiene, quality, or protection.</p>
+      <p className={styles.p}>Additional costs caused by inaccurate measurements, excessive packaging, or non-compliance may be deducted from the Seller Balance.</p>
 
-      <h2 className={styles.h2}>13. Returns and Refunds</h2>
-      <p className={styles.p}>Returns and refunds shall be handled according to Harmonies' return procedures.</p>
-      <p className={styles.p}>The Seller agrees to:</p>
+      <h2 className={styles.h2}>17. Shipping and Delivery</h2>
+      <p className={styles.p}>Harmonies may coordinate delivery through third-party logistics providers.</p>
+      <p className={styles.p}>The Seller must:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Accept valid return requests according to Harmonies rules.</li>
-        <li className={styles.li}>Review return requests when required.</li>
-        <li className={styles.li}>Cooperate with Harmonies during return investigations.</li>
-        <li className={styles.li}>Provide refunds when applicable.</li>
+        <li className={styles.li}>Prepare orders before scheduled pickup.</li>
+        <li className={styles.li}>Provide accurate pickup information.</li>
+        <li className={styles.li}>Provide accurate shipment weight and dimensions.</li>
+        <li className={styles.li}>Comply with delivery-partner restrictions.</li>
+        <li className={styles.li}>Retain reasonable evidence that the correct order was handed over.</li>
       </ul>
-      <p className={styles.p}>The Seller remains responsible for products that:</p>
+      <p className={styles.p}>Chargeable weight may be based on the greater of actual or volumetric weight.</p>
+      <p className={styles.p}>Harmonies does not guarantee delivery times and is not liable for third-party delays where Harmonies and the Seller fulfilled their respective responsibilities.</p>
+
+      <h2 className={styles.h2}>18. Returns and Refunds</h2>
+      <p className={styles.p}>Returns and refunds will be handled under Harmonies' Return Policy and applicable law.</p>
+      <p className={styles.p}>The Seller must:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Do not match their description.</li>
-        <li className={styles.li}>Arrive damaged due to poor packaging.</li>
-        <li className={styles.li}>Have defects.</li>
-        <li className={styles.li}>Do not meet customer expectations due to inaccurate listing information.</li>
+        <li className={styles.li}>Accept valid returns.</li>
+        <li className={styles.li}>Respond within the required period.</li>
+        <li className={styles.li}>Cooperate with investigations.</li>
+        <li className={styles.li}>Provide requested evidence.</li>
+        <li className={styles.li}>Comply with Harmonies' decisions concerning returns, refunds, and customer claims where made under applicable law and Platform policies.</li>
+      </ul>
+      <p className={styles.p}>The Seller is responsible where a product:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Does not match its listing.</li>
+        <li className={styles.li}>Is defective, unsafe, counterfeit, or unauthorised.</li>
+        <li className={styles.li}>Is damaged because of inadequate packaging.</li>
+        <li className={styles.li}>Fails to meet reasonable expectations because of inaccurate information.</li>
+      </ul>
+      <p className={styles.p}>Applicable costs may be deducted from the Seller Balance.</p>
+
+      <h2 className={styles.h2}>19. Payments and Seller Balance</h2>
+      <p className={styles.p}>Harmonies may collect Buyer payments in connection with Seller transactions.</p>
+      <p className={styles.p}>Transaction proceeds will initially remain pending. Unless otherwise specified, funds remain unavailable until the applicable return period of <strong>seven calendar days after successful delivery</strong> expires.</p>
+      <p className={styles.p}>Funds become available only when no return, refund, dispute, chargeback, fraud review, or other authorised hold remains pending.</p>
+      <p className={styles.p}>The Available Balance is calculated after deductions including:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Harmonies' commission.</li>
+        <li className={styles.li}>Applicable service or subscription fees.</li>
+        <li className={styles.li}>Payment-processing charges where applicable.</li>
+        <li className={styles.li}>Delivery charges.</li>
+        <li className={styles.li}>Refunds and return costs.</li>
+        <li className={styles.li}>Chargebacks and card-scheme assessments.</li>
+        <li className={styles.li}>Taxes Harmonies must collect or withhold.</li>
+        <li className={styles.li}>Seller-specific reserves.</li>
+        <li className={styles.li}>Other authorised deductions.</li>
       </ul>
 
-      <h2 className={styles.h2}>14. Payments and Seller Balance</h2>
-      <p className={styles.p}>Harmonies collects payments from Buyers on behalf of Sellers.</p>
-      <p className={styles.p}>After a successful transaction, the order amount will not immediately become available for withdrawal.</p>
-      <p className={styles.p}>To protect Buyers and allow sufficient time for returns or disputes, Harmonies will hold the transaction amount until the applicable return period expires.</p>
-      <p className={styles.p}>Unless otherwise specified, the return period is <strong>7 calendar days from the date the order is successfully delivered</strong>.</p>
-      <p className={styles.p}>After the return period expires, and provided there is:</p>
+      <h2 className={styles.h2}>20. Seller Payouts</h2>
+      <p className={styles.p}>A Seller may request a payout when its Available Balance reaches at least <strong>AED 50</strong>.</p>
+      <p className={styles.p}>Payouts are subject to Harmonies' processing procedures and communicated timelines.</p>
+      <p className={styles.p}>The Seller is responsible for providing accurate bank and payout information.</p>
+      <p className={styles.p}>Harmonies may delay, offset, suspend, or reject a payout where:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>No approved return.</li>
-        <li className={styles.li}>No refund request.</li>
-        <li className={styles.li}>No dispute.</li>
-        <li className={styles.li}>No chargeback.</li>
-        <li className={styles.li}>No fraud investigation.</li>
-      </ul>
-      <p className={styles.p}>the amount will become part of the Seller's <strong>Available Balance</strong>.</p>
-      <p className={styles.p}>The Available Balance represents the amount remaining after deduction of:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Marketplace commissions according to the Seller's selected pricing package.</li>
-        <li className={styles.li}>Subscription fees.</li>
-        <li className={styles.li}>Payment processing fees.</li>
-        <li className={styles.li}>Delivery-related charges where applicable.</li>
-        <li className={styles.li}>Refunds.</li>
-        <li className={styles.li}>Chargebacks.</li>
-        <li className={styles.li}>Other authorized deductions.</li>
-      </ul>
-      <p className={styles.p}>The Available Balance shown to the Seller represents the amount remaining after deduction of all applicable fees according to the Seller's selected pricing package.</p>
-
-      <h2 className={styles.h2}>15. Seller Payouts</h2>
-      <p className={styles.p}>A Seller may request a payout when the Available Balance reaches a minimum of <strong>AED 50</strong>.</p>
-      <p className={styles.p}>Payout requests will be processed according to Harmonies' payout schedule and procedures.</p>
-      <p className={styles.p}>Harmonies may delay, suspend, or reject payout requests where:</p>
-      <ul className={styles.ul}>
+        <li className={styles.li}>A refund, return, dispute, or chargeback is pending.</li>
         <li className={styles.li}>Fraud or suspicious activity is suspected.</li>
-        <li className={styles.li}>There are unresolved customer disputes.</li>
-        <li className={styles.li}>Legal or regulatory requirements require additional review.</li>
-        <li className={styles.li}>The Seller has outstanding obligations to Harmonies.</li>
+        <li className={styles.li}>Additional KYC or compliance checks are required.</li>
+        <li className={styles.li}>The Seller owes money to Harmonies.</li>
+        <li className={styles.li}>A payment or banking service is unavailable.</li>
+        <li className={styles.li}>The payment provider, acquiring bank, card scheme, regulator, or applicable law requires a hold.</li>
+        <li className={styles.li}>Harmonies reasonably determines that immediate payout would create a material financial risk.</li>
       </ul>
-      <p className={styles.p}>The Seller is responsible for ensuring that payout information provided to Harmonies is accurate.</p>
+      <p className={styles.p}>A delayed payout is not a forfeiture of funds. Undisputed amounts will be released when the relevant risk or obligation has been resolved.</p>
 
-      <h2 className={styles.h2}>16. Taxes and Legal Obligations</h2>
-      <p className={styles.p}>The Seller is solely responsible for:</p>
+      <h2 className={styles.h2}>21. Seller Risk Reserve</h2>
+      <p className={styles.p}>Harmonies may establish or adjust a reasonable reserve against a Seller's current or future proceeds when necessary to cover anticipated:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Obtaining required business licenses.</li>
-        <li className={styles.li}>VAT registration where applicable.</li>
-        <li className={styles.li}>Tax reporting.</li>
-        <li className={styles.li}>Tax payments.</li>
-        <li className={styles.li}>Compliance with all applicable laws and regulations.</li>
+        <li className={styles.li}>Refunds or returns.</li>
+        <li className={styles.li}>Chargebacks and payment disputes.</li>
+        <li className={styles.li}>Fraud losses.</li>
+        <li className={styles.li}>Delivery or fulfilment failures.</li>
+        <li className={styles.li}>Card-scheme fines or assessments.</li>
+        <li className={styles.li}>Negative balances.</li>
+        <li className={styles.li}>Other amounts for which the Seller may be responsible.</li>
       </ul>
-      <p className={styles.p}>Harmonies does not provide tax or legal advice to Sellers.</p>
-
-      <h2 className={styles.h2}>17. Marketing Rights and Promotion</h2>
-      <p className={styles.p}>The Seller grants Harmonies a worldwide, royalty-free, non-exclusive license to use Seller-provided content, including:</p>
+      <p className={styles.p}>In determining whether a reserve is necessary, Harmonies may consider:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Store name.</li>
-        <li className={styles.li}>Logo.</li>
-        <li className={styles.li}>Product images.</li>
-        <li className={styles.li}>Product videos.</li>
+        <li className={styles.li}>Chargeback, refund, return, and cancellation rates.</li>
+        <li className={styles.li}>Complaint and non-delivery rates.</li>
+        <li className={styles.li}>Unusual transaction activity.</li>
+        <li className={styles.li}>Product category and delivery timeframe.</li>
+        <li className={styles.li}>Seller history and financial condition.</li>
+        <li className={styles.li}>Suspected fraud or policy violations.</li>
+        <li className={styles.li}>Requirements imposed by a payment provider, acquiring bank, regulator, or card scheme.</li>
+      </ul>
+      <p className={styles.p}>Where reasonably possible, Harmonies will notify the Seller of the reserve percentage or amount, the reason for it, and the conditions for its review or release.</p>
+      <p className={styles.p}>A reserve may apply to a specific Seller without applying to other Sellers. Harmonies will not retain more than it reasonably considers necessary to cover the identified exposure.</p>
+      <p className={styles.p}>Reserve amounts may remain held until the applicable dispute, chargeback, refund, or legal exposure has reasonably expired. Any remaining amount will then be released, subject to outstanding obligations.</p>
+
+      <h2 className={styles.h2}>22. Chargebacks and Payment Disputes</h2>
+      <p className={styles.p}>If a payment is disputed or reversed, the Seller must cooperate promptly and provide requested evidence, including:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Order and invoice records.</li>
         <li className={styles.li}>Product descriptions.</li>
-        <li className={styles.li}>Other submitted marketing materials.</li>
+        <li className={styles.li}>Customer communications.</li>
+        <li className={styles.li}>Proof of dispatch and delivery.</li>
+        <li className={styles.li}>Return or refund records.</li>
+        <li className={styles.li}>Other evidence reasonably required.</li>
       </ul>
-      <p className={styles.p}>Harmonies may use such content for:</p>
+      <p className={styles.p}>If a chargeback results from the Seller's product, listing, conduct, fulfilment, policy breach, or failure to provide evidence, Harmonies may recover:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Operating the marketplace.</li>
-        <li className={styles.li}>Promoting products.</li>
-        <li className={styles.li}>Creating collections ("Harmonies").</li>
-        <li className={styles.li}>Social media marketing.</li>
-        <li className={styles.li}>Advertisements.</li>
-        <li className={styles.li}>Email campaigns.</li>
-        <li className={styles.li}>Platform recommendations.</li>
-        <li className={styles.li}>Promotional materials.</li>
+        <li className={styles.li}>The transaction amount.</li>
+        <li className={styles.li}>Payment-processing charges.</li>
+        <li className={styles.li}>Delivery and return costs.</li>
+        <li className={styles.li}>Chargeback fees.</li>
+        <li className={styles.li}>Card-scheme fines or assessments.</li>
+        <li className={styles.li}>Reasonable administrative costs directly related to the dispute.</li>
       </ul>
-      <p className={styles.p}>The Seller confirms that they have all necessary rights to provide such content.</p>
+      <p className={styles.p}>The Seller authorises Harmonies to recover these amounts from its balance, reserve, or future proceeds.</p>
 
-      <h2 className={styles.h2}>18. Product Visibility and Platform Placement</h2>
-      <p className={styles.p}>Harmonies determines how products and Sellers are displayed across the platform.</p>
-      <p className={styles.p}>Visibility may depend on factors including:</p>
+      <h2 className={styles.h2}>23. Negative Balances and Recovery</h2>
+      <p className={styles.p}>If deductions create a negative Seller Balance, the Seller must repay the amount upon request.</p>
+      <p className={styles.p}>Harmonies may:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Product relevance.</li>
-        <li className={styles.li}>Customer experience.</li>
-        <li className={styles.li}>Seller performance.</li>
-        <li className={styles.li}>Product quality.</li>
-        <li className={styles.li}>Availability.</li>
-        <li className={styles.li}>Customer engagement.</li>
-        <li className={styles.li}>Promotional campaigns.</li>
+        <li className={styles.li}>Offset the amount against future proceeds.</li>
+        <li className={styles.li}>Apply Seller reserve funds.</li>
+        <li className={styles.li}>Suspend payouts, listings, or account access.</li>
+        <li className={styles.li}>Request direct payment.</li>
+        <li className={styles.li}>Take reasonable recovery action where the amount remains unpaid.</li>
       </ul>
-      <p className={styles.p}>Selecting a paid pricing package does not guarantee specific rankings, placements, sales volume, or customer exposure.</p>
-      <p className={styles.p}>Harmonies may provide additional visibility opportunities through promotional services or campaigns according to applicable terms.</p>
+      <p className={styles.p}>Harmonies will provide a reasonable explanation of material deductions upon request.</p>
 
-      <h2 className={styles.h2}>19. Customer Communication</h2>
-      <p className={styles.p}>The Seller agrees to communicate with customers professionally and only for legitimate business purposes.</p>
+      <h2 className={styles.h2}>24. Fraud Prevention and Transaction Review</h2>
       <p className={styles.p}>The Seller must not:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Request customers to complete purchases outside Harmonies.</li>
-        <li className={styles.li}>Share personal payment information.</li>
-        <li className={styles.li}>Circumvent Harmonies fees.</li>
-        <li className={styles.li}>Use customer data for unauthorized marketing.</li>
-        <li className={styles.li}>Provide false or misleading information.</li>
+        <li className={styles.li}>Create fake orders.</li>
+        <li className={styles.li}>Purchase its own products to manipulate activity.</li>
+        <li className={styles.li}>Process transactions for another person or business.</li>
+        <li className={styles.li}>Split transactions to avoid controls.</li>
+        <li className={styles.li}>Manipulate ratings, reviews, or visibility.</li>
+        <li className={styles.li}>Abuse promotions.</li>
+        <li className={styles.li}>Accept or encourage unauthorised payments.</li>
+        <li className={styles.li}>Misrepresent the nature or value of a transaction.</li>
       </ul>
-      <p className={styles.p}>All customer transactions must remain within the Harmonies platform.</p>
+      <p className={styles.p}>Harmonies may review, delay, decline, or cancel unusual or suspicious transactions.</p>
+      <p className={styles.p}>The Seller must investigate suspicious orders and cooperate with Harmonies before fulfilment when requested.</p>
 
-      <h2 className={styles.h2}>20. Seller Performance Standards</h2>
-      <p className={styles.p}>Harmonies may monitor Seller performance based on factors including:</p>
+      <h2 className={styles.h2}>25. Transaction Records</h2>
+      <p className={styles.p}>The Seller must maintain complete and accurate records relating to each transaction, including:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Order fulfillment rate.</li>
-        <li className={styles.li}>Cancellation rate.</li>
-        <li className={styles.li}>Delivery performance.</li>
-        <li className={styles.li}>Return rate.</li>
+        <li className={styles.li}>Invoices and order information.</li>
+        <li className={styles.li}>Product and pricing details.</li>
+        <li className={styles.li}>Customer communications.</li>
+        <li className={styles.li}>Dispatch and delivery evidence.</li>
+        <li className={styles.li}>Refund and return records.</li>
+        <li className={styles.li}>Relevant licences and authenticity documents.</li>
+      </ul>
+      <p className={styles.p}>Records must be retained for at least <strong>five years</strong>, or longer if applicable law requires.</p>
+      <p className={styles.p}>The Seller must supply requested records promptly and within any deadline communicated by Harmonies.</p>
+
+      <h2 className={styles.h2}>26. Taxes and Legal Obligations</h2>
+      <p className={styles.p}>The Seller is responsible for:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Maintaining required licences.</li>
+        <li className={styles.li}>VAT registration where applicable.</li>
+        <li className={styles.li}>Setting tax-compliant prices.</li>
+        <li className={styles.li}>Issuing legally required invoices.</li>
+        <li className={styles.li}>Tax reporting and payment.</li>
+        <li className={styles.li}>Compliance with applicable laws.</li>
+      </ul>
+      <p className={styles.p}>Unless stated otherwise, submitted product prices must include any VAT the Seller is legally required to charge.</p>
+      <p className={styles.p}>Harmonies does not provide tax or legal advice.</p>
+
+      <h2 className={styles.h2}>27. Cross-Border Sales</h2>
+      <p className={styles.p}>For cross-border transactions, the Seller is responsible for:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Import and export compliance.</li>
+        <li className={styles.li}>Customs documentation.</li>
+        <li className={styles.li}>Product classification.</li>
+        <li className={styles.li}>Applicable duties and taxes assigned to the Seller.</li>
+        <li className={styles.li}>Destination-country labelling and safety requirements.</li>
+        <li className={styles.li}>Ensuring the product may legally be delivered.</li>
+      </ul>
+      <p className={styles.p}>Harmonies may restrict cross-border sales or destinations.</p>
+
+      <h2 className={styles.h2}>28. Marketing Rights</h2>
+      <p className={styles.p}>The Seller grants Harmonies a worldwide, royalty-free, non-exclusive licence to use, reproduce, adapt, display, publish, and distribute Seller-provided content for:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Operating the Platform.</li>
+        <li className={styles.li}>Promoting Sellers and products.</li>
+        <li className={styles.li}>Creating Harmonies collections.</li>
+        <li className={styles.li}>Social-media and advertising campaigns.</li>
+        <li className={styles.li}>Emails and other promotional materials.</li>
+      </ul>
+      <p className={styles.p}>The Seller confirms that it has all rights required to grant this licence.</p>
+
+      <h2 className={styles.h2}>29. Product Visibility</h2>
+      <p className={styles.p}>Harmonies determines how Sellers and products are ranked, recommended, displayed, or promoted.</p>
+      <p className={styles.p}>Visibility may depend on relevance, availability, product quality, customer engagement, fulfilment, returns, complaints, and Seller performance.</p>
+      <p className={styles.p}>No package guarantees ranking, exposure, sales, or revenue.</p>
+
+      <h2 className={styles.h2}>30. Customer Communication</h2>
+      <p className={styles.p}>The Seller must communicate professionally and only for legitimate purposes.</p>
+      <p className={styles.p}>The Seller must not:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Direct Buyers to purchase outside Harmonies.</li>
+        <li className={styles.li}>Request unauthorised direct payments.</li>
+        <li className={styles.li}>Circumvent Harmonies' fees.</li>
+        <li className={styles.li}>Use Buyer data for unauthorised marketing.</li>
+        <li className={styles.li}>Provide false information.</li>
+        <li className={styles.li}>Harass or discriminate against Buyers.</li>
+      </ul>
+      <p className={styles.p}>Transactions initiated through Harmonies must be completed through Harmonies unless expressly authorised otherwise.</p>
+
+      <h2 className={styles.h2}>31. Seller Performance</h2>
+      <p className={styles.p}>Harmonies may evaluate:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Fulfilment and cancellation rates.</li>
+        <li className={styles.li}>Preparation and delivery performance.</li>
+        <li className={styles.li}>Refund, return, and chargeback rates.</li>
         <li className={styles.li}>Customer complaints.</li>
-        <li className={styles.li}>Response time.</li>
+        <li className={styles.li}>Response times.</li>
         <li className={styles.li}>Product quality.</li>
-        <li className={styles.li}>Policy compliance.</li>
+        <li className={styles.li}>Compliance history.</li>
       </ul>
-      <p className={styles.p}>Harmonies may take corrective actions when performance standards are not maintained, including:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Warning notices.</li>
-        <li className={styles.li}>Reduced visibility.</li>
-        <li className={styles.li}>Temporary restrictions.</li>
-        <li className={styles.li}>Suspension.</li>
-        <li className={styles.li}>Termination.</li>
-      </ul>
+      <p className={styles.p}>Poor performance may lead to warnings, reduced visibility, transaction limits, additional reserves, delayed payouts, restrictions, suspension, or termination.</p>
 
-      <h2 className={styles.h2}>21. Fraud Prevention and Prohibited Seller Conduct</h2>
-      <p className={styles.p}>The Seller must not engage in fraudulent, deceptive, or abusive activities, including but not limited to:</p>
+      <h2 className={styles.h2}>32. Customer Data and Privacy</h2>
+      <p className={styles.p}>Seller access to Buyer information is limited to fulfilment and authorised customer service.</p>
+      <p className={styles.p}>The Seller must:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Creating fake orders.</li>
-        <li className={styles.li}>Purchasing their own products to manipulate performance.</li>
-        <li className={styles.li}>Manipulating reviews, recommendations, ratings, or customer feedback.</li>
-        <li className={styles.li}>Creating multiple accounts to bypass restrictions.</li>
-        <li className={styles.li}>Providing false business information.</li>
-        <li className={styles.li}>Circumventing Harmonies fees or payment processes.</li>
-        <li className={styles.li}>Misusing promotions, discounts, or marketing campaigns.</li>
-        <li className={styles.li}>Attempting to manipulate platform visibility unfairly.</li>
+        <li className={styles.li}>Use Buyer information only for authorised purposes.</li>
+        <li className={styles.li}>Protect it from unauthorised access.</li>
+        <li className={styles.li}>Not sell, share, retain unnecessarily, or misuse it.</li>
+        <li className={styles.li}>Delete it when no longer required, unless retention is legally required.</li>
+        <li className={styles.li}>Comply with applicable privacy laws.</li>
       </ul>
-      <p className={styles.p}>Harmonies may investigate suspicious activities and take any necessary action, including withholding payments, removing products, restricting accounts, or terminating Seller access.</p>
+      <p className={styles.p}>Unauthorised use is a material breach.</p>
 
-      <h2 className={styles.h2}>22. Intellectual Property Rights</h2>
-      <p className={styles.p}>The Seller represents and warrants that:</p>
+      <h2 className={styles.h2}>33. Intellectual Property</h2>
+      <p className={styles.p}>The Seller represents that:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>They own or have the legal right to sell all products listed on Harmonies.</li>
-        <li className={styles.li}>They own or have permission to use all images, videos, descriptions, trademarks, logos, and other content submitted to Harmonies.</li>
-        <li className={styles.li}>Their products and content do not infringe the intellectual property rights of any third party.</li>
+        <li className={styles.li}>It owns or is authorised to sell listed products.</li>
+        <li className={styles.li}>It owns or may lawfully use submitted content.</li>
+        <li className={styles.li}>Its products and content do not infringe third-party rights.</li>
       </ul>
-      <p className={styles.p}>If Harmonies receives an intellectual property complaint or believes that a violation may exist, Harmonies may:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Remove or restrict access to the relevant product listing.</li>
-        <li className={styles.li}>Request supporting documentation from the Seller.</li>
-        <li className={styles.li}>Suspend related activities while investigating the matter.</li>
-      </ul>
-      <p className={styles.p}>Repeated intellectual property violations may result in permanent account termination.</p>
+      <p className={styles.p}>Harmonies may remove disputed content, request evidence, or suspend related activity while investigating complaints.</p>
 
-      <h2 className={styles.h2}>23. Customer Data and Privacy</h2>
-      <p className={styles.p}>The Seller may receive customer information only for purposes related to fulfilling orders and providing customer service through Harmonies.</p>
-      <p className={styles.p}>The Seller agrees to:</p>
+      <h2 className={styles.h2}>34. Confidentiality</h2>
+      <p className={styles.p}>The Seller must keep confidential and must not disclose to any third party, including any actual or potential competitor of Harmonies, non-public information concerning Harmonies or the Platform, including:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Use customer information only for legitimate order-related purposes.</li>
-        <li className={styles.li}>Protect customer information from unauthorized access.</li>
-        <li className={styles.li}>Not sell, share, rent, or misuse customer data.</li>
-        <li className={styles.li}>Comply with applicable privacy and data protection laws.</li>
+        <li className={styles.li}>Business, financial, and commercial information.</li>
+        <li className={styles.li}>Platform operations, strategies, and future plans.</li>
+        <li className={styles.li}>Technical systems, features, and documentation.</li>
+        <li className={styles.li}>Confidential pricing, fees, or service terms.</li>
+        <li className={styles.li}>Customer, Seller, partner, and supplier information.</li>
+        <li className={styles.li}>Reports, statistics, analytics, and performance data.</li>
       </ul>
-      <p className={styles.p}>Any unauthorized use of customer information is considered a material breach of this Agreement.</p>
-
-      <h2 className={styles.h2}>24. Confidentiality</h2>
-      <p className={styles.p}>The Seller agrees to keep confidential any non-public information received from Harmonies, including:</p>
+      <p className={styles.p}>The Seller may use confidential information only to operate through Harmonies or comply with this Agreement.</p>
+      <p className={styles.p}>These restrictions do not apply to information that:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Business information.</li>
-        <li className={styles.li}>Platform operations.</li>
-        <li className={styles.li}>Seller tools and features.</li>
-        <li className={styles.li}>Commercial terms.</li>
-        <li className={styles.li}>Technical information.</li>
+        <li className={styles.li}>Became public without breach of this Agreement.</li>
+        <li className={styles.li}>Was already lawfully known to the Seller.</li>
+        <li className={styles.li}>Was lawfully received from an independent third party.</li>
+        <li className={styles.li}>Must be disclosed by law or binding order.</li>
       </ul>
-      <p className={styles.p}>This obligation remains valid after termination of the Seller account.</p>
+      <p className={styles.p}>Necessary disclosure to employees or professional advisers is permitted only where they are subject to equivalent confidentiality duties.</p>
+      <p className={styles.p}>These obligations survive termination.</p>
 
-      <h2 className={styles.h2}>25. Suspension and Termination</h2>
-      <p className={styles.p}>Harmonies may suspend, restrict, or terminate a Seller account if the Seller:</p>
+      <h2 className={styles.h2}>35. Marketplace Role</h2>
+      <p className={styles.p}>Harmonies operates as a marketplace connecting Sellers and Buyers.</p>
+      <p className={styles.p}>Unless expressly stated otherwise, Harmonies is not the seller, importer, manufacturer, distributor, reseller, or owner of Seller products.</p>
+      <p className={styles.p}>The Seller is the contracting supplier and remains responsible for product legality, quality, safety, description, fulfilment, warranties, and related claims.</p>
+
+      <h2 className={styles.h2}>36. Platform Availability</h2>
+      <p className={styles.p}>Harmonies will use commercially reasonable efforts to maintain the Platform's availability, security, and proper operation.</p>
+      <p className={styles.p}>Continuous or error-free access cannot be guaranteed. Temporary unavailability may result from:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Scheduled or emergency maintenance.</li>
+        <li className={styles.li}>Updates or security measures.</li>
+        <li className={styles.li}>Cyberattacks.</li>
+        <li className={styles.li}>Hosting, utility, internet, or telecommunications failures.</li>
+        <li className={styles.li}>Third-party service-provider failures.</li>
+        <li className={styles.li}>Government actions or legal requirements.</li>
+        <li className={styles.li}>Natural disasters, war, civil unrest, pandemics, or other circumstances beyond Harmonies' reasonable control.</li>
+      </ul>
+      <p className={styles.p}>Harmonies will take reasonable measures to restore affected services and minimise disruption.</p>
+      <p className={styles.p}>Harmonies is not liable for temporary unavailability caused by circumstances beyond its reasonable control, provided it has taken commercially reasonable preventive and recovery measures.</p>
+
+      <h2 className={styles.h2}>37. Account Inactivity</h2>
+      <p className={styles.p}>Harmonies may restrict or suspend an account after an extended period of inactivity.</p>
+      <p className={styles.p}>Reactivation may require updated information or renewed KYC verification.</p>
+
+      <h2 className={styles.h2}>38. Suspension and Termination</h2>
+      <p className={styles.p}>Harmonies may suspend, restrict, or terminate an account where the Seller:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Violates this Agreement.</li>
         <li className={styles.li}>Sells prohibited products.</li>
-        <li className={styles.li}>Engages in fraud or deceptive practices.</li>
+        <li className={styles.li}>Engages in fraud or deceptive conduct.</li>
         <li className={styles.li}>Provides inaccurate information.</li>
         <li className={styles.li}>Fails KYC requirements.</li>
-        <li className={styles.li}>Repeatedly fails to fulfill orders.</li>
-        <li className={styles.li}>Receives excessive customer complaints.</li>
-        <li className={styles.li}>Fails to pay applicable fees.</li>
-        <li className={styles.li}>Violates applicable laws or regulations.</li>
+        <li className={styles.li}>Repeatedly fails to fulfil orders.</li>
+        <li className={styles.li}>Receives excessive substantiated complaints or chargebacks.</li>
+        <li className={styles.li}>Fails to pay amounts owed.</li>
+        <li className={styles.li}>Violates applicable law.</li>
+        <li className={styles.li}>Creates material financial, legal, reputational, or customer risk.</li>
       </ul>
-      <p className={styles.p}>Upon termination:</p>
+      <p className={styles.p}>Following termination:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>The Seller may no longer create new listings or receive new orders.</li>
-        <li className={styles.li}>Existing orders, returns, refunds, and payouts will continue to be processed according to this Agreement.</li>
-        <li className={styles.li}>Outstanding financial obligations remain payable.</li>
+        <li className={styles.li}>No new products or orders may be accepted.</li>
+        <li className={styles.li}>Existing orders, returns, investigations, and payouts will continue to be processed.</li>
+        <li className={styles.li}>Outstanding obligations remain payable.</li>
+        <li className={styles.li}>Reasonable reserves may remain held until outstanding exposure expires.</li>
+        <li className={styles.li}>Remaining undisputed amounts will then be paid to the Seller.</li>
       </ul>
 
-      <h2 className={styles.h2}>26. Limitation of Liability</h2>
-      <p className={styles.p}>Harmonies operates as a marketplace platform connecting Sellers and Buyers.</p>
-      <p className={styles.p}>The Seller acknowledges that Harmonies does not manufacture, own, or directly control Seller products.</p>
+      <h2 className={styles.h2}>39. Limitation of Liability</h2>
       <p className={styles.p}>To the maximum extent permitted by law, Harmonies is not responsible for:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Product quality.</li>
-        <li className={styles.li}>Product safety.</li>
-        <li className={styles.li}>Product authenticity.</li>
-        <li className={styles.li}>Seller statements or claims.</li>
-        <li className={styles.li}>Seller actions or omissions.</li>
-        <li className={styles.li}>Customer misuse of products.</li>
-        <li className={styles.li}>Loss of profits or indirect damages.</li>
-        <li className={styles.li}>Delays caused by third-party service providers.</li>
+        <li className={styles.li}>Seller product quality, safety, or authenticity.</li>
+        <li className={styles.li}>Seller statements, acts, or omissions.</li>
+        <li className={styles.li}>Buyer misuse of products.</li>
+        <li className={styles.li}>Indirect, incidental, or consequential losses.</li>
+        <li className={styles.li}>Loss of anticipated profits.</li>
+        <li className={styles.li}>Third-party delivery or payment-service delays.</li>
+        <li className={styles.li}>Events outside Harmonies' reasonable control.</li>
       </ul>
+      <p className={styles.p}>Nothing excludes liability that cannot legally be excluded.</p>
 
-      <h2 className={styles.h2}>27. Indemnification</h2>
-      <p className={styles.p}>The Seller agrees to defend, indemnify, and hold harmless Harmonies, its affiliates, employees, representatives, and partners from any claims, damages, losses, liabilities, penalties, costs, or expenses arising from:</p>
+      <h2 className={styles.h2}>40. Indemnification</h2>
+      <p className={styles.p}>To the extent permitted by law, the Seller agrees to defend, indemnify, and hold harmless Harmonies, its affiliates, directors, employees, representatives, and partners from claims, losses, liabilities, penalties, costs, or expenses arising from:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Products sold by the Seller.</li>
-        <li className={styles.li}>Product defects or customer claims.</li>
-        <li className={styles.li}>Violation of this Agreement.</li>
-        <li className={styles.li}>Violation of applicable laws.</li>
-        <li className={styles.li}>Intellectual property infringement.</li>
+        <li className={styles.li}>Seller products.</li>
+        <li className={styles.li}>Product defects, injuries, or customer claims.</li>
+        <li className={styles.li}>Breach of this Agreement.</li>
+        <li className={styles.li}>Violation of law.</li>
+        <li className={styles.li}>Intellectual-property infringement.</li>
         <li className={styles.li}>Seller negligence, fraud, or misconduct.</li>
+        <li className={styles.li}>Misuse of customer data.</li>
+        <li className={styles.li}>Seller-responsible refunds, disputes, or chargebacks.</li>
       </ul>
 
-      <h2 className={styles.h2}>28. Force Majeure</h2>
-      <p className={styles.p}>Neither party shall be responsible for delays or failures caused by events beyond reasonable control, including but not limited to:</p>
+      <h2 className={styles.h2}>41. Force Majeure</h2>
+      <p className={styles.p}>Neither party is liable for failure or delay caused by circumstances beyond its reasonable control.</p>
+      <p className={styles.p}>The affected party must take reasonable steps to reduce the impact and resume performance where possible.</p>
+
+      <h2 className={styles.h2}>42. Survival</h2>
+      <p className={styles.p}>Provisions concerning payments, reserves, negative balances, transaction records, taxes, confidentiality, customer data, intellectual property, liability, indemnification, and dispute resolution survive suspension or termination.</p>
+
+      <h2 className={styles.h2}>43. Notices</h2>
+      <p className={styles.p}>Harmonies may issue notices through:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Natural disasters.</li>
-        <li className={styles.li}>Government actions.</li>
-        <li className={styles.li}>War.</li>
-        <li className={styles.li}>Pandemics.</li>
-        <li className={styles.li}>Labor disputes.</li>
-        <li className={styles.li}>Transportation failures.</li>
-        <li className={styles.li}>Internet or telecommunications failures.</li>
+        <li className={styles.li}>The Platform.</li>
+        <li className={styles.li}>The Seller's registered email.</li>
+        <li className={styles.li}>Push notifications.</li>
+        <li className={styles.li}>Other reasonable electronic means.</li>
       </ul>
+      <p className={styles.p}>The Seller must maintain current contact information and review Platform communications.</p>
 
-      <h2 className={styles.h2}>29. Amendments</h2>
-      <p className={styles.p}>Harmonies may amend this Seller Agreement from time to time.</p>
-      <p className={styles.p}>Sellers will be notified of any material changes through the Platform, email, or other reasonable means.</p>
-      <p className={styles.p}>Material changes become effective only after the Seller expressly accepts the updated Agreement through the Platform.</p>
-      <p className={styles.p}>If the Seller does not accept the updated Agreement, Harmonies may suspend or terminate the Seller's ability to list new products or receive new orders, while continuing to process any outstanding orders, returns, and payouts in accordance with this Agreement and applicable law.</p>
-      <p className={styles.p}>For non-material changes, continued use of the Harmonies platform after the updated Agreement becomes available may constitute acceptance of such changes.</p>
+      <h2 className={styles.h2}>44. Payment-Provider and Card-Scheme Requirements</h2>
+      <p className={styles.p}>The Seller agrees to comply with reasonable payment-processing, fraud-prevention, documentation, and transaction requirements communicated by Harmonies.</p>
+      <p className={styles.p}>Where payment-provider or card-scheme rules conflict with this Agreement, Harmonies may take the measures reasonably necessary to maintain payment services, subject to applicable law.</p>
+      <p className={styles.p}>This may include transaction reviews, limits, additional documentation, payout delays, or seller-specific reserves.</p>
 
-      <h2 className={styles.h2}>30. Assignment</h2>
-      <p className={styles.p}>The Seller may not transfer or assign their rights or obligations under this Agreement without Harmonies' prior written approval.</p>
-      <p className={styles.p}>Harmonies may assign or transfer this Agreement as part of a merger, acquisition, restructuring, or transfer of business assets.</p>
+      <h2 className={styles.h2}>45. Amendments</h2>
+      <p className={styles.p}>Harmonies may amend this Agreement.</p>
+      <p className={styles.p}>Material changes will be communicated and become effective only after the Seller expressly accepts them.</p>
+      <p className={styles.p}>If the Seller does not accept a material update, Harmonies may prevent new listings or orders while processing existing obligations under the previously accepted terms.</p>
+      <p className={styles.p}>Non-material changes may take effect following notice where permitted by law.</p>
 
-      <h2 className={styles.h2}>31. Entire Agreement</h2>
-      <p className={styles.p}>This Agreement represents the complete agreement between Harmonies and the Seller regarding the Seller's use of the platform and supersedes any previous agreements or communications relating to the same subject matter.</p>
+      <h2 className={styles.h2}>46. Assignment</h2>
+      <p className={styles.p}>The Seller may not assign this Agreement without Harmonies' written approval.</p>
+      <p className={styles.p}>Harmonies may assign it as part of a merger, acquisition, restructuring, financing, or business transfer, subject to applicable law.</p>
 
-      <h2 className={styles.h2}>32. Governing Law and Dispute Resolution</h2>
-      <p className={styles.p}>This Agreement shall be governed by the laws of the United Arab Emirates.</p>
-      <p className={styles.p}>Any dispute arising from this Agreement shall be resolved through the competent courts of the United Arab Emirates unless otherwise required by applicable law.</p>
+      <h2 className={styles.h2}>47. Severability and No Waiver</h2>
+      <p className={styles.p}>If any provision is invalid or unenforceable, the remaining provisions remain effective.</p>
+      <p className={styles.p}>Failure or delay in enforcing a right does not waive that right.</p>
 
-      <h2 className={styles.h2}>33. Electronic Acceptance</h2>
-      <p className={styles.p}>By registering as a Seller, clicking "Accept", submitting products, accepting orders, or continuing to use Seller services, the Seller confirms that:</p>
+      <h2 className={styles.h2}>48. Entire Agreement</h2>
+      <p className={styles.p}>This Agreement, together with expressly incorporated policies and pricing terms, constitutes the complete agreement governing the Seller's use of Harmonies.</p>
+
+      <h2 className={styles.h2}>49. Governing Law and Dispute Resolution</h2>
+      <p className={styles.p}>This Agreement is governed by the laws of the United Arab Emirates.</p>
+      <p className={styles.p}>Disputes are subject to the competent courts of the United Arab Emirates unless applicable law requires otherwise.</p>
+
+      <h2 className={styles.h2}>50. Electronic Acceptance and Evidence</h2>
+      <p className={styles.p}>Electronic acceptance has the same legal effect as a physical signature where recognised by applicable law.</p>
+      <p className={styles.p}>Harmonies may record:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>They have read and understood this Agreement.</li>
-        <li className={styles.li}>They agree to comply with all obligations contained herein.</li>
-        <li className={styles.li}>They have authority to enter into this Agreement.</li>
+        <li className={styles.li}>Seller ID.</li>
+        <li className={styles.li}>Agreement version.</li>
+        <li className={styles.li}>Acceptance date and time.</li>
+        <li className={styles.li}>IP address.</li>
+        <li className={styles.li}>Device or browser information.</li>
+        <li className={styles.li}>The identity and authority of the accepting representative.</li>
       </ul>
-      <p className={styles.p}>Electronic acceptance shall have the same legal effect as a signed agreement.</p>
 
-      <h2 className={styles.h2}>34. Contact Information</h2>
-      <p className={styles.p}>For questions regarding this Agreement:</p>
-      <p className={styles.p}><strong>Harmonies</strong><br />Email: <a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></p>
+      <h2 className={styles.h2}>51. Contact Information</h2>
+      <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></p>
     </LegalPage>
   );
 }
