@@ -225,6 +225,7 @@ export default function SellerAgreement() {
         <li className={styles.li}>Prepare orders before scheduled pickup.</li>
         <li className={styles.li}>Provide accurate pickup information.</li>
         <li className={styles.li}>Provide accurate shipment weight and dimensions.</li>
+        <li className={styles.li}>Print and affix the shipping label to each order before pickup.</li>
         <li className={styles.li}>Comply with delivery-partner restrictions.</li>
         <li className={styles.li}>Retain reasonable evidence that the correct order was handed over.</li>
       </ul>
