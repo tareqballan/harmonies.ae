@@ -8,7 +8,7 @@ export default function SellerAgreement() {
       description="The terms governing the relationship between Harmonies and sellers using the platform."
       path="/seller-agreement"
       dateLabel="Effective Date"
-      date="01 July 2026"
+      date="11 August 2026"
     >
       <p className={styles.p}>This Seller Agreement ("Agreement") is entered into between <strong>Lumiere Global Ventures LLC-FZ</strong>, operating the Harmonies Platform ("Harmonies," "we," "our," or "us"), and the individual or legal entity registered as a Seller ("Seller," "you," or "your").</p>
       <p className={styles.p}>This Agreement governs your use of Harmonies to list, promote, sell, and fulfil products.</p>
@@ -142,7 +142,16 @@ export default function SellerAgreement() {
         <li className={styles.li}>Products infringing third-party rights.</li>
         <li className={styles.li}>Products prohibited by law, payment providers, card schemes, logistics providers, or competent authorities.</li>
       </ul>
-      <p className={styles.p}>The Seller may only sell product categories approved by Harmonies. New categories may require prior written approval.</p>
+      <p className={styles.p}>The Seller may only sell product categories approved by Harmonies. Approved product categories currently include:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Handmade products.</li>
+        <li className={styles.li}>Food.</li>
+        <li className={styles.li}>Drinks.</li>
+        <li className={styles.li}>Chocolates and sweets.</li>
+        <li className={styles.li}>Apparel.</li>
+        <li className={styles.li}>Shoes.</li>
+      </ul>
+      <p className={styles.p}>New categories may require prior written approval.</p>
 
       <h2 className={styles.h2}>11. Pricing and Promotions</h2>
       <p className={styles.p}>The Seller determines its product prices.</p>
@@ -214,6 +223,8 @@ export default function SellerAgreement() {
         <li className={styles.li}>Complies with carrier and safety requirements.</li>
         <li className={styles.li}>Is properly sealed and labelled where necessary.</li>
       </ul>
+      <p className={styles.p}>The Seller must print the shipping label and affix it to the package before pickup.</p>
+      <p className={styles.p}>Where possible, the Seller should combine two or more products from the same order into a single package, provided this does not compromise product safety, hygiene, quality, or protection.</p>
       <p className={styles.p}>Where reasonably possible, the Seller must use the <strong>smallest suitably sized package</strong> that safely protects the product. Unnecessarily large packaging must be avoided because delivery charges may be based on volumetric weight.</p>
       <p className={styles.p}>Reducing package size must not compromise product safety, hygiene, quality, or protection.</p>
       <p className={styles.p}>Additional costs caused by inaccurate measurements, excessive packaging, or non-compliance may be deducted from the Seller Balance.</p>
@@ -249,6 +260,8 @@ export default function SellerAgreement() {
         <li className={styles.li}>Is damaged because of inadequate packaging.</li>
         <li className={styles.li}>Fails to meet reasonable expectations because of inaccurate information.</li>
       </ul>
+      <p className={styles.p}>For change-of-mind returns, the Buyer generally bears the shipping and return delivery cost, subject to the Seller's displayed return policy, Harmonies' minimum requirements, and applicable law.</p>
+      <p className={styles.p}>Harmonies will work with Sellers to identify the causes of recurring returns and help reduce them, protecting both parties from unnecessary costs.</p>
       <p className={styles.p}>Applicable costs may be deducted from the Seller Balance.</p>
 
       <h2 className={styles.h2}>19. Payments and Seller Balance</h2>
@@ -259,14 +272,14 @@ export default function SellerAgreement() {
       <ul className={styles.ul}>
         <li className={styles.li}>Harmonies' commission.</li>
         <li className={styles.li}>Applicable service or subscription fees.</li>
-        <li className={styles.li}>Payment-processing charges where applicable.</li>
-        <li className={styles.li}>Delivery charges.</li>
-        <li className={styles.li}>Refunds and return costs.</li>
+        <li className={styles.li}>Delivery charges, where applicable.</li>
+        <li className={styles.li}>Refunds and return costs, where applicable.</li>
         <li className={styles.li}>Chargebacks and card-scheme assessments.</li>
         <li className={styles.li}>Taxes Harmonies must collect or withhold.</li>
         <li className={styles.li}>Seller-specific reserves.</li>
         <li className={styles.li}>Other authorised deductions.</li>
       </ul>
+      <p className={styles.p}>Harmonies is responsible for payment-processing charges, which are not deducted from the Seller's proceeds.</p>
 
       <h2 className={styles.h2}>20. Seller Payouts</h2>
       <p className={styles.p}>A Seller may request a payout when its Available Balance reaches at least <strong>AED 50</strong>.</p>
@@ -611,7 +624,7 @@ export default function SellerAgreement() {
       </ul>
 
       <h2 className={styles.h2}>51. Contact Information</h2>
-      <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></p>
+      <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
     </LegalPage>
   );
 }
