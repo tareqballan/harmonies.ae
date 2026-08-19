@@ -8,7 +8,7 @@ export default function SellerAgreement() {
       description="The terms governing the relationship between Harmonies and sellers using the platform."
       path="/seller-agreement"
       dateLabel="Effective Date"
-      date="11 August 2026"
+      date="19 August 2026"
     >
       <p className={styles.p}>This Seller Agreement ("Agreement") is entered into between <strong>Lumiere Global Ventures LLC-FZ</strong>, operating the Harmonies Platform ("Harmonies," "we," "our," or "us"), and the individual or legal entity registered as a Seller ("Seller," "you," or "your").</p>
       <p className={styles.p}>This Agreement governs your use of Harmonies to list, promote, sell, and fulfil products.</p>
