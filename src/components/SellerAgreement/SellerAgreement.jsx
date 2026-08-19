@@ -178,7 +178,7 @@ export default function SellerAgreement() {
       <p className={styles.p}>Applicable commissions, delivery charges, subscription fees, service charges, and other fees will be shown in the Seller's pricing terms or package.</p>
       <p className={styles.p}>The Seller must review the applicable fees before accepting the package or transaction.</p>
       <p className={styles.p}>The Seller authorises Harmonies to deduct all applicable and authorised amounts from transaction proceeds, the Seller Balance, or future payouts.</p>
-      <p className={styles.p}>Changes to fees will be handled in accordance with Section 45.</p>
+      <p className={styles.p}>Changes to fees will be handled in accordance with Section 46.</p>
 
       <h2 className={styles.h2}>13. Inventory Management</h2>
       <p className={styles.p}>The Seller must:</p>
@@ -542,7 +542,16 @@ export default function SellerAgreement() {
         <li className={styles.li}>Remaining undisputed amounts will then be paid to the Seller.</li>
       </ul>
 
-      <h2 className={styles.h2}>39. Limitation of Liability</h2>
+      <h2 className={styles.h2}>39. Account Deletion</h2>
+      <p className={styles.p}>The Seller may not delete its account while:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Any order remains outstanding, including an order that has not been fulfilled or that has been fulfilled but remains within its applicable return window.</li>
+        <li className={styles.li}>Any balance remains in the Seller's account that has not yet been withdrawn.</li>
+      </ul>
+      <p className={styles.p}>The Seller has the right to close its store while these conditions are outstanding. Once all orders have been resolved, applicable return windows have expired, and the Seller's balance has been fully withdrawn, the Seller may request account deletion again.</p>
+      <p className={styles.p}>On account deletion, Harmonies will retain the Seller's store data for a period of <strong>five years</strong> for legal and compliance reasons, including in case of a dispute. The data will be permanently deleted after that period expires.</p>
+
+      <h2 className={styles.h2}>40. Limitation of Liability</h2>
       <p className={styles.p}>To the maximum extent permitted by law, Harmonies is not responsible for:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Seller product quality, safety, or authenticity.</li>
@@ -555,7 +564,7 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>Nothing excludes liability that cannot legally be excluded.</p>
 
-      <h2 className={styles.h2}>40. Indemnification</h2>
+      <h2 className={styles.h2}>41. Indemnification</h2>
       <p className={styles.p}>To the extent permitted by law, the Seller agrees to defend, indemnify, and hold harmless Harmonies, its affiliates, directors, employees, representatives, and partners from claims, losses, liabilities, penalties, costs, or expenses arising from:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Seller products.</li>
@@ -568,14 +577,14 @@ export default function SellerAgreement() {
         <li className={styles.li}>Seller-responsible refunds, disputes, or chargebacks.</li>
       </ul>
 
-      <h2 className={styles.h2}>41. Force Majeure</h2>
+      <h2 className={styles.h2}>42. Force Majeure</h2>
       <p className={styles.p}>Neither party is liable for failure or delay caused by circumstances beyond its reasonable control.</p>
       <p className={styles.p}>The affected party must take reasonable steps to reduce the impact and resume performance where possible.</p>
 
-      <h2 className={styles.h2}>42. Survival</h2>
+      <h2 className={styles.h2}>43. Survival</h2>
       <p className={styles.p}>Provisions concerning payments, reserves, negative balances, transaction records, taxes, confidentiality, customer data, intellectual property, liability, indemnification, and dispute resolution survive suspension or termination.</p>
 
-      <h2 className={styles.h2}>43. Notices</h2>
+      <h2 className={styles.h2}>44. Notices</h2>
       <p className={styles.p}>Harmonies may issue notices through:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>The Platform.</li>
@@ -585,33 +594,33 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>The Seller must maintain current contact information and review Platform communications.</p>
 
-      <h2 className={styles.h2}>44. Payment-Provider and Card-Scheme Requirements</h2>
+      <h2 className={styles.h2}>45. Payment-Provider and Card-Scheme Requirements</h2>
       <p className={styles.p}>The Seller agrees to comply with reasonable payment-processing, fraud-prevention, documentation, and transaction requirements communicated by Harmonies.</p>
       <p className={styles.p}>Where payment-provider or card-scheme rules conflict with this Agreement, Harmonies may take the measures reasonably necessary to maintain payment services, subject to applicable law.</p>
       <p className={styles.p}>This may include transaction reviews, limits, additional documentation, payout delays, or seller-specific reserves.</p>
 
-      <h2 className={styles.h2}>45. Amendments</h2>
+      <h2 className={styles.h2}>46. Amendments</h2>
       <p className={styles.p}>Harmonies may amend this Agreement.</p>
       <p className={styles.p}>Material changes will be communicated and become effective only after the Seller expressly accepts them.</p>
       <p className={styles.p}>If the Seller does not accept a material update, Harmonies may prevent new listings or orders while processing existing obligations under the previously accepted terms.</p>
       <p className={styles.p}>Non-material changes may take effect following notice where permitted by law.</p>
 
-      <h2 className={styles.h2}>46. Assignment</h2>
+      <h2 className={styles.h2}>47. Assignment</h2>
       <p className={styles.p}>The Seller may not assign this Agreement without Harmonies' written approval.</p>
       <p className={styles.p}>Harmonies may assign it as part of a merger, acquisition, restructuring, financing, or business transfer, subject to applicable law.</p>
 
-      <h2 className={styles.h2}>47. Severability and No Waiver</h2>
+      <h2 className={styles.h2}>48. Severability and No Waiver</h2>
       <p className={styles.p}>If any provision is invalid or unenforceable, the remaining provisions remain effective.</p>
       <p className={styles.p}>Failure or delay in enforcing a right does not waive that right.</p>
 
-      <h2 className={styles.h2}>48. Entire Agreement</h2>
+      <h2 className={styles.h2}>49. Entire Agreement</h2>
       <p className={styles.p}>This Agreement, together with expressly incorporated policies and pricing terms, constitutes the complete agreement governing the Seller's use of Harmonies.</p>
 
-      <h2 className={styles.h2}>49. Governing Law and Dispute Resolution</h2>
+      <h2 className={styles.h2}>50. Governing Law and Dispute Resolution</h2>
       <p className={styles.p}>This Agreement is governed by the laws of the United Arab Emirates.</p>
       <p className={styles.p}>Disputes are subject to the competent courts of the United Arab Emirates unless applicable law requires otherwise.</p>
 
-      <h2 className={styles.h2}>50. Electronic Acceptance and Evidence</h2>
+      <h2 className={styles.h2}>51. Electronic Acceptance and Evidence</h2>
       <p className={styles.p}>Electronic acceptance has the same legal effect as a physical signature where recognised by applicable law.</p>
       <p className={styles.p}>Harmonies may record:</p>
       <ul className={styles.ul}>
@@ -623,7 +632,7 @@ export default function SellerAgreement() {
         <li className={styles.li}>The identity and authority of the accepting representative.</li>
       </ul>
 
-      <h2 className={styles.h2}>51. Contact Information</h2>
+      <h2 className={styles.h2}>52. Contact Information</h2>
       <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
     </LegalPage>
   );
