@@ -2,6 +2,7 @@ import { onRequestPost as applyHandler } from '../functions/api/apply.js';
 import { onRequestPost as contactHandler } from '../functions/api/contact.js';
 import { onRequestPost as consentHandler } from '../functions/api/consent.js';
 import { onRequestPost as bannerImpressionHandler } from '../functions/api/banner-impression.js';
+import { onRequestPost as deleteAccountHandler } from '../functions/api/delete-account.js';
 
 const SITE_URL = 'https://harmonies.ae';
 
@@ -15,6 +16,10 @@ const PAGE_META = {
   '/contact': {
     title: 'Contact Us | Harmonies',
     description: 'Have a question about selling on Harmonies? Get in touch — we usually reply within a day.',
+  },
+  '/delete-account': {
+    title: 'Request Seller Account Deletion | Harmonies',
+    description: 'Request the deletion of your Harmonies seller account.',
   },
   '/privacy-policy': {
     title: 'Privacy Policy | Harmonies',
@@ -118,6 +123,10 @@ export default {
 
     if (url.pathname === '/api/banner-impression' && request.method === 'POST') {
       return bannerImpressionHandler({ request, env });
+    }
+
+    if (url.pathname === '/api/delete-account' && request.method === 'POST') {
+      return deleteAccountHandler({ request, env, ctx });
     }
 
     // Try to serve a static asset; fall back to index.html for SPA routes

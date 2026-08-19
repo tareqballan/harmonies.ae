@@ -13,6 +13,7 @@ const COLUMNS = [
     links: [
       { text: 'FAQs', to: '/faqs' },
       { text: 'Contact Us', to: '/contact' },
+      { text: 'Request Seller Account Deletion', to: '/delete-account' },
     ],
   },
   {

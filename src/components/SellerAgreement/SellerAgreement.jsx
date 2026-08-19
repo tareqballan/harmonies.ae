@@ -542,7 +542,7 @@ export default function SellerAgreement() {
         <li className={styles.li}>Remaining undisputed amounts will then be paid to the Seller.</li>
       </ul>
 
-      <h2 className={styles.h2}>39. Account Deletion</h2>
+      <h2 id="account-deletion" className={styles.h2}>39. Account Deletion</h2>
       <p className={styles.p}>The Seller may not delete its account while:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Any order remains outstanding, including an order that has not been fulfilled or that has been fulfilled but remains within its applicable return window.</li>

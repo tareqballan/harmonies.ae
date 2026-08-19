@@ -22,6 +22,14 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
   submitted_at  TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS account_deletion_requests (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  name          TEXT NOT NULL,
+  email         TEXT NOT NULL,
+  phone         TEXT NOT NULL,
+  submitted_at  TEXT NOT NULL
+);
+
 -- Audit trail for the cookie consent banner: one row per decision
 -- (accept all / reject non-essential / save preferences). This is
 -- separate from the client-side localStorage flag that controls whether
