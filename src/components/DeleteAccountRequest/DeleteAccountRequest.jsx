@@ -91,7 +91,7 @@ export default function DeleteAccountRequest() {
               You can close your store at any time while these conditions are outstanding. Once all orders are resolved, return windows have expired, and your balance has been fully withdrawn, you can request deletion again.
             </p>
             <p className={styles.policyText}>
-              On deletion, Harmonies retains your store data for <strong>5 years</strong> for legal and dispute purposes, after which it is permanently deleted.
+              On deletion, Harmonies retains your store data for <strong>5 years</strong> for legal, tax, and dispute purposes only — it won't be used for marketing, analytics, or anything else. It's permanently deleted after that period.
             </p>
             <Link to="/seller-agreement#account-deletion" className={styles.policyLink}>
               Read the full Account Deletion policy →

@@ -549,7 +549,7 @@ export default function SellerAgreement() {
         <li className={styles.li}>Any balance remains in the Seller's account that has not yet been withdrawn.</li>
       </ul>
       <p className={styles.p}>The Seller has the right to close its store while these conditions are outstanding. Once all orders have been resolved, applicable return windows have expired, and the Seller's balance has been fully withdrawn, the Seller may request account deletion again.</p>
-      <p className={styles.p}>On account deletion, Harmonies will retain the Seller's store data for a period of <strong>five years</strong> for legal and compliance reasons, including in case of a dispute. The data will be permanently deleted after that period expires.</p>
+      <p className={styles.p}>On account deletion, Harmonies will retain the Seller's store data for a period of <strong>five years</strong> for legal and compliance reasons, including in case of a dispute, tax audit, or regulatory request. During this period, retained data will be used solely for those purposes and for no other purpose, including marketing, analytics, or profiling. The data will be permanently deleted after that period expires.</p>
 
       <h2 className={styles.h2}>40. Limitation of Liability</h2>
       <p className={styles.p}>To the maximum extent permitted by law, Harmonies is not responsible for:</p>
