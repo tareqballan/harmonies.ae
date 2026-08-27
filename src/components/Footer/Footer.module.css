@@ -13,6 +13,8 @@
 }
 
 .column { flex: 1 1 160px; min-width: 150px; }
+.parentColumn { flex: 1 1 220px; min-width: 220px; }
+.parentColumn .link { line-height: 1.5; }
 .colTitle {
   font-family: var(--font-display); font-weight: 700; font-size: 15.5px;
   color: #fff; margin-bottom: 18px;
@@ -49,6 +51,7 @@
   .columnsRow { justify-content: center; text-align: center; gap: 40px 24px; padding-bottom: 32px; }
   .column { flex: 1 1 45%; min-width: 140px; }
   .column:last-child { display: flex; flex-direction: column; align-items: center; }
+  .parentColumn { flex: 1 1 100%; min-width: 100%; }
   .colTitle { font-size: 15px; margin-bottom: 14px; }
   .linkStack { gap: 11px; }
   .link { font-size: 14.5px; }

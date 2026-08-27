@@ -58,6 +58,22 @@ function FooterLink({ link }) {
     : <a href="#" className={className}>{link.text}</a>;
 }
 
+function ParentCompanyColumn() {
+  return (
+    <div className={`${styles.column} ${styles.parentColumn}`}>
+      <div className={styles.colTitle}>Parent Company</div>
+      <div className={styles.linkStack}>
+        <a href="https://lgv.ae" target="_blank" rel="noopener noreferrer" className={styles.link}>
+          Lumiere Global Ventures LLC-FZ
+        </a>
+        <a href="tel:+971501278250" className={styles.link}>+971 50 127 8250</a>
+        <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a>
+        <span className={styles.link}>6th Floor, Meydan Freezone, Nad Al-Sheba, Dubai, UAE</span>
+      </div>
+    </div>
+  );
+}
+
 function AppDownloadColumn({ title }) {
   return (
     <div className={styles.column}>
@@ -96,6 +112,7 @@ export default function Footer() {
             </div>
           </div>
         ))}
+        <ParentCompanyColumn />
         <AppDownloadColumn title="Download the Free App" />
       </div>
 
