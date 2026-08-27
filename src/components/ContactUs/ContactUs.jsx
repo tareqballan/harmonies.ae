@@ -78,7 +78,6 @@ export default function ContactUs() {
           <p className={styles.subCopy}>
             Questions, feedback, or just want to say hi — drop us a line and a real person will get back to you.
           </p>
-          <a href="tel:+971501278250" className={styles.phoneLink}>+971 50 127 8250</a>
           <div className={styles.socials}>
             <a href="https://www.instagram.com/harmonies.ae" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.socialBtn}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2">

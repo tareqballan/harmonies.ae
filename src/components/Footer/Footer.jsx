@@ -105,7 +105,6 @@ export default function Footer() {
           <span className={styles.brandWordmark}>Harmonies</span>
         </div>
         <span className={styles.copyright}>© 2026 Lumiere Global Ventures LLC-FZ. All rights reserved.</span>
-        <a href="tel:+971501278250" className={styles.subline}>+971 50 127 8250</a>
         <span className={styles.subline}>
           Harmonies is a social commerce platform operated by Lumiere Global Ventures LLC-FZ.
         </span>
