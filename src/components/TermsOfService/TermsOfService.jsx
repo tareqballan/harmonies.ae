@@ -29,6 +29,7 @@ export default function TermsOfService() {
         <li className={styles.li}>Use the Platform only for lawful purposes.</li>
       </ul>
       <p className={styles.p}>Sellers must maintain valid business licenses, permits, and approvals required to operate their business and sell their products.</p>
+      <p className={styles.p}>Harmonies does not permit the use of the Platform by, or transactions with, individuals or entities located in, or ordinarily resident in, any country or region that is subject to comprehensive trade sanctions administered by the U.S. Office of Foreign Assets Control (OFAC) or other applicable sanctions authorities. By using Harmonies, you confirm that you are not located in, and are not ordinarily resident in, any such sanctioned country or region, and that you are not on any restricted or denied-party list.</p>
 
       <h2 className={styles.h2}>3. User Roles</h2>
 

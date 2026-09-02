@@ -74,6 +74,49 @@ function ParentCompanyColumn() {
   );
 }
 
+function VisaIcon() {
+  return (
+    <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="Visa">
+      <rect width="38" height="24" rx="4" fill="#fff" />
+      <text x="19" y="16.5" textAnchor="middle" fontFamily="Arial, sans-serif" fontStyle="italic" fontWeight="700" fontSize="11" fill="#1A1F71">VISA</text>
+    </svg>
+  );
+}
+
+function MastercardIcon() {
+  return (
+    <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="Mastercard">
+      <rect width="38" height="24" rx="4" fill="#fff" />
+      <circle cx="16.5" cy="12" r="6.5" fill="#EB001B" />
+      <circle cx="21.5" cy="12" r="6.5" fill="#F79E1B" />
+      <path d="M19 6.7a6.48 6.48 0 0 1 0 10.6 6.48 6.48 0 0 1 0-10.6z" fill="#FF5F00" />
+    </svg>
+  );
+}
+
+function ApplePayIcon() {
+  return (
+    <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="Apple Pay">
+      <rect width="38" height="24" rx="4" fill="#fff" />
+      <g transform="translate(8.5 6.5) scale(0.024)">
+        <path fill="#000" d="M213.803 167.03c13.264-16.148 22.208-38.06 19.802-60.09-19.14 0.9-42.334 12.822-56.014 28.98-12.312 14.126-23.014 36.9-20.038 58.056 20.622 1.626 41.626-10.552 56.25-26.946z" />
+        <path fill="#000" d="M233.395 199.902c-31.026-1.848-57.328 17.606-72.152 17.606-14.83 0-37.472-16.712-62.16-16.264-32.028 0.542-61.652 18.596-78.096 47.284-33.396 57.92-8.746 143.792 23.936 190.978 15.938 23.164 34.966 48.878 60.108 47.996 23.934-0.914 33.03-15.518 62.096-15.518 29.06 0 37.256 15.518 62.616 15.056 25.98-0.454 42.36-23.164 58.294-46.336 18.4-26.532 25.98-52.242 26.428-53.606-0.548-0.454-50.756-19.526-51.256-77.16-0.454-48.152 39.242-71.31 41.106-72.678-22.436-33.212-57.418-36.9-69.92-37.358z" />
+      </g>
+      <text x="24" y="16" textAnchor="middle" fontFamily="-apple-system, Arial, sans-serif" fontWeight="600" fontSize="11" fill="#000">Pay</text>
+    </svg>
+  );
+}
+
+function PaymentLogos() {
+  return (
+    <div className={styles.paymentLogos} aria-label="Accepted payment methods">
+      <VisaIcon />
+      <MastercardIcon />
+      <ApplePayIcon />
+    </div>
+  );
+}
+
 function AppDownloadColumn({ title }) {
   return (
     <div className={styles.column}>
@@ -128,6 +171,7 @@ export default function Footer() {
         <span className={styles.subline}>
           Made with ❤️ in the UAE for local businesses.
         </span>
+        <PaymentLogos />
       </div>
     </footer>
   );
