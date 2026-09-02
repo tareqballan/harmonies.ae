@@ -21,6 +21,7 @@ export default function TermsOfService() {
 
       <h2 className={styles.h2}>2. Eligibility and Account Registration</h2>
       <p className={styles.p}>To use certain features of Harmonies, you must create an account and provide accurate and complete information.</p>
+      <p className={styles.p}>You must be at least 18 years old to register as a user or to transact on the Platform. Minors under 18 years old are not permitted to create an account, register as a user, or otherwise conduct transactions on Harmonies.</p>
       <p className={styles.p}>You agree to:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Provide truthful and updated account information.</li>
