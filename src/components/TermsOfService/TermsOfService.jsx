@@ -95,7 +95,7 @@ export default function TermsOfService() {
       </ul>
       <p className={styles.p}>Returned products must be in their original condition unless the issue is related to a defect, incorrect product, or seller error.</p>
       <p className={styles.p}>Harmonies will cover approved return shipping costs.</p>
-      <p className={styles.p}>Once a refund is approved, it will be processed within one working day and returned to the original payment method used for the transaction.</p>
+      <p className={styles.p}>Once a refund is approved, it will be processed within one working day and returned to the original payment method used for the transaction. Once initiated, the refund is typically credited to the customer's account within 10 to 45 days, depending on the bank, card issuer, or payment provider.</p>
       <p className={styles.p}>Harmonies facilitates communication and operational processes between customers and sellers regarding returns and refunds. Sellers remain responsible for product quality, accuracy, safety, and compliance of their products.</p>
       <p className={styles.p}>Harmonies is not responsible for product defects, incorrect product descriptions, or seller actions, except where required by applicable law.</p>
 

@@ -97,7 +97,7 @@ export default function ReturnRefundPolicy() {
         <li className={styles.li}>The refund will normally be issued to the original payment method.</li>
         <li className={styles.li}>For seller-fault returns, the refund will include any original outbound delivery fee paid by the customer.</li>
         <li className={styles.li}>For change-of-mind returns, the refund may be reduced by the customer-responsible return fee.</li>
-        <li className={styles.li}>The time required for the refund to appear in the customer's account may vary depending on the bank, card issuer, or payment provider.</li>
+        <li className={styles.li}>Once initiated, the refund is typically credited to the customer's original payment method within 10 to 45 days, depending on the bank, card issuer, or payment provider.</li>
       </ul>
       <p className={styles.p}>If the returned product does not meet the applicable requirements, Harmonies may reject or adjust the refund after reviewing the evidence and informing the customer of the reason.</p>
 
