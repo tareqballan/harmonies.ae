@@ -77,20 +77,20 @@ function ParentCompanyColumn() {
 
 function VisaIcon() {
   return (
-    <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="Visa">
-      <rect width="38" height="24" rx="4" fill="#fff" />
-      <text x="19" y="16.5" textAnchor="middle" fontFamily="Arial, sans-serif" fontStyle="italic" fontWeight="700" fontSize="11" fill="#1A1F71">VISA</text>
+    <svg width="52" height="26" viewBox="0 0 52 26" role="img" aria-label="Visa">
+      <rect width="52" height="26" rx="6" fill="#fff" />
+      <text x="26" y="17.5" textAnchor="middle" fontFamily="Arial, sans-serif" fontStyle="italic" fontWeight="700" fontSize="15" fill="#1A1F71">VISA</text>
     </svg>
   );
 }
 
 function MastercardIcon() {
   return (
-    <svg width="38" height="24" viewBox="0 0 38 24" role="img" aria-label="Mastercard">
-      <rect width="38" height="24" rx="4" fill="#fff" />
-      <circle cx="16.5" cy="12" r="6.5" fill="#EB001B" />
-      <circle cx="21.5" cy="12" r="6.5" fill="#F79E1B" />
-      <path d="M19 6.7a6.48 6.48 0 0 1 0 10.6 6.48 6.48 0 0 1 0-10.6z" fill="#FF5F00" />
+    <svg width="52" height="26" viewBox="0 0 52 26" role="img" aria-label="Mastercard">
+      <rect width="52" height="26" rx="6" fill="#fff" />
+      <circle cx="22.5" cy="13" r="7.5" fill="#EB001B" />
+      <circle cx="29.5" cy="13" r="7.5" fill="#F79E1B" />
+      <path d="M26 6.7a7.48 7.48 0 0 1 0 12.6 7.48 7.48 0 0 1 0-12.6z" fill="#FF5F00" />
     </svg>
   );
 }
