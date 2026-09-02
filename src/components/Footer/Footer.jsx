@@ -107,16 +107,6 @@ function ApplePayIcon() {
   );
 }
 
-function PaymentLogos() {
-  return (
-    <div className={styles.paymentLogos} aria-label="Accepted payment methods">
-      <VisaIcon />
-      <MastercardIcon />
-      <ApplePayIcon />
-    </div>
-  );
-}
-
 function AppDownloadColumn({ title }) {
   return (
     <div className={styles.column}>
@@ -138,6 +128,13 @@ function AppDownloadColumn({ title }) {
             <span className={styles.appName}>App Store</span>
           </span>
         </a>
+      </div>
+
+      <div className={styles.colTitle} style={{ marginTop: 24 }}>Accepted Payment Methods</div>
+      <div className={styles.paymentLogos} aria-label="Accepted payment methods">
+        <VisaIcon />
+        <MastercardIcon />
+        <ApplePayIcon />
       </div>
     </div>
   );
@@ -171,7 +168,6 @@ export default function Footer() {
         <span className={styles.subline}>
           Made with ❤️ in the UAE for local businesses.
         </span>
-        <PaymentLogos />
       </div>
     </footer>
   );
