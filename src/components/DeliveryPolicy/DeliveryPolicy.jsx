@@ -33,7 +33,7 @@ export default function DeliveryPolicy() {
 
       <h2 className={styles.h2}>6. Contact Us</h2>
       <p className={styles.p}>For questions about delivery, please contact us:</p>
-      <p className={styles.p}>Email: <a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></p>
+      <p className={styles.p}>Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
     </LegalPage>
   );
 }

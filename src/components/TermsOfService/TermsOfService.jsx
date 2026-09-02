@@ -182,7 +182,7 @@ export default function TermsOfService() {
 
       <h2 className={styles.h2}>20. Contact Us</h2>
       <p className={styles.p}>For questions regarding these Terms, please contact us:</p>
-      <p className={styles.p}>Email: <a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></p>
+      <p className={styles.p}>Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
     </LegalPage>
   );
 }

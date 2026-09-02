@@ -69,7 +69,7 @@ export default function SellerVerificationKYCPolicy() {
 
       <h2 className={styles.h2}>7. Contact Us</h2>
       <p className={styles.p}>For questions regarding seller verification, please contact:</p>
-      <p className={styles.p}>Email: <a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></p>
+      <p className={styles.p}>Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
     </LegalPage>
   );
 }

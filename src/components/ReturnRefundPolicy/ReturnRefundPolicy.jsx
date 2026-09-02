@@ -151,7 +151,7 @@ export default function ReturnRefundPolicy() {
 
       <h2 className={styles.h2}>13. Contact Us</h2>
       <p className={styles.p}>For questions concerning returns or refunds, contact:</p>
-      <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></p>
+      <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
     </LegalPage>
   );
 }

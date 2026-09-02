@@ -85,7 +85,7 @@ export default function ContactUs() {
             </div>
             <div className={styles.contactRow}>
               <span className={styles.contactLabel}>Email</span>
-              <a href="mailto:info@harmonies.ae" className={styles.contactLink}>info@harmonies.ae</a>
+              <a href="mailto:info@lgv.ae" className={styles.contactLink}>info@lgv.ae</a>
             </div>
             <div className={styles.contactRow}>
               <span className={styles.contactLabel}>Phone</span>

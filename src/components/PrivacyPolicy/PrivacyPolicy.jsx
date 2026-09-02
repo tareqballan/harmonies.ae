@@ -340,7 +340,7 @@ export default function PrivacyPolicy() {
       <h2 className={styles.h2}>22. Contact Us</h2>
       <p className={styles.p}>If you have questions regarding this Privacy Policy or our privacy practices, contact us:</p>
       <p className={styles.p}><strong>Harmonies.ae</strong></p>
-      <p className={styles.p}>Email: <strong><a href="mailto:info@harmonies.ae" className={styles.link}>info@harmonies.ae</a></strong></p>
+      <p className={styles.p}>Email: <strong><a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></strong></p>
       <p className={styles.p}>Website: <strong>https://harmonies.ae</strong></p>
 
       <h2 className={styles.h2}>23. Governing Law</h2>
