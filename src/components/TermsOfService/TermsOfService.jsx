@@ -67,6 +67,7 @@ export default function TermsOfService() {
         <li className={styles.li}>Sellers may reject or cancel orders due to stock availability, pricing errors, inability to fulfill the order, suspected fraud, or other legitimate reasons.</li>
       </ul>
       <p className={styles.p}>By completing a purchase, customers authorize Harmonies and its approved payment providers to process payments using the selected payment method.</p>
+      <p className={styles.p}>The price and currency displayed at checkout will match the price and currency shown on the order receipt and the amount charged to the customer&apos;s payment card.</p>
       <p className={styles.p}>Customer payments are processed securely through approved third-party payment providers.</p>
       <p className={styles.p}>Harmonies manages the marketplace transaction flow, including applicable commissions, service fees, and seller payouts.</p>
       <p className={styles.p}>Seller payouts may be processed according to Harmonies&apos; payout schedule and may be subject to order completion, delivery confirmation, refunds, disputes, chargebacks, or other risk management procedures.</p>
