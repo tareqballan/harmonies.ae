@@ -92,6 +92,35 @@
   color: #9a9ec4;
   margin: 0 0 36px;
 }
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 22px;
+  margin: 0 0 32px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.contactRow {
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #c7c9d9;
+}
+.contactLabel {
+  flex-shrink: 0;
+  width: 68px;
+  font-weight: 700;
+  color: #9a9ec4;
+}
+.contactLink {
+  color: #c7c9d9;
+  text-decoration: none;
+}
+.contactLink:hover { text-decoration: underline; }
+
 .socials {
   display: flex;
   gap: 12px;
@@ -251,6 +280,8 @@
     text-align: center;
   }
   .socials { justify-content: center; }
+  .contactDetails { text-align: left; }
+  .contactRow { justify-content: flex-start; }
   .card { max-width: 100%; width: 100%; }
   .statusPill { display: inline-flex; }
 }

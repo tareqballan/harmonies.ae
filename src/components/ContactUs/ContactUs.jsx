@@ -78,6 +78,24 @@ export default function ContactUs() {
           <p className={styles.subCopy}>
             Questions, feedback, or just want to say hi — drop us a line and a real person will get back to you.
           </p>
+          <div className={styles.contactDetails}>
+            <div className={styles.contactRow}>
+              <span className={styles.contactLabel}>Company</span>
+              <span>Lumiere Global Ventures LLC-FZ</span>
+            </div>
+            <div className={styles.contactRow}>
+              <span className={styles.contactLabel}>Email</span>
+              <a href="mailto:info@harmonies.ae" className={styles.contactLink}>info@harmonies.ae</a>
+            </div>
+            <div className={styles.contactRow}>
+              <span className={styles.contactLabel}>Phone</span>
+              <a href="tel:+971501278250" className={styles.contactLink}>+971 50 127 8250</a>
+            </div>
+            <div className={styles.contactRow}>
+              <span className={styles.contactLabel}>Address</span>
+              <span>6th Floor, Meydan Freezone, Nad Al-Sheba, Dubai, United Arab Emirates</span>
+            </div>
+          </div>
           <div className={styles.socials}>
             <a href="https://www.instagram.com/harmonies.ae" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.socialBtn}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2">

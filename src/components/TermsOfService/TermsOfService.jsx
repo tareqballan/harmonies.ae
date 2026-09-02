@@ -70,6 +70,7 @@ export default function TermsOfService() {
       <p className={styles.p}>The price and currency displayed at checkout will match the price and currency shown on the order receipt and the amount charged to the customer&apos;s payment card.</p>
       <p className={styles.p}>Customer payments are processed securely through approved third-party payment providers.</p>
       <p className={styles.p}>Harmonies manages the marketplace transaction flow, including applicable commissions, service fees, and seller payouts.</p>
+      <p className={styles.p}>Once a payment is successfully processed, Harmonies confirms the order to the customer by email, if a valid email address is registered on the account, or otherwise by WhatsApp message to the registered mobile number. Payment confirmation is sent immediately after the transaction is completed.</p>
       <p className={styles.p}>Seller payouts may be processed according to Harmonies&apos; payout schedule and may be subject to order completion, delivery confirmation, refunds, disputes, chargebacks, or other risk management procedures.</p>
 
       <h2 className={styles.h2}>7. Delivery and Logistics</h2>
