@@ -23,6 +23,7 @@ export default function DeliveryPolicy() {
       <p className={styles.p}>Harmonies currently delivers within the United Arab Emirates only.</p>
       <p className={styles.p}>Orders are generally delivered within <strong>1 to 5 business days</strong> of the order being accepted, depending on the product, its packaging requirements, and the delivery destination within the UAE.</p>
       <p className={styles.p}>Delivery timeframes are estimates and may vary due to circumstances outside Harmonies&apos; reasonable control, including weather conditions, transportation delays, operational issues, or third-party provider delays.</p>
+      <p className={styles.p}>For handmade, personalized, or made-to-order products, the delivery timeframe is determined by the seller to allow time for the product to be manufactured or prepared. This timeframe will be communicated to the customer before the order is placed.</p>
 
       <h2 className={styles.h2}>4. Order Tracking and Delays</h2>
       <p className={styles.p}>If an order has not arrived within the expected timeframe, customers can contact Harmonies for assistance in locating the order or resolving the delay.</p>
