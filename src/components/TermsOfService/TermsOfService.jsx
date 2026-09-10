@@ -8,10 +8,12 @@ export default function TermsOfService() {
       description="The terms governing your access to and use of the Harmonies platform."
       path="/terms-of-service"
       dateLabel="Last Updated"
-      date="01 July 2026"
+      date="10 September 2026"
     >
       <p className={styles.p}>Welcome to Harmonies.ae. These Terms of Service (&quot;Terms&quot;) govern your access to and use of the Harmonies platform, including our website, mobile applications, and related services (&quot;Platform&quot;).</p>
+      <p className={styles.p}>Lumiere Global Ventures LLC-FZ maintains the <a href="https://harmonies.ae/" className={styles.link}>https://harmonies.ae/</a> website (the &quot;Site&quot;).</p>
       <p className={styles.p}>By creating an account, accessing, or using Harmonies, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our Platform.</p>
+      <p className={styles.p}>Any purchase, dispute, or claim arising out of or in connection with this website shall be governed and construed in accordance with the laws of the United Arab Emirates.</p>
 
       <h2 className={styles.h2}>1. About Harmonies</h2>
       <p className={styles.p}>Harmonies is a social commerce marketplace that connects customers with independent sellers, local businesses, and creators.</p>
@@ -29,6 +31,7 @@ export default function TermsOfService() {
         <li className={styles.li}>Notify Harmonies of any unauthorized access to your account.</li>
         <li className={styles.li}>Use the Platform only for lawful purposes.</li>
       </ul>
+      <p className={styles.p}>You are solely responsible for maintaining the confidentiality of your account and password, and for all activities that occur under your account.</p>
       <p className={styles.p}>Sellers must maintain valid business licenses, permits, and approvals required to operate their business and sell their products.</p>
       <p className={styles.p}>Harmonies does not permit the use of the Platform by, or transactions with, individuals or entities located in, or ordinarily resident in, any country or region that is subject to comprehensive trade sanctions administered by the U.S. Office of Foreign Assets Control (OFAC) or other applicable sanctions authorities. By using Harmonies, you confirm that you are not located in, and are not ordinarily resident in, any such sanctioned country or region, and that you are not on any restricted or denied-party list.</p>
 
@@ -67,8 +70,10 @@ export default function TermsOfService() {
         <li className={styles.li}>Sellers may reject or cancel orders due to stock availability, pricing errors, inability to fulfill the order, suspected fraud, or other legitimate reasons.</li>
       </ul>
       <p className={styles.p}>By completing a purchase, customers authorize Harmonies and its approved payment providers to process payments using the selected payment method.</p>
-      <p className={styles.p}>The price and currency displayed at checkout will match the price and currency shown on the order receipt and the amount charged to the customer&apos;s payment card.</p>
+      <p className={styles.p}>Visa or MasterCard debit and credit cards in AED will be accepted for payment.</p>
+      <p className={styles.p}>The price and currency displayed at checkout will match the price and currency shown on the order receipt and the amount charged to the customer&apos;s payment card, and the amount charged will be shown in your card currency.</p>
       <p className={styles.p}>Customer payments are processed securely through approved third-party payment providers.</p>
+      <p className={styles.p}>The cardholder must retain a copy of their transaction records and of Harmonies&apos; policies and rules.</p>
       <p className={styles.p}>Harmonies manages the marketplace transaction flow, including applicable commissions, service fees, and seller payouts.</p>
       <p className={styles.p}>Once a payment is successfully processed, Harmonies confirms the order to the customer by email, if a valid email address is registered on the account, or otherwise by WhatsApp message to the registered mobile number. Payment confirmation is sent immediately after the transaction is completed.</p>
       <p className={styles.p}>Seller payouts may be processed according to Harmonies&apos; payout schedule and may be subject to order completion, delivery confirmation, refunds, disputes, chargebacks, or other risk management procedures.</p>

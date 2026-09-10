@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       description="How Harmonies collects, uses, stores, and protects your personal information."
       path="/privacy-policy"
       dateLabel="Effective Date"
-      date="July 12, 2026"
+      date="September 10, 2026"
     >
       <p className={styles.p}>Welcome to Harmonies.ae (&quot;Harmonies&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;).</p>
       <p className={styles.p}>This Privacy Policy explains how Harmonies collects, uses, stores, shares, and protects your information when you use our website, mobile applications, and related services (collectively, the &quot;Platform&quot;).</p>
@@ -77,6 +77,8 @@ export default function PrivacyPolicy() {
         <li className={styles.li}>Compliance with legal and regulatory requirements</li>
       </ul>
       <p className={styles.p}>Payments may be processed through third-party payment providers.</p>
+      <p className={styles.p}>All credit/debit card details and personally identifiable information collected during checkout will not be stored, sold, shared, rented, or leased to any third party, other than to the approved payment provider strictly for the purpose of processing the transaction. Harmonies.ae will not otherwise pass any debit/credit card details to third parties.</p>
+      <p className={styles.p}>If you choose to save your card details for future payments, you will first be asked to explicitly consent to this. Only if you agree will your tokenized card details be stored, through our approved payment provider, for use in your future transactions. You may remove a saved card at any time through your account settings. If you do not opt in, your card details are not stored after your transaction is completed.</p>
 
       <h3 className={styles.h3}>Device and Usage Information</h3>
       <p className={styles.p}>We may automatically collect:</p>
@@ -290,7 +292,7 @@ export default function PrivacyPolicy() {
         <li className={styles.li}>Security monitoring</li>
         <li className={styles.li}>Backup procedures</li>
       </ul>
-      <p className={styles.p}>However, no electronic transmission or storage method is completely secure.</p>
+      <p className={styles.p}>Harmonies.ae takes appropriate steps to ensure data privacy and security, including through various hardware and software methodologies. However, Harmonies.ae cannot guarantee the security of any information that is disclosed online, as no electronic transmission or storage method is completely secure.</p>
 
       <h2 className={styles.h2}>16. Account Deletion</h2>
       <p className={styles.p}>Users may request deletion of their account directly through the Harmonies application.</p>
@@ -327,6 +329,7 @@ export default function PrivacyPolicy() {
         <li className={styles.li}>Communication providers</li>
       </ul>
       <p className={styles.p}>Third parties have their own privacy policies, and Harmonies is not responsible for their privacy practices.</p>
+      <p className={styles.p}>Harmonies.ae is not responsible for the privacy policies of websites to which it links. If you provide any information to such third parties, different rules regarding the collection and use of your personal information may apply. You should contact these entities directly if you have any questions about their use of the information that they collect.</p>
 
       <h2 className={styles.h2}>20. Compliance With UAE Data Protection Laws</h2>
       <p className={styles.p}>Harmonies operates in accordance with applicable laws and regulations in the United Arab Emirates, including Federal Decree-Law No. 45 of 2021 regarding the Protection of Personal Data.</p>
