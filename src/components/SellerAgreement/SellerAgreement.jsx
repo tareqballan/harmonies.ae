@@ -8,7 +8,7 @@ export default function SellerAgreement() {
       description="The terms governing the relationship between Harmonies and sellers using the platform."
       path="/seller-agreement"
       dateLabel="Effective Date"
-      date="19 August 2026"
+      date="12 September 2026"
     >
       <p className={styles.p}>This Seller Agreement ("Agreement") is entered into between <strong>Lumiere Global Ventures LLC-FZ</strong>, operating the Harmonies Platform ("Harmonies," "we," "our," or "us"), and the individual or legal entity registered as a Seller ("Seller," "you," or "your").</p>
       <p className={styles.p}>This Agreement governs your use of Harmonies to list, promote, sell, and fulfil products.</p>
@@ -178,7 +178,7 @@ export default function SellerAgreement() {
       <p className={styles.p}>Applicable commissions, delivery charges, subscription fees, service charges, and other fees will be shown in the Seller's pricing terms or package.</p>
       <p className={styles.p}>The Seller must review the applicable fees before accepting the package or transaction.</p>
       <p className={styles.p}>The Seller authorises Harmonies to deduct all applicable and authorised amounts from transaction proceeds, the Seller Balance, or future payouts.</p>
-      <p className={styles.p}>Changes to fees will be handled in accordance with Section 46.</p>
+      <p className={styles.p}>Changes to fees will be handled in accordance with Section 47.</p>
 
       <h2 className={styles.h2}>13. Inventory Management</h2>
       <p className={styles.p}>The Seller must:</p>
@@ -440,7 +440,25 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>Transactions initiated through Harmonies must be completed through Harmonies unless expressly authorised otherwise.</p>
 
-      <h2 className={styles.h2}>31. Seller Performance</h2>
+      <h2 className={styles.h2}>31. Multi-Platform Selling</h2>
+      <p className={styles.p}>Harmonies does not require the Seller to work exclusively with Harmonies. The Seller may sell through other marketplaces, social-commerce channels such as Instagram and TikTok, its own website, physical stores, or any other sales channel ("External Channels"), provided the Seller complies with this Section.</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}><strong>Non-exclusive partnership.</strong> This is a non-exclusive relationship. Selling through External Channels does not breach this Agreement so long as the requirements below are met.</li>
+        <li className={styles.li}><strong>Recording external orders on Harmonies.</strong> Where the Seller wishes to use Harmonies' delivery partners to fulfil an order originating from an External Channel, the Seller must record that order on Harmonies so it can be routed to a delivery partner.</li>
+        <li className={styles.li}><strong>Fees on external orders.</strong> An order recorded on Harmonies solely for delivery purposes because it originated on an External Channel does not incur Harmonies' platform commission. Such orders remain subject to the applicable payment-gateway fee, the delivery partner's fee, and, where applicable, a service fee, each as communicated by Harmonies from time to time.</li>
+        <li className={styles.li}><strong>Inventory synchronisation.</strong> The Seller must keep the stock quantities shown on Harmonies accurate and up to date across all of its sales channels. When a sale is made on an External Channel, the Seller must promptly update the corresponding stock levels on Harmonies to prevent overselling.</li>
+        <li className={styles.li}><strong>No preferential fulfilment.</strong> The Seller must not intentionally delay, cancel, or deprioritise Harmonies orders in favour of orders received through an External Channel. Harmonies orders must be fulfilled according to the same standards regardless of the Seller's other sales activity.</li>
+        <li className={styles.li}><strong>Harmonies customers remain Harmonies customers.</strong> The Seller must not redirect a Buyer who was acquired through Harmonies to an External Channel to complete a transaction that could be completed on Harmonies.</li>
+        <li className={styles.li}><strong>No commission avoidance.</strong> The Seller must not move an order that originated on Harmonies outside the Platform in order to avoid Harmonies' commission or fees.</li>
+        <li className={styles.li}><strong>Consistent product information.</strong> Prices, availability, descriptions, variants, and photos displayed on Harmonies must remain accurate and must not be neglected in favour of the Seller's other sales channels.</li>
+        <li className={styles.li}><strong>Harmonies service standards remain mandatory.</strong> The Seller's delivery, cancellation, returns, refund, and customer-service obligations for Harmonies orders apply in full regardless of the Seller's partnerships with other platforms.</li>
+        <li className={styles.li}><strong>No interference with Harmonies operations.</strong> The Seller's activity on External Channels must not cause repeated stock shortages, fulfilment failures, or customer-service problems on Harmonies.</li>
+        <li className={styles.li}><strong>Seller remains responsible for external orders.</strong> Except where an order has been recorded on Harmonies for delivery purposes under this Section, Harmonies is not responsible for disputes, delivery, refunds, or other issues arising from orders placed through External Channels.</li>
+        <li className={styles.li}><strong>Right to suspend or remove products.</strong> Harmonies may temporarily suspend affected products, or the Seller's account, where the Seller's External Channel activity repeatedly causes overselling, cancellations, or a poor customer experience on Harmonies.</li>
+      </ul>
+      <p className={styles.p}>Repeated or uncured breach of this Section may be treated as a violation of this Agreement under Section 39 (Suspension and Termination).</p>
+
+      <h2 className={styles.h2}>32. Seller Performance</h2>
       <p className={styles.p}>Harmonies may evaluate:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Fulfilment and cancellation rates.</li>
@@ -453,7 +471,7 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>Poor performance may lead to warnings, reduced visibility, transaction limits, additional reserves, delayed payouts, restrictions, suspension, or termination.</p>
 
-      <h2 className={styles.h2}>32. Customer Data and Privacy</h2>
+      <h2 className={styles.h2}>33. Customer Data and Privacy</h2>
       <p className={styles.p}>Seller access to Buyer information is limited to fulfilment and authorised customer service.</p>
       <p className={styles.p}>The Seller must:</p>
       <ul className={styles.ul}>
@@ -465,7 +483,7 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>Unauthorised use is a material breach.</p>
 
-      <h2 className={styles.h2}>33. Intellectual Property</h2>
+      <h2 className={styles.h2}>34. Intellectual Property</h2>
       <p className={styles.p}>The Seller represents that:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>It owns or is authorised to sell listed products.</li>
@@ -474,7 +492,7 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>Harmonies may remove disputed content, request evidence, or suspend related activity while investigating complaints.</p>
 
-      <h2 className={styles.h2}>34. Confidentiality</h2>
+      <h2 className={styles.h2}>35. Confidentiality</h2>
       <p className={styles.p}>The Seller must keep confidential and must not disclose to any third party, including any actual or potential competitor of Harmonies, non-public information concerning Harmonies or the Platform, including:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Business, financial, and commercial information.</li>
@@ -495,12 +513,12 @@ export default function SellerAgreement() {
       <p className={styles.p}>Necessary disclosure to employees or professional advisers is permitted only where they are subject to equivalent confidentiality duties.</p>
       <p className={styles.p}>These obligations survive termination.</p>
 
-      <h2 className={styles.h2}>35. Marketplace Role</h2>
+      <h2 className={styles.h2}>36. Marketplace Role</h2>
       <p className={styles.p}>Harmonies operates as a marketplace connecting Sellers and Buyers.</p>
       <p className={styles.p}>Unless expressly stated otherwise, Harmonies is not the seller, importer, manufacturer, distributor, reseller, or owner of Seller products.</p>
       <p className={styles.p}>The Seller is the contracting supplier and remains responsible for product legality, quality, safety, description, fulfilment, warranties, and related claims.</p>
 
-      <h2 className={styles.h2}>36. Platform Availability</h2>
+      <h2 className={styles.h2}>37. Platform Availability</h2>
       <p className={styles.p}>Harmonies will use commercially reasonable efforts to maintain the Platform's availability, security, and proper operation.</p>
       <p className={styles.p}>Continuous or error-free access cannot be guaranteed. Temporary unavailability may result from:</p>
       <ul className={styles.ul}>
@@ -515,11 +533,11 @@ export default function SellerAgreement() {
       <p className={styles.p}>Harmonies will take reasonable measures to restore affected services and minimise disruption.</p>
       <p className={styles.p}>Harmonies is not liable for temporary unavailability caused by circumstances beyond its reasonable control, provided it has taken commercially reasonable preventive and recovery measures.</p>
 
-      <h2 className={styles.h2}>37. Account Inactivity</h2>
+      <h2 className={styles.h2}>38. Account Inactivity</h2>
       <p className={styles.p}>Harmonies may restrict or suspend an account after an extended period of inactivity.</p>
       <p className={styles.p}>Reactivation may require updated information or renewed KYC verification.</p>
 
-      <h2 className={styles.h2}>38. Suspension and Termination</h2>
+      <h2 className={styles.h2}>39. Suspension and Termination</h2>
       <p className={styles.p}>Harmonies may suspend, restrict, or terminate an account where the Seller:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Violates this Agreement.</li>
@@ -542,7 +560,7 @@ export default function SellerAgreement() {
         <li className={styles.li}>Remaining undisputed amounts will then be paid to the Seller.</li>
       </ul>
 
-      <h2 id="account-deletion" className={styles.h2}>39. Account Deletion</h2>
+      <h2 id="account-deletion" className={styles.h2}>40. Account Deletion</h2>
       <p className={styles.p}>The Seller may not delete its account while:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Any order remains outstanding, including an order that has not been fulfilled or that has been fulfilled but remains within its applicable return window.</li>
@@ -551,7 +569,7 @@ export default function SellerAgreement() {
       <p className={styles.p}>The Seller has the right to close its store while these conditions are outstanding. Once all orders have been resolved, applicable return windows have expired, and the Seller's balance has been fully withdrawn, the Seller may request account deletion again.</p>
       <p className={styles.p}>On account deletion, Harmonies will retain the Seller's store data for a period of <strong>five years</strong> for legal and compliance reasons, including in case of a dispute, tax audit, or regulatory request. During this period, retained data will be used solely for those purposes and for no other purpose, including marketing, analytics, or profiling. The data will be permanently deleted after that period expires.</p>
 
-      <h2 className={styles.h2}>40. Limitation of Liability</h2>
+      <h2 className={styles.h2}>41. Limitation of Liability</h2>
       <p className={styles.p}>To the maximum extent permitted by law, Harmonies is not responsible for:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Seller product quality, safety, or authenticity.</li>
@@ -564,7 +582,7 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>Nothing excludes liability that cannot legally be excluded.</p>
 
-      <h2 className={styles.h2}>41. Indemnification</h2>
+      <h2 className={styles.h2}>42. Indemnification</h2>
       <p className={styles.p}>To the extent permitted by law, the Seller agrees to defend, indemnify, and hold harmless Harmonies, its affiliates, directors, employees, representatives, and partners from claims, losses, liabilities, penalties, costs, or expenses arising from:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Seller products.</li>
@@ -577,14 +595,14 @@ export default function SellerAgreement() {
         <li className={styles.li}>Seller-responsible refunds, disputes, or chargebacks.</li>
       </ul>
 
-      <h2 className={styles.h2}>42. Force Majeure</h2>
+      <h2 className={styles.h2}>43. Force Majeure</h2>
       <p className={styles.p}>Neither party is liable for failure or delay caused by circumstances beyond its reasonable control.</p>
       <p className={styles.p}>The affected party must take reasonable steps to reduce the impact and resume performance where possible.</p>
 
-      <h2 className={styles.h2}>43. Survival</h2>
+      <h2 className={styles.h2}>44. Survival</h2>
       <p className={styles.p}>Provisions concerning payments, reserves, negative balances, transaction records, taxes, confidentiality, customer data, intellectual property, liability, indemnification, and dispute resolution survive suspension or termination.</p>
 
-      <h2 className={styles.h2}>44. Notices</h2>
+      <h2 className={styles.h2}>45. Notices</h2>
       <p className={styles.p}>Harmonies may issue notices through:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>The Platform.</li>
@@ -594,33 +612,33 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>The Seller must maintain current contact information and review Platform communications.</p>
 
-      <h2 className={styles.h2}>45. Payment-Provider and Card-Scheme Requirements</h2>
+      <h2 className={styles.h2}>46. Payment-Provider and Card-Scheme Requirements</h2>
       <p className={styles.p}>The Seller agrees to comply with reasonable payment-processing, fraud-prevention, documentation, and transaction requirements communicated by Harmonies.</p>
       <p className={styles.p}>Where payment-provider or card-scheme rules conflict with this Agreement, Harmonies may take the measures reasonably necessary to maintain payment services, subject to applicable law.</p>
       <p className={styles.p}>This may include transaction reviews, limits, additional documentation, payout delays, or seller-specific reserves.</p>
 
-      <h2 className={styles.h2}>46. Amendments</h2>
+      <h2 className={styles.h2}>47. Amendments</h2>
       <p className={styles.p}>Harmonies may amend this Agreement.</p>
       <p className={styles.p}>Material changes will be communicated and become effective only after the Seller expressly accepts them.</p>
       <p className={styles.p}>If the Seller does not accept a material update, Harmonies may prevent new listings or orders while processing existing obligations under the previously accepted terms.</p>
       <p className={styles.p}>Non-material changes may take effect following notice where permitted by law.</p>
 
-      <h2 className={styles.h2}>47. Assignment</h2>
+      <h2 className={styles.h2}>48. Assignment</h2>
       <p className={styles.p}>The Seller may not assign this Agreement without Harmonies' written approval.</p>
       <p className={styles.p}>Harmonies may assign it as part of a merger, acquisition, restructuring, financing, or business transfer, subject to applicable law.</p>
 
-      <h2 className={styles.h2}>48. Severability and No Waiver</h2>
+      <h2 className={styles.h2}>49. Severability and No Waiver</h2>
       <p className={styles.p}>If any provision is invalid or unenforceable, the remaining provisions remain effective.</p>
       <p className={styles.p}>Failure or delay in enforcing a right does not waive that right.</p>
 
-      <h2 className={styles.h2}>49. Entire Agreement</h2>
+      <h2 className={styles.h2}>50. Entire Agreement</h2>
       <p className={styles.p}>This Agreement, together with expressly incorporated policies and pricing terms, constitutes the complete agreement governing the Seller's use of Harmonies.</p>
 
-      <h2 className={styles.h2}>50. Governing Law and Dispute Resolution</h2>
+      <h2 className={styles.h2}>51. Governing Law and Dispute Resolution</h2>
       <p className={styles.p}>This Agreement is governed by the laws of the United Arab Emirates.</p>
       <p className={styles.p}>Disputes are subject to the competent courts of the United Arab Emirates unless applicable law requires otherwise.</p>
 
-      <h2 className={styles.h2}>51. Electronic Acceptance and Evidence</h2>
+      <h2 className={styles.h2}>52. Electronic Acceptance and Evidence</h2>
       <p className={styles.p}>Electronic acceptance has the same legal effect as a physical signature where recognised by applicable law.</p>
       <p className={styles.p}>Harmonies may record:</p>
       <ul className={styles.ul}>
@@ -632,7 +650,7 @@ export default function SellerAgreement() {
         <li className={styles.li}>The identity and authority of the accepting representative.</li>
       </ul>
 
-      <h2 className={styles.h2}>52. Contact Information</h2>
+      <h2 className={styles.h2}>53. Contact Information</h2>
       <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
     </LegalPage>
   );
