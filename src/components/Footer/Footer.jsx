@@ -136,7 +136,7 @@ function AppDownloadColumn({ title }) {
             <span className={styles.appName}>Google Play</span>
           </span>
         </a>
-        <a href="#" className={styles.appButton}>
+        <a href="https://apps.apple.com/app/harmonies-seller/id6801900798" target="_blank" rel="noopener noreferrer" className={styles.appButton}>
           <span className={styles.appIconWrap}><AppStoreIcon /></span>
           <span className={styles.appTextCol}>
             <span className={styles.appEyebrow}>Download on the</span>
