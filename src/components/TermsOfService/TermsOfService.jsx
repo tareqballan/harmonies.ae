@@ -4,13 +4,13 @@ import styles from '../LegalPage/LegalPage.module.css';
 export default function TermsOfService() {
   return (
     <LegalPage
-      title="Terms of Service"
+      title="Terms and Conditions"
       description="The terms governing your access to and use of the Harmonies platform."
       path="/terms-of-service"
       dateLabel="Last Updated"
-      date="10 September 2026"
+      date="18 September 2026"
     >
-      <p className={styles.p}>Welcome to Harmonies.ae. These Terms of Service (&quot;Terms&quot;) govern your access to and use of the Harmonies platform, including our website, mobile applications, and related services (&quot;Platform&quot;).</p>
+      <p className={styles.p}>Welcome to Harmonies.ae. These Terms and Conditions (&quot;Terms&quot;) govern your access to and use of the Harmonies platform, including our website, mobile applications, and related services (&quot;Platform&quot;).</p>
       <p className={styles.p}>Lumiere Global Ventures LLC-FZ maintains the <a href="https://harmonies.ae/" className={styles.link}>https://harmonies.ae/</a> website (the &quot;Site&quot;).</p>
       <p className={styles.p}>By creating an account, accessing, or using Harmonies, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our Platform.</p>
       <p className={styles.p}>Any purchase, dispute, or claim arising out of or in connection with this website shall be governed and construed in accordance with the laws of the United Arab Emirates.</p>
@@ -33,7 +33,7 @@ export default function TermsOfService() {
       </ul>
       <p className={styles.p}>You are solely responsible for maintaining the confidentiality of your account and password, and for all activities that occur under your account.</p>
       <p className={styles.p}>Sellers must maintain valid business licenses, permits, and approvals required to operate their business and sell their products.</p>
-      <p className={styles.p}>Harmonies does not permit the use of the Platform by, or transactions with, individuals or entities located in, or ordinarily resident in, any country or region that is subject to comprehensive trade sanctions administered by the U.S. Office of Foreign Assets Control (OFAC) or other applicable sanctions authorities. By using Harmonies, you confirm that you are not located in, and are not ordinarily resident in, any such sanctioned country or region, and that you are not on any restricted or denied-party list.</p>
+      <p className={styles.p}>We will not trade with or provide any services to individuals or entities located in, or ordinarily resident in, any country or region subject to comprehensive trade sanctions administered by the U.S. Office of Foreign Assets Control (OFAC) or other applicable sanctions authorities. By using Harmonies, you confirm that you are not located in, and are not ordinarily resident in, any such sanctioned country or region, and that you are not on any restricted or denied-party list.</p>
 
       <h2 className={styles.h2}>3. User Roles</h2>
 
@@ -75,7 +75,8 @@ export default function TermsOfService() {
       <p className={styles.p}>Customer payments are processed securely through approved third-party payment providers.</p>
       <p className={styles.p}>The cardholder must retain a copy of their transaction records and of Harmonies&apos; policies and rules.</p>
       <p className={styles.p}>Harmonies manages the marketplace transaction flow, including applicable commissions, service fees, and seller payouts.</p>
-      <p className={styles.p}>Once a payment is successfully processed, Harmonies confirms the order to the customer by email, if a valid email address is registered on the account, or otherwise by WhatsApp message to the registered mobile number. Payment confirmation is sent immediately after the transaction is completed.</p>
+      <h3 className={styles.h3}>Payment Confirmation</h3>
+      <p className={styles.p}>Once a payment is successfully processed, Harmonies sends the customer a payment confirmation immediately, and in any case within 24 hours of the transaction. Confirmation is sent by email, if a valid email address is registered on the account, or otherwise by WhatsApp message to the registered mobile number.</p>
       <p className={styles.p}>Seller payouts may be processed according to Harmonies&apos; payout schedule and may be subject to order completion, delivery confirmation, refunds, disputes, chargebacks, or other risk management procedures.</p>
 
       <h2 className={styles.h2}>7. Delivery and Logistics</h2>

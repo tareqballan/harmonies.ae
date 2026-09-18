@@ -8,7 +8,7 @@ export default function ReturnRefundPolicy() {
       description="When customers may request returns, who bears delivery costs, and how refunds are processed on Harmonies."
       path="/return-refund-policy"
       dateLabel="Last Updated"
-      date="02 August 2026"
+      date="18 September 2026"
     >
       <p className={styles.p}>At Harmonies, we aim to provide customers with a reliable and transparent shopping experience. This policy explains when returns may be requested, who is responsible for delivery costs, and how refunds are processed.</p>
 
@@ -94,11 +94,10 @@ export default function ReturnRefundPolicy() {
       <p className={styles.p}>If the return is approved following inspection:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Harmonies will initiate the refund within one working day.</li>
-        <li className={styles.li}>The refund will normally be issued to the original payment method.</li>
         <li className={styles.li}>For seller-fault returns, the refund will include any original outbound delivery fee paid by the customer.</li>
         <li className={styles.li}>For change-of-mind returns, the refund may be reduced by the customer-responsible return fee.</li>
-        <li className={styles.li}>Once initiated, the refund is typically credited to the customer's original payment method within 10 to 45 days, depending on the bank, card issuer, or payment provider.</li>
       </ul>
+      <p className={styles.p}>Refunds will be done only through the original mode of payment used for the transaction and will be processed within 10 to 45 days, depending on the issuing bank of the credit card.</p>
       <p className={styles.p}>If the returned product does not meet the applicable requirements, Harmonies may reject or adjust the refund after reviewing the evidence and informing the customer of the reason.</p>
 
       <h2 className={styles.h2}>8. Order Cancellation</h2>

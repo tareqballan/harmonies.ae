@@ -26,7 +26,7 @@ const PAGE_META = {
     description: 'How Harmonies collects, uses, stores, and protects your personal information.',
   },
   '/terms-of-service': {
-    title: 'Terms of Service | Harmonies',
+    title: 'Terms and Conditions | Harmonies',
     description: 'The terms governing your access to and use of the Harmonies platform.',
   },
   '/cookies-policy': {
