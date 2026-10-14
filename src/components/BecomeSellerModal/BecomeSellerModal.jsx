@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './BecomeSellerModal.module.css';
+import { HOW_HEARD_OPTIONS, STEP_FIELDS, validateSellerApplication } from '../../shared/sellerApplication';
 
 const INITIAL_FORM = { name: '', whatsapp: '', instagram: '', tiktok: '', website: '', email: '', howHeard: '', message: '' };
 
@@ -30,21 +31,19 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
     setForm((f) => ({ ...f, [key]: e.target.value }));
     if (errors[key]) setErrors((e) => ({ ...e, [key]: null }));
   };
-  const nextStep = () => setStep((s) => Math.min(s + 1, 2));
-  const nextStepValidated = () => {
-    const newErrors = {};
-    if (!form.name.trim()) newErrors.name = 'Please enter your name.';
-    if (!form.whatsapp.trim()) newErrors.whatsapp = 'Please enter your WhatsApp number.';
-    if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
-    nextStep();
+  // validates only the fields on the current step; returns true if they pass
+  const validateStep = () => {
+    const { errors: allErrors } = validateSellerApplication(form);
+    const stepErrors = {};
+    for (const key of STEP_FIELDS[step]) if (allErrors[key]) stepErrors[key] = allErrors[key];
+    setErrors(stepErrors);
+    return Object.keys(stepErrors).length === 0;
   };
-  const nextStepInstagram = () => {
-    if (!form.instagram.trim()) { setErrors({ instagram: 'Please enter your Instagram account.' }); return; }
-    nextStep();
-  };
-  const prevStep = () => setStep((s) => Math.max(s - 1, 0));
+  const nextStep = () => { if (validateStep()) setStep((s) => Math.min(s + 1, 2)); };
+  const prevStep = () => { setErrors({}); setStep((s) => Math.max(s - 1, 0)); };
 
   const submitSeller = async () => {
+    if (!validateStep()) return;
     setIsSubmitting(true);
     setSubmitError(null);
     try {
@@ -108,25 +107,26 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
                   value={form.name}
                   onChange={field('name')}
                   className={styles.input}
-                  style={{ marginBottom: errors.name ? 4 : 18 }}
+                  style={{ marginBottom: 18 }}
                 />
-                {errors.name && <p className={styles.errorText}>{errors.name}</p>}
+                {errors.name && <p className={styles.fieldError}>{errors.name}</p>}
 
                 <label className={styles.label}>WhatsApp number</label>
                 <div className={styles.whatsappRow}>
                   <div className={styles.countryCode}>+971</div>
                   <input
-                    type="text"
+                    type="tel"
+                    inputMode="tel"
                     placeholder="50 123 4567"
                     value={form.whatsapp}
                     onChange={field('whatsapp')}
                     className={styles.input}
                   />
                 </div>
-                {errors.whatsapp && <p className={styles.errorText}>{errors.whatsapp}</p>}
+                {errors.whatsapp && <p className={styles.fieldError} style={{ marginTop: -22 }}>{errors.whatsapp}</p>}
 
                 <div className={styles.footerRowEnd}>
-                  <button type="button" className={styles.continueButton} onClick={nextStepValidated}>
+                  <button type="button" className={styles.continueButton} onClick={nextStep}>
                     Continue
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                   </button>
@@ -140,21 +140,24 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
                 <p className={styles.subcopy}>Your Instagram helps us understand your store faster.</p>
 
                 <label className={styles.label}>Instagram account</label>
-                <input type="text" placeholder="@yourstore" value={form.instagram} onChange={field('instagram')} className={styles.input} style={{ marginBottom: errors.instagram ? 4 : 16 }} />
-                {errors.instagram && <p className={styles.errorText} style={{ marginBottom: 16 }}>{errors.instagram}</p>}
+                <input type="text" placeholder="@yourstore" value={form.instagram} onChange={field('instagram')} className={styles.input} style={{ marginBottom: 16 }} />
+                {errors.instagram && <p className={styles.fieldError}>{errors.instagram}</p>}
 
                 <label className={styles.label}>TikTok <span className={styles.optional}>(optional)</span></label>
                 <input type="text" placeholder="@yourstore" value={form.tiktok} onChange={field('tiktok')} className={styles.input} style={{ marginBottom: 16 }} />
+                {errors.tiktok && <p className={styles.fieldError}>{errors.tiktok}</p>}
 
                 <label className={styles.label}>Website <span className={styles.optional}>(optional)</span></label>
                 <input type="text" placeholder="yourstore.com" value={form.website} onChange={field('website')} className={styles.input} style={{ marginBottom: 16 }} />
+                {errors.website && <p className={styles.fieldError}>{errors.website}</p>}
 
-                <label className={styles.label}>Email <span className={styles.optional}>(optional)</span></label>
-                <input type="text" placeholder="you@email.com" value={form.email} onChange={field('email')} className={styles.input} style={{ marginBottom: 30 }} />
+                <label className={styles.label}>Email</label>
+                <input type="email" inputMode="email" placeholder="you@email.com" value={form.email} onChange={field('email')} className={styles.input} style={{ marginBottom: 30 }} />
+                {errors.email && <p className={styles.fieldError} style={{ marginTop: -22 }}>{errors.email}</p>}
 
                 <div className={styles.footerRowBetween}>
                   <span className={styles.backLink} onClick={prevStep}>Back</span>
-                  <button type="button" className={styles.continueButton} onClick={nextStepInstagram}>
+                  <button type="button" className={styles.continueButton} onClick={nextStep}>
                     Continue
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                   </button>
@@ -167,15 +170,17 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
                 <h2 className={styles.heading}>Almost there!</h2>
                 <p className={styles.subcopy}>One last thing, then we&apos;ll be in touch.</p>
 
-                <label className={styles.label}>How&apos;d you hear about us? <span className={styles.optional}>(optional)</span></label>
-                <input
-                  type="text"
-                  placeholder="Instagram, a friend, TikTok..."
+                <label className={styles.label}>How&apos;d you hear about us?</label>
+                <select
                   value={form.howHeard}
                   onChange={field('howHeard')}
-                  className={styles.input}
-                  style={{ marginBottom: 16 }}
-                />
+                  className={`${styles.input} ${styles.select}`}
+                  style={{ marginBottom: 16, color: form.howHeard ? '#fff' : '#6b6f92' }}
+                >
+                  <option value="" disabled>Choose one…</option>
+                  {HOW_HEARD_OPTIONS.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+                </select>
+                {errors.howHeard && <p className={styles.fieldError}>{errors.howHeard}</p>}
 
                 <label className={styles.label}>Anything you&apos;d like to tell us? <span className={styles.optional}>(optional)</span></label>
                 <textarea
@@ -186,6 +191,7 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
                   className={styles.input}
                   style={{ marginBottom: 30, resize: 'vertical' }}
                 />
+                {errors.message && <p className={styles.fieldError} style={{ marginTop: -22 }}>{errors.message}</p>}
 
                 <div className={styles.footerRowBetween}>
                   <span className={styles.backLink} onClick={prevStep}>Back</span>

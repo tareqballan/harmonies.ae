@@ -30,6 +30,8 @@
 //    Optionally also set FROM_EMAIL (a verified sender) — defaults to
 //    Resend's shared test address if not set.
 
+import { validateSellerApplication } from '../../src/shared/sellerApplication.js';
+
 export async function onRequestPost({ request, env, ctx }) {
   let body;
   try {
@@ -38,18 +40,11 @@ export async function onRequestPost({ request, env, ctx }) {
     return json({ error: 'Invalid JSON body' }, 400);
   }
 
-  const name = (body.name || '').toString().trim();
-  const whatsapp = (body.whatsapp || '').toString().trim();
-  const instagram = (body.instagram || '').toString().trim();
-  const tiktok = (body.tiktok || '').toString().trim();
-  const website = (body.website || '').toString().trim();
-  const email = (body.email || '').toString().trim();
-  const howHeard = (body.howHeard || '').toString().trim();
-  const message = (body.message || '').toString().trim();
-
-  if (!name || !whatsapp || !instagram) {
-    return json({ error: 'Name, WhatsApp number and Instagram account are required.' }, 400);
+  const { values, errors } = validateSellerApplication(body || {});
+  if (Object.keys(errors).length > 0) {
+    return json({ error: Object.values(errors)[0], errors }, 400);
   }
+  const { name, whatsapp, instagram, tiktok, website, email, howHeard, message } = values;
 
   const submittedAt = new Date().toISOString();
 
