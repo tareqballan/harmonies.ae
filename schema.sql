@@ -6,9 +6,11 @@ CREATE TABLE IF NOT EXISTS seller_applications (
   name          TEXT NOT NULL,
   whatsapp      TEXT NOT NULL,
   instagram     TEXT,
+  tiktok        TEXT,
   website       TEXT,
   email         TEXT,
   how_heard     TEXT,
+  message       TEXT,
   submitted_at  TEXT NOT NULL
 );
 
@@ -91,3 +93,5 @@ CREATE TABLE IF NOT EXISTS cookie_banner_impressions (
 --   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN country TEXT"
 --   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN city TEXT"
 --   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE cookie_consents ADD COLUMN region TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE seller_applications ADD COLUMN tiktok TEXT"
+--   npx wrangler d1 execute harmonies-sellers --remote --command="ALTER TABLE seller_applications ADD COLUMN message TEXT"

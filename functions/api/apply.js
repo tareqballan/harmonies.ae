@@ -41,12 +41,14 @@ export async function onRequestPost({ request, env, ctx }) {
   const name = (body.name || '').toString().trim();
   const whatsapp = (body.whatsapp || '').toString().trim();
   const instagram = (body.instagram || '').toString().trim();
+  const tiktok = (body.tiktok || '').toString().trim();
   const website = (body.website || '').toString().trim();
   const email = (body.email || '').toString().trim();
   const howHeard = (body.howHeard || '').toString().trim();
+  const message = (body.message || '').toString().trim();
 
-  if (!name || !whatsapp) {
-    return json({ error: 'Name and WhatsApp number are required.' }, 400);
+  if (!name || !whatsapp || !instagram) {
+    return json({ error: 'Name, WhatsApp number and Instagram account are required.' }, 400);
   }
 
   const submittedAt = new Date().toISOString();
@@ -56,9 +58,9 @@ export async function onRequestPost({ request, env, ctx }) {
   if (env.DB) {
     try {
       await env.DB.prepare(
-        `INSERT INTO seller_applications (name, whatsapp, instagram, website, email, how_heard, submitted_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?)`
-      ).bind(name, whatsapp, instagram, website, email, howHeard, submittedAt).run();
+        `INSERT INTO seller_applications (name, whatsapp, instagram, tiktok, website, email, how_heard, message, submitted_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
+      ).bind(name, whatsapp, instagram, tiktok, website, email, howHeard, message, submittedAt).run();
     } catch (err) {
       dbError = String(err);
     }
@@ -82,10 +84,13 @@ export async function onRequestPost({ request, env, ctx }) {
             <h2>New seller application</h2>
             <p><strong>Name:</strong> ${escapeHtml(name)}</p>
             <p><strong>WhatsApp:</strong> +971 ${escapeHtml(whatsapp)}</p>
-            <p><strong>Instagram/TikTok:</strong> ${escapeHtml(instagram) || '—'}</p>
+            <p><strong>Instagram:</strong> ${escapeHtml(instagram) || '—'}</p>
+            <p><strong>TikTok:</strong> ${escapeHtml(tiktok) || '—'}</p>
             <p><strong>Website:</strong> ${escapeHtml(website) || '—'}</p>
             <p><strong>Email:</strong> ${escapeHtml(email) || '—'}</p>
             <p><strong>How they heard about us:</strong> ${escapeHtml(howHeard) || '—'}</p>
+            <p><strong>Message:</strong></p>
+            <p style="white-space:pre-wrap">${escapeHtml(message) || '—'}</p>
             <p style="color:#888;font-size:12px;margin-top:24px">Submitted ${submittedAt}</p>
           `,
         }),
@@ -120,7 +125,8 @@ export async function onRequestPost({ request, env, ctx }) {
               <div style="background:#faf9f6;border-radius:12px;padding:18px 20px;margin:0 0 24px;border:1px solid #e7e3dc">
                 <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#a8a5b8;margin:0 0 8px">Your details</p>
                 <p style="font-size:14px;color:#5B596B;margin:0;line-height:1.6"><strong>WhatsApp:</strong> +971 ${escapeHtml(whatsapp)}</p>
-                ${instagram ? `<p style="font-size:14px;color:#5B596B;margin:4px 0 0;line-height:1.6"><strong>Instagram/TikTok:</strong> ${escapeHtml(instagram)}</p>` : ''}
+                ${instagram ? `<p style="font-size:14px;color:#5B596B;margin:4px 0 0;line-height:1.6"><strong>Instagram:</strong> ${escapeHtml(instagram)}</p>` : ''}
+                ${tiktok ? `<p style="font-size:14px;color:#5B596B;margin:4px 0 0;line-height:1.6"><strong>TikTok:</strong> ${escapeHtml(tiktok)}</p>` : ''}
                 ${website ? `<p style="font-size:14px;color:#5B596B;margin:4px 0 0;line-height:1.6"><strong>Website:</strong> ${escapeHtml(website)}</p>` : ''}
               </div>
               <p style="font-size:15px;color:#0d1033;font-weight:600;margin:0 0 4px">The Harmonies team</p>

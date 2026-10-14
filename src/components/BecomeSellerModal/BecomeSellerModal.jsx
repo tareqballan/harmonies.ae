@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './BecomeSellerModal.module.css';
 
-const INITIAL_FORM = { name: '', whatsapp: '', instagram: '', website: '', email: '', howHeard: '' };
+const INITIAL_FORM = { name: '', whatsapp: '', instagram: '', tiktok: '', website: '', email: '', howHeard: '', message: '' };
 
 export default function BecomeSellerModal({ isOpen, onClose }) {
   const [step, setStep] = useState(0);
@@ -36,6 +36,10 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
     if (!form.name.trim()) newErrors.name = 'Please enter your name.';
     if (!form.whatsapp.trim()) newErrors.whatsapp = 'Please enter your WhatsApp number.';
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
+    nextStep();
+  };
+  const nextStepInstagram = () => {
+    if (!form.instagram.trim()) { setErrors({ instagram: 'Please enter your Instagram account.' }); return; }
     nextStep();
   };
   const prevStep = () => setStep((s) => Math.max(s - 1, 0));
@@ -133,10 +137,14 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
             {step === 1 && (
               <>
                 <h2 className={styles.heading}>Where can buyers find you?</h2>
-                <p className={styles.subcopy}>Totally optional — but it helps us understand your store faster.</p>
+                <p className={styles.subcopy}>Your Instagram helps us understand your store faster.</p>
 
-                <label className={styles.label}>Instagram or TikTok <span className={styles.optional}>(optional)</span></label>
-                <input type="text" placeholder="@yourstore" value={form.instagram} onChange={field('instagram')} className={styles.input} style={{ marginBottom: 16 }} />
+                <label className={styles.label}>Instagram account</label>
+                <input type="text" placeholder="@yourstore" value={form.instagram} onChange={field('instagram')} className={styles.input} style={{ marginBottom: errors.instagram ? 4 : 16 }} />
+                {errors.instagram && <p className={styles.errorText} style={{ marginBottom: 16 }}>{errors.instagram}</p>}
+
+                <label className={styles.label}>TikTok <span className={styles.optional}>(optional)</span></label>
+                <input type="text" placeholder="@yourstore" value={form.tiktok} onChange={field('tiktok')} className={styles.input} style={{ marginBottom: 16 }} />
 
                 <label className={styles.label}>Website <span className={styles.optional}>(optional)</span></label>
                 <input type="text" placeholder="yourstore.com" value={form.website} onChange={field('website')} className={styles.input} style={{ marginBottom: 16 }} />
@@ -146,7 +154,7 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
 
                 <div className={styles.footerRowBetween}>
                   <span className={styles.backLink} onClick={prevStep}>Back</span>
-                  <button type="button" className={styles.continueButton} onClick={nextStep}>
+                  <button type="button" className={styles.continueButton} onClick={nextStepInstagram}>
                     Continue
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                   </button>
@@ -166,7 +174,17 @@ export default function BecomeSellerModal({ isOpen, onClose }) {
                   value={form.howHeard}
                   onChange={field('howHeard')}
                   className={styles.input}
-                  style={{ marginBottom: 30 }}
+                  style={{ marginBottom: 16 }}
+                />
+
+                <label className={styles.label}>Anything you&apos;d like to tell us? <span className={styles.optional}>(optional)</span></label>
+                <textarea
+                  rows={4}
+                  placeholder="Tell us about your store, what you sell, or any questions you have..."
+                  value={form.message}
+                  onChange={field('message')}
+                  className={styles.input}
+                  style={{ marginBottom: 30, resize: 'vertical' }}
                 />
 
                 <div className={styles.footerRowBetween}>
