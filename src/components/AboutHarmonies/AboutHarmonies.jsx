@@ -34,10 +34,11 @@ const ABOUT_SCHEMA = {
   description: 'Harmonies is a social commerce platform designed to help local businesses and creators sell, grow, and build meaningful connections with customers.',
   about: {
     '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
     name: 'Harmonies',
     legalName: 'Lumiere Global Ventures LLC-FZ',
     url: SITE_URL,
-    logo: `${SITE_URL}/assets/harmonies-mark.png`,
+    logo: `${SITE_URL}/favicon-512.png`,
   },
 };
 
