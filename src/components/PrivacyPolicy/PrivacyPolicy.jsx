@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       description="How Harmonies collects, uses, stores, and protects your personal information."
       path="/privacy-policy"
       dateLabel="Effective Date"
-      date="September 10, 2026"
+      date="November 15, 2026"
     >
       <p className={styles.p}>Welcome to Harmonies.ae (&quot;Harmonies&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;).</p>
       <p className={styles.p}>This Privacy Policy explains how Harmonies collects, uses, stores, shares, and protects your information when you use our website, mobile applications, and related services (collectively, the &quot;Platform&quot;).</p>
@@ -295,7 +295,7 @@ export default function PrivacyPolicy() {
       <p className={styles.p}>Harmonies.ae takes appropriate steps to ensure data privacy and security, including through various hardware and software methodologies. However, Harmonies.ae cannot guarantee the security of any information that is disclosed online, as no electronic transmission or storage method is completely secure.</p>
 
       <h2 className={styles.h2}>16. Account Deletion</h2>
-      <p className={styles.p}>Users may request deletion of their account directly through the Harmonies application.</p>
+      <p className={styles.p}>Users may request deletion of their account directly through the Harmonies application, through our account deletion form at <a href="https://harmonies.ae/delete-account" className={styles.link}>https://harmonies.ae/delete-account</a>, or by emailing <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a>. See the Data Deletion Requests section for details.</p>
       <p className={styles.p}>Upon deletion:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Personal data associated with the user account will be removed.</li>
@@ -327,6 +327,7 @@ export default function PrivacyPolicy() {
         <li className={styles.li}>Hosting providers</li>
         <li className={styles.li}>Analytics providers</li>
         <li className={styles.li}>Communication providers</li>
+        <li className={styles.li}>Meta Platforms (Instagram), when you choose to connect your Instagram account</li>
       </ul>
       <p className={styles.p}>Third parties have their own privacy policies, and Harmonies is not responsible for their privacy practices.</p>
       <p className={styles.p}>Harmonies.ae is not responsible for the privacy policies of websites to which it links. If you provide any information to such third parties, different rules regarding the collection and use of your personal information may apply. You should contact these entities directly if you have any questions about their use of the information that they collect.</p>
@@ -346,7 +347,32 @@ export default function PrivacyPolicy() {
       <p className={styles.p}>Email: <strong><a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></strong></p>
       <p className={styles.p}>Website: <strong>https://harmonies.ae</strong></p>
 
-      <h2 className={styles.h2}>23. Governing Law</h2>
+      <h2 className={styles.h2}>23. Instagram and Meta Integration</h2>
+      <p className={styles.p}>Sellers may choose to connect an Instagram professional (Business or Creator) account to Harmonies using Meta&apos;s official login and APIs. Connecting is optional, and we only access the information you authorize on Meta&apos;s permission screen.</p>
+      <h3 className={styles.h3}>Information We Receive From Instagram</h3>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Basic account information, such as your Instagram account ID, username, name, account type, and profile picture</li>
+        <li className={styles.li}>Account statistics, such as follower and media counts</li>
+        <li className={styles.li}>Your posts and their content, such as images, videos, captions, timestamps, and links</li>
+        <li className={styles.li}>An access token issued by Meta that allows Harmonies to act on the permissions you granted</li>
+      </ul>
+      <h3 className={styles.h3}>How We Use It</h3>
+      <p className={styles.p}>We use Instagram data only to provide the features you request, such as linking your Instagram account to your Harmonies storefront, displaying your profile and posts, and helping you create product listings from your existing content. We do not sell Instagram data, use it for advertising profiles, or share it with third parties except service providers that help us operate the Platform under confidentiality obligations, or where required by law.</p>
+      <h3 className={styles.h3}>Disconnecting and Deleting Instagram Data</h3>
+      <p className={styles.p}>You can disconnect your Instagram account at any time from the Harmonies application, or by removing Harmonies from your Instagram settings under Apps and Websites. When you disconnect, we stop accessing your Instagram account and delete the access token and Instagram data we stored within 30 days, unless retention is required by law.</p>
+      <p className={styles.p}>To request deletion of your Instagram data or any other personal information, follow the steps in the Data Deletion Requests section below.</p>
+      <p className={styles.p}>Your use of Instagram is also governed by Meta&apos;s own Privacy Policy, available at <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className={styles.link}>https://www.facebook.com/privacy/policy/</a>.</p>
+
+      <h2 className={styles.h2}>24. Data Deletion Requests</h2>
+      <p className={styles.p}>You can request deletion of your account and personal data, including any data received from Instagram, in any of these ways:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>In the Harmonies application, through your account settings</li>
+        <li className={styles.li}>Using our account deletion form at <a href="https://harmonies.ae/delete-account" className={styles.link}>https://harmonies.ae/delete-account</a></li>
+        <li className={styles.li}>By emailing <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a> with the subject &quot;Data Deletion Request&quot; from the email address linked to your account</li>
+      </ul>
+      <p className={styles.p}>We will confirm your request and complete the deletion within 30 days, subject to the retention exceptions described in the Data Retention and Account Deletion sections.</p>
+
+      <h2 className={styles.h2}>25. Governing Law</h2>
       <p className={styles.p}>This Privacy Policy shall be governed by the applicable laws and regulations of the United Arab Emirates.</p>
     </LegalPage>
   );
