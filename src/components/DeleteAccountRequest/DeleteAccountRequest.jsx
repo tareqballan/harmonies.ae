@@ -97,6 +97,24 @@ export default function DeleteAccountRequest() {
               Read the full Account Deletion policy →
             </Link>
           </div>
+
+          <div className={styles.policyBox} id="instagram-data" style={{ marginTop: 20 }}>
+            <p className={styles.policyTitle}>Instagram data</p>
+            <p className={styles.policyText}>
+              Deleting the data we received from Instagram is separate from deleting your account. You can do it at any time, even while the conditions above apply:
+            </p>
+            <ul className={styles.policyList}>
+              <li>In the Harmonies Seller app, open Settings → Instagram and tap Disconnect. We stop accessing your Instagram account and delete the access token immediately.</li>
+              <li>To also delete the remaining record of your connected account (its account ID and username), email <a href="mailto:info@lgv.ae?subject=Instagram%20Data%20Deletion%20Request" className={styles.inlineLink}>info@lgv.ae</a> with the subject &quot;Instagram Data Deletion Request&quot; from the email address linked to your seller account. We complete it within 30 days.</li>
+              <li>You can also remove Harmonies&apos; access on Meta&apos;s side: in the Facebook account you used when connecting, go to Settings &amp; privacy → Settings → Business integrations.</li>
+            </ul>
+            <p className={styles.policyText}>
+              Posts you chose to import are now product listings in your store. You can edit or delete them at any time in the app.
+            </p>
+            <Link to="/privacy-policy" className={styles.policyLink}>
+              Read our Privacy Policy →
+            </Link>
+          </div>
         </div>
 
         {/* Right: form card */}
