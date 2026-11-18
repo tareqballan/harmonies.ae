@@ -106,7 +106,6 @@ export default function DeleteAccountRequest() {
             <ul className={styles.policyList}>
               <li>In the Harmonies Seller app, open Settings → Instagram and tap Disconnect. We stop accessing your Instagram account and delete the access token immediately.</li>
               <li>To also delete the remaining record of your connected account (its account ID and username), email <a href="mailto:info@lgv.ae?subject=Instagram%20Data%20Deletion%20Request" className={styles.inlineLink}>info@lgv.ae</a> with the subject &quot;Instagram Data Deletion Request&quot; from the email address linked to your seller account. We complete it within 30 days.</li>
-              <li>You can also remove Harmonies&apos; access on Meta&apos;s side: in the Facebook account you used when connecting, go to Settings &amp; privacy → Settings → Business integrations.</li>
             </ul>
             <p className={styles.policyText}>
               Posts you chose to import are now product listings in your store. You can edit or delete them at any time in the app.
