@@ -1,13 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import App from './App';
 import ContactUs from './components/ContactUs/ContactUs';
 import DeleteAccountRequest from './components/DeleteAccountRequest/DeleteAccountRequest';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService/TermsOfService';
-import CookiesPolicy from './components/CookiesPolicy/CookiesPolicy';
 import ReturnRefundPolicy from './components/ReturnRefundPolicy/ReturnRefundPolicy';
 import DeliveryPolicy from './components/DeliveryPolicy/DeliveryPolicy';
-import SellerVerificationKYCPolicy from './components/SellerVerificationKYCPolicy/SellerVerificationKYCPolicy';
 import SellerAgreement from './components/SellerAgreement/SellerAgreement';
 import WhyHarmonies from './components/WhyHarmonies/WhyHarmonies';
 import Pricing from './components/Pricing/Pricing';
@@ -27,11 +25,13 @@ export default function AppRoutes() {
       <Route path="/delete-account" element={<DeleteAccountRequest />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-of-service" element={<TermsOfService />} />
-      <Route path="/cookies-policy" element={<CookiesPolicy />} />
       <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
       <Route path="/delivery-policy" element={<DeliveryPolicy />} />
-      <Route path="/seller-verification-kyc-policy" element={<SellerVerificationKYCPolicy />} />
       <Route path="/seller-agreement" element={<SellerAgreement />} />
+      {/* Retired pages. The worker 301s these (see LEGACY_REDIRECTS in
+          worker.js); these routes only catch in-app navigation. */}
+      <Route path="/cookies-policy" element={<Navigate to="/privacy-policy#cookies" replace />} />
+      <Route path="/seller-verification-kyc-policy" element={<Navigate to="/seller-agreement#verification" replace />} />
       <Route path="/why-harmonies" element={<WhyHarmonies />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<Features />} />

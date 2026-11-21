@@ -78,7 +78,7 @@ export default function DeleteAccountRequest() {
           </h1>
           <p className={styles.subCopy}>
             Before submitting a request, please review our account deletion policy below. It's part of our{' '}
-            <Link to="/seller-agreement#account-deletion" className={styles.inlineLink}>Seller Agreement, Section 39</Link>.
+            <Link to="/seller-agreement#account-deletion" className={styles.inlineLink}>Seller Agreement, Section 40</Link>.
           </p>
 
           <div className={styles.policyBox}>

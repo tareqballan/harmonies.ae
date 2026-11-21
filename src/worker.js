@@ -47,9 +47,23 @@ function injectPageMeta(response, pathname) {
     .transform(response);
 }
 
+// Legal pages retired when the policies were consolidated (November 2026).
+// Their content now lives in a section of another page, so each old URL
+// permanently redirects to that section.
+const LEGACY_REDIRECTS = {
+  '/cookies-policy': '/privacy-policy#cookies',
+  '/seller-verification-kyc-policy': '/seller-agreement#verification',
+};
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    const legacyPath = url.pathname.replace(/(\.html|\/)$/, '');
+    const redirectTo = LEGACY_REDIRECTS[legacyPath];
+    if (redirectTo) {
+      return Response.redirect(new URL(redirectTo, url).toString(), 301);
+    }
 
     if (url.pathname === '/api/apply' && request.method === 'POST') {
       return applyHandler({ request, env });

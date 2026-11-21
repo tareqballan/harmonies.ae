@@ -17,23 +17,23 @@ export const PAGE_META = {
   },
   '/privacy-policy': {
     title: 'Privacy Policy | Harmonies',
-    description: 'How Harmonies collects, uses, stores, and protects your personal information.',
+    description: 'How Harmonies collects, uses, stores, and protects your personal information, including our use of cookies.',
   },
   '/terms-of-service': {
     title: 'Terms and Conditions | Harmonies',
     description: 'The terms governing your access to and use of the Harmonies platform.',
   },
-  '/cookies-policy': {
-    title: 'Cookies Policy | Harmonies',
-    description: 'How Harmonies uses cookies and similar technologies, and how to manage your preferences.',
-  },
   '/return-refund-policy': {
     title: 'Return and Refund Policy | Harmonies',
     description: 'When customers may request returns, how returns are processed, and how refunds are issued on Harmonies.',
   },
-  '/seller-verification-kyc-policy': {
-    title: 'Seller Verification and KYC Policy | Harmonies',
-    description: 'How Harmonies verifies seller identity and business legitimacy to maintain a trusted marketplace.',
+  '/delivery-policy': {
+    title: 'Delivery Policy | Harmonies',
+    description: 'How orders are shipped on Harmonies, delivery fees, and expected delivery timeframes.',
+  },
+  '/seller-agreement': {
+    title: 'Seller Agreement | Harmonies',
+    description: 'The terms governing the relationship between Harmonies and sellers using the platform.',
   },
   '/why-harmonies': {
     title: 'Why Harmonies? | Turn Your Passion Into a Growing Business',

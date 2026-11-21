@@ -1,4 +1,5 @@
-import LegalPage from '../LegalPage/LegalPage';
+import { Link } from 'react-router-dom';
+import LegalPage, { LegalContact } from '../LegalPage/LegalPage';
 import styles from '../LegalPage/LegalPage.module.css';
 
 export default function SellerAgreement() {
@@ -7,18 +8,17 @@ export default function SellerAgreement() {
       title="Seller Agreement"
       description="The terms governing the relationship between Harmonies and sellers using the platform."
       path="/seller-agreement"
-      dateLabel="Effective Date"
-      date="12 September 2026"
     >
       <p className={styles.p}>This Seller Agreement ("Agreement") is entered into between <strong>Lumiere Global Ventures LLC-FZ</strong>, operating the Harmonies Platform ("Harmonies," "we," "our," or "us"), and the individual or legal entity registered as a Seller ("Seller," "you," or "your").</p>
-      <p className={styles.p}>This Agreement governs your use of Harmonies to list, promote, sell, and fulfil products.</p>
+      <p className={styles.p}>This Agreement governs your use of Harmonies to list, promote, sell, and fulfil products. It applies in addition to the <Link to="/terms-of-service" className={styles.link}>Terms and Conditions</Link>, and incorporates the <Link to="/return-refund-policy" className={styles.link}>Return and Refund Policy</Link>, the <Link to="/delivery-policy" className={styles.link}>Delivery Policy</Link>, and the <Link to="/privacy-policy" className={styles.link}>Privacy Policy</Link>.</p>
 
       <h2 className={styles.h2}>1. Acceptance</h2>
-      <p className={styles.p}>By completing electronic acceptance, the Seller confirms that:</p>
+      <p className={styles.p}>A new Seller must sign this Agreement when joining Harmonies, before it can sell on the Platform. Later versions of this Agreement are accepted through the Harmonies Seller application, as described in Section 47.</p>
+      <p className={styles.p}>By signing this Agreement, or by accepting an updated version in the Harmonies Seller application, the Seller confirms that:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>The Seller has read and understood this Agreement.</li>
         <li className={styles.li}>The Seller agrees to comply with it.</li>
-        <li className={styles.li}>The person accepting it has authority to bind the Seller.</li>
+        <li className={styles.li}>The person signing or accepting it has authority to bind the Seller.</li>
       </ul>
       <p className={styles.p}>Merely browsing the Platform does not constitute acceptance of this Seller Agreement.</p>
 
@@ -28,7 +28,7 @@ export default function SellerAgreement() {
         <li className={styles.li}>Be legally capable of entering into this Agreement.</li>
         <li className={styles.li}>Maintain a legally registered business where required.</li>
         <li className={styles.li}>Hold all licences, permits, approvals, and registrations required for your activities and products.</li>
-        <li className={styles.li}>Complete Harmonies' KYC and compliance processes.</li>
+        <li className={styles.li}>Complete Harmonies' seller verification (KYC) and compliance processes described in Section 5.</li>
         <li className={styles.li}>Provide accurate, complete, and current information.</li>
         <li className={styles.li}>Comply with applicable UAE laws and regulations.</li>
       </ul>
@@ -56,11 +56,24 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>Accounts may only be used by the registered Seller and its authorised representatives. They may not be sold, transferred, shared, or assigned without Harmonies' written approval.</p>
 
-      <h2 className={styles.h2}>5. Verification and Compliance Reviews</h2>
-      <p className={styles.p}>Harmonies may request information or documents to verify:</p>
+      <h2 id="verification" className={styles.h2}>5. Seller Verification (KYC) and Compliance Reviews</h2>
+      <p className={styles.p}>To maintain platform security, comply with applicable regulations, and prevent fraudulent activities, Harmonies requires Sellers to complete verification procedures before selling on the Platform.</p>
+
+      <h3 className={styles.h3}>5.1 Purpose of Seller Verification</h3>
+      <p className={styles.p}>Seller verification helps Harmonies:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Identity, ownership, and business registration.</li>
-        <li className={styles.li}>Licences and regulatory approvals.</li>
+        <li className={styles.li}>Confirm the identity and legitimacy of Sellers.</li>
+        <li className={styles.li}>Protect customers from fraudulent activities.</li>
+        <li className={styles.li}>Maintain marketplace quality and trust.</li>
+        <li className={styles.li}>Comply with applicable legal, payment provider, and regulatory requirements.</li>
+      </ul>
+
+      <h3 className={styles.h3}>5.2 Information and Documents</h3>
+      <p className={styles.p}>Depending on the Seller type and business activities, Harmonies may request information or documents to verify:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Identity, ownership, and business registration, including the full legal business name, trade licence or business registration documents, and identification documents of the owner or authorised representative.</li>
+        <li className={styles.li}>Business address and contact information.</li>
+        <li className={styles.li}>Licences and regulatory approvals, including additional documents required for specific product categories.</li>
         <li className={styles.li}>Bank and payout details.</li>
         <li className={styles.li}>Product authenticity and origin.</li>
         <li className={styles.li}>Intellectual-property rights.</li>
@@ -68,9 +81,25 @@ export default function SellerAgreement() {
         <li className={styles.li}>Transaction legitimacy.</li>
         <li className={styles.li}>Continued eligibility and compliance.</li>
       </ul>
-      <p className={styles.p}>The Seller must provide requested documents within the period specified by Harmonies.</p>
-      <p className={styles.p}>Failure to provide satisfactory information may result in listing removal, delayed payouts, additional reserves, restrictions, suspension, or termination.</p>
+      <p className={styles.p}>The Seller must ensure that submitted documents are valid, current, and legally obtained.</p>
+
+      <h3 className={styles.h3}>5.3 Verification Process</h3>
+      <p className={styles.p}>The seller verification process may include:</p>
+      <ol className={styles.ul}>
+        <li className={styles.li}>Submission of required information and documents.</li>
+        <li className={styles.li}>Review and verification by Harmonies.</li>
+        <li className={styles.li}>Additional information requests if needed.</li>
+        <li className={styles.li}>Approval before activating selling capabilities.</li>
+      </ol>
+      <p className={styles.p}>Verification timelines may vary depending on the completeness and accuracy of submitted information.</p>
+
+      <h3 className={styles.h3}>5.4 Ongoing Reviews</h3>
+      <p className={styles.p}>Harmonies may review Seller information periodically and request additional or updated verification documents at any time. The Seller must provide requested documents within the period specified by Harmonies.</p>
+      <p className={styles.p}>Failure to provide satisfactory information may result in listing removal, delayed payouts, additional reserves, restrictions, suspension, or termination. Providing false, misleading, expired, or fraudulent information may result in rejection of the Seller application, account suspension, or termination.</p>
       <p className={styles.p}>The Seller must promptly notify Harmonies of any change to its VAT-registration status and provide accurate supporting documents.</p>
+
+      <h3 className={styles.h3}>5.5 How Verification Information Is Handled</h3>
+      <p className={styles.p}>Harmonies uses verification information only for legitimate business purposes, including identity verification, compliance requirements, fraud prevention, platform security, and payment processing. Verification information is handled in accordance with the <Link to="/privacy-policy" className={styles.link}>Privacy Policy</Link> and may be shared with identity verification providers for these purposes.</p>
 
       <h2 className={styles.h2}>6. Changes to Seller Information</h2>
       <p className={styles.p}>The Seller must promptly notify Harmonies of material changes concerning:</p>
@@ -125,33 +154,8 @@ export default function SellerAgreement() {
       <p className={styles.p}>Claims that products are handmade, customised, original, sustainable, or otherwise distinctive must be truthful.</p>
 
       <h2 className={styles.h2}>10. Prohibited and Restricted Products</h2>
-      <p className={styles.p}>Sellers must not list or sell illegal, restricted, unsafe, counterfeit, or harmful products, including:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Counterfeit, replica, or unauthorised branded goods.</li>
-        <li className={styles.li}>Stolen goods.</li>
-        <li className={styles.li}>Weapons, ammunition, or explosives.</li>
-        <li className={styles.li}>Illegal drugs or controlled substances.</li>
-        <li className={styles.li}>Unauthorised medicines or regulated medical products.</li>
-        <li className={styles.li}>Tobacco, nicotine, cigarettes, or vaping products.</li>
-        <li className={styles.li}>Alcohol.</li>
-        <li className={styles.li}>Hazardous chemicals or dangerous materials.</li>
-        <li className={styles.li}>Adult or sexually explicit products.</li>
-        <li className={styles.li}>Human biological materials.</li>
-        <li className={styles.li}>Live animals.</li>
-        <li className={styles.li}>Recalled, expired, or unsafe products.</li>
-        <li className={styles.li}>Products infringing third-party rights.</li>
-        <li className={styles.li}>Products prohibited by law, payment providers, card schemes, logistics providers, or competent authorities.</li>
-      </ul>
-      <p className={styles.p}>The Seller may only sell product categories approved by Harmonies. Approved product categories currently include:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Handmade products.</li>
-        <li className={styles.li}>Food.</li>
-        <li className={styles.li}>Drinks.</li>
-        <li className={styles.li}>Chocolates and sweets.</li>
-        <li className={styles.li}>Apparel.</li>
-        <li className={styles.li}>Shoes.</li>
-      </ul>
-      <p className={styles.p}>New categories may require prior written approval.</p>
+      <p className={styles.p}>The Seller may only sell product categories approved by Harmonies, and must not list or sell illegal, restricted, unsafe, counterfeit, or harmful products. The approved categories and the prohibited and restricted products list are set out in <a href="#prohibited-items" className={styles.link}>Appendix A</a>, which forms part of this Agreement.</p>
+      <p className={styles.p}>Harmonies may remove listings that breach Appendix A and take action under Section 39.</p>
 
       <h2 className={styles.h2}>11. Pricing and Promotions</h2>
       <p className={styles.p}>The Seller determines its product prices.</p>
@@ -214,7 +218,7 @@ export default function SellerAgreement() {
       </ul>
       <p className={styles.p}>Necessary refunds will be processed according to applicable law and Harmonies' payment procedures.</p>
 
-      <h2 className={styles.h2}>16. Packaging Requirements</h2>
+      <h2 id="shipping" className={styles.h2}>16. Packaging Requirements</h2>
       <p className={styles.p}>The Seller must use packaging that:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Protects the product during transportation.</li>
@@ -243,10 +247,11 @@ export default function SellerAgreement() {
       <p className={styles.p}>Chargeable weight may be based on the greater of actual or volumetric weight.</p>
       <p className={styles.p}>Harmonies does not guarantee delivery times and is not liable for third-party delays where Harmonies and the Seller fulfilled their respective responsibilities.</p>
 
-      <h2 className={styles.h2}>18. Returns and Refunds</h2>
-      <p className={styles.p}>Returns and refunds will be handled under Harmonies' Return Policy and applicable law.</p>
+      <h2 id="returns" className={styles.h2}>18. Returns and Refunds</h2>
+      <p className={styles.p}>Returns and refunds will be handled under Harmonies' <Link to="/return-refund-policy" className={styles.link}>Return and Refund Policy</Link> and applicable law.</p>
       <p className={styles.p}>The Seller must:</p>
       <ul className={styles.ul}>
+        <li className={styles.li}>Accurately mark each product as "Returnable" or not on the Platform.</li>
         <li className={styles.li}>Accept valid returns.</li>
         <li className={styles.li}>Respond within the required period.</li>
         <li className={styles.li}>Cooperate with investigations.</li>
@@ -260,7 +265,8 @@ export default function SellerAgreement() {
         <li className={styles.li}>Is damaged because of inadequate packaging.</li>
         <li className={styles.li}>Fails to meet reasonable expectations because of inaccurate information.</li>
       </ul>
-      <p className={styles.p}>For change-of-mind returns, the Buyer generally bears the shipping and return delivery cost, subject to the Seller's displayed return policy, Harmonies' minimum requirements, and applicable law.</p>
+      <p className={styles.p}>Where the Seller is responsible, the Seller bears both the original outbound delivery fee and the return-delivery fee.</p>
+      <p className={styles.p}>Change-of-mind returns are available only for products the Seller has marked as "Returnable" on the Platform. For change-of-mind returns, the Buyer bears the return-delivery fee and the original outbound delivery fee is normally not refunded, as set out in the Return and Refund Policy and subject to applicable law.</p>
       <p className={styles.p}>Harmonies will work with Sellers to identify the causes of recurring returns and help reduce them, protecting both parties from unnecessary costs.</p>
       <p className={styles.p}>Applicable costs may be deducted from the Seller Balance.</p>
 
@@ -400,16 +406,8 @@ export default function SellerAgreement() {
       <p className={styles.p}>Harmonies does not provide tax or legal advice.</p>
 
       <h2 className={styles.h2}>27. Cross-Border Sales</h2>
-      <p className={styles.p}>For cross-border transactions, the Seller is responsible for:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Import and export compliance.</li>
-        <li className={styles.li}>Customs documentation.</li>
-        <li className={styles.li}>Product classification.</li>
-        <li className={styles.li}>Applicable duties and taxes assigned to the Seller.</li>
-        <li className={styles.li}>Destination-country labelling and safety requirements.</li>
-        <li className={styles.li}>Ensuring the product may legally be delivered.</li>
-      </ul>
-      <p className={styles.p}>Harmonies may restrict cross-border sales or destinations.</p>
+      <p className={styles.p}>Cross-border sales are not currently supported. Harmonies delivers within the United Arab Emirates only, as set out in the <Link to="/delivery-policy" className={styles.link}>Delivery Policy</Link>.</p>
+      <p className={styles.p}>If Harmonies enables cross-border sales in the future, import duties, taxes, and customs charges will be borne by the Buyer, and the Seller will remain responsible for export compliance, accurate customs documentation and product classification, destination-country labelling and safety requirements, and ensuring the product may legally be delivered. Harmonies may restrict cross-border sales or destinations.</p>
 
       <h2 className={styles.h2}>28. Marketing Rights</h2>
       <p className={styles.p}>The Seller grants Harmonies a worldwide, royalty-free, non-exclusive licence to use, reproduce, adapt, display, publish, and distribute Seller-provided content for:</p>
@@ -567,7 +565,7 @@ export default function SellerAgreement() {
         <li className={styles.li}>Any balance remains in the Seller's account that has not yet been withdrawn.</li>
       </ul>
       <p className={styles.p}>The Seller has the right to close its store while these conditions are outstanding. Once all orders have been resolved, applicable return windows have expired, and the Seller's balance has been fully withdrawn, the Seller may request account deletion again.</p>
-      <p className={styles.p}>On account deletion, Harmonies will retain the Seller's store data for a period of <strong>five years</strong> for legal and compliance reasons, including in case of a dispute, tax audit, or regulatory request. During this period, retained data will be used solely for those purposes and for no other purpose, including marketing, analytics, or profiling. The data will be permanently deleted after that period expires.</p>
+      <p className={styles.p}>On account deletion, Harmonies will retain the Seller's store data for a period of <strong>five years</strong> for legal and compliance reasons, including in case of a dispute, tax audit, or regulatory request. During this period, retained data will be used solely for those purposes and for no other purpose, including marketing, analytics, or profiling. The data will be permanently deleted after that period expires. This retention is also described in the Data Retention section of the <Link to="/privacy-policy#data-retention" className={styles.link}>Privacy Policy</Link>.</p>
 
       <h2 className={styles.h2}>41. Limitation of Liability</h2>
       <p className={styles.p}>To the maximum extent permitted by law, Harmonies is not responsible for:</p>
@@ -619,8 +617,8 @@ export default function SellerAgreement() {
 
       <h2 className={styles.h2}>47. Amendments</h2>
       <p className={styles.p}>Harmonies may amend this Agreement.</p>
-      <p className={styles.p}>Material changes will be communicated and become effective only after the Seller expressly accepts them.</p>
-      <p className={styles.p}>If the Seller does not accept a material update, Harmonies may prevent new listings or orders while processing existing obligations under the previously accepted terms.</p>
+      <p className={styles.p}>Material changes will be communicated and become effective only after the Seller expressly accepts them. The Seller will be asked to review and accept the updated Agreement in the Harmonies Seller application; a new signature is not required.</p>
+      <p className={styles.p}>If the Seller does not accept a material update, Harmonies may prevent new listings or orders while processing existing obligations under the previously signed or accepted terms.</p>
       <p className={styles.p}>Non-material changes may take effect following notice where permitted by law.</p>
 
       <h2 className={styles.h2}>48. Assignment</h2>
@@ -632,26 +630,60 @@ export default function SellerAgreement() {
       <p className={styles.p}>Failure or delay in enforcing a right does not waive that right.</p>
 
       <h2 className={styles.h2}>50. Entire Agreement</h2>
-      <p className={styles.p}>This Agreement, together with expressly incorporated policies and pricing terms, constitutes the complete agreement governing the Seller's use of Harmonies.</p>
+      <p className={styles.p}>This Agreement, together with expressly incorporated policies (including the Return and Refund Policy, the Delivery Policy, and the Privacy Policy), Appendix A, and pricing terms, constitutes the complete agreement governing the Seller's use of Harmonies.</p>
 
       <h2 className={styles.h2}>51. Governing Law and Dispute Resolution</h2>
       <p className={styles.p}>This Agreement is governed by the laws of the United Arab Emirates.</p>
       <p className={styles.p}>Disputes are subject to the competent courts of the United Arab Emirates unless applicable law requires otherwise.</p>
 
-      <h2 className={styles.h2}>52. Electronic Acceptance and Evidence</h2>
-      <p className={styles.p}>Electronic acceptance has the same legal effect as a physical signature where recognised by applicable law.</p>
-      <p className={styles.p}>Harmonies may record:</p>
+      <h2 className={styles.h2}>52. Signature, Electronic Acceptance and Evidence</h2>
+      <p className={styles.p}>An electronic signature of this Agreement, and electronic acceptance of an updated version in the Harmonies Seller application, have the same legal effect as a physical signature where recognised by applicable law.</p>
+      <p className={styles.p}>Harmonies may keep the signed Agreement and may record:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Seller ID.</li>
         <li className={styles.li}>Agreement version.</li>
-        <li className={styles.li}>Acceptance date and time.</li>
+        <li className={styles.li}>Signature or acceptance date and time.</li>
         <li className={styles.li}>IP address.</li>
         <li className={styles.li}>Device or browser information.</li>
         <li className={styles.li}>The identity and authority of the accepting representative.</li>
       </ul>
 
-      <h2 className={styles.h2}>53. Contact Information</h2>
-      <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
+      <h2 id="prohibited-items" className={styles.h2}>Appendix A: Approved Categories and Prohibited Products</h2>
+      <p className={styles.p}>This Appendix is the single list of approved and prohibited products on Harmonies. It applies to all Sellers and is referred to in the <Link to="/terms-of-service" className={styles.link}>Terms and Conditions</Link>.</p>
+
+      <h3 className={styles.h3}>A.1 Approved Product Categories</h3>
+      <p className={styles.p}>The Seller may only sell product categories approved by Harmonies. Approved product categories currently include:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Handmade products.</li>
+        <li className={styles.li}>Food.</li>
+        <li className={styles.li}>Drinks.</li>
+        <li className={styles.li}>Chocolates and sweets.</li>
+        <li className={styles.li}>Apparel.</li>
+        <li className={styles.li}>Shoes.</li>
+      </ul>
+      <p className={styles.p}>New categories may require prior written approval.</p>
+
+      <h3 className={styles.h3}>A.2 Prohibited and Restricted Products</h3>
+      <p className={styles.p}>Sellers must not list, sell, or promote the following, regardless of category:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Counterfeit, replica, fake, or unauthorised branded goods.</li>
+        <li className={styles.li}>Stolen or illegally obtained goods.</li>
+        <li className={styles.li}>Weapons, firearms, ammunition, explosives, or prohibited weapon accessories.</li>
+        <li className={styles.li}>Illegal drugs, controlled substances, or related products.</li>
+        <li className={styles.li}>Unauthorised medicines or regulated medical products.</li>
+        <li className={styles.li}>Tobacco, nicotine, cigarettes, or vaping products.</li>
+        <li className={styles.li}>Alcohol.</li>
+        <li className={styles.li}>Hazardous chemicals or dangerous materials.</li>
+        <li className={styles.li}>Adult or sexually explicit products or content.</li>
+        <li className={styles.li}>Human biological materials.</li>
+        <li className={styles.li}>Live animals.</li>
+        <li className={styles.li}>Recalled, expired, or unsafe products.</li>
+        <li className={styles.li}>Products infringing third-party rights, including intellectual-property rights.</li>
+        <li className={styles.li}>Products prohibited by law, payment providers, card schemes, logistics providers, or competent authorities.</li>
+      </ul>
+
+      <h2 className={styles.h2}>Contact Us</h2>
+      <LegalContact intro="For questions regarding this Agreement or seller verification, please contact us:" />
     </LegalPage>
   );
 }

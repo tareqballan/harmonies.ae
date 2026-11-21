@@ -1,4 +1,5 @@
-import LegalPage from '../LegalPage/LegalPage';
+import { Link } from 'react-router-dom';
+import LegalPage, { LegalContact } from '../LegalPage/LegalPage';
 import styles from '../LegalPage/LegalPage.module.css';
 
 export default function PrivacyPolicy() {
@@ -7,12 +8,10 @@ export default function PrivacyPolicy() {
       title="Privacy Policy"
       description="How Harmonies collects, uses, stores, and protects your personal information."
       path="/privacy-policy"
-      dateLabel="Effective Date"
-      date="November 15, 2026"
     >
       <p className={styles.p}>Welcome to Harmonies.ae (&quot;Harmonies&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;).</p>
       <p className={styles.p}>This Privacy Policy explains how Harmonies collects, uses, stores, shares, and protects your information when you use our website, mobile applications, and related services (collectively, the &quot;Platform&quot;).</p>
-      <p className={styles.p}>By accessing or using Harmonies, you acknowledge and agree to the practices described in this Privacy Policy.</p>
+      <p className={styles.p}>This Privacy Policy explains how we process your personal data in accordance with Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data. We process personal data where it is necessary to provide our services and perform our contract with you, to comply with legal obligations, for our legitimate business interests, or, where required, with your consent, which you may withdraw at any time.</p>
 
       <h2 className={styles.h2}>1. Information We Collect</h2>
       <p className={styles.p}>We collect information necessary to provide our services, improve the Platform, support our users, and operate our marketplace.</p>
@@ -137,19 +136,83 @@ export default function PrivacyPolicy() {
       </ul>
       <p className={styles.p}>You may unsubscribe from marketing communications at any time. Service-related communications necessary for operating your account cannot be disabled while your account remains active.</p>
 
-      <h2 className={styles.h2}>4. Cookies and Similar Technologies</h2>
-      <p className={styles.p}>We use cookies and similar technologies to:</p>
+      <h2 id="cookies" className={styles.h2}>4. Cookies and Similar Technologies</h2>
+      <p className={styles.p}>We use cookies and similar technologies on our website, applications, and digital services to keep you signed in, remember your preferences, keep the Platform secure and detect fraudulent activity, understand how the Platform is used and improve its performance and recommendations, and, where you allow it, support our marketing activities. This section explains what these technologies are, how we use them, and how you can manage your preferences.</p>
+
+      <h3 className={styles.h3}>4.1 What Are Cookies?</h3>
+      <p className={styles.p}>Cookies are small text files stored on your device when you visit a website. They allow websites to remember information about your activity and preferences, helping improve functionality and provide a more personalized experience.</p>
+      <p className={styles.p}>In addition to cookies, we may use similar technologies such as pixels, software development kits (SDKs), local storage, and other tracking technologies in our website and mobile applications.</p>
+
+      <h3 className={styles.h3}>4.2 How We Use Cookies</h3>
+      <p className={styles.p}>We use cookies and similar technologies for the following purposes:</p>
+      <p className={styles.p}><strong>Essential cookies.</strong> These cookies are necessary for our platform to function properly. They help us:</p>
       <ul className={styles.ul}>
-        <li className={styles.li}>Keep you signed in</li>
-        <li className={styles.li}>Remember preferences</li>
-        <li className={styles.li}>Improve Platform performance</li>
-        <li className={styles.li}>Analyze traffic and usage</li>
-        <li className={styles.li}>Detect fraudulent activity</li>
-        <li className={styles.li}>Improve recommendations</li>
-        <li className={styles.li}>Support marketing activities where permitted</li>
+        <li className={styles.li}>Keep users securely logged into their accounts</li>
+        <li className={styles.li}>Maintain account sessions</li>
+        <li className={styles.li}>Protect against security risks and unauthorized access</li>
+        <li className={styles.li}>Support shopping, ordering, and payment processes</li>
+        <li className={styles.li}>Remember essential settings required for platform operation</li>
       </ul>
-      <p className={styles.p}>You may manage cookies through your browser settings. Disabling cookies may affect some Platform functionality.</p>
-      <p className={styles.p}>Separately, when you make a choice through our cookie consent banner — including if you reject non-essential cookies — we log that decision along with your IP address, approximate location, and device/browser information, as an essential record of consent. See our <a href="/cookies-policy" className={styles.link}>Cookies Policy</a> for details.</p>
+      <p className={styles.p}>These cookies cannot be disabled because they are required for the proper functioning of our services.</p>
+      <p className={styles.p}><strong>Functional cookies.</strong> These cookies help us improve your experience by remembering your preferences and choices, including:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Language preferences</li>
+        <li className={styles.li}>User interface settings</li>
+        <li className={styles.li}>Platform preferences</li>
+        <li className={styles.li}>Seller dashboard settings</li>
+        <li className={styles.li}>Other customization choices</li>
+      </ul>
+      <p className={styles.p}><strong>Analytics cookies.</strong> We may use analytics cookies and similar technologies to understand how users interact with our platform and improve our services. These technologies may help us understand:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>How users navigate our website and applications</li>
+        <li className={styles.li}>Which features and pages are most used</li>
+        <li className={styles.li}>Platform performance and errors</li>
+        <li className={styles.li}>User engagement patterns</li>
+      </ul>
+      <p className={styles.p}>The information collected through analytics is used for improving platform functionality, user experience, and business decisions.</p>
+      <p className={styles.p}>Currently, we use Cloudflare Web Analytics for this purpose. Cloudflare Web Analytics does not use cookies or any persistent identifier to track you, so it is not affected by your choice in the cookie consent banner — it runs for all visitors in the same way basic visit logs would on any web server, and only reports aggregate statistics (such as page views and approximate location).</p>
+      <p className={styles.p}><strong>Marketing and advertising cookies.</strong> We may use marketing cookies and similar technologies to measure the effectiveness of our marketing activities and partnerships. These technologies may help us:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Measure advertising campaign performance</li>
+        <li className={styles.li}>Track referrals from partners and influencers</li>
+        <li className={styles.li}>Understand user interactions with promotional content</li>
+        <li className={styles.li}>Improve marketing strategies</li>
+      </ul>
+
+      <h3 className={styles.h3}>4.3 Third-Party Cookies and Technologies</h3>
+      <p className={styles.p}>Some third-party service providers may use cookies or similar technologies when you interact with our services. These providers may include:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Payment service providers</li>
+        <li className={styles.li}>Analytics providers</li>
+        <li className={styles.li}>Marketing and advertising platforms</li>
+        <li className={styles.li}>Other technology partners that support our services</li>
+      </ul>
+      <p className={styles.p}>These third parties may collect information according to their own privacy policies and practices.</p>
+
+      <h3 className={styles.h3}>4.4 Cookies and Mobile Applications</h3>
+      <p className={styles.p}>Our mobile applications may use similar technologies, including SDKs and local storage, to provide essential functionality, analyze application performance, and improve user experience. These technologies may be used for purposes such as:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>Maintaining user sessions</li>
+        <li className={styles.li}>Improving application reliability</li>
+        <li className={styles.li}>Understanding application usage</li>
+        <li className={styles.li}>Supporting platform features</li>
+      </ul>
+
+      <h3 className={styles.h3}>4.5 Managing Your Cookie Preferences</h3>
+      <p className={styles.p}>You can accept or reject non-essential cookies, or choose individual categories, through the cookie consent banner on our website. You can also manage or delete cookies through your browser settings. Most browsers allow you to:</p>
+      <ul className={styles.ul}>
+        <li className={styles.li}>View stored cookies</li>
+        <li className={styles.li}>Delete existing cookies</li>
+        <li className={styles.li}>Block certain cookies</li>
+        <li className={styles.li}>Configure cookie preferences</li>
+      </ul>
+      <p className={styles.p}>Please note that disabling essential cookies may affect the availability or functionality of certain parts of our services.</p>
+      <p className={styles.p}>For mobile applications, you can manage certain permissions and tracking preferences through your device settings.</p>
+
+      <h3 className={styles.h3}>4.6 Cookie Consent Records</h3>
+      <p className={styles.p}>When you make a choice through our cookie consent banner (accept all, reject non-essential, or save preferences), we record that decision together with technical information about the request that made it — including your IP address, approximate location (country, city, and region), and device, browser, and operating system information. This applies regardless of which choice you make, including if you reject all non-essential cookies.</p>
+      <p className={styles.p}>This record-keeping is treated as essential to operating Harmonies: it allows us to demonstrate, if required, that a specific consent decision was made, when, and under what circumstances. It is not used for analytics, marketing, or personalization, and is kept separate from any data collected under the Analytics or Marketing cookies you may separately consent to.</p>
+      <p className={styles.p}>Separately, when the cookie consent banner is first shown to you — before you make any choice — we record that it was shown, together with a randomly generated identifier stored in your browser. This does not include your IP address, device, or browser information, and exists only to measure how often the banner is shown versus acted on.</p>
 
       <h2 className={styles.h2}>5. Personalized Recommendations</h2>
       <p className={styles.p}>Harmonies uses information such as browsing activity, saved items, purchase history, interactions, and preferences to improve your experience.</p>
@@ -183,7 +246,7 @@ export default function PrivacyPolicy() {
         <li className={styles.li}>Identity verification providers</li>
         <li className={styles.li}>Analytics providers</li>
         <li className={styles.li}>Marketing partners</li>
-        <li className={styles.li}>Influencers involved in campaigns</li>
+        <li className={styles.li}>Influencers and creators we work with on campaigns, who receive only aggregated or anonymised campaign performance data (for example, the number of orders or visits from a referral link), and never your name, contact details, or order details</li>
         <li className={styles.li}>Customer support providers</li>
         <li className={styles.li}>Cloud hosting providers</li>
         <li className={styles.li}>Government authorities when legally required</li>
@@ -263,7 +326,7 @@ export default function PrivacyPolicy() {
       <p className={styles.p}>Your information may be processed or stored in countries outside your country of residence.</p>
       <p className={styles.p}>Where required by law, we apply appropriate safeguards to protect personal information during transfers.</p>
 
-      <h2 className={styles.h2}>14. Data Retention</h2>
+      <h2 id="data-retention" className={styles.h2}>14. Data Retention</h2>
       <p className={styles.p}>We retain personal information for as long as necessary to:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Provide our services</li>
@@ -281,6 +344,8 @@ export default function PrivacyPolicy() {
         <li className={styles.li}>Business performance analysis</li>
         <li className={styles.li}>Legal and regulatory requirements</li>
       </ul>
+      <h3 className={styles.h3}>Seller Store Data</h3>
+      <p className={styles.p}>When a seller account is deleted, Harmonies retains the seller&apos;s store data for five years for legal and compliance reasons, including in case of a dispute, tax audit, or regulatory request, as set out in Section 40 of the <Link to="/seller-agreement#account-deletion" className={styles.link}>Seller Agreement</Link>. During this period, the retained data is used solely for those purposes and not for marketing, analytics, or profiling, and it is permanently deleted when the period expires. This exception does not apply to data received from Instagram, which is deleted as described in the <a href="#instagram" className={styles.link}>Instagram and Meta Integration</a> section.</p>
 
       <h2 className={styles.h2}>15. Data Security</h2>
       <p className={styles.p}>We use appropriate technical and organizational measures to protect personal information, including:</p>
@@ -294,13 +359,14 @@ export default function PrivacyPolicy() {
       </ul>
       <p className={styles.p}>Harmonies.ae takes appropriate steps to ensure data privacy and security, including through various hardware and software methodologies. However, Harmonies.ae cannot guarantee the security of any information that is disclosed online, as no electronic transmission or storage method is completely secure.</p>
 
-      <h2 className={styles.h2}>16. Account Deletion</h2>
-      <p className={styles.p}>Users may request deletion of their account directly through the Harmonies application, through our account deletion form at <a href="https://harmonies.ae/delete-account" className={styles.link}>https://harmonies.ae/delete-account</a>, or by emailing <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a>. See the Data Deletion Requests section for details.</p>
+      <h2 id="account-deletion" className={styles.h2}>16. Account Deletion</h2>
+      <p className={styles.p}>Users may request deletion of their account directly through the Harmonies application, through our account deletion form at <a href="https://harmonies.ae/delete-account" className={styles.link}>https://harmonies.ae/delete-account</a>, or by emailing <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a>. See the <a href="#data-deletion" className={styles.link}>Data Deletion Requests</a> section for details.</p>
       <p className={styles.p}>Upon deletion:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Personal data associated with the user account will be removed.</li>
         <li className={styles.li}>Certain information may be retained where required for historical records, financial analysis, business performance analysis, fraud prevention, or legal obligations.</li>
         <li className={styles.li}>Retained information will be anonymized where possible and will no longer identify the user.</li>
+        <li className={styles.li}>For seller accounts, store data is retained for five years for legal and compliance reasons, as described under Seller Store Data in the <a href="#data-retention" className={styles.link}>Data Retention</a> section.</li>
       </ul>
 
       <h2 className={styles.h2}>17. Your Rights</h2>
@@ -338,16 +404,10 @@ export default function PrivacyPolicy() {
 
       <h2 className={styles.h2}>21. Changes to This Privacy Policy</h2>
       <p className={styles.p}>We may update this Privacy Policy from time to time.</p>
-      <p className={styles.p}>When significant changes are made, we will update the Effective Date and provide notice where required.</p>
-      <p className={styles.p}>Continued use of Harmonies after updates means acceptance of the revised Privacy Policy.</p>
+      <p className={styles.p}>When significant changes are made, we will update the &quot;Last Updated&quot; date at the top of this policy and provide notice where required.</p>
+      <p className={styles.p}>Where a change requires your consent under applicable law, we will ask for it before the change applies to you.</p>
 
-      <h2 className={styles.h2}>22. Contact Us</h2>
-      <p className={styles.p}>If you have questions regarding this Privacy Policy or our privacy practices, contact us:</p>
-      <p className={styles.p}><strong>Harmonies.ae</strong></p>
-      <p className={styles.p}>Email: <strong><a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></strong></p>
-      <p className={styles.p}>Website: <strong>https://harmonies.ae</strong></p>
-
-      <h2 className={styles.h2}>23. Instagram and Meta Integration</h2>
+      <h2 id="instagram" className={styles.h2}>22. Instagram and Meta Integration</h2>
       <p className={styles.p}>Sellers may choose to connect an Instagram professional (Business or Creator) account to Harmonies using Meta&apos;s official login and APIs. Connecting is optional, and we only access the information you authorize on Meta&apos;s permission screen.</p>
       <h3 className={styles.h3}>Information We Receive From Instagram</h3>
       <ul className={styles.ul}>
@@ -360,20 +420,23 @@ export default function PrivacyPolicy() {
       <p className={styles.p}>We use Instagram data only to provide the features you request, such as linking your Instagram account to your Harmonies storefront, displaying your profile and posts, and helping you create product listings from your existing content. We do not sell Instagram data, use it for advertising profiles, or share it with third parties except service providers that help us operate the Platform under confidentiality obligations, or where required by law.</p>
       <h3 className={styles.h3}>Disconnecting and Deleting Instagram Data</h3>
       <p className={styles.p}>You can disconnect your Instagram account at any time in the Harmonies Seller application under Settings → Instagram. When you disconnect, we immediately stop accessing your Instagram account and delete the access token.</p>
-      <p className={styles.p}>To delete the remaining record of your connected Instagram account (its account ID and username), or any other personal information, follow the steps in the Data Deletion Requests section below. Instagram data deletion requests are completed within 30 days, at any time and regardless of the status of your seller account. Posts you chose to import become product listings in your store; you can edit or delete them at any time.</p>
+      <p className={styles.p}>To delete the remaining record of your connected Instagram account (its account ID and username), or any other personal information, follow the steps in the <a href="#data-deletion" className={styles.link}>Data Deletion Requests</a> section below. Instagram data deletion requests are completed within 30 days, at any time and regardless of the status of your seller account. Posts you chose to import become product listings in your store; you can edit or delete them at any time.</p>
       <p className={styles.p}>Your use of Instagram is also governed by Meta&apos;s own Privacy Policy, available at <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className={styles.link}>https://www.facebook.com/privacy/policy/</a>.</p>
 
-      <h2 className={styles.h2}>24. Data Deletion Requests</h2>
+      <h2 id="data-deletion" className={styles.h2}>23. Data Deletion Requests</h2>
       <p className={styles.p}>You can request deletion of your account and personal data, including any data received from Instagram, in any of these ways:</p>
       <ul className={styles.ul}>
         <li className={styles.li}>In the Harmonies application, through your account settings</li>
         <li className={styles.li}>Using our account deletion form at <a href="https://harmonies.ae/delete-account" className={styles.link}>https://harmonies.ae/delete-account</a></li>
         <li className={styles.li}>By emailing <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a> with the subject &quot;Data Deletion Request&quot; from the email address linked to your account</li>
       </ul>
-      <p className={styles.p}>We will confirm your request and complete the deletion within 30 days, subject to the retention exceptions described in the Data Retention and Account Deletion sections.</p>
+      <p className={styles.p}>We will confirm your request and complete the deletion within 30 days, subject to the retention exceptions described in the <a href="#data-retention" className={styles.link}>Data Retention</a> and <a href="#account-deletion" className={styles.link}>Account Deletion</a> sections, including the five-year retention of seller store data.</p>
 
-      <h2 className={styles.h2}>25. Governing Law</h2>
+      <h2 className={styles.h2}>24. Governing Law</h2>
       <p className={styles.p}>This Privacy Policy shall be governed by the applicable laws and regulations of the United Arab Emirates.</p>
+
+      <h2 className={styles.h2}>25. Contact Us</h2>
+      <LegalContact intro="If you have questions regarding this Privacy Policy or our privacy practices, please contact us:" />
     </LegalPage>
   );
 }

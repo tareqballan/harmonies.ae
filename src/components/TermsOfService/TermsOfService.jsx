@@ -1,4 +1,5 @@
-import LegalPage from '../LegalPage/LegalPage';
+import { Link } from 'react-router-dom';
+import LegalPage, { LegalContact } from '../LegalPage/LegalPage';
 import styles from '../LegalPage/LegalPage.module.css';
 
 export default function TermsOfService() {
@@ -7,11 +8,9 @@ export default function TermsOfService() {
       title="Terms and Conditions"
       description="The terms governing your access to and use of the Harmonies platform."
       path="/terms-of-service"
-      dateLabel="Last Updated"
-      date="18 September 2026"
     >
-      <p className={styles.p}>Welcome to Harmonies.ae. These Terms and Conditions (&quot;Terms&quot;) govern your access to and use of the Harmonies platform, including our website, mobile applications, and related services (&quot;Platform&quot;).</p>
-      <p className={styles.p}>Lumiere Global Ventures LLC-FZ maintains the <a href="https://harmonies.ae/" className={styles.link}>https://harmonies.ae/</a> website (the &quot;Site&quot;).</p>
+      <p className={styles.p}>Welcome to Harmonies. The Harmonies platform, including the website at <a href="https://harmonies.ae/" className={styles.link}>https://harmonies.ae/</a> (the &quot;Site&quot;), our mobile applications, and related services (together, the &quot;Platform&quot;), is owned and operated by Lumiere Global Ventures LLC-FZ, Meydan Freezone, Dubai, United Arab Emirates (&quot;Harmonies&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;).</p>
+      <p className={styles.p}>These Terms and Conditions (&quot;Terms&quot;) govern your access to and use of the Platform. They should be read together with our <Link to="/privacy-policy" className={styles.link}>Privacy Policy</Link>, <Link to="/return-refund-policy" className={styles.link}>Return and Refund Policy</Link>, and <Link to="/delivery-policy" className={styles.link}>Delivery Policy</Link>, and, for sellers, the <Link to="/seller-agreement" className={styles.link}>Seller Agreement</Link>.</p>
       <p className={styles.p}>By creating an account, accessing, or using Harmonies, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our Platform.</p>
       <p className={styles.p}>Any purchase, dispute, or claim arising out of or in connection with this website shall be governed and construed in accordance with the laws of the United Arab Emirates.</p>
 
@@ -54,12 +53,11 @@ export default function TermsOfService() {
         <li className={styles.li}>Handle customer inquiries and approved returns according to applicable policies.</li>
         <li className={styles.li}>Avoid selling prohibited, counterfeit, unsafe, or illegal products.</li>
       </ul>
+      <p className={styles.p}>Sellers are also bound by the <Link to="/seller-agreement" className={styles.link}>Seller Agreement</Link>, which sets out their obligations in full.</p>
       <p className={styles.p}>Harmonies may review seller accounts, remove products, restrict access, suspend accounts, or take other actions if sellers violate these Terms or applicable laws.</p>
 
-      <h2 className={styles.h2}>5. Seller Verification and KYC Requirements</h2>
-      <p className={styles.p}>To maintain a secure and trusted marketplace, sellers may be required to complete identity and business verification procedures before accessing selling features on Harmonies.</p>
-      <p className={styles.p}>Sellers agree to provide accurate and up-to-date information and documentation required for verification purposes.</p>
-      <p className={styles.p}>For more details about seller verification requirements, please refer to our <a href="/seller-verification-kyc-policy" className={styles.link}>Seller Verification and KYC Policy</a>.</p>
+      <h2 className={styles.h2}>5. Seller Verification</h2>
+      <p className={styles.p}>Sellers must complete Harmonies&apos; identity and business verification (KYC) before they can sell on the Platform, and must keep their verification information accurate and up to date. The requirements and process are set out in Section 5 of the <Link to="/seller-agreement#verification" className={styles.link}>Seller Agreement</Link>.</p>
 
       <h2 className={styles.h2}>6. Orders and Payments</h2>
       <p className={styles.p}>When a customer places an order through Harmonies:</p>
@@ -79,40 +77,15 @@ export default function TermsOfService() {
       <p className={styles.p}>Once a payment is successfully processed, Harmonies sends the customer a payment confirmation immediately, and in any case within 24 hours of the transaction. Confirmation is sent by email, if a valid email address is registered on the account, or otherwise by WhatsApp message to the registered mobile number.</p>
       <p className={styles.p}>Seller payouts may be processed according to Harmonies&apos; payout schedule and may be subject to order completion, delivery confirmation, refunds, disputes, chargebacks, or other risk management procedures.</p>
 
-      <h2 className={styles.h2}>7. Delivery and Logistics</h2>
-      <p className={styles.p}>Harmonies coordinates delivery through third-party logistics providers and delivery partners to support order fulfillment.</p>
-      <p className={styles.p}>Delivery times are estimates and may vary due to circumstances outside Harmonies&apos; reasonable control, including weather conditions, transportation delays, operational issues, or third-party provider delays.</p>
-      <p className={styles.p}>Delivery fees and applicable logistics charges will be displayed or communicated before order completion.</p>
-      <p className={styles.p}>While Harmonies facilitates delivery coordination, sellers remain responsible for ensuring products are properly prepared, packaged, and ready for delivery.</p>
+      <h2 className={styles.h2}>7. Delivery</h2>
+      <p className={styles.p}>Harmonies delivers within the United Arab Emirates only, through third-party delivery partners; delivery fees are shown before checkout is completed, and delivery timeframes are estimates. Full details are in our <Link to="/delivery-policy" className={styles.link}>Delivery Policy</Link>.</p>
 
       <h2 className={styles.h2}>8. Returns and Refunds</h2>
-      <p className={styles.p}>Return eligibility depends on the seller&apos;s return settings and the product type.</p>
-      <p className={styles.p}>Customers may request a return or refund if:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>The seller has marked the product as &quot;Returnable&quot; on the Platform.</li>
-        <li className={styles.li}>The request is submitted within 7 days of receiving the product.</li>
-        <li className={styles.li}>The product meets applicable return conditions.</li>
-      </ul>
-      <p className={styles.p}>The following products are generally not eligible for return or refund:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Food and perishable products.</li>
-        <li className={styles.li}>Personalized products.</li>
-        <li className={styles.li}>Custom-made or specially prepared items.</li>
-        <li className={styles.li}>Products that cannot be returned due to hygiene, safety, or legal restrictions.</li>
-      </ul>
-      <p className={styles.p}>Returned products must be in their original condition unless the issue is related to a defect, incorrect product, or seller error.</p>
-      <p className={styles.p}>Harmonies will cover approved return shipping costs.</p>
-      <p className={styles.p}>Once a refund is approved, it will be processed within one working day and returned to the original payment method used for the transaction. Once initiated, the refund is typically credited to the customer's account within 10 to 45 days, depending on the bank, card issuer, or payment provider.</p>
-      <p className={styles.p}>Harmonies facilitates communication and operational processes between customers and sellers regarding returns and refunds. Sellers remain responsible for product quality, accuracy, safety, and compliance of their products.</p>
-      <p className={styles.p}>Harmonies is not responsible for product defects, incorrect product descriptions, or seller actions, except where required by applicable law.</p>
+      <p className={styles.p}>Products the seller has marked &quot;Returnable&quot; may be returned within seven calendar days after delivery, and products that are incorrect, damaged, defective, or materially misdescribed may be returned whether or not they are marked &quot;Returnable&quot;. Who pays for return delivery, which products are excluded, and how to request a return are set out in our <Link to="/return-refund-policy" className={styles.link}>Return and Refund Policy</Link>.</p>
+      <p className={styles.p}>Once a return is approved, Harmonies will initiate the refund within one working day. Refunds will be done only through the original mode of payment used for the transaction and will be processed within 10 to 45 days, depending on the issuing bank of the credit card.</p>
 
       <h2 className={styles.h2}>9. Order Cancellation</h2>
-      <p className={styles.p}>Customers may request order cancellation under the following conditions:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>For standard products: cancellation is allowed if the order has not been shipped.</li>
-        <li className={styles.li}>For personalized or made-to-order products: cancellation is allowed only if the seller has not started preparing or producing the item.</li>
-      </ul>
-      <p className={styles.p}>Once an order has been shipped or production has started, cancellation may not be possible.</p>
+      <p className={styles.p}>Standard orders may be cancelled before they are shipped, and personalized or made-to-order products only before the seller starts preparing them. Full conditions, including refunds when a seller cancels, are in Section 8 of our <Link to="/return-refund-policy#cancellation" className={styles.link}>Return and Refund Policy</Link>.</p>
 
       <h2 className={styles.h2}>10. Platform Content and Intellectual Property</h2>
       <p className={styles.p}>All content, features, designs, trademarks, software, and materials provided by Harmonies are owned by or licensed to Harmonies.</p>
@@ -130,20 +103,7 @@ export default function TermsOfService() {
       <p className={styles.p}>Customers should make purchasing decisions based on their own judgment.</p>
 
       <h2 className={styles.h2}>12. Prohibited Products and Activities</h2>
-      <p className={styles.p}>Sellers may not list, sell, or promote products or services that violate applicable UAE laws or payment provider requirements, including:</p>
-      <ul className={styles.ul}>
-        <li className={styles.li}>Illegal drugs, controlled substances, or related products.</li>
-        <li className={styles.li}>Weapons, firearms, ammunition, explosives, or prohibited weapon accessories.</li>
-        <li className={styles.li}>Counterfeit, fake, or unauthorized branded products.</li>
-        <li className={styles.li}>Stolen goods or illegally obtained products.</li>
-        <li className={styles.li}>Tobacco products, vaping products, or restricted nicotine products where prohibited.</li>
-        <li className={styles.li}>Alcohol products where not legally permitted.</li>
-        <li className={styles.li}>Adult sexual products or explicit content.</li>
-        <li className={styles.li}>Products violating intellectual property rights.</li>
-        <li className={styles.li}>Hazardous materials or unsafe products.</li>
-        <li className={styles.li}>Any products prohibited by applicable regulations, logistics providers, or payment providers.</li>
-      </ul>
-      <p className={styles.p}>Harmonies reserves the right to remove prohibited products and take appropriate action against violating accounts.</p>
+      <p className={styles.p}>Sellers may only list products in the categories approved by Harmonies, and may not list, sell, or promote any product in the prohibited and restricted products list in <Link to="/seller-agreement#prohibited-items" className={styles.link}>Appendix A of the Seller Agreement</Link>. Harmonies reserves the right to remove prohibited products and take appropriate action against violating accounts.</p>
 
       <h2 className={styles.h2}>13. Third-Party Services</h2>
       <p className={styles.p}>Harmonies may integrate with third-party services, including payment providers, delivery companies, analytics providers, and other partners.</p>
@@ -176,7 +136,7 @@ export default function TermsOfService() {
       <p className={styles.p}>Nothing in these Terms excludes liability where such exclusion is not permitted by applicable law.</p>
 
       <h2 className={styles.h2}>17. Privacy</h2>
-      <p className={styles.p}>Your use of Harmonies is also governed by our <a href="/privacy-policy" className={styles.link}>Privacy Policy</a>, which explains how we collect, use, store, and protect your information.</p>
+      <p className={styles.p}>Your use of Harmonies is also governed by our <Link to="/privacy-policy" className={styles.link}>Privacy Policy</Link>, which explains how we collect, use, store, and protect your information, including our use of <Link to="/privacy-policy#cookies" className={styles.link}>cookies and similar technologies</Link>.</p>
 
       <h2 className={styles.h2}>18. Changes to These Terms</h2>
       <p className={styles.p}>Harmonies may update these Terms from time to time.</p>
@@ -187,8 +147,7 @@ export default function TermsOfService() {
       <p className={styles.p}>Any disputes arising from these Terms or your use of Harmonies shall be handled according to applicable UAE laws and jurisdiction.</p>
 
       <h2 className={styles.h2}>20. Contact Us</h2>
-      <p className={styles.p}>For questions regarding these Terms, please contact us:</p>
-      <p className={styles.p}>Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
+      <LegalContact intro="For questions regarding these Terms, please contact us:" />
     </LegalPage>
   );
 }

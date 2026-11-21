@@ -1,4 +1,5 @@
-import LegalPage from '../LegalPage/LegalPage';
+import { Link } from 'react-router-dom';
+import LegalPage, { LegalContact } from '../LegalPage/LegalPage';
 import styles from '../LegalPage/LegalPage.module.css';
 
 export default function ReturnRefundPolicy() {
@@ -7,10 +8,8 @@ export default function ReturnRefundPolicy() {
       title="Return and Refund Policy"
       description="When customers may request returns, who bears delivery costs, and how refunds are processed on Harmonies."
       path="/return-refund-policy"
-      dateLabel="Last Updated"
-      date="18 September 2026"
     >
-      <p className={styles.p}>At Harmonies, we aim to provide customers with a reliable and transparent shopping experience. This policy explains when returns may be requested, who is responsible for delivery costs, and how refunds are processed.</p>
+      <p className={styles.p}>At Harmonies, we aim to provide customers with a reliable and transparent shopping experience. This policy explains when returns may be requested, who is responsible for delivery costs, and how refunds are processed. It forms part of our <Link to="/terms-of-service" className={styles.link}>Terms and Conditions</Link>; delivery fees and timeframes are covered in our <Link to="/delivery-policy" className={styles.link}>Delivery Policy</Link>.</p>
 
       <h2 className={styles.h2}>1. About Returns on Harmonies</h2>
       <p className={styles.p}>Harmonies is a marketplace connecting customers with independent sellers. Each seller remains responsible for its products, including their quality, safety, legality, description, and conformity with the customer's order.</p>
@@ -78,7 +77,7 @@ export default function ReturnRefundPolicy() {
       <p className={styles.p}>Customers must not return products before receiving approval and return instructions.</p>
       <p className={styles.p}>The seller may review and respond to the request, but Harmonies may investigate and make the final decision based on this policy, applicable law, and the available evidence.</p>
 
-      <h2 className={styles.h2}>6. Return Shipping</h2>
+      <h2 id="return-shipping" className={styles.h2}>6. Return Shipping</h2>
       <p className={styles.p}>Approved returns may be coordinated through Harmonies or its delivery partners.</p>
       <p className={styles.p}>Responsibility for delivery costs is determined as follows:</p>
       <ul className={styles.ul}>
@@ -89,7 +88,7 @@ export default function ReturnRefundPolicy() {
       </ul>
       <p className={styles.p}>Customers must package returned products appropriately. A customer may be responsible for damage caused by inadequate return packaging, misuse, or unreasonable handling after delivery.</p>
 
-      <h2 className={styles.h2}>7. Inspection and Refunds</h2>
+      <h2 id="refunds" className={styles.h2}>7. Inspection and Refunds</h2>
       <p className={styles.p}>After the returned product is received, it may be inspected to verify the return reason and condition.</p>
       <p className={styles.p}>If the return is approved following inspection:</p>
       <ul className={styles.ul}>
@@ -100,7 +99,7 @@ export default function ReturnRefundPolicy() {
       <p className={styles.p}>Refunds will be done only through the original mode of payment used for the transaction and will be processed within 10 to 45 days, depending on the issuing bank of the credit card.</p>
       <p className={styles.p}>If the returned product does not meet the applicable requirements, Harmonies may reject or adjust the refund after reviewing the evidence and informing the customer of the reason.</p>
 
-      <h2 className={styles.h2}>8. Order Cancellation</h2>
+      <h2 id="cancellation" className={styles.h2}>8. Order Cancellation</h2>
       <h3 className={styles.h3}>Standard Products</h3>
       <p className={styles.p}>A customer may request cancellation before the order has been shipped.</p>
       <h3 className={styles.h3}>Personalized or Made-to-Order Products</h3>
@@ -131,7 +130,7 @@ export default function ReturnRefundPolicy() {
         <li className={styles.li}>Accept valid returns and provide remedies required by this policy or applicable law.</li>
         <li className={styles.li}>Pay the original outbound delivery fee and return-delivery fee where the return results from an incorrect, damaged, defective, incomplete, or materially misdescribed product attributable to the seller.</li>
       </ul>
-      <p className={styles.p}>Seller-responsible refunds and delivery costs may be deducted from the seller's balance, reserve, or future proceeds.</p>
+      <p className={styles.p}>Seller-responsible refunds and delivery costs may be deducted from the seller's balance, reserve, or future proceeds. Sellers' return obligations are also set out in Section 18 of the <Link to="/seller-agreement#returns" className={styles.link}>Seller Agreement</Link>.</p>
 
       <h2 className={styles.h2}>11. Fraudulent or Abusive Returns</h2>
       <p className={styles.p}>Harmonies may investigate and refuse a return or refund where sufficient evidence indicates:</p>
@@ -149,8 +148,7 @@ export default function ReturnRefundPolicy() {
       <p className={styles.p}>If any part of this policy conflicts with a mandatory legal requirement, that legal requirement will apply.</p>
 
       <h2 className={styles.h2}>13. Contact Us</h2>
-      <p className={styles.p}>For questions concerning returns or refunds, contact:</p>
-      <p className={styles.p}><strong>Harmonies</strong><br />Operated by Lumiere Global Ventures LLC-FZ<br />Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
+      <LegalContact intro="For questions concerning returns, refunds, or cancellations, please contact us:" />
     </LegalPage>
   );
 }

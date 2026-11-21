@@ -1,4 +1,5 @@
-import LegalPage from '../LegalPage/LegalPage';
+import { Link } from 'react-router-dom';
+import LegalPage, { LegalContact } from '../LegalPage/LegalPage';
 import styles from '../LegalPage/LegalPage.module.css';
 
 export default function DeliveryPolicy() {
@@ -7,8 +8,6 @@ export default function DeliveryPolicy() {
       title="Delivery Policy"
       description="How orders are shipped on Harmonies, delivery fees, and expected delivery timeframes."
       path="/delivery-policy"
-      dateLabel="Last Updated"
-      date="02 September 2026"
     >
       <p className={styles.p}>Harmonies is a marketplace connecting customers with independent sellers. This policy explains how orders are shipped, how delivery fees are determined, and the delivery timeframes customers can expect.</p>
 
@@ -29,11 +28,10 @@ export default function DeliveryPolicy() {
       <p className={styles.p}>If an order has not arrived within the expected timeframe, customers can contact Harmonies for assistance in locating the order or resolving the delay.</p>
 
       <h2 className={styles.h2}>5. Related Policies</h2>
-      <p className={styles.p}>For information on returns, cancellations, and refunds, please see our <a href="/return-refund-policy" className={styles.link}>Return and Refund Policy</a>. Sellers&apos; shipping and packaging obligations are set out in the <a href="/seller-agreement" className={styles.link}>Seller Agreement</a>.</p>
+      <p className={styles.p}>This policy forms part of our <Link to="/terms-of-service" className={styles.link}>Terms and Conditions</Link>. For information on returns, cancellations, and refunds, including who pays for return delivery, please see our <Link to="/return-refund-policy" className={styles.link}>Return and Refund Policy</Link>. Sellers&apos; shipping and packaging obligations are set out in Sections 16 and 17 of the <Link to="/seller-agreement#shipping" className={styles.link}>Seller Agreement</Link>.</p>
 
       <h2 className={styles.h2}>6. Contact Us</h2>
-      <p className={styles.p}>For questions about delivery, please contact us:</p>
-      <p className={styles.p}>Email: <a href="mailto:info@lgv.ae" className={styles.link}>info@lgv.ae</a></p>
+      <LegalContact intro="For questions about delivery, please contact us:" />
     </LegalPage>
   );
 }

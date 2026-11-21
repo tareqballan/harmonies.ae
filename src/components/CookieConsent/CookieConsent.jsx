@@ -161,8 +161,8 @@ export default function CookieConsent() {
               <span className={styles.bannerTitle}>We use cookies</span>
             </div>
             <p className={styles.bannerCopy}>
-              We use cookies to keep Harmonies running smoothly, understand how sellers use the platform, and show relevant content. See our{' '}
-              <Link to="/cookies-policy" className={styles.link}>Cookie Policy</Link> for details.
+              We use cookies to keep Harmonies running smoothly, understand how sellers use the platform, and show relevant content. See{' '}
+              <Link to="/privacy-policy#cookies" className={styles.link}>Cookies and Similar Technologies</Link> in our Privacy Policy for details.
             </p>
             <div className={styles.actionsRow}>
               <button type="button" className={styles.btnSecondary} onClick={rejectAll}>Reject non-essential</button>

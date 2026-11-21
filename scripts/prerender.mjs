@@ -15,9 +15,9 @@ import { SITE_URL, PAGE_META } from '../src/pageMeta.js';
 const ROUTES = [
   '/privacy-policy',
   '/terms-of-service',
-  '/cookies-policy',
   '/return-refund-policy',
-  '/seller-verification-kyc-policy',
+  '/delivery-policy',
+  '/seller-agreement',
   '/delete-account',
 ];
 
